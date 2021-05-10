@@ -41,7 +41,7 @@ public class Controller {
     } while (keepRunning);
   }
 
-  public void subsdsadsadasMenu(){
+  public void subsdsadsadasMenu() {
     Menu menu = new Menu();
 
     int choice;
@@ -81,5 +81,5 @@ public class Controller {
     } while (keepRunning);
   }
 
-  }
 }
+
