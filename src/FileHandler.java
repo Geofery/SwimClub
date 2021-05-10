@@ -5,7 +5,7 @@ import java.util.Scanner;
 
   public class FileHandler {
     UI ui = new UI();
-    File file = new File("Leaderboard.txt");
+    File file = new File("Members.txt");
     private String name;
     private int score;
 

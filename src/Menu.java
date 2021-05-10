@@ -1,14 +1,14 @@
 public class Menu {
   public void showMainMenu(){
 
-    System.out.println("\nWelcome to Rock, Paper or Scissors!\n");
-    System.out.println("          RULES:");
-    System.out.println("Get the higest win streak.");
-    System.out.println("If you loose, your win streak resets!\n");
-    System.out.println("1. New game");
-    // System.out.println("2. Show Score");
-    System.out.println("2. Show leaderboard");
-    System.out.println("9. Quit game");
+    System.out.println("\nWelcome to the Dolphins swim club!\n");
+    System.out.println("          ");
+    System.out.println("1. ");
+    System.out.println("2. ");
+    System.out.println("3. ");
+    System.out.println("4. ");
+    System.out.println("5. ");
+    System.out.println("9. ");
     System.out.println("Please choose: ");
   }
 
