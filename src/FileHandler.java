@@ -1,13 +1,9 @@
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Scanner;
 
 public class FileHandler {
-  UI ui = new UI();
-  Membership membership = new Membership();
-  File file = new File("Members.txt");
-  Member member;
+  File file = new File("Members2.txt");
+
   private String firstName;
   private String surName;
   private String age;
@@ -34,7 +30,7 @@ public class FileHandler {
     }
   }
 
-  public void loadMembers() {
+  public void loadMembers(Membership membership, Member member) {
 
     Scanner fileReader = null;
     try {
@@ -42,9 +38,6 @@ public class FileHandler {
     } catch (FileNotFoundException e) {
       e.printStackTrace();
     }
-    ui.displayGreen("First name   Surname   Age   Sex   Membership status   Results ");
-    ui.display("______________________");
-
 
     while (fileReader.hasNext()) {
       firstName = fileReader.next();
@@ -53,7 +46,7 @@ public class FileHandler {
       sex = fileReader.next();
       membershipStatus = fileReader.nextBoolean();
       results = fileReader.next();
-      Member member = new Member(firstName, surName, age, sex, membershipStatus, results);
+      member = new Member(firstName, surName, age, sex, membershipStatus, results);
       membership.ageIdentifier(member);
     }
   }
