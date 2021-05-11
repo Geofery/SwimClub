@@ -28,4 +28,14 @@ public class Member {
   public String getAge() {
     return age;
   }
+
+  @Override
+  public String toString() {
+    return firstName + '\'' +
+        ", surName='" + surName + '\'' +
+        ", age='" + age + '\'' +
+        ", sex='" + sex + '\'' +
+        ", membershipStatus=" + membershipStatus +
+        ", results='" + results;
+  }
 }

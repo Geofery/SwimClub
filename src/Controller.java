@@ -5,6 +5,7 @@ public class Controller {
   Member member;
   Membership membership = new Membership();
   LoginGui loginGui = new LoginGui();
+  FileHandler fileHandler = new FileHandler();
 
 
   public void mainMenu() {
@@ -28,6 +29,9 @@ public class Controller {
           competitionResults();
           break;
         case 4:
+          showMembers();
+          break;
+        case 5:
           adminLogin();
           break;
         case 9:
@@ -55,16 +59,28 @@ public class Controller {
     } while (keepRunning);
   }
 
-  public void joinTheClub() {registerNewMember();}
-  public void viewMembership() {}
-  public void competitionResults() {}
+  public void joinTheClub() {
+    registerNewMember();
+  }
+
+  public void viewMembership() {
+  }
+
+  public void competitionResults() {
+  }
+
+  public void showMembers() {
+    fileHandler.loadMembers();
+    ui.displayGreen(membership.youthTeam.toString() + "\n" + membership.seniorTeam + "\n" + membership.seniorXoTeam + "\n" + membership.passive);
+  }
+
   public void adminLogin() {
     loginGui.getLoginRights();
     if (loginGui.getLoginRights() == 1) {
       chairmanSubMenu();
-    }else if (loginGui.getLoginRights() == 2) {
+    } else if (loginGui.getLoginRights() == 2) {
       financeSubMenu();
-    }else if (loginGui.getLoginRights() == 3)
+    } else if (loginGui.getLoginRights() == 3)
       coachSubMenu();
     else
       ui.errorRed("Wrong e-mail or password!");
@@ -92,10 +108,12 @@ public class Controller {
           changeActivityLevel();
           break;
         case 4:
-          addLostFound();;
+          addLostFound();
+          ;
           break;
         case 5:
-          deleteLostFound();;
+          deleteLostFound();
+          ;
           break;
         case 9:
           ui.displayGreen("Saving your high score.....");
@@ -122,12 +140,16 @@ public class Controller {
     } while (keepRunning);
   }
 
-  public void registerNewMember(){
-      member = new Member(ui.getString(),ui.getString(), ui.getString(), ui.getString(), ui.getString());
-      //membership.ageIdentifier();
+  public void registerNewMember() {
+    member = new Member(ui.getString(), ui.getString(), ui.getString(), ui.getString(), ui.getString());
+    //membership.ageIdentifier();
   }
-  public void changeMembershipStatus(){}
-  public void changeActivityLevel(){}
+
+  public void changeMembershipStatus() {
+  }
+
+  public void changeActivityLevel() {
+  }
 
   public void financeSubMenu() {
     Menu menu = new Menu();
@@ -150,7 +172,8 @@ public class Controller {
           deleteMember();
           break;
         case 4:
-          addLostFound();;
+          addLostFound();
+          ;
           break;
         case 5:
           deleteLostFound();
@@ -180,9 +203,14 @@ public class Controller {
     } while (keepRunning);
   }
 
-  public void membershipStatistics(){}
-  public void viewFinances(){}
-  public void deleteMember(){}
+  public void membershipStatistics() {
+  }
+
+  public void viewFinances() {
+  }
+
+  public void deleteMember() {
+  }
 
 
   public void coachSubMenu() {
@@ -235,9 +263,14 @@ public class Controller {
     } while (keepRunning);
   }
 
-  public void showSwimmers(){}
-  public void addLostFound(){}
-  public void deleteLostFound(){}
+  public void showSwimmers() {
+  }
+
+  public void addLostFound() {
+  }
+
+  public void deleteLostFound() {
+  }
 
   public void swimStylesSubMenu() {
     Menu menu = new Menu();
@@ -290,11 +323,20 @@ public class Controller {
     } while (keepRunning);
   }
 
-  public void frontCrawl(){}
-  public void butterfly(){}
-  public void backstroke(){}
-  public void breaststroke(){}
-  public void sidestroke(){}
+  public void frontCrawl() {
+  }
+
+  public void butterfly() {
+  }
+
+  public void backstroke() {
+  }
+
+  public void breaststroke() {
+  }
+
+  public void sidestroke() {
+  }
 
 }
 

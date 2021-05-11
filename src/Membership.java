@@ -9,8 +9,6 @@ public class Membership {
 
 
   public void ageIdentifier(Member member) {
-
-    member = member;
     int getAge = Integer.parseInt(member.getAge());
     if (getAge < 18) {
       youthTeam.add(member);
@@ -21,5 +19,10 @@ public class Membership {
     } else {
       passive.add(member);
     }
+  }
+
+  @Override
+  public String toString() {
+    return "Members:\n" + youthTeam;
   }
 }

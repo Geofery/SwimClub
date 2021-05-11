@@ -3,9 +3,7 @@ public class Main {
     new Main().run();
   }
   public void run() {
-    FileHandler fileHandler = new FileHandler();
-    fileHandler.loadMembers();
-    Membership membership = new Membership();
-    System.out.println(membership.seniorXoTeam.toString());
+    Controller controller = new Controller();
+    controller.mainMenu();
   }
 }
