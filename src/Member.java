@@ -7,11 +7,12 @@ public class Member {
  // It should be used when various implementations of the same kind share a common behavior.
 
 
-  public Member(String name, String age, String sex, boolean membershipStatus, String results) {
+  public Member(String name, String age, String sex, String results) {
     this.name = name;
     this.age = age;
     this.sex = sex;
-    this.membershipStatus = membershipStatus;
     this.results = results;
   }
+
+
 }

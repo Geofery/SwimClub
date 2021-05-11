@@ -1,5 +1,9 @@
+import java.lang.management.MemoryManagerMXBean;
+
 public class Controller {
   UI ui = new UI();
+  Member member;
+  Membership membership = new Membership();
 
 
   public void run() {
@@ -49,7 +53,10 @@ public class Controller {
     } while (keepRunning);
   }
 
-  public void createMember();
+  public void createMember() {
+    member = new Member(ui.getString(), ui.getString(), ui.getString(), ui.getString());
+    membership.ageIdentifier();
+  }
 
   public void subsdsadsadasMenu() {
     Menu menu = new Menu();
@@ -90,7 +97,6 @@ public class Controller {
       }
     } while (keepRunning);
   }
-
 
 
 }
