@@ -1,6 +1,7 @@
 public class Controller {
   UI ui = new UI();
 
+
   public void run() {
     Menu menu = new Menu();
 
@@ -13,8 +14,15 @@ public class Controller {
       choice = ui.getScanInt();
       switch (choice) {
         case 1:
+          createMember();
           break;
         case 2:
+          break;
+        case 3:
+          break;
+        case 4:
+          break;
+        case 5:
           break;
         case 9:
           ui.displayGreen("Saving your high score.....");
@@ -40,6 +48,8 @@ public class Controller {
       }
     } while (keepRunning);
   }
+
+  public void createMember();
 
   public void subsdsadsadasMenu() {
     Menu menu = new Menu();
@@ -80,6 +90,8 @@ public class Controller {
       }
     } while (keepRunning);
   }
+
+
 
 }
 
