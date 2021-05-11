@@ -65,9 +65,17 @@ public class LoginGui implements ActionListener {
   public void actionPerformed(ActionEvent e) {
     String user = email.getText().toLowerCase(Locale.ROOT);
     String password = passwordField.getText();
-    if (user.equals("email@email.com") && password.equals("1234")) {
+    if (user.equals("chairman@dolphin.com") && password.equals("1234")) {
       success.setText("Login successful!");
-    } else
+    } else if (user.equals("finance@dolphin.com") && password.equals("1234")) {
+      success.setText("Login successful!");
+    } else if (user.equals("coach@dolphin.com") && password.equals("1234")){
+      success.setText("Login successful!");
+    }else
       success.setText("Wrong E-mail or Password");
+  }
+
+  public int getLoginRights(){
+    return 0;
   }
 }
