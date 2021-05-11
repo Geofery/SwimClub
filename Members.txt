@@ -1,6 +1,6 @@
 Jens Jensen 		2008	female  true    49:59
 Jeanette Tottesen	1987	female	true	03:56
-Mie Nielsen 		1996	female	true	15:12
+Mie Nielsen 		1996	female	false	15:12
 Lotte Friis 		1988	female	true 	03:58
 Bob Friis 		    1988	male	true	08:04
 Marley Friis 		1988	male 	true 	15:28

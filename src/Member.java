@@ -31,11 +31,7 @@ public class Member {
 
   @Override
   public String toString() {
-    return firstName + '\'' +
-        ", surName='" + surName + '\'' +
-        ", age='" + age + '\'' +
-        ", sex='" + sex + '\'' +
-        ", membershipStatus=" + membershipStatus +
-        ", results='" + results;
+    return "First name: " + firstName  + ", Surname: " + surName + ", age: " + age + ", sex: " + sex +
+        ", membership status: " + membershipStatus + ", results: " + results;
   }
 }

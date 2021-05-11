@@ -1,3 +1,4 @@
+import java.time.Year;
 import java.util.ArrayList;
 
 public class Membership {
@@ -5,6 +6,7 @@ public class Membership {
   ArrayList<Member> seniorTeam;
   ArrayList<Member> seniorXoTeam;
   ArrayList<Member> passive;
+  int year = 2021;
 
   public void createYouthTeam() {
     youthTeam = new ArrayList<>();
@@ -24,24 +26,20 @@ public class Membership {
 
 
   public void ageIdentifier(Member member) {
+
     int getAge = Integer.parseInt(member.getAge());
-    if (getAge < 18) {
+    if ((year - getAge) < 18) {
       createYouthTeam();
       youthTeam.add(member);
-    } else if (getAge >= 18) {
+    } else if ((year - getAge) >= 18) {
       createSeniorTeam();
       seniorTeam.add(member);
-    } else if (getAge >= 60) {
+    } else if ((year - getAge) >= 60) {
       createSeniorXoTeam();
       seniorXoTeam.add(member);
     } else {
       createPassive();
       passive.add(member);
     }
-  }
-
-  @Override
-  public String toString() {
-    return "Members:\n" + youthTeam;
   }
 }

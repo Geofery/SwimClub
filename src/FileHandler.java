@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.Scanner;
 
 public class FileHandler {
-  File file = new File("Members2.txt");
+  File file = new File("Members.txt");
 
   private String firstName;
   private String surName;
@@ -48,6 +48,7 @@ public class FileHandler {
       results = fileReader.next();
       member = new Member(firstName, surName, age, sex, membershipStatus, results);
       membership.ageIdentifier(member);
+
     }
   }
 }

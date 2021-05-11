@@ -71,7 +71,7 @@ public class Controller {
 
   public void showMembers() {
     fileHandler.loadMembers(membership, member);
-    ui.displayGreen(membership.youthTeam.toString() + "\n" + membership.seniorTeam + "\n" + membership.seniorXoTeam + "\n" + membership.passive);
+    ui.displayGreen(membership.youthTeam + "\n" + membership.seniorTeam + "\n" + membership.seniorXoTeam + "\n" + membership.passive);
   }
 
   public void adminLogin() {
