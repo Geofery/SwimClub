@@ -1,5 +1,6 @@
 Jens  Jensen  2008     female          true           49:59
 Jeanette Tottesen 	1987    female	    true	03:56
+<<<<<<< HEAD
 Mie Nielsen 	1996  female	true	15:12
 Lotte Friis 	1988 female true 	03:58
 Bob Friis 	1988 male true	08:04
@@ -51,3 +52,56 @@ Pernille Larsen 	1992 female true 	02:03
 Mie Nielsen 	1996 female true 	00:59
 Julie Hjorth-Hansen 	1984 female true	02:07
 Dorthe Hjorth-Hansen 	1984 female true	04:32
+=======
+Mie Nielsen 	1996  female	true	03:57
+Lotte Friis 	1988 female true 	58,02
+Bob Friis 	1988 male true	08.04,61
+Marley Friis 	1988 male true 	15.28,65
+Hans Peedersen 	1989 male true 	00.29,87
+Rikke Petersen 	1989 female true	01.03,74
+Oskar Sørensen 	1989 male true 	02.15,21
+Jeanette Ottesen 	1987 female true	00.24,71 	05-12-2014
+Jeanne Ottesen 	1987 female true	00.55,10
+Micha Østergaard 	1987 female true	02.04,98
+Julie Jensen 	2000 female true	00.26,08
+Jakob Andkjær 	1985 male true 	00.21,26
+Mathias Rysgaard  male true 	1998
+Anders Nielsen 	1991  male true 	01.43,69
+Mads Glæsner 	1988  male true 	03.36,82
+Alexander Nørgaard  male true 	2000
+Mads Glæsner 	1988  male true 	14.26,74
+Sarah Sjös 	1993 female true	00.23,67
+Michala Sjöström 	1993 female true	00.51,71
+Sara ström 	1993 female true	01.54,08
+Lotte Briis 	1988 female true	04.03,98
+Dorte Friis 	1988 female true	08.15,92
+Lis Friis 	1988 female true	15.38,88
+Jennie Johansson 	1988 female true	00.30,05
+Katharina Nielsen 	1989 female true	01.05,93
+Fleur Pedersen 	1989 female true	02.19,11
+Sarah Thomsen	1993 female true	00.24,43
+Sarah Njöström 	1993 female true	00.55,48
+Michala Østergaard 	1987 female true	02.07,44
+Mimosa Jallow 	1994 female true	00.27,42
+Mie Nielsen 	1996 female true	00.58,73
+Eyglo Gustafsdottir 	1995 female true	02.08,84
+Julia Hjorth-Hansen 	1984 female true	02.09,73
+Julie Hjorth-Sørensen 	1984 female true	04.38,20
+Tobias Bjerg 	1998  male true 	00.26,14
+Torben Bjerg 	1998  male true 	00.57,14
+Chris Christensen 	1988  male true 	02.05,38
+Jakob Andkjær 	1985  male true 	00.22,79
+Rasmus Nickelsen 	2003  male true 	00.50,83
+Viktor Bromer 	1993  male true 	01.51,62
+Magnus Jákupsson 	1994  male true 	00.23,84
+Anders Jensen 	1987  male true 	00.51,54
+Anders Nielsen 	1987  male true 	01.52,33
+Daniel Skaaning 	1993  male true 	00.53,17
+Viktor Bromer 	1993  male true 	01.54,86
+Chris Christensen 	1988  male true 	04.05,98
+Mia Nielsen 	1996 female true 	00.55,99
+Pernille Larsen 	1992 female true 	02.03,50
+Mie Nielsen 	1996 female true 	00.59,34
+Julie Hjorth-Hansen 	1984 female true	02.07,08
+Dorthe Hjorth-Hansen 	1984 female true	04.32,39
+>>>>>>> b1d7b9be9803531ea73717e0e9aadd006a224a5c

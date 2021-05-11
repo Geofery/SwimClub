@@ -5,7 +5,7 @@ public class Main {
   public void run() {
     FileHandler fileHandler = new FileHandler();
     fileHandler.loadMembers();
-  Membership membership = new Membership();
-    System.out.println(membership.seniorTeam.toString());
+    Membership membership = new Membership();
+    System.out.println(membership.seniorXoTeam.toString());
   }
 }
