@@ -14,5 +14,7 @@ public class Member {
     this.results = results;
   }
 
-
+  public String getAge() {
+    return age;
+  }
 }
