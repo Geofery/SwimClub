@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 public class Controller {
   UI ui = new UI();
@@ -5,6 +6,7 @@ public class Controller {
   LoginGui loginGui = new LoginGui();
   FileHandler fileHandler = new FileHandler();
   Membership membership = new Membership();
+  Finance finance = new Finance();
 
 
   public void mainMenu() {
@@ -34,23 +36,23 @@ public class Controller {
           adminLogin();
           break;
         case 9:
-          ui.displayGreen("Saving your high score.....");
+          ui.displayGreen("Checking if you forgot anyfin.....");
           try {
             Thread.sleep(2500);
           } catch (Exception e) {
           }
-          ui.displayGreen("Still saving....");
+          ui.displayGreen("Anyfin can happen when your part dolphin....");
           try {
             Thread.sleep(2500);
           } catch (Exception e) {
           }
-          ui.errorRed("System error!");
+          ui.errorRed("Water you sinking aboat");
           try {
             Thread.sleep(1000);
           } catch (Exception e) {
           }
           ui.errorRed("F40");
-          ui.displayGreen("Thanks for playing! :D");
+          ui.displayGreen("Swim ya later! :D");
 
 
           keepRunning = false;
@@ -82,7 +84,7 @@ public class Controller {
     } else if (loginGui.getLoginRights() == 3)
       coachSubMenu();
     else
-      ui.errorRed("Wrong e-mail or password!");
+      ui.errorRed("Water up with the e-mail or password!");
   }
 
 
@@ -115,23 +117,23 @@ public class Controller {
           ;
           break;
         case 9:
-          ui.displayGreen("Saving your high score.....");
+          ui.displayGreen("If in doubt, swim it out.....");
           try {
             Thread.sleep(2500);
           } catch (Exception e) {
           }
-          ui.displayGreen("Still saving....");
+          ui.displayGreen("The wetter the better....");
           try {
             Thread.sleep(2500);
           } catch (Exception e) {
           }
-          ui.errorRed("System error!");
+          ui.errorRed("Water you doing !");
           try {
             Thread.sleep(1000);
           } catch (Exception e) {
           }
           ui.errorRed("F40");
-          ui.displayGreen("Thanks for playing! :D");
+          ui.displayGreen("We do it dirty in the deep end !!! :D");
 
 
           keepRunning = false;
@@ -187,23 +189,23 @@ public class Controller {
           deleteLostFound();
           break;
         case 9:
-          ui.displayGreen("Saving your high score.....");
+          ui.displayGreen("Swimming away .....");
           try {
             Thread.sleep(2500);
           } catch (Exception e) {
           }
-          ui.displayGreen("Still saving....");
+          ui.displayGreen("Still swimming....");
           try {
             Thread.sleep(2500);
           } catch (Exception e) {
           }
-          ui.errorRed("System error!");
+          ui.errorRed("SHARK !!!");
           try {
             Thread.sleep(1000);
           } catch (Exception e) {
           }
           ui.errorRed("F40");
-          ui.displayGreen("Thanks for playing! :D");
+          ui.displayGreen("Thanks for Swimming! :D");
 
 
           keepRunning = false;
@@ -215,6 +217,7 @@ public class Controller {
   }
 
   public void viewFinances() {
+    finance.getSubscription(membership);
   }
 
   public void deleteMember() {
