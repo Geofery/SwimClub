@@ -1,7 +1,7 @@
 Jens  Jensen  2008     female          true           49:59
-Jeanette Tottesen 	1987    female	    true	03.56
-Mie Nielsen 	1996  female	true	15-12-2013
-Lotte Friis 	1988 female true 	03.58,02
+Jeanette Tottesen 	1987    female	    true	03:56
+Mie Nielsen 	1996  female	true	03:57
+Lotte Friis 	1988 female true 	58,02
 Bob Friis 	1988 male true	08.04,61
 Marley Friis 	1988 male true 	15.28,65
 Hans Peedersen 	1989 male true 	00.29,87
