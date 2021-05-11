@@ -218,11 +218,7 @@ public class Controller {
   }
 
   public void viewFinances() {
-<<<<<<< HEAD
-
-=======
     finance.getSubscription(membership);
->>>>>>> 77931dae220a7eac114399b1d0ebb910d1c9e484
   }
 
   public void deleteMember() {
