@@ -3,9 +3,9 @@ import java.lang.management.MemoryManagerMXBean;
 public class Controller {
   UI ui = new UI();
   Member member;
-  Membership membership = new Membership();
   LoginGui loginGui = new LoginGui();
   FileHandler fileHandler = new FileHandler();
+  Membership membership = new Membership();
 
 
   public void mainMenu() {
@@ -70,7 +70,7 @@ public class Controller {
   }
 
   public void showMembers() {
-    fileHandler.loadMembers();
+    fileHandler.loadMembers(membership, member);
     ui.displayGreen(membership.youthTeam.toString() + "\n" + membership.seniorTeam + "\n" + membership.seniorXoTeam + "\n" + membership.passive);
   }
 
