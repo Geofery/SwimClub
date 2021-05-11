@@ -123,8 +123,8 @@ public class Controller {
   }
 
   public void registerNewMember(){
-      member = new Member(ui.getString(), ui.getString(), ui.getString(), ui.getString());
-      membership.ageIdentifier();
+      member = new Member(ui.getString(),ui.getString(), ui.getString(), ui.getString(), ui.getString());
+      //membership.ageIdentifier();
   }
   public void changeMembershipStatus(){}
   public void changeActivityLevel(){}

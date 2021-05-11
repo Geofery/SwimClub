@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 
 public class Membership {
-    Member member;
 
     ArrayList<Member> youthTeam = new ArrayList<>();
     ArrayList<Member> seniorTeam = new ArrayList<>();
@@ -11,7 +10,7 @@ public class Membership {
 
 
 
-    public int ageIdentifier() {
+    public void ageIdentifier(Member member) {
 
        int getAge = Integer.parseInt(member.getAge());
         if (getAge < 18) {
@@ -23,8 +22,5 @@ public class Membership {
         } else {
              passive.add(member);
         }
-        return 0;
     }
-
-
 }
