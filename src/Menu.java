@@ -14,7 +14,7 @@ public class Menu {
   public void chairmanSubMenu(){
     System.out.println("1. Register new member.");
     System.out.println("2. Change membership status.");
-    System.out.println("3. Change activity level."); //TODO beskrivelse skal ændres
+    System.out.println("3. Change activity type."); //TODO beskrivelse skal ændres
     System.out.println("4. Add item to Lost and found");
     System.out.println("5. Delete item from Lost and found");
     System.out.println("9. Main menu");
