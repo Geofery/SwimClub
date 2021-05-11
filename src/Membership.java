@@ -25,7 +25,7 @@ public class Membership {
   }
 
 
-  public void ageIdentifier(Member member) {
+  public void ageIdentifier(Member member) {    //@ not null ???
 
     int getAge = Integer.parseInt(member.getAge());
     if ((year - getAge) < 18) {

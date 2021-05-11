@@ -1,4 +1,4 @@
-Jens Jensen 		2008	female   true    49:59,34
+Jens Jensen 		2008	female   true   49:59,34
 Jeanette Tottesen	1987	female	true	03:56,32
 Mie Nielsen 		1996	female	true	15:12,11
 Lotte Friis 		1988	female	true 	03:58,33
@@ -15,7 +15,7 @@ Jakob Andkjær 		1985 	male 	true 	00:21,21
 Mathias Rysgaard 	1998 	male 	true 	01:21,34
 Anders Nielsen 		1991  	male 	true 	01:43,55
 Mads Glæsner 		1988  	male 	true 	03:36,22
-Alexander Nørgaard  2000 	male 	true 	02:12,27
+Alex Nørgaard       2000 	male 	true 	02:12,27
 Mads Glæsner 		1988  	male 	true 	14:36,38
 Sarah Sjös 		    1993 	female 	true	00:23,12
 Michala Sjöström 	1993	female 	true	00:52,54
@@ -66,7 +66,7 @@ Jakob Andkjær 		1985 	male 	true 	00.21,26
 Mathias Rysgaard 	2000 	male 	true 	12.32,33
 Anders Nielsen 		1991 	male 	true 	01.43,69
 Mads Glæsner 		1988  	male 	true 	03.36,82
-Alexander Nørgaard 	2004  	male 	true 	15,55.12
+Alexander Nørgaard 	2004  	male 	true 	15.55,12
 Mads Glæsner 		1988  	male 	true 	14.26,74
 Sarah Sjös 		    1993 	female 	true	00.23,67
 Michala Sjöström 	1993 	female 	true	00.51,71

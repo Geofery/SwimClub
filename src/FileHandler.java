@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.Scanner;
 
 public class FileHandler {
-  File file = new File("Members.txt");
+  File file = new File("Members2.txt");
 
   private String firstName;
   private String surName;
