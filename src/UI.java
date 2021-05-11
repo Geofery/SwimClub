@@ -18,15 +18,9 @@ public class UI {
     System.out.println(ANSI_RED + message + ANSI_RESET);
   }
 
-  /*public String getString() {
+  public String getString() {
     String anwser = scanner.nextLine();
     return anwser;
-  }*/
-  public String getString() {
-    String answer = scanner.nextLine();
-    if (answer.contains(" "))
-      answer = answer.replaceAll(" ", "");
-    return answer;
   }
 
   public int getScanInt(String errorMessage) {

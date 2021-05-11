@@ -102,3 +102,4 @@ Pernille Larsen 	1992 	female 	true 	02.03,50
 Mie Nielsen 		1996 	female 	true 	00.59,34
 Julie Hjorth-Hansen 1984 	female 	true	02.07,08
 Dorthe Pedersen     1984 	female 	true	04.32,39
+Jens Hansen			1991	male	true	null

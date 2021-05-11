@@ -9,9 +9,9 @@ public class FileHandler {
   private String age;
   private String sex;
   private boolean membershipStatus;
-  private String results;
+  private String result;
 
-  public void saveMember(String name, int points) {
+  public void saveMember(Member member) {
     FileWriter fw = null;
     try {
       fw = new FileWriter(file, true);
@@ -20,8 +20,18 @@ public class FileHandler {
     }
     BufferedWriter bw = new BufferedWriter(fw);
     try {
-      bw.write(name.replaceAll("\\[", "").replaceAll("]", "")
-          .replaceAll(",", "") + " " + points);
+
+      firstName = member.getFirstName();
+      surName = member.getSurName();
+      age = member.getAge();
+      sex = member.getSex();
+      membershipStatus = member.isMembershipStatus();
+      result = member.getResult();
+
+
+
+      bw.write(firstName.replaceAll("\\[", "").replaceAll("]", "")
+          .replaceAll(",", "\t") + " " + surName + "\t\t\t" + age + "\t" + sex + "\t" + membershipStatus + "\t" + result);
       bw.newLine();
       bw.close();
       fw.close();
@@ -45,10 +55,9 @@ public class FileHandler {
       age = fileReader.next();
       sex = fileReader.next();
       membershipStatus = fileReader.nextBoolean();
-      results = fileReader.next();
-      member = new Member(firstName, surName, age, sex, membershipStatus, results);
+      result = fileReader.next();
+      member = new Member(firstName, surName, age, sex, membershipStatus, result);
       membership.ageIdentifier(member);
-
     }
   }
 }

@@ -3,8 +3,8 @@ public class Member {
   private String surName;
   private String age;
   private String sex;
-  private boolean membershipStatus;
-  private String results;
+  private boolean membershipStatus = true;
+  private String result;
   // It should be used when various implementations of the same kind share a common behavior.
 
 
@@ -14,7 +14,7 @@ public class Member {
     this.age = age;
     this.sex = sex;
     this.membershipStatus = membershipStatus;
-    this.results = results;
+    this.result = results;
   }
 
   public Member(String firstName, String surName, String age, String sex, String results) {
@@ -22,7 +22,34 @@ public class Member {
     this.surName = surName;
     this.age = age;
     this.sex = sex;
-    this.results = results;
+    this.result = results;
+  }
+
+  public Member(String firstName, String surName, String age, String sex) {
+    this.firstName = firstName;
+    this.surName = surName;
+    this.age = age;
+    this.sex = sex;
+  }
+
+  public String getFirstName() {
+    return firstName;
+  }
+
+  public String getSurName() {
+    return surName;
+  }
+
+  public String getSex() {
+    return sex;
+  }
+
+  public boolean isMembershipStatus() {
+    return membershipStatus;
+  }
+
+  public String getResult() {
+    return result;
   }
 
   public String getAge() {
@@ -31,7 +58,7 @@ public class Member {
 
   @Override
   public String toString() {
-    return "First name: " + firstName  + ", Surname: " + surName + ", age: " + age + ", sex: " + sex +
-        ", membership status: " + membershipStatus + ", results: " + results;
+    return "First name: " + firstName + " Surname: " + surName + " Age: " + age + " Sex: " + sex +
+        " Membership status: " + membershipStatus + " Results: " + result + "\n";
   }
 }

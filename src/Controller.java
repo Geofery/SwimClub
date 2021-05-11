@@ -1,4 +1,3 @@
-import java.lang.management.MemoryManagerMXBean;
 
 public class Controller {
   UI ui = new UI();
@@ -141,8 +140,17 @@ public class Controller {
   }
 
   public void registerNewMember() {
-    member = new Member(ui.getString(), ui.getString(), ui.getString(), ui.getString(), ui.getString());
-    //membership.ageIdentifier();
+    ui.displayGreen("Please enter Name");
+    String name = ui.getString();
+   ui.displayGreen("Please enter surname");
+   String surName = ui.getString();
+    ui.displayGreen("Please enter year of birth");
+    String year = ui.getString();
+    ui.displayGreen("Please enter sex");
+    String sex = ui.getString();
+    member = new Member(name, surName, year, sex);
+    membership.ageIdentifier(member);
+    fileHandler.saveMember(member);
   }
 
   public void changeMembershipStatus() {
