@@ -7,6 +7,7 @@ public class Controller {
   Membership membership = new Membership();
 
 
+
   public void mainMenu() {
     Menu menu = new Menu();
 
@@ -215,6 +216,7 @@ public class Controller {
   }
 
   public void viewFinances() {
+
   }
 
   public void deleteMember() {

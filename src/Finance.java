@@ -1,5 +1,5 @@
 public class Finance {
-
+  
 }
 //prices youth 1000 kr
 //prices senior 1600 kr
