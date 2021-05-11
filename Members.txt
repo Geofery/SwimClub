@@ -1,6 +1,5 @@
 Jens  Jensen  2008     female          true           49:59
 Jeanette Tottesen 	1987    female	    true	03:56
-<<<<<<< HEAD
 Mie Nielsen 	1996  female	true	15:12
 Lotte Friis 	1988 female true 	03:58
 Bob Friis 	1988 male true	08:04
@@ -52,7 +51,6 @@ Pernille Larsen 	1992 female true 	02:03
 Mie Nielsen 	1996 female true 	00:59
 Julie Hjorth-Hansen 	1984 female true	02:07
 Dorthe Hjorth-Hansen 	1984 female true	04:32
-=======
 Mie Nielsen 	1996  female	true	03:57
 Lotte Friis 	1988 female true 	58,02
 Bob Friis 	1988 male true	08.04,61
@@ -104,4 +102,3 @@ Pernille Larsen 	1992 female true 	02.03,50
 Mie Nielsen 	1996 female true 	00.59,34
 Julie Hjorth-Hansen 	1984 female true	02.07,08
 Dorthe Hjorth-Hansen 	1984 female true	04.32,39
->>>>>>> b1d7b9be9803531ea73717e0e9aadd006a224a5c
