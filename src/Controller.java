@@ -1,5 +1,10 @@
+import java.lang.management.MemoryManagerMXBean;
+
 public class Controller {
   UI ui = new UI();
+  Member member;
+  Membership membership = new Membership();
+
 
   public void run() {
     Menu menu = new Menu();
@@ -13,8 +18,15 @@ public class Controller {
       choice = ui.getScanInt();
       switch (choice) {
         case 1:
+          createMember();
           break;
         case 2:
+          break;
+        case 3:
+          break;
+        case 4:
+          break;
+        case 5:
           break;
         case 9:
           ui.displayGreen("Saving your high score.....");
@@ -39,6 +51,11 @@ public class Controller {
           keepRunning = false;
       }
     } while (keepRunning);
+  }
+
+  public void createMember() {
+    member = new Member(ui.getString(), ui.getString(), ui.getString(), ui.getString());
+    membership.ageIdentifier();
   }
 
   public void subsdsadsadasMenu() {
@@ -80,6 +97,7 @@ public class Controller {
       }
     } while (keepRunning);
   }
+
 
 }
 
