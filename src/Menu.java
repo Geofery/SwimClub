@@ -13,10 +13,11 @@ public class Menu {
   }
 
   public void showNewGameMenu(){
-    System.out.println("1. Rock");
-    System.out.println("2. Paper");
-    System.out.println("3. Scissors");
-    System.out.println("4. Show score");
+    System.out.println("1. Join the club");
+    System.out.println("2. View you membership");
+    System.out.println("3. Competition results");
+    System.out.println("4. Lost and found");
+    System.out.println("5. Admin access");
     System.out.println("9. Main menu");
   }
 
