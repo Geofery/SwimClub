@@ -1,9 +1,3 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-
-import static java.util.Comparator.naturalOrder;
-
 public class Controller {
     UI ui = new UI();
     Member member;
@@ -74,7 +68,7 @@ public class Controller {
         String input = ui.getString();
         membership.allMembers();
         for (int i = 0; i < membership.allMembers.size(); i++) {
-            if(input.equals(membership.allMembers.get(i).getFirstName())) {
+            if (input.equals(membership.allMembers.get(i).getFirstName())) {
                 ui.displayGreen(membership.allMembers.get(i).toString());
             }
         }
@@ -85,18 +79,18 @@ public class Controller {
         //
     }
 
-    public void showMembers() {
+    public void showMembers() { //TODO FIX this filtrering natual order...
         //Filtrering natual order...
         fileHandler.loadMembers(membership, member);
         //ui.displayGreen(membership.youthTeam + "\n" + membership.seniorTeam + "\n" + membership.seniorXoTeam + "\n" + membership.passive);
-    ui.displayGreen(membership.allMembers().toString()); //prints better than above
+
+        ui.displayGreen(membership.allMembers().toString()); //shorter than above
         //ui.displayGreen(membership.allMembers().sort(naturalOrder().toString()); needs interface to work
-        //Collections.sort(this.membership.allMembers,);
     }
 
     public void adminLogin() {
-        loginGui.createFrame();
-        int type = 0;
+     //   loginGui.createFrame();
+        int type = 2;
         type = loginGui.getLoginRights(type);
         if (loginGui.getLoginRights(type) == 1) {
             chairmanSubMenu();
@@ -212,7 +206,6 @@ public class Controller {
                     break;
                 case 4:
                     addLostFound();
-                    ;
                     break;
                 case 5:
                     deleteLostFound();
@@ -246,7 +239,17 @@ public class Controller {
     }
 
     public void viewFinances() {
-        finance.getSubscription(membership);
+        int youthIncome = finance.youthSubFee(membership);
+        int seniorIncome = finance.seniorSubFee(membership);
+        int seniorXoIncome = finance.seniorXoSubFee(membership);
+        int passiveIncome = finance.passiveSubFee(membership);
+        ui.displayGreen("Total income from youth subscribers " + youthIncome);
+        ui.displayGreen("Total income from senior subscribers " + seniorIncome);
+        ui.displayGreen("Total income from senior over 60 subscribers " + seniorXoIncome);
+        ui.displayGreen("Total income from passive subscribers " + passiveIncome);
+        ui.displayGreen("Total income from subscribers " + youthIncome + seniorIncome + seniorXoIncome + passiveIncome);
+
+
     }
 
     public void deleteMember() {

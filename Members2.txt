@@ -80,7 +80,7 @@ Fleur Pedersen 		1989 	female 	true	02.19,11
 Sarah Thomsen		1993 	female 	true	00.24,43
 Sarah Njöström 		1993 	female 	true	00.55,48
 Michala Østergaard 	1987 	female 	true	02.07,44
-Mimosa Jallow 		1994 	female 	true	00.27,42
+Mimi Jallow 		1994 	female 	true	00.27,42
 Mie Nielsen 		1996 	female 	true	00.58,73
 Eyglo Gustafsdottir 1995 	female 	true	02.08,84
 Julia Hjorth-Hansen 1984 	female 	true	02.09,73
