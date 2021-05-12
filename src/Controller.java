@@ -95,12 +95,14 @@ public class Controller {
     }
 
     public void adminLogin() {
-        loginGui.getLoginRights();
-        if (loginGui.getLoginRights() == 1) {
+        loginGui.createFrame();
+        int type = 0;
+        type = loginGui.getLoginRights(type);
+        if (loginGui.getLoginRights(type) == 1) {
             chairmanSubMenu();
-        } else if (loginGui.getLoginRights() == 2) {
+        } else if (loginGui.getLoginRights(type) == 2) {
             financeSubMenu();
-        } else if (loginGui.getLoginRights() == 3)
+        } else if (loginGui.getLoginRights(type) == 3)
             coachSubMenu();
         else
             ui.errorRed("Water you doing?!");

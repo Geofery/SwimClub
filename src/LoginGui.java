@@ -6,13 +6,13 @@ import java.util.Locale;
 public class LoginGui implements ActionListener {
   private static JLabel passwordLabel;
   private static JButton loginButton;
-  private static JButton cancelButton;
+  //private static JButton cancelButton;
   private static JLabel emailLabel;
   private static JPasswordField passwordField;
   private static JTextField email;
   private static JLabel success;
 
-  public static void createFrame() {
+  public void createFrame() {
 
     JFrame frame = new JFrame();
     JPanel panel = new JPanel();
@@ -47,7 +47,7 @@ public class LoginGui implements ActionListener {
     loginButton.addActionListener(new LoginGui());
     panel.add(loginButton);
 
-    /*
+/*
     cancelButton = new JButton("Cancel");
     cancelButton.setBounds(100, 80, 80, 25);
     loginButton.addActionListener(new LoginGUI());
@@ -61,7 +61,6 @@ public class LoginGui implements ActionListener {
     frame.setVisible(true);
     frame.toFront();
     frame.requestFocus();
-
     frame.setVisible(true);
   }
 
@@ -69,17 +68,23 @@ public class LoginGui implements ActionListener {
   public void actionPerformed(ActionEvent e) {
     String user = email.getText().toLowerCase(Locale.ROOT);
     String password = passwordField.getText();
-    if (user.equals("chairman@dolphin.com") && password.equals("1234")) {
+    if (e.getActionCommand().equals("Login")) {
       success.setText("Login successful!");
-    } else if (user.equals("finance@dolphin.com") && password.equals("1234")) {
-      success.setText("Login successful!");
-    } else if (user.equals("coach@dolphin.com") && password.equals("1234")){
-      success.setText("Login successful!");
-    }else
-      success.setText("Wrong E-mail or Password");
+      if (user.equals("chairman@dolphin.com") && password.equals("1234")) {
+        success.setText("Login successful!");
+        getLoginRights(1);
+      } else if (user.equals("finance@dolphin.com") && password.equals("1234")) {
+        success.setText("Login successful!");
+        getLoginRights(2);
+      } else if (user.equals("coach@dolphin.com") && password.equals("1234")) {
+        success.setText("Login successful!");
+        getLoginRights(3);
+      } else
+        success.setText("Wrong E-mail or Password");
+    }
   }
 
-  public int getLoginRights(){
-    return 2;
+    public int getLoginRights ( int nr){
+      return nr;
+    }
   }
-}
