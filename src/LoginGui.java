@@ -61,7 +61,6 @@ public class LoginGui implements ActionListener {
     frame.setVisible(true);
     frame.toFront();
     frame.requestFocus();
-
     frame.setVisible(true);
   }
 
@@ -77,16 +76,15 @@ public class LoginGui implements ActionListener {
       } else if (user.equals("finance@dolphin.com") && password.equals("1234")) {
         success.setText("Login successful!");
         getLoginRights(2);
-      } else if (user.equals("coach@dolphin.com") && password.equals("1234")){
+      } else if (user.equals("coach@dolphin.com") && password.equals("1234")) {
         success.setText("Login successful!");
         getLoginRights(3);
-      }else
+      } else
         success.setText("Wrong E-mail or Password");
     }
   }
 
-
-  public int getLoginRights(int type){
-    return type;
+    public int getLoginRights ( int nr){
+      return nr;
     }
-}
+  }
