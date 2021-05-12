@@ -59,6 +59,10 @@ public class LoginGui implements ActionListener {
     panel.add(success);
 
     frame.setVisible(true);
+    frame.toFront();
+    frame.requestFocus();
+
+    frame.setVisible(true);
   }
 
   @Override

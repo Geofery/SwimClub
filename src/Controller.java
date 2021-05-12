@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 public class Controller {
     UI ui = new UI();
     Member member;
@@ -51,7 +49,6 @@ public class Controller {
                         Thread.sleep(1000);
                     } catch (Exception e) {
                     }
-                    ui.errorRed("F40");
                     ui.displayGreen("Swim ya later! :D");
 
 
@@ -177,9 +174,9 @@ public class Controller {
         ui.displayGreen("1. Active");
         ui.displayGreen("2. Passive");
         if (ui.getScanInt() == 1) {
-            member.setMembershipStatus(true);
+            member.setActive(true);
         } else
-            member.setMembershipStatus(false);
+            member.setActive(false);
     }
 
     public void financeSubMenu() {

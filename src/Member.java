@@ -3,7 +3,7 @@ public class Member {
   private String surName;
   private String age;
   private String sex;
-  private boolean membershipStatus = true;
+  private boolean isActive = true;
   private String result;
   // It should be used when various implementations of the same kind share a common behavior.
 
@@ -13,7 +13,7 @@ public class Member {
     this.surName = surName;
     this.age = age;
     this.sex = sex;
-    this.membershipStatus = membershipStatus;
+    this.isActive = membershipStatus;
     this.result = results;
   }
 
@@ -24,8 +24,8 @@ public class Member {
     this.sex = sex;
   }
 
-  public void setMembershipStatus(boolean membershipStatus) {
-    this.membershipStatus = membershipStatus;
+  public void setActive(boolean active) {
+    this.isActive = active;
   }
 
   public String getFirstName() {
@@ -40,8 +40,8 @@ public class Member {
     return sex;
   }
 
-  public boolean isMembershipStatus() {
-    return membershipStatus;
+  public boolean isActive() {
+    return isActive;
   }
 
   public String getResult() {
@@ -55,6 +55,6 @@ public class Member {
   @Override
   public String toString() {
     return "First name: " + firstName + " Surname: " + surName + " Age: " + age + " Sex: " + sex +
-        " Membership status: " + membershipStatus + " Results: " + result + "\n";
+        " Membership status: " + isActive + " Results: " + result + "\n";
   }
 }

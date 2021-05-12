@@ -25,7 +25,7 @@ public class FileHandler {
       surName = member.getSurName();
       age = member.getAge();
       sex = member.getSex();
-      membershipStatus = member.isMembershipStatus();
+      membershipStatus = member.isActive();
       result = member.getResult();
 
       bw.write(firstName.replaceAll("\\[", "").replaceAll("]", "")
@@ -53,10 +53,13 @@ public class FileHandler {
       age = fileReader.next();
       sex = fileReader.next();
       membershipStatus = fileReader.nextBoolean();
+
+      //IF Statement som nogengange bruger result og andre
+      //gange skipper den.
       result = fileReader.next();
-     /* if (result.equals(null)) {
+      if (result.equals(null)) {
         member = new Member(firstName, surName, age, sex);
-      } else*/
+      } else
       member = new Member(firstName, surName, age, sex, membershipStatus, result);
       membership.ageIdentifier(member);
     }
