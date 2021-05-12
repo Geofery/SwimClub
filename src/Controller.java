@@ -66,12 +66,18 @@ public class Controller {
   }
 
   public void viewMembership() {
+    //TODO Christopher
+    //vise 1 bruger ud fra index eller navn og surname.
+    //comapareTo Collections .equals eller andre metoder.
   }
 
   public void competitionResults() {
+    //Top 5 svømmere?
+    //
   }
 
   public void showMembers() {
+    //Filtrering natual order...
     fileHandler.loadMembers(membership, member);
     ui.displayGreen(membership.youthTeam + "\n" + membership.seniorTeam + "\n" + membership.seniorXoTeam + "\n" + membership.passive);
   }

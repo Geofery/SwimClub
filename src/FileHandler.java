@@ -56,6 +56,7 @@ public class FileHandler {
       sex = fileReader.next();
       membershipStatus = fileReader.nextBoolean();
       result = fileReader.next();
+      //If Statement der kigger på result er null eller har en værdi.
       member = new Member(firstName, surName, age, sex, membershipStatus, result);
       membership.ageIdentifier(member);
     }
