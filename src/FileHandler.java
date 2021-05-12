@@ -28,8 +28,6 @@ public class FileHandler {
       membershipStatus = member.isMembershipStatus();
       result = member.getResult();
 
-
-
       bw.write(firstName.replaceAll("\\[", "").replaceAll("]", "")
           .replaceAll(",", "\t") + " " + surName + "\t\t\t" + age + "\t" + sex + "\t" + membershipStatus + "\t" + result);
       bw.newLine();
@@ -56,7 +54,9 @@ public class FileHandler {
       sex = fileReader.next();
       membershipStatus = fileReader.nextBoolean();
       result = fileReader.next();
-      //If Statement der kigger på result er null eller har en værdi.
+     /* if (result.equals(null)) {
+        member = new Member(firstName, surName, age, sex);
+      } else*/
       member = new Member(firstName, surName, age, sex, membershipStatus, result);
       membership.ageIdentifier(member);
     }

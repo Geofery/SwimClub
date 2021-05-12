@@ -21,4 +21,13 @@ public class Membership {
       passive.add(member);
     }
   }
+
+  public ArrayList allMembers(){
+    ArrayList<Member> allMembers = new ArrayList<>();
+    allMembers.addAll(youthTeam);
+    allMembers.addAll(seniorTeam);
+    allMembers.addAll(seniorXoTeam);
+    allMembers.addAll(passive);
+return allMembers;
+  }
 }

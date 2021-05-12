@@ -17,19 +17,15 @@ public class Member {
     this.result = results;
   }
 
-  public Member(String firstName, String surName, String age, String sex, String results) {
-    this.firstName = firstName;
-    this.surName = surName;
-    this.age = age;
-    this.sex = sex;
-    this.result = results;
-  }
-
   public Member(String firstName, String surName, String age, String sex) {
     this.firstName = firstName;
     this.surName = surName;
     this.age = age;
     this.sex = sex;
+  }
+
+  public void setMembershipStatus(boolean membershipStatus) {
+    this.membershipStatus = membershipStatus;
   }
 
   public String getFirstName() {

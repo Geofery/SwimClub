@@ -76,6 +76,6 @@ public class LoginGui implements ActionListener {
   }
 
   public int getLoginRights(){
-    return 0;
+    return 2;
   }
 }

@@ -9,7 +9,6 @@ public class Controller {
   Finance finance = new Finance();
 
 
-
   public void mainMenu() {
     Menu menu = new Menu();
 
@@ -91,7 +90,7 @@ public class Controller {
     } else if (loginGui.getLoginRights() == 3)
       coachSubMenu();
     else
-      ui.errorRed("Water up with the e-mail or password!");
+      ui.errorRed("Water you doing?!");
   }
 
 
@@ -103,7 +102,7 @@ public class Controller {
 
     do {
       keepRunning = true;
-      menu.showMainMenu();
+      menu.chairmanSubMenu();
       choice = ui.getScanInt();
       switch (choice) {
         case 1:
@@ -151,8 +150,8 @@ public class Controller {
   public void registerNewMember() {
     ui.displayGreen("Please enter Name");
     String name = ui.getString();
-   ui.displayGreen("Please enter surname");
-   String surName = ui.getString();
+    ui.displayGreen("Please enter surname");
+    String surName = ui.getString();
     ui.displayGreen("Please enter year of birth");
     String year = ui.getString();
     ui.displayGreen("Please enter sex");
@@ -166,6 +165,14 @@ public class Controller {
   }
 
   public void changeActivityLevel() {
+    //Kalder på viewmembership, så vi har en enkelt bruger.
+    ui.displayGreen("Set membership status: ");
+    ui.displayGreen("1. Active");
+    ui.displayGreen("2. Passive");
+    if (ui.getScanInt() == 1) {
+      member.setMembershipStatus(true);
+    } else
+      member.setMembershipStatus(false);
   }
 
   public void financeSubMenu() {
@@ -176,7 +183,7 @@ public class Controller {
 
     do {
       keepRunning = true;
-      menu.showMainMenu();
+      menu.financeSubMenu();
       choice = ui.getScanInt();
       switch (choice) {
         case 1:
@@ -228,6 +235,15 @@ public class Controller {
   }
 
   public void deleteMember() {
+    ui.displayGreen("Write name of member: ");
+    String firstName = ui.getString();
+    ui.displayGreen("Write surname of member: ");
+    String surName = ui.getString();
+    if (membership.allMembers().contains(firstName) && membership.allMembers().contains(surName)) {
+      membership.allMembers().remove(membership.allMembers().indexOf(firstName));
+    }else
+      ui.errorRed("No member with that name");
+//Virker ikke korrekt!
   }
 
 
@@ -239,7 +255,7 @@ public class Controller {
 
     do {
       keepRunning = true;
-      menu.showMainMenu();
+      menu.coachSubMenu();
       choice = ui.getScanInt();
       switch (choice) {
         case 1:
@@ -298,7 +314,7 @@ public class Controller {
 
     do {
       keepRunning = true;
-      menu.showMainMenu();
+      menu.swimStylesSubMenu();
       choice = ui.getScanInt();
       switch (choice) {
         case 1:
