@@ -1,4 +1,4 @@
-Jens Jensen 		2008	female   true   49:59,34
+Jens Jensen 		2008	female  true   49:59,34
 Jeanette Tottesen	1987	female	true	03:56,32
 Mie Nielsen 		1996	female	true	15:12,11
 Lotte Friis 		1988	female	true 	03:58,33

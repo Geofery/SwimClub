@@ -6,6 +6,7 @@ public class Membership {
   ArrayList<Member> seniorTeam = new ArrayList<>();
   ArrayList<Member> seniorXoTeam = new ArrayList<>();
   ArrayList<Member> passive  = new ArrayList<>();
+  ArrayList<Member> allMembers = new ArrayList<>();
   int year = 2021;
 
   public void ageIdentifier(Member member) {
@@ -22,8 +23,7 @@ public class Membership {
     }
   }
 
-  public ArrayList allMembers(){
-    ArrayList<Member> allMembers = new ArrayList<>();
+  public ArrayList<Member> allMembers(){
     allMembers.addAll(youthTeam);
     allMembers.addAll(seniorTeam);
     allMembers.addAll(seniorXoTeam);
