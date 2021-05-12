@@ -1,3 +1,9 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
+import static java.util.Comparator.naturalOrder;
+
 public class Controller {
     UI ui = new UI();
     Member member;
@@ -63,7 +69,7 @@ public class Controller {
 
     public void viewMembership() {
         //TODO Christopher
-        fileHandler.loadMembers(membership, member); // remove later
+        fileHandler.loadMembers(membership, member); // remove later loads members
         ui.displayGreen("Enter your name id");
         String input = ui.getString();
         membership.allMembers();
@@ -82,7 +88,10 @@ public class Controller {
     public void showMembers() {
         //Filtrering natual order...
         fileHandler.loadMembers(membership, member);
-        ui.displayGreen(membership.youthTeam + "\n" + membership.seniorTeam + "\n" + membership.seniorXoTeam + "\n" + membership.passive);
+        //ui.displayGreen(membership.youthTeam + "\n" + membership.seniorTeam + "\n" + membership.seniorXoTeam + "\n" + membership.passive);
+    ui.displayGreen(membership.allMembers().toString()); //prints better than above
+        //ui.displayGreen(membership.allMembers().sort(naturalOrder().toString()); needs interface to work
+        //Collections.sort(this.membership.allMembers,);
     }
 
     public void adminLogin() {
