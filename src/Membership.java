@@ -14,7 +14,7 @@ public class Membership {
         int getAge = Integer.parseInt(member.getAge());
         if ((year - getAge) < 18) {
             youthTeam.add(member);
-        } else if ((year - getAge) >= 18) {
+        } else if ((year - getAge) >= 18 && !(year - getAge >60)) {
             seniorTeam.add(member);
         } else if ((year - getAge) >= 60) {
             seniorXoTeam.add(member);

@@ -55,7 +55,7 @@ Mie Nielsen 		1996  	female	true	03:57,56
 Lotte Friis 		1988 	female 	true 	58,02,22
 Bob Friis 		    1988 	male 	true	08.04,61
 Marley Friis 		1988 	male 	true 	15.28,65
-Hans Peedersen 		1989 	male 	true 	00.29,87
+Hans Petersen 		1989 	male 	true 	00.29,87
 Rikke Petersen 		1989 	female 	true	01.03,74
 Oskar Sørensen 		1989 	male 	true 	02.15,21
 Jeanette Ottesen 	1987 	female 	true	00.24,71 	

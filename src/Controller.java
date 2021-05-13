@@ -1,3 +1,5 @@
+import java.text.DecimalFormat;
+
 public class Controller {
     UI ui = new UI();
     Member member;
@@ -244,10 +246,11 @@ public class Controller {
         int sum = youthIncome + seniorIncome + seniorXoIncome + passiveIncome;
         ui.displayGreen("Total income from youth subscribers " + youthIncome + " kr");
         ui.displayGreen("Total income from senior subscribers " + seniorIncome + " kr");
-        ui.displayGreen("Total income from senior over 60 subscribers " + seniorXoIncome + " kr");
+        ui.displayGreen("Total income from seniors > 60 subscribers " + seniorXoIncome + " kr");
         ui.displayGreen("Total income from passive subscribers " + passiveIncome + " kr");
         ui.displayGreen("Total income from subscribers " + sum + " kr");
-        ui.getPattern(sum);
+        ui.getPattern(seniorIncome+"kr");
+
 
 
     }
