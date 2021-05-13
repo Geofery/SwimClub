@@ -1,7 +1,6 @@
-import java.text.DecimalFormat;
+import java.util.Collection;
 import java.util.Collections;
-
-import static java.util.Comparator.naturalOrder;
+import java.util.Comparator;
 
 public class Controller {
     UI ui = new UI();
@@ -86,10 +85,28 @@ public class Controller {
     public void showMembers() { //TODO FIX this filtrering natual order...
         //Filtrering natual order...
         //ui.displayGreen(membership.youthTeam + "\n" + membership.seniorTeam + "\n" + membership.seniorXoTeam + "\n" + membership.passive);
-
-        ui.displayGreen(membership.allMembers().toString()); //shorter than above
+       //instantiere
+        membership.allMembers();
+        //ui.displayGreen(membership.allMembers().toString()); //shorter than above
         //ui.displayGreen(membership.allMembers().sort(naturalOrder().toString()); //needs interface to work
         //Collections.sort(membership.allMembers, new member.FirstNameSorter()); // needs Jeff :-D
+        /*Collections.sort(membership.allMembers, new Comparator<Member>() {
+            @Override
+            public int compare(Member o1, Member o2) {
+                return Integer.valueOf(o1.getFirstName().compareTo(o2.getFirstName().toString()));
+            }
+        });
+        ui.displayGreen(membership.allMembers().toString()); //shorter than above*/ //kind a works
+
+        Collections.sort(membership.allMembers, new Comparator<Member>() {
+            @Override
+            public int compare(Member o1, Member o2) {
+                return o1.getFirstName().compareTo(o2.getFirstName());
+            }
+        });
+        ui.displayGreen(membership.allMembers.toString());
+
+
     }
 
     public void adminLogin() {
@@ -253,8 +270,7 @@ public class Controller {
         ui.displayGreen("Total income from seniors > 60 subscribers " + seniorXoIncome + " kr");
         ui.displayGreen("Total income from passive subscribers " + passiveIncome + " kr");
         ui.displayGreen("Total income from subscribers " + sum + " kr");
-        ui.getPattern(seniorIncome+"kr");// Trying to get seniorIncome displayed in a pattern.
-
+        ui.getPattern(seniorIncome + "kr");// Trying to get seniorIncome displayed in a pattern.
 
 
     }

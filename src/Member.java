@@ -1,3 +1,4 @@
+import java.util.Collections;
 import java.util.Comparator;
 
 public class Member {
@@ -55,12 +56,12 @@ public class Member {
   }
 
 
-  public class FirstNameSorter implements Comparator<Member> {
+  /*public class FirstNameSorter implements Comparator<Member> {
     @Override
     public int compare(Member o1, Member o2) {
       return o1.getFirstName().compareTo(o2.getFirstName());
 
-    }
+    }*/
 
     @Override
     public String toString() {
@@ -68,4 +69,4 @@ public class Member {
               " Membership status: " + isActive + " Results: " + result + "\n";
     }
   }
-}
+
