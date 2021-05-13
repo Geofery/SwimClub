@@ -96,7 +96,7 @@ public class Controller {
                 return Integer.valueOf(o1.getFirstName().compareTo(o2.getFirstName().toString()));
             }
         });
-        ui.displayGreen(membership.allMembers().toString()); //shorter than above*/ //kind a works
+        ui.displayGreen(membership.allMembers().toString()); //shorter than above*/ //kinda works
 
         Collections.sort(membership.allMembers, new Comparator<Member>() {
             @Override
