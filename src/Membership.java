@@ -8,6 +8,11 @@ public class Membership {
     ArrayList<Member> passive = new ArrayList<>();
     ArrayList<Member> allMembers = new ArrayList<>();
     int year = 2021;
+    int youthSize = youthTeam.size(); //a try to get numbers of member in each array to controller class
+    int seniorSize = seniorTeam.size();
+    int seniorXoSize = seniorXoTeam.size();
+    int passiveSize = passive.size();
+
 
     public void ageIdentifier(Member member) {
 

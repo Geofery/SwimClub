@@ -1,4 +1,3 @@
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 
@@ -13,7 +12,7 @@ public class Controller {
 
     public void mainMenu() {
         Menu menu = new Menu();
-        fileHandler.loadMembers(membership, member); //loads all the member into the array // maybe messes up filesave?
+        fileHandler.loadMembers(membership, member); //loads all the member into the array
         int choice;
         boolean keepRunning;
 
@@ -53,7 +52,7 @@ public class Controller {
                         Thread.sleep(1000);
                     } catch (Exception e) {
                     }
-                    ui.displayGreen("Swim ya later! :D");
+                    ui.displayGreen("Sea ya later! :D");
 
 
                     keepRunning = false;
@@ -85,7 +84,7 @@ public class Controller {
     public void showMembers() { //TODO FIX this filtrering natual order...
         //Filtrering natual order...
         //ui.displayGreen(membership.youthTeam + "\n" + membership.seniorTeam + "\n" + membership.seniorXoTeam + "\n" + membership.passive);
-       //instantiere
+        //instantiere
         membership.allMembers();
         //ui.displayGreen(membership.allMembers().toString()); //shorter than above
         //ui.displayGreen(membership.allMembers().sort(naturalOrder().toString()); //needs interface to work
@@ -265,12 +264,14 @@ public class Controller {
         int seniorXoIncome = finance.seniorXoSubFee(membership);
         int passiveIncome = finance.passiveSubFee(membership);
         int sum = youthIncome + seniorIncome + seniorXoIncome + passiveIncome;
+        ui.displayGreen("-----------------------------------------------------------");
         ui.displayGreen("Total income from youth subscribers " + youthIncome + " kr");
         ui.displayGreen("Total income from senior subscribers " + seniorIncome + " kr");
         ui.displayGreen("Total income from seniors > 60 subscribers " + seniorXoIncome + " kr");
         ui.displayGreen("Total income from passive subscribers " + passiveIncome + " kr");
         ui.displayGreen("Total income from subscribers " + sum + " kr");
-        ui.getPattern(seniorIncome + "kr");// Trying to get seniorIncome displayed in a pattern.
+        ui.getPattern(sum);
+        ui.getPattern(seniorIncome);//Todo Trying to get seniorIncome displayed in a pattern.
 
 
     }
@@ -341,6 +342,7 @@ public class Controller {
     }
 
     public void showSwimmers() {
+        showMembers();
     }
 
     public void addLostFound() {
