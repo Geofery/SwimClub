@@ -9,7 +9,7 @@ public class Controller {
 
     public void mainMenu() {
         Menu menu = new Menu();
-
+        fileHandler.loadMembers(membership, member); //loads all the member into the array // maybe messes up filesave?
         int choice;
         boolean keepRunning;
 
@@ -63,7 +63,6 @@ public class Controller {
 
     public void viewMembership() {
         //TODO Christopher
-        fileHandler.loadMembers(membership, member); // remove later loads members
         ui.displayGreen("Enter your name id");
         String input = ui.getString();
         membership.allMembers();
@@ -81,7 +80,6 @@ public class Controller {
 
     public void showMembers() { //TODO FIX this filtrering natual order...
         //Filtrering natual order...
-        fileHandler.loadMembers(membership, member);
         //ui.displayGreen(membership.youthTeam + "\n" + membership.seniorTeam + "\n" + membership.seniorXoTeam + "\n" + membership.passive);
 
         ui.displayGreen(membership.allMembers().toString()); //shorter than above
@@ -89,7 +87,7 @@ public class Controller {
     }
 
     public void adminLogin() {
-     //   loginGui.createFrame();
+        //   loginGui.createFrame();
         int type = 2;
         type = loginGui.getLoginRights(type);
         if (loginGui.getLoginRights(type) == 1) {
@@ -243,11 +241,13 @@ public class Controller {
         int seniorIncome = finance.seniorSubFee(membership);
         int seniorXoIncome = finance.seniorXoSubFee(membership);
         int passiveIncome = finance.passiveSubFee(membership);
-        ui.displayGreen("Total income from youth subscribers " + youthIncome);
-        ui.displayGreen("Total income from senior subscribers " + seniorIncome);
-        ui.displayGreen("Total income from senior over 60 subscribers " + seniorXoIncome);
-        ui.displayGreen("Total income from passive subscribers " + passiveIncome);
-        ui.displayGreen("Total income from subscribers " + youthIncome + seniorIncome + seniorXoIncome + passiveIncome);
+        int sum = youthIncome + seniorIncome + seniorXoIncome + passiveIncome;
+        ui.displayGreen("Total income from youth subscribers " + youthIncome + " kr");
+        ui.displayGreen("Total income from senior subscribers " + seniorIncome + " kr");
+        ui.displayGreen("Total income from senior over 60 subscribers " + seniorXoIncome + " kr");
+        ui.displayGreen("Total income from passive subscribers " + passiveIncome + " kr");
+        ui.displayGreen("Total income from subscribers " + sum + " kr");
+        ui.getPattern(sum);
 
 
     }
@@ -309,7 +309,7 @@ public class Controller {
                     } catch (Exception e) {
                     }
                     ui.errorRed("F40");
-                    ui.displayGreen("Thanks for playing! :D");
+                    ui.displayGreen("Sea ya later! :D");
 
 
                     keepRunning = false;
@@ -353,12 +353,12 @@ public class Controller {
                     sidestroke();
                     break;
                 case 9:
-                    ui.displayGreen("Saving your high score.....");
+                    ui.displayGreen("Water we waiting for.....");
                     try {
                         Thread.sleep(2500);
                     } catch (Exception e) {
                     }
-                    ui.displayGreen("Still saving....");
+                    ui.displayGreen("Water-ever it takes....");
                     try {
                         Thread.sleep(2500);
                     } catch (Exception e) {
@@ -369,7 +369,7 @@ public class Controller {
                     } catch (Exception e) {
                     }
                     ui.errorRed("F40");
-                    ui.displayGreen("Thanks for playing! :D");
+                    ui.displayGreen("You should eat your pasta if you want to swim fasta! :D");
 
 
                     keepRunning = false;

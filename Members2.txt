@@ -4,7 +4,7 @@ Mie Nielsen 		1996	female	true	15:12,11
 Lotte Friis 		1988	female	true 	03:58,33
 Bob Friis 		    1988	male	true	08:04,53
 Marley Friis 		1988	male 	true 	15:28,21
-Hans Peedersen 		1989 	male 	true 	00:29,12
+Hans Peedersen 		1930 	male 	true 	00:29,12
 Rikke Petersen 		1989	female	true	01:03,42
 Oskar Sørensen 		1989 	male 	true 	02:15,21
 Jeanette Ottesen 	1987 	female 	true	00:24,12
@@ -44,8 +44,8 @@ Magnus Jákupsson 	1994  	male 	true 	00:23,23
 Anders Jensen 		1987  	male 	true 	00:51,55
 Anders Nielsen 		1987  	male 	true 	01:52,33
 Daniel Skaaning 	1993  	male 	true 	00:53,53
-Viktor Bromer 		1993  	male 	true 	01:54,74
-Chris Christensen 	1988  	male 	true 	04:05,24
+Viktor Bromer 		1940  	male 	true 	01:54,74
+Chris Christensen 	1945  	male 	true 	04:05,24
 Mia Nielsen 		1996 	female	true 	00:55,25
 Pernille Larsen 	1992 	female 	true 	02:03,83
 Mie Nielsen 		1996 	female 	true 	00:59,34
