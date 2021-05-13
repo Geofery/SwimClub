@@ -1,4 +1,7 @@
 import java.text.DecimalFormat;
+import java.util.Collections;
+
+import static java.util.Comparator.naturalOrder;
 
 public class Controller {
     UI ui = new UI();
@@ -65,7 +68,7 @@ public class Controller {
 
     public void viewMembership() {
         //TODO Christopher
-        ui.displayGreen("Enter your name id");
+        ui.displayGreen("Enter your firstname with a capital letter ");
         String input = ui.getString();
         membership.allMembers();
         for (int i = 0; i < membership.allMembers.size(); i++) {
@@ -85,7 +88,8 @@ public class Controller {
         //ui.displayGreen(membership.youthTeam + "\n" + membership.seniorTeam + "\n" + membership.seniorXoTeam + "\n" + membership.passive);
 
         ui.displayGreen(membership.allMembers().toString()); //shorter than above
-        //ui.displayGreen(membership.allMembers().sort(naturalOrder().toString()); needs interface to work
+        //ui.displayGreen(membership.allMembers().sort(naturalOrder().toString()); //needs interface to work
+        //Collections.sort(membership.allMembers, new member.FirstNameSorter()); // needs Jeff :-D
     }
 
     public void adminLogin() {
@@ -249,7 +253,7 @@ public class Controller {
         ui.displayGreen("Total income from seniors > 60 subscribers " + seniorXoIncome + " kr");
         ui.displayGreen("Total income from passive subscribers " + passiveIncome + " kr");
         ui.displayGreen("Total income from subscribers " + sum + " kr");
-        ui.getPattern(seniorIncome+"kr");
+        ui.getPattern(seniorIncome+"kr");// Trying to get seniorIncome displayed in a pattern.
 
 
 

@@ -1,4 +1,6 @@
-public class Member implements Comparable<Member>{
+import java.util.Comparator;
+
+public class Member {
   private String firstName;
   private String surName;
   private String age;
@@ -52,14 +54,18 @@ public class Member implements Comparable<Member>{
     return age;
   }
 
-  @Override
-  public int compareTo(Member o) {
-    return this.firstName.compareTo(o.firstName);
 
-  }
-  @Override
-  public String toString() {
-    return "First name: " + firstName + " Surname: " + surName + " Age: " + age + " Sex: " + sex +
-        " Membership status: " + isActive + " Results: " + result + "\n";
+  public class FirstNameSorter implements Comparator<Member> {
+    @Override
+    public int compare(Member o1, Member o2) {
+      return o1.getFirstName().compareTo(o2.getFirstName());
+
+    }
+
+    @Override
+    public String toString() {
+      return "First name: " + firstName + " Surname: " + surName + " Age: " + age + " Sex: " + sex +
+              " Membership status: " + isActive + " Results: " + result + "\n";
+    }
   }
 }
