@@ -91,7 +91,7 @@ public class Controller {
         //Filtrering natual order...
         //ui.displayGreen(membership.youthTeam + "\n" + membership.seniorTeam + "\n" + membership.seniorXoTeam + "\n" + membership.passive);
         //instantiere
-        membership.allMembers();
+       //membership.allMembers();
         //ui.displayGreen(membership.allMembers().toString()); //shorter than above
         //ui.displayGreen(membership.allMembers().sort(naturalOrder().toString()); //needs interface to work
         //Collections.sort(membership.allMembers, new member.FirstNameSorter()); // needs Jeff :-D
@@ -109,7 +109,8 @@ public class Controller {
                 return o1.getFirstName().compareTo(o2.getFirstName());
             }
         });
-        ui.displayGreen(membership.allMembers.toString());
+        //ui.displayGreen(membership.allMembers.toString());
+        membership.displayMembers(ui);
     }
 
     public void adminLogin() {
