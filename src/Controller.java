@@ -15,6 +15,7 @@ public class Controller {
         Menu menu = new Menu();
         fileHandler.loadMembers(membership, member); //loads all the member into the array
         lostAndFound.createLostAndFoundList();
+        membership.allMembers();
         int choice;
         boolean keepRunning;
 
@@ -113,7 +114,7 @@ public class Controller {
 
     public void adminLogin() {
         //   loginGui.createFrame();
-        int type = 2;
+        int type = 1;
         type = loginGui.getLoginRights(type);
         if (loginGui.getLoginRights(type) == 1) {
             chairmanSubMenu();
@@ -148,7 +149,7 @@ public class Controller {
                     changeMembershipStatus();
                     break;
                 case 3:
-                    changeActivityLevel();
+                    deleteMember();
                     break;
                 case 4:
                     addLostFound();
@@ -198,17 +199,28 @@ public class Controller {
     }
 
     public void changeMembershipStatus() {
-    }
-
-    public void changeActivityLevel() {
+        //TODO Jeff, virker ikke helt. Den er stuck i menuen efter man inputter.
+        // måske en lille switch case her? i stedet for if statements.
         //Kalder på viewmembership, så vi har en enkelt bruger.
+        membership.displayMembers(ui);
         ui.displayGreen("Set membership status: ");
         ui.displayGreen("1. Active");
         ui.displayGreen("2. Passive");
-        if (ui.getScanInt() == 1) {
-            member.setActive(true);
-        } else
-            member.setActive(false);
+        ui.displayGreen("9. Back to admin");
+        int choice = ui.getScanInt();
+        if (choice == 1) {
+            ui.displayGreen("What member?");
+            membership.allMembers.get(ui.getScanInt()-1).setActive(true);
+        } else if (choice == 2) {
+            ui.displayGreen("What member?");
+            membership.allMembers.get(ui.getScanInt()-1).setActive(false);
+        } else if (choice == 9) {
+            chairmanSubMenu();
+        } else if (choice != 1 || choice != 2 || choice != 9 ) {
+            ui.errorRed("WATER YOU SINKING ABOAT???");
+            chairmanSubMenu();
+        }
+
     }
 
     public void financeSubMenu() {
@@ -263,6 +275,7 @@ public class Controller {
     }
 
     public void membershipStatistics() {
+        //What statistics would be relevant here?
     }
 
     public void viewFinances() {
@@ -284,6 +297,9 @@ public class Controller {
     }
 
     public void deleteMember() {
+        membership.displayMembers(ui);
+        membership.deleteMember(ui);
+        /*
         ui.displayGreen("Write name of member: ");
         String firstName = ui.getString();
         ui.displayGreen("Write surname of member: ");
@@ -295,7 +311,7 @@ public class Controller {
             } else
                 ui.errorRed("No member with that name");
         }
-        //Mangler at gemme til fil via filehandler.
+        //Mangler at gemme til fil via filehandler.*/
     }
 
     public void coachSubMenu() {

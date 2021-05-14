@@ -34,4 +34,15 @@ public class Membership {
         allMembers.addAll(passive);
         return allMembers;
     }
+
+    public void displayMembers(UI ui){
+        for (int i = 0; i < allMembers.size(); i++) {
+            ui.displayGreen(i + 1 + ". " + allMembers.get(i).toString());
+        }
+    }
+
+    public void deleteMember(UI ui){
+        ui.displayGreen("Input number of the member you want deleted: ");
+        allMembers.remove(ui.getScanInt() - 1);
+    }
 }
