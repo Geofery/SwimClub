@@ -45,4 +45,18 @@ public class Membership {
         ui.displayGreen("Input number of the member you want deleted: ");
         allMembers.remove(ui.getScanInt() - 1);
     }
+
+    public void registerNewMember(UI ui, Member member, Membership membership, FileHandler fileHandler) {
+        ui.displayGreen("Please enter Name");
+        String name = ui.getString();
+        ui.displayGreen("Please enter surname");
+        String surName = ui.getString();
+        ui.displayGreen("Please enter year of birth");
+        String year = ui.getString();
+        ui.displayGreen("Please enter sex");
+        String sex = ui.getString();
+        member = new Member(name, surName, year, sex);
+        membership.ageIdentifier(member);
+        fileHandler.saveMember(member);
+    }
 }

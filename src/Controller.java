@@ -88,6 +88,7 @@ public class Controller {
     }
 
     public void showMembers() { //TODO FIX this filtrering natual order...
+        //TODO Christopher oprydning :) Jeg har ændret lidt i den.
         //Filtrering natual order...
         //ui.displayGreen(membership.youthTeam + "\n" + membership.seniorTeam + "\n" + membership.seniorXoTeam + "\n" + membership.passive);
         //instantiere
@@ -113,7 +114,7 @@ public class Controller {
         membership.displayMembers(ui);
     }
 
-    public void adminLogin() {
+    public void adminLogin() { //TODO Jeff FIX så det virker!
         //   loginGui.createFrame();
         int type = 1;
         type = loginGui.getLoginRights(type);
@@ -186,23 +187,11 @@ public class Controller {
     }
 
     public void registerNewMember() {
-        ui.displayGreen("Please enter Name");
-        String name = ui.getString();
-        ui.displayGreen("Please enter surname");
-        String surName = ui.getString();
-        ui.displayGreen("Please enter year of birth");
-        String year = ui.getString();
-        ui.displayGreen("Please enter sex");
-        String sex = ui.getString();
-        member = new Member(name, surName, year, sex);
-        membership.ageIdentifier(member);
-        fileHandler.saveMember(member);
+        membership.registerNewMember(ui,member, membership, fileHandler);
+        //TODO Kan smides ind i switchcase og metode slettes
     }
 
     public void changeMembershipStatus() {
-        //TODO Jeff, virker ikke helt. Den er stuck i menuen efter man inputter.
-        // måske en lille switch case her? i stedet for if statements.
-        //Kalder på viewmembership, så vi har en enkelt bruger.
         membership.displayMembers(ui);
         ui.displayGreen("Set membership status: ");
         ui.displayGreen("1. Active");
@@ -280,26 +269,13 @@ public class Controller {
     }
 
     public void viewFinances() {
-        int youthIncome = finance.youthSubFee(membership);
-        int seniorIncome = finance.seniorSubFee(membership);
-        int seniorXoIncome = finance.seniorXoSubFee(membership);
-        int passiveIncome = finance.passiveSubFee(membership);
-        int sum = youthIncome + seniorIncome + seniorXoIncome + passiveIncome;
-        ui.displayGreen("-----------------------------------------------------------");
-        ui.displayGreen("Total income from youth subscribers " + youthIncome + " kr");
-        ui.displayGreen("Total income from senior subscribers " + seniorIncome + " kr");
-        ui.displayGreen("Total income from seniors > 60 subscribers " + seniorXoIncome + " kr");
-        ui.displayGreen("Total income from passive subscribers " + passiveIncome + " kr");
-        ui.displayGreen("Total income from subscribers " + sum + " kr");
-        ui.getPattern(sum);
-        ui.getPattern(seniorIncome);//Todo Trying to get seniorIncome displayed in a pattern.
-
-
+        finance.viewFinances(ui, membership);//TODO burde kunne smides ind i switchcase nu og resten af metoden slettes
     }
 
     public void deleteMember() {
         membership.displayMembers(ui);
         membership.deleteMember(ui);
+        //TODO burde kunne smides ind i switchcase nu og resten af metoden slettes
         /*
         ui.displayGreen("Write name of member: ");
         String firstName = ui.getString();
