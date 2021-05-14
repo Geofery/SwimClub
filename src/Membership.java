@@ -10,7 +10,6 @@ public class Membership {
     int year = 2021;
 
     public void ageIdentifier(Member member) {
-
         int getAge = Integer.parseInt(member.getAge());
         if ((year - getAge) < 18) {
             youthTeam.add(member);
