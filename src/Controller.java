@@ -8,11 +8,13 @@ public class Controller {
     FileHandler fileHandler = new FileHandler();
     Membership membership = new Membership();
     Finance finance = new Finance();
+    LostAndFound lostAndFound = new LostAndFound();
 
 
     public void mainMenu() {
         Menu menu = new Menu();
         fileHandler.loadMembers(membership, member); //loads all the member into the array
+        lostAndFound.createLostAndFoundList();
         int choice;
         boolean keepRunning;
 
@@ -35,6 +37,9 @@ public class Controller {
                     break;
                 case 5:
                     adminLogin();
+                    break;
+                case 6:
+                    showLostAndFound();
                     break;
                 case 9:
                     ui.displayGreen("Checking if you forgot anyfin.....");
@@ -104,8 +109,6 @@ public class Controller {
             }
         });
         ui.displayGreen(membership.allMembers.toString());
-
-
     }
 
     public void adminLogin() {
@@ -120,6 +123,10 @@ public class Controller {
             coachSubMenu();
         else
             ui.errorRed("Water you doing?!");
+    }
+
+    public void showLostAndFound(){
+        lostAndFound.displayLostAndFound(ui);
     }
 
 
@@ -346,9 +353,11 @@ public class Controller {
     }
 
     public void addLostFound() {
+        lostAndFound.addLostItem(ui);
     }
 
     public void deleteLostFound() {
+        lostAndFound.deleteItem(ui);
     }
 
     public void swimStylesSubMenu() {

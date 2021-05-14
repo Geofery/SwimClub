@@ -8,6 +8,7 @@ public class Menu {
     System.out.println("3. Competition results");
     System.out.println("4. Show members");
     System.out.println("5. Admin access");
+    System.out.println("6. Show lost and found");
     System.out.println("9. Quit ");
     System.out.println("Please choose: ");
   }

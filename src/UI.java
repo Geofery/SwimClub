@@ -34,6 +34,10 @@ public class UI {
         return readInt;
     }
 
+    public void displayLine(){
+        display("------------------------------");
+    }
+
     public DecimalFormat getPattern(int numbers) {
         String pattern = "#.###.###";
         DecimalFormat decimalFormat = new DecimalFormat(pattern);
