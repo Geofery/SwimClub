@@ -25,7 +25,7 @@ public class Controller {
             choice = ui.getScanInt();
             switch (choice) {
                 case 1:
-                    joinTheClub();
+                    membership.registerNewMember(ui,member, membership, fileHandler);
                     break;
                 case 2:
                     viewMembership();
@@ -66,10 +66,6 @@ public class Controller {
         } while (keepRunning);
     }
 
-    public void joinTheClub() {
-        registerNewMember();
-    }
-
     public void viewMembership() {
         //TODO Christopher
         ui.displayGreen("Enter your firstname with a capital letter ");
@@ -87,30 +83,13 @@ public class Controller {
         //
     }
 
-    public void showMembers() { //TODO FIX this filtrering natual order...
-        //TODO Christopher oprydning :) Jeg har ændret lidt i den.
-        //Filtrering natual order...
-        //ui.displayGreen(membership.youthTeam + "\n" + membership.seniorTeam + "\n" + membership.seniorXoTeam + "\n" + membership.passive);
-        //instantiere
-       //membership.allMembers();
-        //ui.displayGreen(membership.allMembers().toString()); //shorter than above
-        //ui.displayGreen(membership.allMembers().sort(naturalOrder().toString()); //needs interface to work
-        //Collections.sort(membership.allMembers, new member.FirstNameSorter()); // needs Jeff :-D
-        /*Collections.sort(membership.allMembers, new Comparator<Member>() {
-            @Override
-            public int compare(Member o1, Member o2) {
-                return Integer.valueOf(o1.getFirstName().compareTo(o2.getFirstName().toString()));
-            }
-        });
-        ui.displayGreen(membership.allMembers().toString()); //shorter than above*/ //kinda works
-
+    public void showMembers() {
         Collections.sort(membership.allMembers, new Comparator<Member>() {
             @Override
             public int compare(Member o1, Member o2) {
                 return o1.getFirstName().compareTo(o2.getFirstName());
             }
         });
-        //ui.displayGreen(membership.allMembers.toString());
         membership.displayMembers(ui);
     }
 
@@ -145,7 +124,7 @@ public class Controller {
             choice = ui.getScanInt();
             switch (choice) {
                 case 1:
-                    registerNewMember();
+                    membership.registerNewMember(ui,member, membership, fileHandler);
                     break;
                 case 2:
                     changeMembershipStatus();
@@ -186,11 +165,6 @@ public class Controller {
         } while (keepRunning);
     }
 
-    public void registerNewMember() {
-        membership.registerNewMember(ui,member, membership, fileHandler);
-        //TODO Kan smides ind i switchcase og metode slettes
-    }
-
     public void changeMembershipStatus() {
         membership.displayMembers(ui);
         ui.displayGreen("Set membership status: ");
@@ -210,7 +184,6 @@ public class Controller {
             ui.errorRed("WATER YOU SINKING ABOAT???");
             chairmanSubMenu();
         }
-
     }
 
     public void financeSubMenu() {
@@ -276,19 +249,7 @@ public class Controller {
         membership.displayMembers(ui);
         membership.deleteMember(ui);
         //TODO burde kunne smides ind i switchcase nu og resten af metoden slettes
-        /*
-        ui.displayGreen("Write name of member: ");
-        String firstName = ui.getString();
-        ui.displayGreen("Write surname of member: ");
-        String surName = ui.getString();
-        for (int i = 0; i < membership.allMembers.size(); i++) {
-            if (firstName.equals(membership.allMembers.get(i).getFirstName())
-                    && (surName.equals(membership.allMembers.get(i).getSurName()))) {
-                membership.allMembers.remove(membership.allMembers.get(i));
-            } else
-                ui.errorRed("No member with that name");
-        }
-        //Mangler at gemme til fil via filehandler.*/
+
     }
 
     public void coachSubMenu() {
@@ -341,7 +302,7 @@ public class Controller {
         } while (keepRunning);
     }
 
-    public void showSwimmers() {
+    public void showSwimmers() {//TODO skal laves færdig
         showMembers();
     }
 
