@@ -238,7 +238,7 @@ public class Controller {
                     deleteLostFound();
                     break;
                 case 9:
-                    ui.errorRed("WATER YOU DOING??");
+                    ui.errorRed("WATER YOU SINKING ABOAT??");
                     try {
                         Thread.sleep(2500);
                     } catch (Exception e) {
