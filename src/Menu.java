@@ -23,13 +23,13 @@ public class Menu {
     System.out.println("Please choose: ");
   }
 
-  public void financeSubMenu(){
+  public void financeSubMenu(UI ui){
     System.out.println("1. Membership Statistics");
     System.out.println("2. View finances");
     System.out.println("3. Delete member");
     System.out.println("4. Add item to Lost and found");
     System.out.println("5. Delete item from Lost and found");
-    System.out.println("9. Main menu");
+    System.out.println("9. DO NOT PUSH!");
     System.out.println("Please choose: ");
   }
 

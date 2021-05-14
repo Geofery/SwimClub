@@ -6,7 +6,7 @@ public class LostAndFound {
 
   public void createLostAndFoundList() {
     lostAndFound.add("Left swim fin.");
-    lostAndFound.add("Wedding dress and shoes size small.");
+    lostAndFound.add("Wedding dress and shoes size XXL.");
     lostAndFound.add("50 vacuum-packed frogs.");
     lostAndFound.add("Speedoes suspiciously discolored.");
     lostAndFound.add("A Goldfish, kinda alive.");
@@ -17,7 +17,7 @@ public class LostAndFound {
 
   public void displayLostAndFound(UI ui) {
     ui.displayLine();
-    ui.displayGreen("Welcome to Dolphin \"Lost and Found!\"\n");
+    ui.displayGreen("Water you looking for??\n \t\t \"Lost and Found!\"\n");
     for (int i = 0; i < lostAndFound.size(); i++) {
       ui.displayGreen(i + 1 + ". " + lostAndFound.get(i));
     }

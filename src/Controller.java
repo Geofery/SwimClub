@@ -253,7 +253,7 @@ public class Controller {
                         Thread.sleep(1000);
                     } catch (Exception e) {
                     }
-                    ui.errorRed("F40");
+                    ui.errorRed("U Dead???");
                     ui.displayGreen("Thanks for Swimming! :D");
 
 
@@ -334,12 +334,12 @@ public class Controller {
                         Thread.sleep(2500);
                     } catch (Exception e) {
                     }
-                    ui.errorRed("System error!");
+                    ui.errorRed("SHARK!!!");
                     try {
                         Thread.sleep(1000);
                     } catch (Exception e) {
                     }
-                    ui.errorRed("F40");
+                    ui.errorRed("False alarm!");
                     ui.displayGreen("Sea ya later! :D");
 
 
