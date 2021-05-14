@@ -29,7 +29,7 @@ public class Menu {
     System.out.println("3. Delete member");
     System.out.println("4. Add item to Lost and found");
     System.out.println("5. Delete item from Lost and found");
-    System.out.println("9. DO NOT PUSH!");
+    ui.errorRed("9. DO NOT PUSH!");
     System.out.println("Please choose: ");
   }
 

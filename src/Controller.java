@@ -219,7 +219,7 @@ public class Controller {
 
         do {
             keepRunning = true;
-            menu.financeSubMenu();
+            menu.financeSubMenu(ui);
             choice = ui.getScanInt();
             switch (choice) {
                 case 1:
@@ -238,12 +238,12 @@ public class Controller {
                     deleteLostFound();
                     break;
                 case 9:
-                    ui.displayGreen("Swimming away .....");
+                    ui.errorRed("WATER YOU DOING??");
                     try {
                         Thread.sleep(2500);
                     } catch (Exception e) {
                     }
-                    ui.displayGreen("Still swimming....");
+                    ui.displayGreen("Swimming away");
                     try {
                         Thread.sleep(2500);
                     } catch (Exception e) {
@@ -254,7 +254,7 @@ public class Controller {
                     } catch (Exception e) {
                     }
                     ui.errorRed("U Dead???");
-                    ui.displayGreen("Thanks for Swimming! :D");
+                    ui.displayGreen("Told you not to push it! :D");
 
 
                     keepRunning = false;
@@ -324,12 +324,12 @@ public class Controller {
                 case 5:
                     break;
                 case 9:
-                    ui.displayGreen("Saving your high score.....");
+                    ui.displayGreen("Swimming away.....");
                     try {
                         Thread.sleep(2500);
                     } catch (Exception e) {
                     }
-                    ui.displayGreen("Still saving....");
+                    ui.displayGreen("Still swimming....");
                     try {
                         Thread.sleep(2500);
                     } catch (Exception e) {
