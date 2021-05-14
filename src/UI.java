@@ -34,13 +34,13 @@ public class UI {
         return readInt;
     }
 
-    public DecimalFormat getPattern(String numbers) {
-        String pattern = "#,###.###";
+    public DecimalFormat getPattern(int numbers) {
+        String pattern = "#.###.###";
         DecimalFormat decimalFormat = new DecimalFormat(pattern);
         decimalFormat.setGroupingSize(4);
 
-        String number = decimalFormat.format(123456789.123);
-        System.out.println(number);
+        String number  = decimalFormat.format(numbers);
+        displayGreen(number);
         return decimalFormat;
     }
 
