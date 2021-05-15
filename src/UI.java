@@ -13,18 +13,20 @@ public class UI {
         System.out.println(ANSI_GREEN + message + ANSI_RESET);
     }
 
-    public void display(String message) {
-        System.out.println(message);
+    public void displayGreenPrint(String message) {
+        System.out.print(ANSI_GREEN + message + ANSI_RESET);
     }
 
     public void errorRed(String message) { System.out.println(ANSI_RED + message + ANSI_RESET); }
 
     public void displayBlue(String message) { System.out.println(ANSI_BLUE + message + ANSI_RESET); }
 
-    public String getString() {
-        String anwser = scanner.nextLine();
-        return anwser;
-    }
+    public void display(String message) { System.out.println(message); }
+
+
+
+
+    public String getString() { String anwser = scanner.nextLine();return anwser; }
 
     public int getScanInt(String errorMessage) {
         while (!scanner.hasNextInt()) {
@@ -43,12 +45,10 @@ public class UI {
 
 
     public DecimalFormat getPattern(int numbers) {
-        String pattern = "#.###.###";
+        String pattern = "###,###";
         DecimalFormat decimalFormat = new DecimalFormat(pattern);
-        decimalFormat.setGroupingSize(4);
-
         String number  = decimalFormat.format(numbers);
-        displayGreen(number);
+        displayGreenPrint(number);
         return decimalFormat;
     }
 

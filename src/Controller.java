@@ -81,6 +81,7 @@ public class Controller {
     }
 
     public void competitionResults() {
+        ui.displayLine();
         //Top 5 svømmere?
         //
         ui.displayLine();
@@ -247,9 +248,9 @@ public class Controller {
         } while (keepRunning);
     }
 
-    public void membershipStatistics() {
+    public void membershipStatistics() { //Name change to MPS membershipPayingService :-D
         ui.displayLine();
-        //What statistics would be relevant here?  S
+        //What statistics would be relevant here? if they have paid or not, and when its time to pay the next sub.
     }
 
     public void viewFinances() {

@@ -1,55 +1,55 @@
 public class Menu {
-
+  UI ui = new UI();
   public void showMainMenu(){
-    System.out.println("\nWelcome to the Dolphins swim club!\n");
-    System.out.println("          ");
-    System.out.println("1. Join the club");
-    System.out.println("2. View you membership");
-    System.out.println("3. Competition results");
-    System.out.println("4. Show members");
-    System.out.println("5. Admin access");
-    System.out.println("6. Show lost and found");
-    System.out.println("9. Quit ");
-    System.out.println("Please choose: ");
+    ui.displayBlue("\nWelcome to the Dolphins swim club!\n");
+    ui.display("          ");
+    ui.display("1. Join the club");
+    ui.display("2. View you membership");
+    ui.display("3. Competition results");
+    ui.display("4. Show members");
+    ui.display("5. Admin access");
+    ui.display("6. Show lost and found");
+    ui.display("9. Quit ");
+    ui.display("Please choose: ");
   }
 
   public void chairmanSubMenu(){
-    System.out.println("1. Register new member.");
-    System.out.println("2. Change membership status.");
-    System.out.println("3. Delete member."); //TODO beskrivelse skal ændres
-    System.out.println("4. Add item to Lost and found");
-    System.out.println("5. Delete item from Lost and found");
-    System.out.println("9. Main menu");
-    System.out.println("Please choose: ");
+    ui.display("1. Register new member.");
+    ui.display("2. Change membership status.");
+    ui.display("3. Edit a member."); //TODO beskrivelse skal ændres      <----- Is It Better???
+    ui.display("4. Add item to Lost and found");
+    ui.display("5. Delete item from Lost and found");
+    ui.display("9. Main menu");
+    ui.display("Please choose: ");
   }
 
   public void financeSubMenu(UI ui){
-    System.out.println("1. Membership Statistics");
-    System.out.println("2. View finances");
-    System.out.println("3. Delete member");
-    System.out.println("4. Add item to Lost and found");
-    System.out.println("5. Delete item from Lost and found");
+    ui.display("1. Membership Statistics");
+    ui.display("2. View finances");
+    ui.display("3. Delete member");
+    ui.display("4. Add item to Lost and found");
+    ui.display("5. Delete item from Lost and found");
     ui.errorRed("9. DO NOT PUSH!");
-    System.out.println("Please choose: ");
+    ui.display("Please choose: ");
   }
 
   public void coachSubMenu(){
-    System.out.println("1. Show styles.");
-    System.out.println("2. Show swimmers.");
-    System.out.println("3. Competition results");
-    System.out.println("4. Add item to Lost and found");
-    System.out.println("5. Delete item from Lost and found");
-    System.out.println("9. Main menu");
-    System.out.println("Please choose: ");
+    ui.display("1. Show styles.");
+    ui.display("2. Show swimmers.");
+    ui.display("3. Competition results");
+    ui.display("4. Add item to Lost and found");
+    ui.display("5. Delete item from Lost and found");
+    ui.display("9. Main menu");
+    ui.display("Please choose: ");
   }
 
   public void swimStylesSubMenu(){
-    System.out.println("1. Front Crawl");
-    System.out.println("2. Butterfly");
-    System.out.println("3. Backstroke");
-    System.out.println("4. Breaststroke");
-    System.out.println("5. Sidestroke");
-    System.out.println("9. Coach menu");
-    System.out.println("Please choose: ");
+    ui.display("1. Front Crawl");
+    ui.display("2. Butterfly");
+    ui.display("3. Backstroke");
+    ui.display("4. Breaststroke");
+    ui.display("5. Sidestroke");
+    ui.display("9. Coach menu");
+    ui.display("Please choose: ");
   }
 }
