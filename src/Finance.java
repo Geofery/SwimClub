@@ -23,6 +23,7 @@ public class Finance {
   }
 
   public void viewFinances(UI ui, Membership membership) {
+    ui.displayLine();
     int sum = youthSubFee(membership) + seniorSubFee(membership) + seniorXoSubFee(membership) + passiveSubFee(membership);
     ui.displayGreen("Total income from youth subscribers " + youthSubFee(membership) + " kr.");  // Old method
     ui.displayGreen("Total income from senior subscribers " + seniorSubFee(membership) + " kr.");
@@ -40,7 +41,21 @@ public class Finance {
     ui.getPattern(passiveSubFee(membership));ui.displayGreen(" kr.");
     ui.displayGreenPrint("Total income from subscribers: = ");
     ui.getPattern(sum);ui.displayGreen(" kr.");
+    ui.displayLine();
 
+  }
+
+  public void membershipStatistics(UI ui) { //Name change to MPS membershipPayingService :-D
+    ui.displayLine();
+    ui.errorRed("Missing stats");
+    ui.displayLine();
+    //What statistics would be relevant here? if they have paid or not, and when its time to pay the next sub.
+  }
+  public void deleteMember(UI ui, Membership membership) {
+    ui.displayLine();
+    membership.displayMembers(ui);
+    membership.deleteMember(ui);
+    ui.displayLine();
   }
 }
 

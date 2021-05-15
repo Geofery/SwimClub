@@ -1,7 +1,7 @@
 public class Menu {
   UI ui = new UI();
   public void showMainMenu(){
-    ui.displayBlue("\nWelcome to the Dolphins swim club!\n");
+    ui.displayBlue("\nWelcome to the Dolphins swim club!  人人人人 へ( ﾟｪﾟ)＿ 人人人人 \n");
     ui.display("          ");
     ui.display("1. Join the club");
     ui.display("2. View you membership");

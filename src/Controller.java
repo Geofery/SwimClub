@@ -209,13 +209,13 @@ public class Controller {
             choice = ui.getScanInt();
             switch (choice) {
                 case 1:
-                    membershipStatistics();
+                    finance.membershipStatistics(ui);
                     break;
                 case 2:
-                    viewFinances();
+                    finance.viewFinances(ui, membership);
                     break;
                 case 3:
-                    deleteMember();
+                    finance.deleteMember(ui, membership);
                     break;
                 case 4:
                     addLostFound();
@@ -248,16 +248,7 @@ public class Controller {
         } while (keepRunning);
     }
 
-    public void membershipStatistics() { //Name change to MPS membershipPayingService :-D
-        ui.displayLine();
-        //What statistics would be relevant here? if they have paid or not, and when its time to pay the next sub.
-    }
 
-    public void viewFinances() {
-        ui.displayLine();
-        finance.viewFinances(ui, membership);//TODO burde kunne smides ind i switchcase nu og resten af metoden slettes
-        ui.displayLine();
-    }
 
     public void deleteMember() {
         ui.displayLine();

@@ -1,6 +1,3 @@
-import java.util.Collections;
-import java.util.Comparator;
-
 public class Member {
   private String firstName;
   private String surName;
@@ -55,13 +52,6 @@ public class Member {
     return age;
   }
 
-
-  /*public class FirstNameSorter implements Comparator<Member> {
-    @Override
-    public int compare(Member o1, Member o2) {
-      return o1.getFirstName().compareTo(o2.getFirstName());
-
-    }*/
 
     @Override
     public String toString() {

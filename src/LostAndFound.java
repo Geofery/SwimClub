@@ -23,7 +23,7 @@ public class LostAndFound {
         }
     }
 
-    public void addLostItem(UI ui) {
+    public void addLostItem(UI ui) {  //Todo if there is time save to arrayList
         ui.displayGreen("Please write what item has been found:");
         lostAndFound.add(ui.getString());
     }
