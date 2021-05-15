@@ -30,8 +30,8 @@ public class Finance {
     ui.displayGreen("Total income from seniors > 60 subscribers " + seniorXoSubFee(membership) + " kr.");
     ui.displayGreen("Total income from passive subscribers " + passiveSubFee(membership) + " kr.");
     ui.displayGreen("Total income from subscribers " + sum + " kr");
-    ui.getPattern(sum);
-    ui.getPattern(seniorSubFee(membership));//Todo Trying to get seniorIncome displayed in a pattern.
+   // ui.getPattern(sum);
+    //ui.getPattern(seniorSubFee(membership));//Todo Trying to get seniorIncome displayed in a pattern.
     ui.displayLine();
   }
 }

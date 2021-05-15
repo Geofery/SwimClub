@@ -67,8 +67,9 @@ public class Controller {
     }
 
     public void viewMembership() {
-        //TODO Christopher
-        ui.displayGreen("Enter your firstname with a capital letter ");
+        //TODO Christopher // Something is wrong it displays a member ++ times + if no member needs to show that.
+        ui.displayLine();
+        ui.displayBlue("Enter your firstname with a capital letter ");
         String input = ui.getString();
         membership.allMembers();
         for (int i = 0; i < membership.allMembers.size(); i++) {
@@ -76,14 +77,17 @@ public class Controller {
                 ui.displayGreen(membership.allMembers.get(i).toString());
             }
         }
+        ui.displayLine();
     }
 
     public void competitionResults() {
         //Top 5 svømmere?
         //
+        ui.displayLine();
     }
 
     public void showMembers() {
+        ui.displayLine();
         Collections.sort(membership.allMembers, new Comparator<Member>() {
             @Override
             public int compare(Member o1, Member o2) {
@@ -91,11 +95,13 @@ public class Controller {
             }
         });
         membership.displayMembers(ui);
+        ui.displayLine();
     }
 
     public void adminLogin() { //TODO Jeff FIX så det virker!
         //   loginGui.createFrame();
-        int type = 1;
+        ui.displayLine();
+        int type = 2;
         type = loginGui.getLoginRights(type);
         if (loginGui.getLoginRights(type) == 1) {
             chairmanSubMenu();
@@ -105,10 +111,13 @@ public class Controller {
             coachSubMenu();
         else
             ui.errorRed("Water you doing?!");
+        ui.displayLine();
     }
 
     public void showLostAndFound(){
+        ui.displayLine();
         lostAndFound.displayLostAndFound(ui);
+        ui.displayLine();
     }
 
 
@@ -166,6 +175,7 @@ public class Controller {
     }
 
     public void changeMembershipStatus() {
+        ui.displayLine();
         membership.displayMembers(ui);
         ui.displayGreen("Set membership status: ");
         ui.displayGreen("1. Active");
@@ -238,18 +248,22 @@ public class Controller {
     }
 
     public void membershipStatistics() {
-        //What statistics would be relevant here?
+        ui.displayLine();
+        //What statistics would be relevant here?  S
     }
 
     public void viewFinances() {
+        ui.displayLine();
         finance.viewFinances(ui, membership);//TODO burde kunne smides ind i switchcase nu og resten af metoden slettes
+        ui.displayLine();
     }
 
     public void deleteMember() {
+        ui.displayLine();
         membership.displayMembers(ui);
         membership.deleteMember(ui);
         //TODO burde kunne smides ind i switchcase nu og resten af metoden slettes
-
+        ui.displayLine();
     }
 
     public void coachSubMenu() {
@@ -303,15 +317,21 @@ public class Controller {
     }
 
     public void showSwimmers() {//TODO skal laves færdig
+        ui.displayLine();
         showMembers();
+        ui.displayLine();
     }
 
     public void addLostFound() {
+        ui.displayLine();
         lostAndFound.addLostItem(ui);
+        ui.displayLine();
     }
 
     public void deleteLostFound() {
+        ui.displayLine();
         lostAndFound.deleteItem(ui);
+        ui.displayLine();
     }
 
     public void swimStylesSubMenu() {
