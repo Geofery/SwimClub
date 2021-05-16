@@ -1,6 +1,5 @@
 public class Menu {
-  UI ui = new UI();
-  public void showMainMenu(){
+  public void showMainMenu(UI ui){
     ui.displayBlue("\nWelcome to the Dolphins swim club!  人人人人 へ( ﾟｪﾟ)＿ 人人人人 \n");
     ui.display("          ");
     ui.display("1. Join the club");
@@ -13,10 +12,10 @@ public class Menu {
     ui.display("Please choose: ");
   }
 
-  public void chairmanSubMenu(){
+  public void chairmanSubMenu(UI ui){
     ui.display("1. Register new member.");
     ui.display("2. Change membership status.");
-    ui.display("3. Edit a member."); //TODO beskrivelse skal ændres      <----- Is It Better???
+    ui.display("3. Delete a member.");
     ui.display("4. Add item to Lost and found");
     ui.display("5. Delete item from Lost and found");
     ui.display("9. Main menu");
@@ -33,7 +32,7 @@ public class Menu {
     ui.display("Please choose: ");
   }
 
-  public void coachSubMenu(){
+  public void coachSubMenu(UI ui){
     ui.display("1. Show styles.");
     ui.display("2. Show swimmers.");
     ui.display("3. Competition results");
@@ -43,7 +42,7 @@ public class Menu {
     ui.display("Please choose: ");
   }
 
-  public void swimStylesSubMenu(){
+  public void swimStylesSubMenu(UI ui){
     ui.display("1. Front Crawl");
     ui.display("2. Butterfly");
     ui.display("3. Backstroke");

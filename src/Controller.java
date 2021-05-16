@@ -21,28 +21,16 @@ public class Controller {
 
         do {
             keepRunning = true;
-            menu.showMainMenu();
+            menu.showMainMenu(ui);
             choice = ui.getScanInt();
-            switch (choice) {  //Show enhanced switch
-                case 1:
-                    membership.registerNewMember(ui,member, membership, fileHandler);
-                    break;
-                case 2:
-                    viewMembership();
-                    break;
-                case 3:
-                    competitionResults();
-                    break;
-                case 4:
-                    showMembers();
-                    break;
-                case 5:
-                    adminLogin();
-                    break;
-                case 6:
-                    showLostAndFound();
-                    break;
-                case 9:
+            switch (choice) {
+                case 1 -> membership.registerNewMember(ui, member, membership, fileHandler);
+                case 2 -> viewMembership();
+                case 3 -> competitionResults();
+                case 4 -> showMembers();
+                case 5 -> adminLogin();
+                case 6 -> lostAndFound.displayLostAndFound(ui);
+                case 9 -> {
                     ui.displayGreen("If in doubt, swim it out.....");
                     try {
                         Thread.sleep(2500);
@@ -59,9 +47,8 @@ public class Controller {
                     } catch (Exception e) {
                     }
                     ui.displayGreen("We do it dirty in the deep end !!! :D");
-
-
                     keepRunning = false;
+                }
             }
         } while (keepRunning);
     }
@@ -115,13 +102,6 @@ public class Controller {
         ui.displayLine();
     }
 
-    public void showLostAndFound(){
-        ui.displayLine();
-        lostAndFound.displayLostAndFound(ui);
-        ui.displayLine();
-    }
-
-
     public void chairmanSubMenu() {
         Menu menu = new Menu();
 
@@ -130,7 +110,7 @@ public class Controller {
 
         do {
             keepRunning = true;
-            menu.chairmanSubMenu();
+            menu.chairmanSubMenu(ui);
             choice = ui.getScanInt();
             switch (choice) {
                 case 1:
@@ -147,7 +127,6 @@ public class Controller {
                     break;
                 case 5:
                     lostAndFound.deleteItem(ui);
-                    ;
                     break;
                 case 9:
                     ui.displayGreen("Checking if you forgot anyfin.....");
@@ -265,7 +244,7 @@ public class Controller {
 
         do {
             keepRunning = true;
-            menu.coachSubMenu();
+            menu.coachSubMenu(ui);
             choice = ui.getScanInt();
             switch (choice) {
                 case 1:
@@ -312,7 +291,7 @@ public class Controller {
         showMembers();
         ui.displayLine();
     }
-    
+
     public void swimStylesSubMenu() {
         Menu menu = new Menu();
 
@@ -321,7 +300,7 @@ public class Controller {
 
         do {
             keepRunning = true;
-            menu.swimStylesSubMenu();
+            menu.swimStylesSubMenu(ui);
             choice = ui.getScanInt();
             switch (choice) {
                 case 1:
