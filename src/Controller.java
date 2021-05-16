@@ -23,7 +23,7 @@ public class Controller {
             keepRunning = true;
             menu.showMainMenu();
             choice = ui.getScanInt();
-            switch (choice) {
+            switch (choice) {  //Show enhanced switch
                 case 1:
                     membership.registerNewMember(ui,member, membership, fileHandler);
                     break;
@@ -43,12 +43,12 @@ public class Controller {
                     showLostAndFound();
                     break;
                 case 9:
-                    ui.displayGreen("Checking if you forgot anyfin.....");
+                    ui.displayGreen("If in doubt, swim it out.....");
                     try {
                         Thread.sleep(2500);
                     } catch (Exception e) {
                     }
-                    ui.displayGreen("Anyfin can happen when your part dolphin....");
+                    ui.displayGreen("The wetter the better....");
                     try {
                         Thread.sleep(2500);
                     } catch (Exception e) {
@@ -58,7 +58,7 @@ public class Controller {
                         Thread.sleep(1000);
                     } catch (Exception e) {
                     }
-                    ui.displayGreen("Sea ya later! :D");
+                    ui.displayGreen("We do it dirty in the deep end !!! :D");
 
 
                     keepRunning = false;
@@ -67,7 +67,7 @@ public class Controller {
     }
 
     public void viewMembership() {
-        //TODO Christopher // Something is wrong it displays a member ++ times + if no member needs to show that.
+        //TODO Jeff // Something is wrong it displays a member ++ times  ||  if no member needs to show that.
         ui.displayLine();
         ui.displayBlue("Enter your firstname with a capital letter ");
         String input = ui.getString();
@@ -143,20 +143,19 @@ public class Controller {
                     deleteMember();
                     break;
                 case 4:
-                    addLostFound();
-                    ;
+                    lostAndFound.addLostItem(ui);
                     break;
                 case 5:
-                    deleteLostFound();
+                    lostAndFound.deleteItem(ui);
                     ;
                     break;
                 case 9:
-                    ui.displayGreen("If in doubt, swim it out.....");
+                    ui.displayGreen("Checking if you forgot anyfin.....");
                     try {
                         Thread.sleep(2500);
                     } catch (Exception e) {
                     }
-                    ui.displayGreen("The wetter the better....");
+                    ui.displayGreen("Anyfin can happen when your part dolphin....");
                     try {
                         Thread.sleep(2500);
                     } catch (Exception e) {
@@ -166,8 +165,8 @@ public class Controller {
                         Thread.sleep(1000);
                     } catch (Exception e) {
                     }
-                    ui.errorRed("F40");
-                    ui.displayGreen("We do it dirty in the deep end !!! :D");
+                    ui.errorRed("Dont go further out than the belly button");
+                    ui.displayGreen("Sea ya later! :D");
 
 
                     keepRunning = false;
@@ -218,10 +217,10 @@ public class Controller {
                     finance.deleteMember(ui, membership);
                     break;
                 case 4:
-                    addLostFound();
+                    lostAndFound.addLostItem(ui);
                     break;
                 case 5:
-                    deleteLostFound();
+                    lostAndFound.deleteItem(ui);
                     break;
                 case 9:
                     ui.errorRed("WATER YOU SINKING ABOAT??");
@@ -250,7 +249,7 @@ public class Controller {
 
 
 
-    public void deleteMember() {
+    public void deleteMember() {  // Cant be moved because chairman sub also uses it. finance delete has been moved.
         ui.displayLine();
         membership.displayMembers(ui);
         membership.deleteMember(ui);
@@ -276,10 +275,10 @@ public class Controller {
                     showSwimmers();
                     break;
                 case 3:
-                    addLostFound();
+                    lostAndFound.addLostItem(ui);
                     break;
                 case 4:
-                    deleteLostFound();
+                    lostAndFound.deleteItem(ui);
                     break;
                 case 5:
                     break;
@@ -300,7 +299,7 @@ public class Controller {
                     } catch (Exception e) {
                     }
                     ui.errorRed("False alarm!");
-                    ui.displayGreen("Sea ya later! :D");
+                    ui.displayGreen("Don't count laps. Make every lap count. :D");
 
 
                     keepRunning = false;
@@ -313,19 +312,7 @@ public class Controller {
         showMembers();
         ui.displayLine();
     }
-
-    public void addLostFound() {
-        ui.displayLine();
-        lostAndFound.addLostItem(ui);
-        ui.displayLine();
-    }
-
-    public void deleteLostFound() {
-        ui.displayLine();
-        lostAndFound.deleteItem(ui);
-        ui.displayLine();
-    }
-
+    
     public void swimStylesSubMenu() {
         Menu menu = new Menu();
 
@@ -368,7 +355,7 @@ public class Controller {
                         Thread.sleep(1000);
                     } catch (Exception e) {
                     }
-                    ui.errorRed("F40");
+                    ui.errorRed("7 Days Without Swimming Makes One Weak.");
                     ui.displayGreen("You should eat your pasta if you want to swim fasta! :D");
 
 

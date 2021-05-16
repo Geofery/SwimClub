@@ -17,20 +17,26 @@ public class LostAndFound {
     }
 
     public void displayLostAndFound(UI ui) {
+        ui.displayLine();
         ui.displayGreen("Water you looking for??\n \t\t \"Lost and Found!\"\n");
         for (int i = 0; i < lostAndFound.size(); i++) {
             ui.displayGreen(i + 1 + ". " + lostAndFound.get(i));
         }
+        ui.displayLine();
     }
 
     public void addLostItem(UI ui) {  //Todo if there is time save to arrayList
+        ui.displayLine();
         ui.displayGreen("Please write what item has been found:");
         lostAndFound.add(ui.getString());
+        ui.displayLine();
     }
 
     public void deleteItem(UI ui) {
+        ui.displayLine();
         displayLostAndFound(ui);
         ui.displayGreen("What item has been picked up?");
         lostAndFound.remove(ui.getScanInt() - 1);
+        ui.displayLine();
     }
 }
