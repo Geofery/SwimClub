@@ -21,7 +21,7 @@ public class Menu {
             "       ~^- ~^- `~.^- %`~.%~-'%~^- %~^- ~^");
     ui.display("          ");
     ui.display("1. Join the club");
-    ui.display("2. View you membership");
+    ui.display("2. View your membership");
     ui.display("3. Competition results");
     ui.display("4. Show members");
     ui.display("5. Admin access");

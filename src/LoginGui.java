@@ -11,8 +11,10 @@ public class LoginGui implements ActionListener {
   private static JPasswordField passwordField;
   private static JTextField email;
   private static JLabel success;
+  boolean filledOut;
+  private int loginRights;
 
-  public void createFrame() {
+  public JFrame createFrame() {
 
     JFrame frame = new JFrame();
     JPanel panel = new JPanel();
@@ -62,29 +64,43 @@ public class LoginGui implements ActionListener {
     frame.toFront();
     frame.requestFocus();
     frame.setVisible(true);
+
+    return frame;
   }
 
   @Override
   public void actionPerformed(ActionEvent e) {
     String user = email.getText().toLowerCase(Locale.ROOT);
     String password = passwordField.getText();
+
     if (e.getActionCommand().equals("Login")) {
-      success.setText("Login successful!");
       if (user.equals("chairman@dolphin.com") && password.equals("1234")) {
         success.setText("Login successful!");
-        getLoginRights(1);
+        setLoginRights(1);
+        filledOut = true;
       } else if (user.equals("finance@dolphin.com") && password.equals("1234")) {
         success.setText("Login successful!");
-        getLoginRights(2);
+        setLoginRights(2);
+        filledOut = true;
       } else if (user.equals("coach@dolphin.com") && password.equals("1234")) {
         success.setText("Login successful!");
-        getLoginRights(3);
+        setLoginRights(3);
+        filledOut = true;
       } else
         success.setText("Wrong E-mail or Password");
+     filledOut = false;
     }
   }
 
-    public int getLoginRights ( int nr){
-      return nr;
-    }
+  public boolean isFilledOut() {
+    return filledOut;
   }
+
+  public void setLoginRights(int loginRights) {
+    this.loginRights = loginRights;
+  }
+
+  public int getLoginRights() {
+    return loginRights;
+  }
+}
