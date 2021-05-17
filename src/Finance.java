@@ -45,7 +45,7 @@ public class Finance {
 
   }
 
-  public void membershipStatistics(UI ui) { //Name change to MPS membershipPayingService :-D
+  public void financeCreditors(UI ui) {
     ui.displayLine();
     ui.errorRed("Missing stats");
     ui.displayLine();

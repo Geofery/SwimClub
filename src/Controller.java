@@ -9,6 +9,7 @@ public class Controller {
     Membership membership = new Membership();
     Finance finance = new Finance();
     LostAndFound lostAndFound = new LostAndFound();
+   // Competition competition = new Competition();
 
 
     public void mainMenu() {
@@ -74,7 +75,7 @@ public class Controller {
         ui.displayLine();
     }
 
-    public void showMembers() {
+    public void showMembers() {//Todo spørg Patrick om det er god kode stil
         ui.displayLine();
         Collections.sort(membership.allMembers, new Comparator<Member>() {
             @Override
@@ -113,22 +114,12 @@ public class Controller {
             menu.chairmanSubMenu(ui);
             choice = ui.getScanInt();
             switch (choice) {
-                case 1:
-                    membership.registerNewMember(ui,member, membership, fileHandler);
-                    break;
-                case 2:
-                    changeMembershipStatus();
-                    break;
-                case 3:
-                    deleteMember();
-                    break;
-                case 4:
-                    lostAndFound.addLostItem(ui);
-                    break;
-                case 5:
-                    lostAndFound.deleteItem(ui);
-                    break;
-                case 9:
+                case 1 -> membership.registerNewMember(ui, member, membership, fileHandler);
+                case 2 -> changeMembershipStatus();
+                case 3 -> deleteMember();
+                case 4 -> lostAndFound.addLostItem(ui);
+                case 5 -> lostAndFound.deleteItem(ui);
+                case 9 -> {
                     ui.displayGreen("Checking if you forgot anyfin.....");
                     try {
                         Thread.sleep(2500);
@@ -146,9 +137,8 @@ public class Controller {
                     }
                     ui.errorRed("Dont go further out than the belly button");
                     ui.displayGreen("Sea ya later! :D");
-
-
                     keepRunning = false;
+                }
             }
         } while (keepRunning);
     }
@@ -186,22 +176,12 @@ public class Controller {
             menu.financeSubMenu(ui);
             choice = ui.getScanInt();
             switch (choice) {
-                case 1:
-                    finance.membershipStatistics(ui);
-                    break;
-                case 2:
-                    finance.viewFinances(ui, membership);
-                    break;
-                case 3:
-                    finance.deleteMember(ui, membership);
-                    break;
-                case 4:
-                    lostAndFound.addLostItem(ui);
-                    break;
-                case 5:
-                    lostAndFound.deleteItem(ui);
-                    break;
-                case 9:
+                case 1 -> finance.financeCreditors(ui);
+                case 2 -> finance.viewFinances(ui, membership);
+                case 3 -> finance.deleteMember(ui, membership);
+                case 4 -> lostAndFound.addLostItem(ui);
+                case 5 -> lostAndFound.deleteItem(ui);
+                case 9 -> {
                     ui.errorRed("WATER YOU SINKING ABOAT??");
                     try {
                         Thread.sleep(2500);
@@ -219,9 +199,8 @@ public class Controller {
                     }
                     ui.errorRed("U Dead???");
                     ui.displayGreen("Told you not to push it! :D");
-
-
                     keepRunning = false;
+                }
             }
         } while (keepRunning);
     }
@@ -247,21 +226,12 @@ public class Controller {
             menu.coachSubMenu(ui);
             choice = ui.getScanInt();
             switch (choice) {
-                case 1:
-                    swimStylesSubMenu();
-                    break;
-                case 2:
-                    showSwimmers();
-                    break;
-                case 3:
-                    lostAndFound.addLostItem(ui);
-                    break;
-                case 4:
-                    lostAndFound.deleteItem(ui);
-                    break;
-                case 5:
-                    break;
-                case 9:
+                case 1 -> swimStylesSubMenu();
+                case 2 -> showSwimmers();
+                case 3 -> competitionResults();
+                case 4 -> lostAndFound.addLostItem(ui);
+                case 5 -> lostAndFound.deleteItem(ui);
+                case 9 -> {
                     ui.displayGreen("Swimming away.....");
                     try {
                         Thread.sleep(2500);
@@ -279,9 +249,8 @@ public class Controller {
                     }
                     ui.errorRed("False alarm!");
                     ui.displayGreen("Don't count laps. Make every lap count. :D");
-
-
                     keepRunning = false;
+                }
             }
         } while (keepRunning);
     }
@@ -303,22 +272,12 @@ public class Controller {
             menu.swimStylesSubMenu(ui);
             choice = ui.getScanInt();
             switch (choice) {
-                case 1:
-                    frontCrawl();
-                    break;
-                case 2:
-                    butterfly();
-                    break;
-                case 3:
-                    backstroke();
-                    break;
-                case 4:
-                    breaststroke();
-                    break;
-                case 5:
-                    sidestroke();
-                    break;
-                case 9:
+                case 1 -> frontCrawl();
+                case 2 -> butterfly();
+                case 3 -> backstroke();
+                case 4 -> breaststroke();
+                case 5 -> sidestroke();
+                case 9 -> {
                     ui.displayGreen("Water we waiting for.....");
                     try {
                         Thread.sleep(2500);
@@ -336,9 +295,8 @@ public class Controller {
                     }
                     ui.errorRed("7 Days Without Swimming Makes One Weak.");
                     ui.displayGreen("You should eat your pasta if you want to swim fasta! :D");
-
-
                     keepRunning = false;
+                }
             }
         } while (keepRunning);
     }

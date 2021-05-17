@@ -1,6 +1,24 @@
 public class Menu {
   public void showMainMenu(UI ui){
-    ui.displayBlue("\nWelcome to the Dolphins swim club!  人人人人 へ( ﾟｪﾟ)＿ 人人人人 \n");
+    ui.displayBlue("\nWelcome to the Dolphins swim club!");
+    ui.displayBlue("" +
+            "                  _.-,\n" +
+            "              .--'  '-._\n" +
+            "           _/`-  _      '.\n" +
+            "          '----'._`.----. \\\n" +
+            "                   `     \\;\n" +
+            "                         ;_\\");
+    ui.displayLine();
+
+    ui.displayBlue("" +
+            "                      .-\"\"\"-.\n" +
+            "                     /       \\\n" +
+            "                    ;_.-\"\"\"-._;\n" +
+            " .,_       __,.---.-(=(o)-(o)=)-.---.,__       _,.\n" +
+            " '._'--\"```          \\   ^   /          ```\"--'_.'\n" +
+            "    ``\"''~---~~%^%^.%.`._0_.'%,^%^%^~~---~''\"``\n" +
+            "    ~^~- `^-% ^~.%~%.^~-%-~.%-^.% ~`% ~-`%^`-~^~\n" +
+            "       ~^- ~^- `~.^- %`~.%~-'%~^- %~^- ~^");
     ui.display("          ");
     ui.display("1. Join the club");
     ui.display("2. View you membership");

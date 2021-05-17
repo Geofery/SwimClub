@@ -8,8 +8,9 @@ public class FileHandler {
   private String surName;
   private String age;
   private String sex;
-  private boolean membershipStatus;
-  private String result;
+  private boolean active;
+  private  String result;
+  //private boolean competing;
 
   public void saveMember(Member member) {
     FileWriter fw = null;
@@ -25,11 +26,12 @@ public class FileHandler {
       surName = member.getSurName();
       age = member.getAge();
       sex = member.getSex();
-      membershipStatus = member.isActive();
+      active = member.isActive();
       result = member.getResult();
+     // competing = competition.isCompeting();
 
       bw.write(firstName.replaceAll("\\[", "").replaceAll("]", "")
-          .replaceAll(",", "\t") + " " + surName + "\t\t\t" + age + "\t" + sex + "\t" + membershipStatus + "\t" + result);
+          .replaceAll(",", "\t") + " " + surName + "\t\t\t" + age + "\t" + sex + "\t" + active + "\t" + result);
       bw.newLine();
       bw.close();
       fw.close();
@@ -52,7 +54,7 @@ public class FileHandler {
       surName = fileReader.next();
       age = fileReader.next();
       sex = fileReader.next();
-      membershipStatus = fileReader.nextBoolean();
+      active = fileReader.nextBoolean();
 
       //IF Statement som nogengange bruger result og andre
       //gange skipper den.
@@ -60,7 +62,7 @@ public class FileHandler {
       if (result.equals(null)) {
         member = new Member(firstName, surName, age, sex);
       } else
-      member = new Member(firstName, surName, age, sex, membershipStatus, result);
+      member = new Member(firstName, surName, age, sex, active, result);
       membership.ageIdentifier(member);
     }
   }
