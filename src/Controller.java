@@ -5,6 +5,8 @@ import java.util.Comparator;
 public class Controller {
   UI ui = new UI();
   Member member;
+  Competition competition;
+  Training training;
   LoginGui loginGui = new LoginGui();
   FileHandler fileHandler = new FileHandler();
   Membership membership = new Membership();
