@@ -227,8 +227,10 @@ public class Controller {
         case 1 -> swimStylesSubMenu();
         case 2 -> showSwimmers();
         case 3 -> competitionResults();
-        case 4 -> lostAndFound.addLostItem(ui);
-        case 5 -> lostAndFound.deleteItem(ui);
+        case 4 -> addCompetitonMember();
+        case 5 -> deleteCompetitonMember();
+        case 6 -> lostAndFound.addLostItem(ui);
+        case 7 -> lostAndFound.deleteItem(ui);
         case 9 -> {
           ui.displayGreen("Swimming away.....");
           try {
@@ -257,6 +259,13 @@ public class Controller {
     ui.displayLine();
     showMembers();
     ui.displayLine();
+  }
+
+  private void addCompetitonMember() {
+
+  }
+
+  private void deleteCompetitonMember() {
   }
 
   public void swimStylesSubMenu() {

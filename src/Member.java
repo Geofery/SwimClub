@@ -1,13 +1,13 @@
 public class Member {
+    private String memberId;
     private String firstName;
     private String surName;
     private String age;
     private String sex;
     private boolean active = true;
     private String result;
-    //private boolean competing = true;
+    private char type;
     // It should be used when various implementations of the same kind share a common behavior.
-
 
     public Member(String firstName, String surName, String age, String sex, boolean active, String result) {
         this.firstName = firstName;
@@ -16,7 +16,7 @@ public class Member {
         this.sex = sex;
         this.active = active;
         this.result = result;
-        // this.competing = competing;
+        this.type = type;
     }
 
     public Member(String firstName, String surName, String age, String sex, boolean active) {
@@ -38,6 +38,8 @@ public class Member {
         this.active = active;
     }
 
+    public String getMemberId() { return memberId; }
+
     public String getFirstName() {
         return firstName;
     }
@@ -58,11 +60,12 @@ public class Member {
         return active;
     }
 
-    public String getResult() {
-        return result;
-    }
-// public boolean isCompeting() { return competing; }
+    public String getResult() { return result; }
 
+    public char getType() { return type; }
+
+
+    public void setMemberId(String memberId) { this.memberId = memberId; }
 
     @Override
     public String toString() {

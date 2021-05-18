@@ -1,33 +1,16 @@
 public class Menu {
   public void showMainMenu(UI ui){
-    ui.displayBlue("\nWelcome to the Dolphins swim club!");
-    ui.displayBlue("" +
-            "                  _.-,\n" +
-            "              .--'  '-._\n" +
-            "           _/`-  _      '.\n" +
-            "          '----'._`.----. \\\n" +
-            "                   `     \\;\n" +
-            "                         ;_\\");
-    ui.displayLine();
+    ui.displayBlue("\n\t\tWhalecome to the Dolphins swim club!\n");
 
-    ui.displayBlue("" +
-            "                      .-\"\"\"-.\n" +
-            "                     /       \\\n" +
-            "                    ;_.-\"\"\"-._;\n" +
-            " .,_       __,.---.-(=(o)-(o)=)-.---.,__       _,.\n" +
-            " '._'--\"```          \\   ^   /          ```\"--'_.'\n" +
-            "    ``\"''~---~~%^%^.%.`._0_.'%,^%^%^~~---~''\"``\n" +
-            "    ~^~- `^-% ^~.%~%.^~-%-~.%-^.% ~`% ~-`%^`-~^~\n" +
-            "       ~^- ~^- `~.^- %`~.%~-'%~^- %~^- ~^");
     ui.display("          ");
-    ui.display("1. Join the club");
-    ui.display("2. View your membership");
-    ui.display("3. Competition results");
-    ui.display("4. Show members");
-    ui.display("5. Admin access");
-    ui.display("6. Show lost and found");
+    ui.display("1. Join the club"+"                         _.-,");
+    ui.display("2. View your membership"+"              .--'  '-._");
+    ui.display("3. Competition results"+ "            _/`-  _      '.");
+    ui.display("4. Show members"+"                  '----'._`.----. \\");
+    ui.display("5. Admin access"+"                           `     \\;");
+    ui.display("6. Show lost and found"+"                          ;_\\");
     ui.display("9. Quit ");
-    ui.display("Please choose: ");
+    ui.displayBlue("Please choose: ");
   }
 
   public void chairmanSubMenu(UI ui){
