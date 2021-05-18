@@ -37,8 +37,10 @@ public class Menu {
     ui.display("1. Show styles.");
     ui.display("2. Show swimmers.");
     ui.display("3. Competition results");
-    ui.display("4. Add item to Lost and found");
-    ui.display("5. Delete item from Lost and found");
+    ui.display("4. Add competition member");
+    ui.display("5. Delete competition member");
+    ui.display("6. Add item to Lost and found");
+    ui.display("7. Delete item from Lost and found");
     ui.display("9. Main menu");
     ui.display("Please choose: ");
   }

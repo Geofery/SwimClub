@@ -5,13 +5,15 @@ public class CompetitionMember extends Member {
 
     ArrayList<Training> trainingResults = new ArrayList<Training>();
     ArrayList<Competition> competitionResults = new ArrayList<Competition>();
-    public CompetitionMember(String firstName, String surName, String age, String sex, boolean active,
-                             String swimStyle, ArrayList trainings, ArrayList competitions) {
-        super(firstName, surName, age, sex, active);
+    public CompetitionMember(String memberId, String firstName, String surName, String age, String sex, boolean active,
+                             String swimStyle) {
+        super(memberId, firstName, surName, age, sex, active);
         this.swimStyle = swimStyle;
-        this.trainingResults = trainings;
-        this.competitionResults = competitions;
+       // this.trainingResults = trainings;
+        //this.competitionResults = competitions;
     }
+
+
 
     public String getSwimStyle() {
         return swimStyle;

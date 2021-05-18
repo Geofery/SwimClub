@@ -13,6 +13,7 @@ public class Controller {
   Finance finance = new Finance();
   LostAndFound lostAndFound = new LostAndFound();
   // Competition competition = new Competition();
+  //CompetitionMember competitionMember = new CompetitionMember(member.getMemberId(), member.getFirstName(), member.getSurName(), member.getAge(), member.getSex(), member.isActive(), competition.getSwimStyle());
 
 
   public void mainMenu() {
@@ -262,6 +263,7 @@ public class Controller {
   }
 
   private void addCompetitonMember() {
+
 
   }
 

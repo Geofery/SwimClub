@@ -3,10 +3,11 @@ import java.util.Date;
 import java.util.Scanner;
 
 public class FileHandler {
-    File file = new File("Members.txt");
+    File file = new File("NewList.txt");
     File trainings = new File("Training.txt");
     File competitions = new File("Competitions.txt");
 
+    private String memberId;
     private String firstName;
     private String surName;
     private String age;
@@ -28,7 +29,7 @@ public class FileHandler {
         }
         BufferedWriter bw = new BufferedWriter(fw);
         try {
-
+            memberId = member.getMemberId();
             firstName = member.getFirstName();
             surName = member.getSurName();
             age = member.getAge();
@@ -37,8 +38,8 @@ public class FileHandler {
             //result = member.getResult();
             // competing = competition.isCompeting();
 
-            bw.write(firstName.replaceAll("\\[", "").replaceAll("]", "")
-                    .replaceAll(",", "\t") + " " + surName + "\t\t\t" + age + "\t" + sex + "\t" + active);
+            bw.write(memberId.replaceAll("\\[", "").replaceAll("]", "")
+                    .replaceAll(",", "\t") + " " + firstName + " " + surName + "\t\t\t" + age + "\t" + sex + "\t" + active);
             bw.newLine();
             bw.close();
             fw.close();
@@ -57,6 +58,7 @@ public class FileHandler {
         }
 
         while (fileReader.hasNext()) {
+            memberId = fileReader.next();
             firstName = fileReader.next();
             surName = fileReader.next();
             age = fileReader.next();
@@ -68,7 +70,7 @@ public class FileHandler {
      /* if (result.equals(null)) {
         member = new Member(firstName, surName, age, sex);
       } else*/
-            member = new Member(firstName, surName, age, sex, active);
+            member = new Member(memberId, firstName, surName, age, sex, active);
             membership.ageIdentifier(member);
         }
     }
