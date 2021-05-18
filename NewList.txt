@@ -1,3 +1,4 @@
 M767 Jens  Jensen			2000	Whale	true
 M767443 Jeff Roea			1992	Male	true
 M24 Christopher Nielsen			1984	Male	true
+M173 Kim Ørsøe			1994	Male	true

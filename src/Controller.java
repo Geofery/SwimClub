@@ -33,7 +33,7 @@ public class Controller {
         case 2 -> viewMembership();
         case 3 -> competitionResults();
         case 4 -> showMembers();
-        case 5 -> coachSubMenu();//adminLogin();
+        case 5 -> adminLogin(); //coachSubMenu();//
         case 6 -> lostAndFound.displayLostAndFound(ui);
         case 9 -> {
           ui.displayGreen("If in doubt, swim it out.....");
@@ -88,19 +88,37 @@ public class Controller {
 
   public void adminLogin() { //TODO Jeff FIX så det virker!
     JFrame frame = loginGui.createFrame();
-    while (!loginGui.isFilledOut())
-      ;
-    frame.setVisible(false);
+    int type = loginGui.getLoginRights();
+
     ui.displayLine();
-    if (loginGui.getLoginRights() == 3) {
+
+    System.out.println("before listen");
+    if(loginGui.listenForLogin()){
+      switch(type){
+        case 1:
+          chairmanSubMenu();
+        case 2:
+          financeSubMenu();
+        case 3:
+          coachSubMenu();
+      }
+    }
+
+    System.out.println("after listen");
+    ui.displayLine();
+    frame.setVisible(false);
+
+
+    /*
+    if (loginGui.getLoginRights() == 1) {
       chairmanSubMenu();
     } else if (loginGui.getLoginRights() == 2) {
       financeSubMenu();
     } else if (loginGui.getLoginRights() == 3) {
       coachSubMenu();
     } else
-      ui.errorRed("Water you doing?!");
-    ui.displayLine();
+      ui.errorRed("Water you doing?!"); */
+
   }
 
   public void chairmanSubMenu() {
@@ -267,31 +285,32 @@ public class Controller {
     String memberId = ui.getString();
     ui.displayGreen("What swimstyle, do you want to the member to comepete in?");
     ui.displayGreen("1. Frontcrawl: \n 2. Backstroke:\n 3. Breaststroke: \n 4. Butterfly  \n 9. to go back");
-        String choice;
-        int coachChoice = ui.getScanInt();
-        choice = "5";
-        if (coachChoice == 1) {
-          choice = swimStyle.Frontcrawl.toString();
-        } else if (coachChoice == 2) {
-          choice = swimStyle.Backstroke.toString();
-        } else if (coachChoice == 3) {
-          choice = swimStyle.Breaststroke.toString();
-        } else if (coachChoice == 4) {
-          choice = swimStyle.Butterfly.toString();;
-        } else if (coachChoice == 9) {
-          choice = "9";
-        } else
-          coachSubMenu();
+    String choice;
+    int coachChoice = ui.getScanInt();
+    choice = "5";
+    if (coachChoice == 1) {
+      choice = swimStyle.Frontcrawl.toString();
+    } else if (coachChoice == 2) {
+      choice = swimStyle.Backstroke.toString();
+    } else if (coachChoice == 3) {
+      choice = swimStyle.Breaststroke.toString();
+    } else if (coachChoice == 4) {
+      choice = swimStyle.Butterfly.toString();
+      ;
+    } else if (coachChoice == 9) {
+      choice = "9";
+    } else
+      coachSubMenu();
 
     for (int i = 0; i < membership.allMembers.size(); i++) {
       if (membership.allMembers.contains(memberId)) {
-        new CompetitionMember(membership.allMembers.get(i).getMemberId().replaceAll("M","C"),
+        new CompetitionMember(membership.allMembers.get(i).getMemberId().replaceAll("M", "C"),
             membership.allMembers.get(i).getFirstName(), membership.allMembers.get(i).getSurName(),
             membership.allMembers.get(i).getAge(), membership.allMembers.get(i).getSex(),
             membership.allMembers.get(i).isActive(), choice);
       }
     }
-    fileHandler.saveCompetitions(member,competition,competitionMember);
+    fileHandler.saveCompetitions(member, competition, competitionMember);
 
   }
 

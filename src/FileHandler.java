@@ -69,7 +69,8 @@ public class FileHandler {
             //gange skipper den.
      /* if (result.equals(null)) {
         member = new Member(firstName, surName, age, sex);
-      } else*/
+      } else*/                                              //member super                        fitnessMember
+
             member = new Member(memberId, firstName, surName, age, sex, active);
             membership.ageIdentifier(member);
         }
