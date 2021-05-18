@@ -79,7 +79,7 @@ public class FileHandler {
     ////////////////////////////////////////////////////////////
 
 
-    public void saveCompetitions(Member member, Competition competition) {
+    public void saveCompetitions(Member member, Competition competition, CompetitionMember competitionMember) {
         FileWriter fw = null;
         try {
             fw = new FileWriter(competitions, true);
@@ -89,11 +89,11 @@ public class FileHandler {
         BufferedWriter bw = new BufferedWriter(fw);
         try {
 
-            swimStyle = competition.getSwimStyle();
-            place = competition.getPlace();
-            date = competition.getDate();
-            result = competition.getResult();
-            rank = competition.getRank();
+            swimStyle = competitionMember.getSwimStyle();
+           /* place = competitionMember.getPlace();
+            date = competitionMember.getDate();
+            result = competitionMember.getResult();
+            rank = competitionMember.getRank();*/
 
 
             bw.write(swimStyle.replaceAll("\\[", "").replaceAll("]", "")
