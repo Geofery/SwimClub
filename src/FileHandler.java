@@ -1,7 +1,6 @@
 import java.io.*;
 import java.util.Scanner;
-
-public class FileHandler {
+public class FileHandler{
     File file = new File("NewList.txt");
     File trainings = new File("Training.txt");
     File competitions = new File("Competitions.txt");
@@ -14,6 +13,8 @@ public class FileHandler {
     private boolean active;
     //.-.-.-.--.-.-.-....-.-.-.-.
     private String swimStyle;
+    private String trainingResult;
+    private String competitionResult;
     private String place;
     private String date;
     private String result;
@@ -47,7 +48,7 @@ public class FileHandler {
         }
     }
 
-    public void loadMembers() {
+    public void loadMembers(Membership membership, Member member) {
 
         Scanner fileReader = null;
         try {
@@ -63,14 +64,18 @@ public class FileHandler {
             age = fileReader.next();
             sex = fileReader.next();
             active = fileReader.nextBoolean();
-            result = fileReader.next();
+            //result = fileReader.next();
+            //swimStyle = fileReader.next();
+            //trainingResult = fileReader.next();
+            //competitionResult = fileReader.next();
+
 
             //IF Statement som nogengange bruger result og andre
             //gange skipper den.
-            if (result.equals(null)) {
-              member = new Member(firstName, surName, age, sex);
-            } else
-            Member member = new Member(memberId,firstName,surName,age,sex,active,result);
+            //if (result.equals(null)) {
+              Member memeber = new CasualMember(memberId,firstName,surName,age,sex,active);
+            //} else
+               new CompetitionMember(memberId,firstName,surName,age,sex,active,swimStyle,trainingResult,competitionResult);
             //membership.ageIdentifier(member);
         }
     }

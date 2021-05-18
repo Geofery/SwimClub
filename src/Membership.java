@@ -64,8 +64,8 @@ public class Membership {
         }
 
         public void registerNewMember (UI ui, Member member, Membership membership, FileHandler fileHandler){
-            ui.displayGreen("Please enter Name");
-            String name = ui.getString();
+            ui.displayGreen("Please enter first name");
+            String firstName = ui.getString();
             ui.displayGreen("Please enter surname");
             String surName = ui.getString();
             ui.displayGreen("Please enter year of birth");
@@ -73,7 +73,8 @@ public class Membership {
             ui.displayGreen("Please enter sex");
             String sex = ui.getString();
             String memberId = generateMemberId();
-           // member = new Member(memberId, name, surName, year, sex);
+            boolean active;
+            member = new CasualMember(memberId,firstName, surName, year, sex, true);
             membership.ageIdentifier(member);
             fileHandler.saveMember(member);
         }

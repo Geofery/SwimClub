@@ -18,7 +18,7 @@ public class Controller {
 
   public void mainMenu() {
     Menu menu = new Menu();
-    //fileHandler.loadMembers(membership, member); //loads all the member into the array
+    fileHandler.loadMembers(membership, member); //loads all the member into the array
     lostAndFound.createLostAndFoundList();
     membership.allMembers();
     int choice;
