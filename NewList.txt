@@ -1,5 +1,3 @@
-M100 Jens Jensen			2000	Whale	true
-M321 Jens Hansen			2000	Whale	true
-M90 Jens Christensen			2000	Whale	true
-M3 Jens Duran			2000	Whale	true
-M32 Jens Nielsen			2000	Whale	true
+M767 Jens  Jensen			2000	Whale	true
+M767443 Jeff Roea			1992	Male	true
+M24 Christopher Nielsen			1984	Male	true
