@@ -1,4 +1,4 @@
-public class Member {
+public abstract class Member {
   private String memberId;
   private String firstName;
   private String surName;
@@ -8,7 +8,7 @@ public class Member {
   private String result;
   // It should be used when various implementations of the same kind share a common behavior.
 
-  public Member(String memberId, String firstName, String surName, String age, String sex, boolean active, String result) {
+  public  Member(String memberId, String firstName, String surName, String age, String sex, boolean active, String result) {
     this.memberId = memberId;
     this.firstName = firstName;
     this.surName = surName;
@@ -51,9 +51,7 @@ public class Member {
     return surName;
   }
 
-  public String getAge() {
-    return age;
-  }
+  public String getAge() { return age; }
 
   public String getSex() {
     return sex;

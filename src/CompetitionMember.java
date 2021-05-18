@@ -1,26 +1,24 @@
-import java.util.ArrayList;
-
 public class CompetitionMember extends Member {
+    private String trainingResult;
+    private String competitionResult;
     private String swimStyle;
 
-    ArrayList<Training> trainingResults = new ArrayList<Training>();
-    ArrayList<Competition> competitionResults = new ArrayList<Competition>();
     public CompetitionMember(String memberId, String firstName, String surName, String age, String sex, boolean active,
-                             String swimStyle) {
+                             String swimStyle, String trainingResult, String competitionResult) {
         super(memberId, firstName, surName, age, sex, active);
         this.swimStyle = swimStyle;
-       // this.trainingResults = trainings;
-        //this.competitionResults = competitions;
+        this.trainingResult = trainingResult;
+        this.competitionResult = competitionResult;
     }
 
+    public String getTrainingResult() { return trainingResult; }
+    public String getCompetitionResult() { return competitionResult; }
+    public String getSwimStyle() { return swimStyle; }
 
-
-    public String getSwimStyle() {
-        return swimStyle;
-    }
-
+    public void setTrainingResult(String trainingResult) { this.trainingResult = trainingResult; }
+    public void setCompetitionResult(String competitionResult) { this.competitionResult = competitionResult; }
     public void setSwimStyle(String swimStyle) {
         this.swimStyle = swimStyle;
     }
-
 }
+

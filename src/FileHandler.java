@@ -1,5 +1,4 @@
 import java.io.*;
-import java.util.Date;
 import java.util.Scanner;
 
 public class FileHandler {
@@ -48,7 +47,7 @@ public class FileHandler {
         }
     }
 
-    public void loadMembers(Membership membership, Member member) {
+    public void loadMembers() {
 
         Scanner fileReader = null;
         try {
@@ -64,14 +63,15 @@ public class FileHandler {
             age = fileReader.next();
             sex = fileReader.next();
             active = fileReader.nextBoolean();
+            result = fileReader.next();
 
             //IF Statement som nogengange bruger result og andre
             //gange skipper den.
-     /* if (result.equals(null)) {
-        member = new Member(firstName, surName, age, sex);
-      } else*/
-            member = new Member(memberId, firstName, surName, age, sex, active);
-            membership.ageIdentifier(member);
+            if (result.equals(null)) {
+              member = new Member(firstName, surName, age, sex);
+            } else
+            Member member = new Member(memberId,firstName,surName,age,sex,active,result);
+            //membership.ageIdentifier(member);
         }
     }
 
@@ -79,7 +79,7 @@ public class FileHandler {
     ////////////////////////////////////////////////////////////
 
 
-    public void saveCompetitions(Member member, Competition competition, CompetitionMember competitionMember) {
+    public void saveCompetitions(CompetitionMember competitionMember, String choice) {
         FileWriter fw = null;
         try {
             fw = new FileWriter(competitions, true);
@@ -89,7 +89,7 @@ public class FileHandler {
         BufferedWriter bw = new BufferedWriter(fw);
         try {
 
-            swimStyle = competitionMember.getSwimStyle();
+            swimStyle = choice;
            /* place = competitionMember.getPlace();
             date = competitionMember.getDate();
             result = competitionMember.getResult();
@@ -123,7 +123,7 @@ public class FileHandler {
             rank = fileReader.nextInt();
 
             competition = new Competition(swimStyle, place, date, result, rank);
-            competitionMember.competitionResults.add(competition);
+            competition.competitionResults.add(competition);
         }
     }
 
@@ -150,7 +150,7 @@ public class FileHandler {
         }
     }
 
-    public void loadTrainings(Membership membership, Member member, Training training, CompetitionMember competitionMember) {
+    public void loadTrainings(Membership membership, Member member, Training training, Competition competition) {
 
         Scanner fileReader = null;
         try {
@@ -164,7 +164,7 @@ public class FileHandler {
             result = fileReader.next();
 
             training = new Training(date, result);
-            competitionMember.trainingResults.add(training);
+            competition.trainingResults.add(training);
         }
     }
 }

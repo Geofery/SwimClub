@@ -18,7 +18,7 @@ public class Controller {
 
   public void mainMenu() {
     Menu menu = new Menu();
-    fileHandler.loadMembers(membership, member); //loads all the member into the array
+    //fileHandler.loadMembers(membership, member); //loads all the member into the array
     lostAndFound.createLostAndFoundList();
     membership.allMembers();
     int choice;
@@ -266,12 +266,13 @@ public class Controller {
     ui.displayGreen("input member Id");
     String memberId = ui.getString();
     ui.displayGreen("What swimstyle, do you want to the member to comepete in?");
-    ui.displayGreen("1. Frontcrawl: \n 2. Backstroke:\n 3. Breaststroke: \n 4. Butterfly  \n 9. to go back");
+    ui.displayGreen("1. Frontcrawl: \n2. Backstroke: \n3. Breaststroke: \n4. Butterfly  \n9. to go back");
         String choice;
         int coachChoice = ui.getScanInt();
-        choice = "5";
+        choice = "";
         if (coachChoice == 1) {
           choice = swimStyle.Frontcrawl.toString();
+          ui.displayGreen(choice);
         } else if (coachChoice == 2) {
           choice = swimStyle.Backstroke.toString();
         } else if (coachChoice == 3) {
@@ -279,19 +280,19 @@ public class Controller {
         } else if (coachChoice == 4) {
           choice = swimStyle.Butterfly.toString();;
         } else if (coachChoice == 9) {
-          choice = "9";
-        } else
           coachSubMenu();
-
-    for (int i = 0; i < membership.allMembers.size(); i++) {
+        }
+    /*for (int i = 0; i < membership.allMembers.size(); i++) {
       if (membership.allMembers.contains(memberId)) {
-        new CompetitionMember(membership.allMembers.get(i).getMemberId().replaceAll("M","C"),
+        //new CompetitionMember(membership.allMembers.get(i).getMemberId().replaceAll("M","C"),
             membership.allMembers.get(i).getFirstName(), membership.allMembers.get(i).getSurName(),
             membership.allMembers.get(i).getAge(), membership.allMembers.get(i).getSex(),
-            membership.allMembers.get(i).isActive(), choice);
+            membership.allMembers.get(i).isActive();
       }
     }
-    fileHandler.saveCompetitions(member,competition,competitionMember);
+    ui.displayGreen("Jubiiii");
+    fileHandler.saveCompetitions(competitionMember,choice);*/
+
 
   }
 

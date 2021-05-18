@@ -73,7 +73,7 @@ public class Membership {
             ui.displayGreen("Please enter sex");
             String sex = ui.getString();
             String memberId = generateMemberId();
-            member = new Member(memberId, name, surName, year, sex);
+           // member = new Member(memberId, name, surName, year, sex);
             membership.ageIdentifier(member);
             fileHandler.saveMember(member);
         }

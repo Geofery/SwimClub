@@ -1,4 +1,4 @@
-import java.util.Date;
+import java.util.ArrayList;
 
 public class Competition {
   private String swimStyle;
@@ -14,10 +14,11 @@ public class Competition {
     this.result = result;
     this.rank = rank;
   }
-
-  public String getSwimStyle() {
+  ArrayList<Training> trainingResults = new ArrayList<Training>();
+  ArrayList<Competition> competitionResults = new ArrayList<Competition>();
+  /*public String getSwimStyle() {
     return swimStyle;
-  }
+  }*/
 
   public String getPlace() {
     return place;
