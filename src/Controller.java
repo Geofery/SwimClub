@@ -6,14 +6,14 @@ public class Controller {
   UI ui = new UI();
   Member member;
   Competition competition;
+  CompetitionMember competitionMember;
   Training training;
   LoginGui loginGui = new LoginGui();
   FileHandler fileHandler = new FileHandler();
   Membership membership = new Membership();
   Finance finance = new Finance();
   LostAndFound lostAndFound = new LostAndFound();
-  // Competition competition = new Competition();
-  //CompetitionMember competitionMember = new CompetitionMember(member.getMemberId(), member.getFirstName(), member.getSurName(), member.getAge(), member.getSex(), member.isActive(), competition.getSwimStyle());
+  SwimStyle swimStyle;
 
 
   public void mainMenu() {
@@ -263,6 +263,19 @@ public class Controller {
   }
 
   private void addCompetitonMember() {
+    ui.displayGreen("input member Id");
+    String memberId = ui.getString();
+    ui.displayGreen("What swimstyle, do you want to the member to comepete in?");
+    //String choice = SwimStyle.
+
+    for (int i = 0; i < membership.allMembers.size(); i++) {
+      if (membership.allMembers.contains(memberId)) {
+        new CompetitionMember(membership.allMembers.get(i).getMemberId(),
+            membership.allMembers.get(i).getFirstName(), membership.allMembers.get(i).getSurName(),
+            membership.allMembers.get(i).getAge(), membership.allMembers.get(i).getSex(),
+            membership.allMembers.get(i).isActive(), competition.getSwimStyle());
+      }
+    }
 
 
   }
