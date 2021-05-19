@@ -19,6 +19,8 @@ public class FileHandler {
   private String date;
   private String result;
   private int rank;
+  private Training trainingResult;
+  private Competition competitionResult;
 
   public void saveMember(Member member) {
     FileWriter fw = null;
@@ -91,7 +93,7 @@ public class FileHandler {
       swimStyle = choice;
 
       bw.write(memberId.replaceAll("\\[", "").replaceAll("]", "")
-          .replaceAll(",", "\t") + " " + firstName + " " + surName + " " + age + " " + sex + " " + active + " " + swimStyle + " " + place + " " + date + " " + result + " " + rank);
+          .replaceAll(",", "\t") + " " + firstName + " " + surName + " " + age + " " + sex + " " + active + " " + swimStyle); //+ " " + place + " " + date + " " + result + " " + rank);
       bw.newLine();
       bw.close();
       fw.close();
@@ -99,6 +101,43 @@ public class FileHandler {
       e.printStackTrace();
     }
   }
+
+  public void saveCompetitions1(CompetitionMember competitionMember, String choice) {
+    FileWriter fw = null;
+    try {
+      fw = new FileWriter(competitions, true);
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+    BufferedWriter bw = new BufferedWriter(fw);
+    try {
+      memberId = competitionMember.getMemberId();
+      firstName = competitionMember.getFirstName();
+      surName = competitionMember.getSurName();
+      age = competitionMember.getAge();
+      sex = competitionMember.getSex();
+      active = competitionMember.isActive();
+      swimStyle = competitionMember.getSwimStyle();
+      trainingResult = competitionMember.getTrainingResult();
+      competitionResult = competitionMember.getCompetitionResult();
+
+
+      bw.write(memberId.replaceAll("\\[", "").replaceAll("]", "")
+              .replaceAll(",", "\t") + " " + firstName + " " + surName + "\t\t\t" + age + "\t" + sex +
+              "\t" + active + "\t" + swimStyle + "\t" + trainingResult + "\t" + competitionResult);
+      bw.newLine();
+      bw.close();
+      fw.close();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+
+
+
+
+
+
 
   public void loadCompetitions(Membership membership, Competition competition, CompetitionMember competitionMember) {
 
