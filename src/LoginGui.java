@@ -11,8 +11,13 @@ public class LoginGui implements ActionListener {
   private static JPasswordField passwordField;
   private static JTextField email;
   private static JLabel success;
-  boolean filledOut;
+  private boolean filledOut;
   private int loginRights;
+
+
+  public void setFilledOut(boolean filledOut) {
+    this.filledOut = filledOut;
+  }
 
   public JFrame createFrame() {
 
@@ -75,26 +80,22 @@ public class LoginGui implements ActionListener {
 
     if (e.getActionCommand().equals("Login")) {
       if (user.equals("chairman@dolphin.com") && password.equals("1234")) {
-        success.setText("Login successful!");
+        setFilledOut(true);
         setLoginRights(1);
-        filledOut = true;
+        success.setText("Login successful!");
       } else if (user.equals("finance@dolphin.com") && password.equals("1234")) {
         success.setText("Login successful!");
         setLoginRights(2);
-        filledOut = true;
+        setFilledOut(true);
       } else if (user.equals("coach@dolphin.com") && password.equals("1234")) {
         success.setText("Login successful!");
         setLoginRights(3);
-        filledOut = true;
+        setFilledOut(true);
       } else
         success.setText("Wrong E-mail or Password");
-     filledOut = false;
     }
   }
 
-  public boolean isFilledOut() {
-    return filledOut;
-  }
 
   public void setLoginRights(int loginRights) {
     this.loginRights = loginRights;
@@ -103,4 +104,32 @@ public class LoginGui implements ActionListener {
   public int getLoginRights() {
     return loginRights;
   }
+
+  public boolean isFilledOut() {
+    return filledOut;
+  }
+
+  public boolean listenForLogin(){
+    boolean check = true;
+
+
+    while(check){
+      //Java dosnt know shit is changing!!!! WHAT TO DO????
+      check = checkIfLoggedIn();
+    }
+
+
+    System.out.println("awesomesauce");
+    return true;
+  }
+
+  public boolean checkIfLoggedIn(){
+    System.out.println(isFilledOut());
+    if(isFilledOut()){
+      return false;
+    }
+    return true;
+  }
+
+
 }
