@@ -4,3 +4,8 @@ M136 Hans Jensen 1994 male true Butterfly null null null 0
 M136 Hans Jensen 1994 male true Butterfly null null null 0
 M136 Hans Jensen 1994 male true Breaststroke null null null 0
 M88 Tobias Bjerg			1998	male	true	Butterfly	null	null
+M44 Anders Thomsen			2001	male	true	Breaststroke	null	null
+M74 Peter Pallan			1974	male	true	Backstroke	null	null
+M74 Peter Pallan			1974	male	true	Butterfly	null	null
+M67 Anders Hansen		1991	male	true	Frontcrawl
+M10 Jannie Ottesen		1987	female	true	Breaststroke	19. maj 2021	12.42

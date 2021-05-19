@@ -9,6 +9,7 @@ public class Controller {
     SwimStyle swimStyle;
     Member member;
     CompetitionMember competitionMember;
+    Training training;
 
 
     public void mainMenu() {
@@ -238,9 +239,10 @@ public class Controller {
                 case 2 -> showSwimmers();
                 case 3 -> competitionResults();
                 case 4 -> addCompetitonMember();
-                case 5 -> deleteCompetitonMember();
-                case 6 -> lostAndFound.addLostItem(ui);
-                case 7 -> lostAndFound.deleteItem(ui);
+                case 5 -> addTimeCompetitionMember();
+                case 6 -> deleteCompetitonMember();
+                case 7 -> lostAndFound.addLostItem(ui);
+                case 8 -> lostAndFound.deleteItem(ui);
                 case 9 -> {
                     ui.displayGreen("Swimming away.....");
                     try {
@@ -275,10 +277,11 @@ public class Controller {
         ui.displayGreen("input member Id");
         String memberId = ui.getString();
         ui.displayGreen("What swimstyle, do you want to the member to comepete in?");
-        ui.displayGreen("1. Frontcrawl: \n2. Backstroke: \n3. Breaststroke: \n4. Butterfly  \n9. to go back");
-
-        String choice = "";
+        ui.displayGreen("1. Frontcrawl: \n2. Backstroke: \n3. Breaststroke: \n4. Butterfly  \n9. to go back\n");
         int coachChoice = ui.getScanInt();
+        ui.displayGreen("Enter training result in format **,**");
+        String result = ui.getString();
+        String choice = "";
         if (coachChoice == 1) {
             choice = swimStyle.Frontcrawl.toString();
             ui.displayGreen(choice);
@@ -292,29 +295,34 @@ public class Controller {
         } else if (coachChoice == 9) {
             coachSubMenu();
         }
+        training = new Training(ui.date(),result);
         for (int i = 0; i < membership.allMembers.size(); i++) {
             if (membership.allMembers.get(i).getMemberId().equals(memberId)) {
-                ui.displayGreen("sucess" + membership.allMembers.get(i).getMemberId().equals(memberId));
-               competitionMember = new CompetitionMember(membership.allMembers.get(i).getMemberId(),
-                       membership.allMembers.get(i).getFirstName(), membership.allMembers.get(i).getSurName(),
-                       membership.allMembers.get(i).getAge(), membership.allMembers.get(i).getSex(),
-                       membership.allMembers.get(i).isActive(), choice);
+                competitionMember = new CompetitionMember(membership.allMembers.get(i).getMemberId(),
+                        membership.allMembers.get(i).getFirstName(), membership.allMembers.get(i).getSurName(),
+                        membership.allMembers.get(i).getAge(), membership.allMembers.get(i).getSex(),
+                        membership.allMembers.get(i).isActive(), choice,training);
             }
         }
 
-       /* for (int i = 0; i < membership.allMembers.size(); i++) {
-            if (membership.allMembers.get(i).getMemberId().equals(memberId)) {
-                new CompetitionMember(membership.allMembers.get(i).getMemberId(),
-                        membership.allMembers.get(i).getFirstName(), membership.allMembers.get(i).getSurName(),
-                        membership.allMembers.get(i).getAge(), membership.allMembers.get(i).getSex(),
-                        membership.allMembers.get(i).isActive(), choice);
-            }
-        }*/
-       fileHandler.saveCompetitions1(competitionMember, choice);
+
+        fileHandler.createCompetitionMember(competitionMember, choice,training);
+
+    }
+
+    private void addTimeCompetitionMember() {
 
     }
 
     private void deleteCompetitonMember() {
+        for (int i = 0; i < membership.allMembers.size(); i++) {
+            membership.displayMembers(ui, membership);
+            ui.displayGreen("input member Id og the member you want to delete");
+            String memberId = ui.getString();
+            if (membership.allMembers.get(i).getMemberId().equals(memberId)) {
+
+            }
+        }
     }
 
     public void swimStylesSubMenu() {

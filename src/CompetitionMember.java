@@ -11,9 +11,10 @@ public class CompetitionMember extends Member {
         this.competitionResult = competitionResult;
     }
 
-    public CompetitionMember(String memberId, String firstName, String surName, String age, String sex, boolean active, String swimStyle) {
+    public CompetitionMember(String memberId, String firstName, String surName, String age, String sex, boolean active, String swimStyle, Training trainingResult) {
         super(memberId, firstName, surName, age, sex, active);
         this.swimStyle = swimStyle;
+        this.trainingResult = trainingResult;
     }
 
     public Training getTrainingResult() { return trainingResult; }

@@ -1,7 +1,12 @@
 import java.text.DecimalFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
+import java.util.Formatter;
 import java.util.Scanner;
 
 public class UI {
+    LocalDate localDate = LocalDate.now();
     Scanner scanner = new Scanner(System.in);
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_RED = "\u001B[31m";
@@ -41,6 +46,10 @@ public class UI {
     public void displayLine() {
         System.out.println(ANSI_PURPLE +
                 "\n---------------------------------------------------------------------------------------\n" + ANSI_RESET);
+    }
+    public String date(){
+        String formattedDate = localDate.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.MEDIUM));
+        return formattedDate;
     }
 
 

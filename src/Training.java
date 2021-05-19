@@ -19,4 +19,9 @@ public class Training {
   public String getResult() {
     return result;
   }
+
+  @Override
+  public String toString() {
+    return "Training" + "date: " + date + " " + "result: " + result;
+  }
 }
