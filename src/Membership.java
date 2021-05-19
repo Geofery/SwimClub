@@ -73,6 +73,7 @@ public class Membership {
             ui.displayGreen("Please enter sex");
             String sex = ui.getString();
             String memberId = generateMemberId();
+            boolean active;
             casualMember = new CasualMember(memberId,firstName, surName, year, sex, true);
             membership.ageIdentifier(casualMember);
             fileHandler.saveMember(casualMember);
