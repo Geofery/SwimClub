@@ -5,18 +5,7 @@ public abstract class Member {
   private String age;
   private String sex;
   private boolean active = true;
-  private String result;
-  // It should be used when various implementations of the same kind share a common behavior.
 
-  public  Member(String memberId, String firstName, String surName, String age, String sex, boolean active, String result) {
-    this.memberId = memberId;
-    this.firstName = firstName;
-    this.surName = surName;
-    this.age = age;
-    this.sex = sex;
-    this.active = active;
-    this.result = result;
-  }
 
   public Member(String memberId, String firstName, String surName, String age, String sex, boolean active) {
     this.memberId = memberId;
@@ -27,13 +16,6 @@ public abstract class Member {
     this.active = active;
   }
 
-  public Member(String memberId, String firstName, String surName, String age, String sex) {
-    this.memberId = memberId;
-    this.firstName = firstName;
-    this.surName = surName;
-    this.age = age;
-    this.sex = sex;
-  }
 
   public void setActive(boolean active) {
     this.active = active;
@@ -65,7 +47,7 @@ public abstract class Member {
   public String toString() {
     return "Member ID: " + memberId + ", " + " First name: " + firstName + ", "
         + " Surname: " + surName + ", " + " Age: " + age + ", " + " Sex: " + sex
-        + ", " + " Membership status: " + active + ", " + " result " + result;
+        + ", " + " Membership status: " + active;
   }
 }
 

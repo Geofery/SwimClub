@@ -13,8 +13,8 @@ public class FileHandler{
     private boolean active;
     //.-.-.-.--.-.-.-....-.-.-.-.
     private String swimStyle;
-    private String trainingResult;
-    private String competitionResult;
+    private Training trainingResult;
+    private Competition competitionResult;
     private String place;
     private String date;
     private String result;
@@ -132,7 +132,7 @@ public class FileHandler{
         }
     }
 
-    public void saveTrainings(Member member, Training training) {
+    public void saveTrainings(CompetitionMember competitionMember, Training training) {
         FileWriter fw = null;
         try {
             fw = new FileWriter(trainings, true);
@@ -155,7 +155,7 @@ public class FileHandler{
         }
     }
 
-    public void loadTrainings(Membership membership, Training training, Competition competition) {
+    public void loadTrainings(CompetitionMember competitionMember, Training training) {
 
         Scanner fileReader = null;
         try {
@@ -163,13 +163,12 @@ public class FileHandler{
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-
         while (fileReader.hasNext()) {
             date = fileReader.next();
             result = fileReader.next();
 
             training = new Training(date, result);
-            competition.trainingResults.add(training);
+            training.trainingResults.add(training);
         }
     }
 }
