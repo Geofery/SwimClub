@@ -8,14 +8,14 @@ M7	Hans Pedersen 		1930	male 	true
 M8	Rikke Hansen 		1989	female	true
 M9	Oskar Sørensen 		1989	male 	true
 M10	Jannie Ottesen 	   	1987	female 	true
-M11	Jeanne Ottesen 		1987	female 	true
+M11	Jeanne Ottesen 		1987	female 	false
 M12	Micha Østergaard 	1987	female 	true
 M13	Julie Jansen 		2000	female	true
 M14	Jakob Kjær 		1985	male 	true
 M15	Martin Rysgaard 		1998	male 	true
 M16	Anders Poulsen 		1943	male 	true
 M17	Mads Mikkelsen 		1988	male 	true
-M18	Alex Nørgaard     	2000	male 	true 
+M18	Alex Nørgaard     	2000	male 	false
 M19	Mads Glæsner 		1988	male 	true
 M20	Sarah Sjös 		2009	female 	true
 M21	Michala Sjöström 	1993	female 	true
@@ -25,7 +25,7 @@ M24	Dorte Johansson		1988	female	true
 M25	Lis Johansen 	   	1988	female 	true
 M26	Jennie Johansson 	1988	female 	true
 M27	Katharina Sinding 	1989	female 	true
-M28	Fleur Pedersen 		2009	female 	true
+M28	Fleur Pedersen 		2009	female 	false
 M29	Sarah Thomsen		1993	female 	true
 M30	Sarah Njöström 		1953	female 	true
 M31	Michala Østergaard 	1987	female 	true
@@ -34,7 +34,7 @@ M33	Mie Nielsen 		1996	female 	true
 M34	Eyglo Gustafsdottir 	2010	female 	true
 M35	Julia Hjorth-Hansen 	1984	female 	true
 M36	Julie Hjorth       	1984	female 	true
-M37	Tobias Thomsen 		1998	male 	true
+M37	Tobias Thomsen 		1998	male 	false
 M38	Torben Chris 		1998	male 	true
 M39	Chris Hansen    		2008	male 	true
 M40	Jakob Mikkelsen 		1985	male 	true

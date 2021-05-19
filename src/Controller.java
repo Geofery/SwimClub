@@ -185,7 +185,7 @@ public class Controller {
             menu.financeSubMenu(ui);
             choice = ui.getScanInt();
             switch (choice) {
-                case 1 -> finance.financeCreditors(ui);
+                case 1 -> finance.financeCreditors(ui, membership, finance);
                 case 2 -> finance.viewFinances(ui, membership);
                 case 3 -> finance.deleteMember(ui, membership);
                 case 4 -> lostAndFound.addLostItem(ui);

@@ -4,7 +4,7 @@ public abstract class Member {
   private String surName;
   private String age;
   private String sex;
-  private boolean active = true;
+  private boolean active;
 
 
   public Member(String memberId, String firstName, String surName, String age, String sex, boolean active) {
