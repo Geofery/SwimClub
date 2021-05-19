@@ -16,16 +16,16 @@ public class Membership {
     int passiveSize = passive.size();
 
 
-    public void ageIdentifier(Member member) {
-        int getAge = Integer.parseInt(member.getAge());
+    public void ageIdentifier(CasualMember casualMember) {
+        int getAge = Integer.parseInt(casualMember.getAge());
         if ((year - getAge) < 18) {
-            youthTeam.add(member);
+            youthTeam.add(casualMember);
         } else if ((year - getAge) >= 18 && !(year - getAge > 60)) {
-            seniorTeam.add(member);
+            seniorTeam.add(casualMember);
         } else if ((year - getAge) >= 60) {
-            seniorXoTeam.add(member);
+            seniorXoTeam.add(casualMember);
         } else {
-            passive.add(member);
+            passive.add(casualMember);
         }
     }
 

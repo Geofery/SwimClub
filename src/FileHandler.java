@@ -73,7 +73,7 @@ public class FileHandler{
             //IF Statement som nogengange bruger result og andre
             //gange skipper den.
             //if (result.equals(null)) {
-              Member memeber = new CasualMember(memberId,firstName,surName,age,sex,active);
+              CasualMember casualMemeber = new CasualMember(memberId,firstName,surName,age,sex,active);
             //} else
                new CompetitionMember(memberId,firstName,surName,age,sex,active,swimStyle,trainingResult,competitionResult);
             //membership.ageIdentifier(member);
