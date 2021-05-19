@@ -25,7 +25,7 @@ public class Controller {
             menu.showMainMenu(ui);
             choice = ui.getScanInt();
             switch (choice) {
-                case 1 -> membership.registerNewMember(ui, member, membership, fileHandler);
+                case 1 -> membership.addNewMember(ui, member, membership, fileHandler);
                 case 2 -> viewMembership();
                 case 3 -> competitionResults();
                 case 4 -> membership.displayMembers(ui, membership);
@@ -124,7 +124,7 @@ public class Controller {
             menu.chairmanSubMenu(ui);
             choice = ui.getScanInt();
             switch (choice) {
-                case 1 -> membership.registerNewMember(ui, member, membership, fileHandler);
+                case 1 -> membership.addNewMember(ui, member, membership, fileHandler);
                 case 2 -> changeMembershipStatus();
                 case 3 -> deleteMember();
                 case 4 -> lostAndFound.addLostItem(ui);
@@ -298,7 +298,7 @@ public class Controller {
         training = new Training(ui.date(),result);
         for (int i = 0; i < membership.allMembers.size(); i++) {
             if (membership.allMembers.get(i).getMemberId().equals(memberId)) {
-                competitionMember = new CompetitionMember(membership.allMembers.get(i).getMemberId(),
+                competitionMember = new CompetitionMember(membership.allMembers.get(i).getMemberId().replaceAll("M", "C"),
                         membership.allMembers.get(i).getFirstName(), membership.allMembers.get(i).getSurName(),
                         membership.allMembers.get(i).getAge(), membership.allMembers.get(i).getSex(),
                         membership.allMembers.get(i).isActive(), choice,training);
@@ -306,7 +306,7 @@ public class Controller {
         }
 
 
-        fileHandler.createCompetitionMember(competitionMember, choice,training);
+        fileHandler.saveCompetitionMember(competitionMember, choice,training);
 
     }
 

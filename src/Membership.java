@@ -62,7 +62,7 @@ public class Membership {
         allMembers.remove(ui.getScanInt() - 1);
     }
 
-    public void registerNewMember(UI ui, Member member, Membership membership, FileHandler fileHandler) {
+    public void addNewMember(UI ui, Member member, Membership membership, FileHandler fileHandler) {
         ui.displayGreen("Please enter first name");
         String firstName = ui.getString();
         ui.displayGreen("Please enter surname");
