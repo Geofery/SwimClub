@@ -25,13 +25,12 @@ public class Finance {
   public void viewFinances(UI ui, Membership membership) {
     ui.displayLine();
     int sum = youthSubFee(membership) + seniorSubFee(membership) + seniorXoSubFee(membership) + passiveSubFee(membership);
-    ui.displayGreen("Total income from youth subscribers " + youthSubFee(membership) + " kr.");  // Old method
-    ui.displayGreen("Total income from senior subscribers " + seniorSubFee(membership) + " kr.");
-    ui.displayGreen("Total income from seniors > 60 subscribers " + seniorXoSubFee(membership) + " kr.");
-    ui.displayGreen("Total income from passive subscribers " + passiveSubFee(membership) + " kr.");
-    ui.displayGreen("Total income from subscribers " + sum + " kr.");
+   /* ui.displayGreen("Total income from youth subscribers: = " + ui.getPattern(youthSubFee(membership)).toString() + "kr.");
+    ui.displayGreen("Total income from youth subscribers: = " + ui.getPattern(seniorSubFee(membership)) + "kr.");
+    ui.displayGreen("Total income from youth subscribers: = " + ui.getPattern(seniorXoSubFee(membership)) + "kr.");
+    ui.displayGreen("Total income from youth subscribers: = " + ui.getPattern(passiveSubFee(membership)) + "kr.");
+    ui.displayGreen("Total income from youth subscribers: = " + ui.getPattern(sum) + "kr.");*/
     ui.displayLine();
-    ui.displayGreenPrint("Total income from youth subscribers: = ");
     ui.getPattern(youthSubFee(membership));ui.displayGreen(" kr."); //New method
     ui.displayGreenPrint("Total income from senior subscribers: = ");
     ui.getPattern(seniorSubFee(membership));ui.displayGreen(" kr.");
