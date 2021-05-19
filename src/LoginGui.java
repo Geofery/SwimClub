@@ -15,10 +15,6 @@ public class LoginGui implements ActionListener {
   private int loginRights;
 
 
-  public void setFilledOut(boolean filledOut) {
-    this.filledOut = filledOut;
-  }
-
   public JFrame createFrame() {
 
     JFrame frame = new JFrame();
@@ -96,6 +92,9 @@ public class LoginGui implements ActionListener {
     }
   }
 
+  public void setFilledOut(boolean filledOut) {
+    this.filledOut = filledOut;
+  }
 
   public void setLoginRights(int loginRights) {
     this.loginRights = loginRights;
@@ -112,19 +111,16 @@ public class LoginGui implements ActionListener {
   public boolean listenForLogin(){
     boolean check = true;
 
-
     while(check){
       //Java dosnt know shit is changing!!!! WHAT TO DO????
       check = checkIfLoggedIn();
     }
 
-
-    System.out.println("awesomesauce");
     return true;
   }
 
   public boolean checkIfLoggedIn(){
-    System.out.println(isFilledOut());
+
     if(isFilledOut()){
       return false;
     }

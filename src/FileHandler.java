@@ -75,8 +75,8 @@ public class FileHandler{
             //if (result.equals(null)) {
                new CasualMember(memberId,firstName,surName,age,sex,active);
             //} else
-               new CompetitionMember(memberId,firstName,surName,age,sex,active,swimStyle,trainingResult,competitionResult);
-            //membership.ageIdentifier(member);
+               //new CompetitionMember(memberId,firstName,surName,age,sex,active,swimStyle,trainingResult,competitionResult);
+                membership.ageIdentifier(casualMember);
         }
     }
 

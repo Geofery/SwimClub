@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Locale;
 
 public class Controller {
     UI ui = new UI();
@@ -33,7 +34,7 @@ public class Controller {
                 case 2 -> viewMembership();
                 case 3 -> competitionResults();
                 case 4 -> showMembers();
-                case 5 -> coachSubMenu();//adminLogin();
+                case 5 -> adminLogin();
                 case 6 -> lostAndFound.displayLostAndFound(ui);
                 case 9 -> {
                     ui.displayGreen("If in doubt, swim it out.....");
@@ -63,7 +64,6 @@ public class Controller {
         ui.displayLine();
         ui.displayBlue("Enter your firstname with a capital letter ");
         String input = ui.getString();
-        membership.allMembers();
         for (int i = 0; i < membership.allMembers.size(); i++) {
             if (input.equals(membership.allMembers.get(i).getFirstName())) {
                 ui.displayGreen(membership.allMembers.get(i).toString());
@@ -86,10 +86,33 @@ public class Controller {
         ui.displayLine();
     }
 
-    public void adminLogin() { //TODO Jeff FIX så det virker!
+    public void adminLogin() { //TODO Christopher fix login sound and...
+        ui.displayLine();
+        ui.displayGreen("Please enter E-mail: ");
+        String email = ui.getString().toLowerCase(Locale.ROOT);
+        ui.displayGreen("Please enter your password: ");
+        String password = ui.getString();
+
+        if (email.equals("chairman") && password.equals("1234")) {
+            ui.displayGreen("Login successful!");
+            ui.displayLine();
+            chairmanSubMenu();
+        } else if (email.equals("finance") && password.equals("1234")) {
+            ui.displayGreen("Login successful!");
+            ui.displayLine();
+            financeSubMenu();
+        } else if (email.equals("coach") && password.equals("1234")) {
+            ui.displayGreen("Login successful!");
+            ui.displayLine();
+            coachSubMenu();
+        } else
+            ui.errorRed("WATER YOU DOING??? ");
+    }
+
+        /*
         JFrame frame = loginGui.createFrame();
-        while (!loginGui.isFilledOut())
-            ;
+
+        loginGui.listenForLogin();
         frame.setVisible(false);
         ui.displayLine();
         if (loginGui.getLoginRights() == 3) {
@@ -100,8 +123,7 @@ public class Controller {
             coachSubMenu();
         } else
             ui.errorRed("Water you doing?!");
-        ui.displayLine();
-    }
+        ui.displayLine();*/
 
     public void chairmanSubMenu() {
         Menu menu = new Menu();

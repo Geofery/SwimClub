@@ -1,1 +1,5 @@
-M515 Jack  Johnson			2000	Male	true
+M515    Jack  Johnson   2000	Male	true
+M815    Dorthe Pedersen 1984	female 	true
+M900    Jens Hansen     1949	male	true
+M320    Jens Sørensen   1992	male	true
+M4      Jens Hansen     1949	Male	true
