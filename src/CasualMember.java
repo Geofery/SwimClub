@@ -4,5 +4,6 @@ public class CasualMember extends Member{
         super(memberId, firstName, surName, age, sex, active);
     }
 
-
+    public CasualMember() {
+    }
 }

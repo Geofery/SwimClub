@@ -16,6 +16,8 @@ public abstract class Member {
     this.active = active;
   }
 
+  public Member() {
+  }
 
   public void setActive(boolean active) {
     this.active = active;

@@ -105,3 +105,13 @@ M104	Dorthe Pedersen     	1984	female 	true
 M105	Jens Hansen		1949	male	true
 M106	Jens Sørensen		1992	male	true
 M107	Jens Hansen		1949	Male	true
+M972 Jack JohnsonThe3rd			1935	AlphaMale	true
+M299 Jens Vejmand			1992	male	true
+M458 Sten medDetEkstraBen			2001	AlphaMale	true
+M782 Stone RoadMan			2008	male	true
+M562 Stone Stoned			2004	male	true
+M74 Peter Pallan			1974	male	true
+M474 Henning Bug			1999	male	true
+M841 De Bug			1998	male	true
+M668 De Bugger			1994	male	true
+M136 Hans Jensen			1994	male	true

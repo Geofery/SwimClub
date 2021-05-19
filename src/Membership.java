@@ -1,5 +1,6 @@
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Random;
 
 public class Membership {
@@ -52,10 +53,13 @@ public class Membership {
             return allMembers;
         }
 
-        public void displayMembers (UI ui){
+        public void displayMembers (UI ui, Membership membership){
+        ui.displayLine();
+            Collections.sort(membership.allMembers, (o1, o2) -> o1.getFirstName().compareTo(o2.getFirstName()));
             for (int i = 0; i < allMembers.size(); i++) {
                 ui.displayGreen(i + 1 + ". " + allMembers.get(i).toString());
             }
+            ui.displayLine();
         }
 
         public void deleteMember (UI ui){
@@ -75,7 +79,8 @@ public class Membership {
             String memberId = generateMemberId();
             boolean active;
             casualMember = new CasualMember(memberId,firstName, surName, year, sex, true);
-            membership.ageIdentifier(casualMember);
             fileHandler.saveMember(casualMember);
+            membership.ageIdentifier(casualMember);
+            allMembers.add(casualMember);
         }
     }

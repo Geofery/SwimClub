@@ -14,8 +14,6 @@ public class FileHandler {
   private boolean active;
   //.-.-.-.--.-.-.-....-.-.-.-.
   private String swimStyle;
-  private Training trainingResult;
-  private Competition competitionResult;
   private String place;
   private String date;
   private String result;
@@ -65,11 +63,10 @@ public class FileHandler {
       age = fileReader.next();
       sex = fileReader.next();
       active = fileReader.nextBoolean();
-      new CasualMember(memberId, firstName, surName, age, sex, active);
+      casualMember = new CasualMember(memberId, firstName, surName, age, sex, active);
       membership.ageIdentifier(casualMember);
     }
   }
-
 
   ////////////////////////////////////////////////////////////
 

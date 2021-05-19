@@ -53,7 +53,7 @@ public class Finance {
   }
   public void deleteMember(UI ui, Membership membership) {
     ui.displayLine();
-    membership.displayMembers(ui);
+    membership.displayMembers(ui, membership);
     membership.deleteMember(ui);
     ui.displayLine();
   }

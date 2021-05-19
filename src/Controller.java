@@ -1,21 +1,15 @@
-import javax.swing.*;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.Locale;
 
 public class Controller {
     UI ui = new UI();
-    Member member;
-    Competition competition;
-    CompetitionMember competitionMember;
-    Training training;
-    LoginGui loginGui = new LoginGui();
     FileHandler fileHandler = new FileHandler();
     Membership membership = new Membership();
     Finance finance = new Finance();
     LostAndFound lostAndFound = new LostAndFound();
     SwimStyle swimStyle;
     CasualMember casualMember;
+
 
     public void mainMenu() {
         Menu menu = new Menu();
@@ -33,7 +27,7 @@ public class Controller {
                 case 1 -> membership.registerNewMember(ui, casualMember, membership, fileHandler);
                 case 2 -> viewMembership();
                 case 3 -> competitionResults();
-                case 4 -> showMembers();
+                case 4 -> membership.displayMembers(ui, membership);
                 case 5 -> adminLogin();
                 case 6 -> lostAndFound.displayLostAndFound(ui);
                 case 9 -> {
@@ -76,13 +70,6 @@ public class Controller {
         ui.displayLine();
         //Top 5 svømmere?
         //
-        ui.displayLine();
-    }
-
-    public void showMembers() {
-        ui.displayLine();
-        Collections.sort(membership.allMembers, (o1, o2) -> o1.getFirstName().compareTo(o2.getFirstName()));
-        membership.displayMembers(ui);
         ui.displayLine();
     }
 
@@ -167,7 +154,7 @@ public class Controller {
 
     public void changeMembershipStatus() {
         ui.displayLine();
-        membership.displayMembers(ui);
+        membership.displayMembers(ui, membership);
         ui.displayGreen("Set membership status: ");
         ui.displayGreen("1. Active");
         ui.displayGreen("2. Passive");
@@ -230,7 +217,7 @@ public class Controller {
 
     public void deleteMember() {  // Cant be moved because chairman sub also uses it. finance delete has been moved.
         ui.displayLine();
-        membership.displayMembers(ui);
+        membership.displayMembers(ui, membership);
         membership.deleteMember(ui);
         //TODO burde kunne smides ind i switchcase nu og resten af metoden slettes
         ui.displayLine();
@@ -280,7 +267,7 @@ public class Controller {
 
     public void showSwimmers() {//TODO skal laves færdig
         ui.displayLine();
-        showMembers();
+
         ui.displayLine();
     }
 
