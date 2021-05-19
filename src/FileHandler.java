@@ -1,4 +1,5 @@
 import java.io.*;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class FileHandler {
@@ -19,7 +20,7 @@ public class FileHandler {
   private String result;
   private int rank;
 
-  public void saveMember(CasualMember casualMember) {
+  public void saveMember(Member member) {
     FileWriter fw = null;
     try {
       fw = new FileWriter(file, true);
@@ -28,12 +29,12 @@ public class FileHandler {
     }
     BufferedWriter bw = new BufferedWriter(fw);
     try {
-      memberId = casualMember.getMemberId();
-      firstName = casualMember.getFirstName();
-      surName = casualMember.getSurName();
-      age = casualMember.getAge();
-      sex = casualMember.getSex();
-      active = casualMember.isActive();
+      memberId = member.getMemberId();
+      firstName = member.getFirstName();
+      surName = member.getSurName();
+      age = member.getAge();
+      sex = member.getSex();
+      active = member.isActive();
       //result = member.getResult();
       // competing = competition.isCompeting();
 
@@ -47,7 +48,7 @@ public class FileHandler {
     }
   }
 
-  public void loadMembers(Membership membership, CasualMember casualMember) {
+  public void loadMembers(Membership membership, Member member) {
 
     Scanner fileReader = null;
     try {
@@ -63,8 +64,8 @@ public class FileHandler {
       age = fileReader.next();
       sex = fileReader.next();
       active = fileReader.nextBoolean();
-      casualMember = new CasualMember(memberId, firstName, surName, age, sex, active);
-      membership.ageIdentifier(casualMember);
+      member = new Member(memberId, firstName, surName, age, sex, active);
+      membership.ageIdentifier(member);
     }
   }
 
@@ -81,15 +82,16 @@ public class FileHandler {
     BufferedWriter bw = new BufferedWriter(fw);
     try {
 
+      memberId = competitionMember.getMemberId();
+      firstName = competitionMember.getFirstName();
+      surName = competitionMember.getSurName();
+      age = competitionMember.getAge();
+      sex = competitionMember.getSex();
+      active = competitionMember.isActive();
       swimStyle = choice;
-           /* place = competitionMember.getPlace();
-            date = competitionMember.getDate();
-            result = competitionMember.getResult();
-            rank = competitionMember.getRank();*/
 
-
-      bw.write(swimStyle.replaceAll("\\[", "").replaceAll("]", "")
-          .replaceAll(",", "\t") + " " + place + "\t\t\t" + date + "\t" + result + "\t" + rank);
+      bw.write(memberId.replaceAll("\\[", "").replaceAll("]", "")
+          .replaceAll(",", "\t") + " " + firstName + " " + surName + " " + age + " " + sex + " " + active + " " + swimStyle + " " + place + " " + date + " " + result + " " + rank);
       bw.newLine();
       bw.close();
       fw.close();

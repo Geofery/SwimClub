@@ -1,7 +1,6 @@
-
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Random;
+
 
 public class Membership {
     ArrayList<Member> youthTeam = new ArrayList<>();
@@ -13,16 +12,16 @@ public class Membership {
     String memberId = "M";
 
 
-    public void ageIdentifier(CasualMember casualMember) {
-        int getAge = Integer.parseInt(casualMember.getAge());
-        if ((year - getAge) < 18 && casualMember.isActive() == true) {
-            youthTeam.add(casualMember);
-        } else if ((year - getAge) >= 18 && !(year - getAge > 60) && casualMember.isActive() == true) {
-            seniorTeam.add(casualMember);
-        } else if ((year - getAge) >= 60 && casualMember.isActive() == true) {
-            seniorXoTeam.add(casualMember);
+    public void ageIdentifier(Member member) {
+        int getAge = Integer.parseInt(member.getAge());
+        if ((year - getAge) < 18 && member.isActive() == true) {
+            youthTeam.add(member);
+        } else if ((year - getAge) >= 18 && !(year - getAge > 60) && member.isActive() == true) {
+            seniorTeam.add(member);
+        } else if ((year - getAge) >= 60 && member.isActive() == true) {
+            seniorXoTeam.add(member);
         } else {
-            passive.add(casualMember);
+            passive.add(member);
         }
     }
 
@@ -63,7 +62,7 @@ public class Membership {
         allMembers.remove(ui.getScanInt() - 1);
     }
 
-    public void registerNewMember(UI ui, CasualMember casualMember, Membership membership, FileHandler fileHandler) {
+    public void registerNewMember(UI ui, Member member, Membership membership, FileHandler fileHandler) {
         ui.displayGreen("Please enter first name");
         String firstName = ui.getString();
         ui.displayGreen("Please enter surname");
@@ -74,9 +73,9 @@ public class Membership {
         String sex = ui.getString();
         String memberId = generateMemberId();
         boolean active;
-        casualMember = new CasualMember(memberId, firstName, surName, year, sex, true);
-        fileHandler.saveMember(casualMember);
-        membership.ageIdentifier(casualMember);
-        allMembers.add(casualMember);
+        member = new Member(memberId, firstName, surName, year, sex, true);
+        fileHandler.saveMember(member);
+        membership.ageIdentifier(member);
+        allMembers.add(member);
     }
 }

@@ -114,4 +114,4 @@ M74 Peter Pallan			1974	male	true
 M474 Henning Bug			1999	male	true
 M841 De Bug			1998	male	true
 M668 De Bugger			1994	male	true
-M136 Hans Jensen			1994	male	true
+M136 Hans Jensen		1994	male	true

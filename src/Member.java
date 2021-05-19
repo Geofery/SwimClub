@@ -1,4 +1,4 @@
-public abstract class Member {
+public class Member {
   private String memberId;
   private String firstName;
   private String surName;
