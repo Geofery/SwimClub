@@ -20,7 +20,7 @@ public class FileHandler{
     private String result;
     private int rank;
 
-    public void saveMember(Member member) {
+    public void saveMember(CasualMember casualMember) {
         FileWriter fw = null;
         try {
             fw = new FileWriter(file, true);
@@ -29,12 +29,12 @@ public class FileHandler{
         }
         BufferedWriter bw = new BufferedWriter(fw);
         try {
-            memberId = member.getMemberId();
-            firstName = member.getFirstName();
-            surName = member.getSurName();
-            age = member.getAge();
-            sex = member.getSex();
-            active = member.isActive();
+            memberId = casualMember.getMemberId();
+            firstName = casualMember.getFirstName();
+            surName = casualMember.getSurName();
+            age = casualMember.getAge();
+            sex = casualMember.getSex();
+            active = casualMember.isActive();
             //result = member.getResult();
             // competing = competition.isCompeting();
 
@@ -48,7 +48,7 @@ public class FileHandler{
         }
     }
 
-    public void loadMembers(Membership membership, Member member) {
+    public void loadMembers(Membership membership, CasualMember casualMember) {
 
         Scanner fileReader = null;
         try {
@@ -73,7 +73,7 @@ public class FileHandler{
             //IF Statement som nogengange bruger result og andre
             //gange skipper den.
             //if (result.equals(null)) {
-              CasualMember casualMemeber = new CasualMember(memberId,firstName,surName,age,sex,active);
+               new CasualMember(memberId,firstName,surName,age,sex,active);
             //} else
                new CompetitionMember(memberId,firstName,surName,age,sex,active,swimStyle,trainingResult,competitionResult);
             //membership.ageIdentifier(member);
@@ -111,7 +111,7 @@ public class FileHandler{
         }
     }
 
-    public void loadCompetitions(Membership membership, Member member, Competition competition, CompetitionMember competitionMember) {
+    public void loadCompetitions(Membership membership, Competition competition, CompetitionMember competitionMember) {
 
         Scanner fileReader = null;
         try {
@@ -155,7 +155,7 @@ public class FileHandler{
         }
     }
 
-    public void loadTrainings(Membership membership, Member member, Training training, Competition competition) {
+    public void loadTrainings(Membership membership, Training training, Competition competition) {
 
         Scanner fileReader = null;
         try {

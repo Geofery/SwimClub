@@ -63,7 +63,7 @@ public class Membership {
             allMembers.remove(ui.getScanInt() - 1);
         }
 
-        public void registerNewMember (UI ui, Member member, Membership membership, FileHandler fileHandler){
+        public void registerNewMember (UI ui, CasualMember casualMember, Membership membership, FileHandler fileHandler){
             ui.displayGreen("Please enter first name");
             String firstName = ui.getString();
             ui.displayGreen("Please enter surname");
@@ -74,8 +74,8 @@ public class Membership {
             String sex = ui.getString();
             String memberId = generateMemberId();
             boolean active;
-            member = new CasualMember(memberId,firstName, surName, year, sex, true);
-            membership.ageIdentifier(member);
-            fileHandler.saveMember(member);
+            casualMember = new CasualMember(memberId,firstName, surName, year, sex, true);
+            membership.ageIdentifier(casualMember);
+            fileHandler.saveMember(casualMember);
         }
     }
