@@ -22,7 +22,7 @@ public class Finance {
         return membership.passive.size() * passivePrice;
     }
 
-    public void viewFinances(UI ui, Membership membership) {//Todo chris make pretty
+    public void viewFinances(UI ui, Membership membership) {//Todo chris Print BadStandingMember @Jens
         ui.displayLine();
         int sum = youthSubFee(membership) + seniorSubFee(membership) + seniorXoSubFee(membership) + passiveSubFee(membership);
    /* ui.displayGreen("Total income from youth subscribers: = " + ui.getPattern(youthSubFee(membership)).toString() + "kr.");
@@ -49,7 +49,7 @@ public class Finance {
 
     }
 
-    public void financeCreditors(UI ui, Membership membership, Finance finance) {
+    public void financeCreditors(UI ui, Membership membership, Finance finance) { //TODO CHRISTOPHER!!!! hver enkelt medlem på.
         double percentage;
         int badStanding;
         int missingPayment;

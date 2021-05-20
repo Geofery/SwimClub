@@ -15,21 +15,6 @@ public class Competition {
     this.rank = rank;
   }
 
-  public String getPlace() {
-    return place;
-  }
-
-  public String getDate() {
-    return date;
-  }
-
-  public String getResult() {
-    return result;
-  }
-
-  public int getRank() {
-    return rank;
-  }
 }
 
 

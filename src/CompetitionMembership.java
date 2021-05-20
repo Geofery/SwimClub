@@ -34,7 +34,7 @@ public class CompetitionMembership {
   }
 
   public void swimStyleIdentifierYouth(CompetitionMember competitionMember) {
-    for (int i = 0; i < youthTeam.size(); i++) {
+    for (int i = 0; i < youthTeam.size(); i++) { //TODO Christopher!
       if (youthTeam.get(i).getSwimStyle().equals(SwimStyle.Frontcrawl)){
         youthFrontcrawl.add(competitionMember);
       } else if (youthTeam.get(i).getSwimStyle().equals(SwimStyle.Butterfly)){

@@ -116,3 +116,4 @@ M841 De Bug			1998	male	true
 M668 De Bugger			1994	male	true
 M136 Hans Jensen		1994	male	true
 M88 Tobias Bjerg			1998	male	true
+M711 Jens Whale		2005	Cum	true

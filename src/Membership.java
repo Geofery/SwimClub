@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 
-public class Membership {
+public class Membership { //TODO gøres private
     ArrayList<Member> youthTeam = new ArrayList<>();
     ArrayList<Member> seniorTeam = new ArrayList<>();
     ArrayList<Member> seniorXoTeam = new ArrayList<>();
@@ -11,8 +11,7 @@ public class Membership {
     int year = 2021;
     String memberId = "M";
 
-
-    public void ageIdentifier(Member member) {
+    public void ageIdentifier(Member member) { //TODO eventuel udregn alderen på members.
         int getAge = Integer.parseInt(member.getAge());
         if ((year - getAge) < 18 && member.isActive() == true) {
             youthTeam.add(member);

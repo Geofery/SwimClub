@@ -1,8 +1,8 @@
 public class Menu {
-  public void showMainMenu(UI ui){
+  public void showMainMenu(UI ui){ //TODO Christopher få halen til at bevæge sig!
     ui.displayBlue("\n\t\tWhalecome to the Dolphins swim club!\n");
 
-    ui.display("          ");
+    ui.display("                                       Jens the Dolphin!");
     ui.display("1. Join the club"+"                         _.-,");
     ui.display("2. View your membership"+"              .--'  '-._");
     ui.display("3. Competition results"+ "            _/`-  _      '.");
@@ -14,6 +14,9 @@ public class Menu {
   }
 
   public void chairmanSubMenu(UI ui){
+    ui.displayLine();
+    ui.display("Chairman Menu");
+    ui.display("");
     ui.display("1. Register new member.");
     ui.display("2. Change membership status.");
     ui.display("3. Delete a member.");
@@ -24,6 +27,9 @@ public class Menu {
   }
 
   public void financeSubMenu(UI ui){
+    ui.displayLine();
+    ui.display("Finance Menu");
+    ui.display("");
     ui.display("1. Membership Statistics");
     ui.display("2. View finances");
     ui.display("3. Delete member");
@@ -34,6 +40,9 @@ public class Menu {
   }
 
   public void coachSubMenu(UI ui){
+    ui.displayLine();
+    ui.display("Coach Menu!");
+    ui.display("");
     ui.display("1. Show styles.");
     ui.display("2. Show competition swimmers.");
     ui.display("3. Competition results");
@@ -46,6 +55,9 @@ public class Menu {
   }
 
   public void swimStylesSubMenu(UI ui){
+    ui.displayLine();
+    ui.display("Swimstyle Menu");
+    ui.display("");
     ui.display("1. Front Crawl");
     ui.display("2. Butterfly");
     ui.display("3. Backstroke");

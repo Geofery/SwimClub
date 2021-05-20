@@ -4,7 +4,7 @@ public class Member {
   private String surName;
   private String age;
   private String sex;
-  private boolean active;
+  private boolean active; // TODO lav til en String Active /Passive Evt. en Metode
 
 
   public Member(String memberId, String firstName, String surName, String age, String sex, boolean active) {
@@ -14,9 +14,6 @@ public class Member {
     this.age = age;
     this.sex = sex;
     this.active = active;
-  }
-
-  public Member() {
   }
 
   public void setActive(boolean active) {

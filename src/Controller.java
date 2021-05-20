@@ -100,13 +100,13 @@ public class Controller {
             ui.errorRed("WATER YOU DOING??? ");
     }
 
-        /*
-        JFrame frame = loginGui.createFrame();
+        //JOptionPain
+      /* JFrame frame = loginGui.createFrame();
 
         loginGui.listenForLogin();
         frame.setVisible(false);
         ui.displayLine();
-        if (loginGui.getLoginRights() == 3) {
+        if (loginGui.getLoginRights() == 1) {
             chairmanSubMenu();
         } else if (loginGui.getLoginRights() == 2) {
             financeSubMenu();

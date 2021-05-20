@@ -2,7 +2,6 @@ import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
-import java.util.Formatter;
 import java.util.Scanner;
 
 public class UI {
@@ -28,9 +27,6 @@ public class UI {
 
     public void display(String message) { System.out.println(message); }
 
-
-
-
     public String getString() { String anwser = scanner.nextLine();return anwser; }
 
     public int getScanInt(String errorMessage) {
@@ -47,11 +43,11 @@ public class UI {
         System.out.println(ANSI_PURPLE +
                 "\n---------------------------------------------------------------------------------------\n" + ANSI_RESET);
     }
+
     public String date(){
         String formattedDate = localDate.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.MEDIUM));
         return formattedDate;
     }
-
 
     public DecimalFormat getPattern(int numbers) {
         String pattern = "###,###";
@@ -60,10 +56,6 @@ public class UI {
         displayGreenPrint(number);
         return decimalFormat;
     }
-
-
-
-
 
     public int getScanInt() {
         return this.getScanInt("Not a valid input!");

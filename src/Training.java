@@ -10,7 +10,7 @@ public class Training {
     this.result = result;
   }
 
-  ArrayList<Training> trainingResults = new ArrayList<Training>();
+  ArrayList<Training> trainingResults = new ArrayList<Training>();//TODO Gøres private
 
   public String getDate() {
     return date;
