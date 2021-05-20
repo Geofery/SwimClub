@@ -8,8 +8,8 @@ public class Membership { //TODO gøres private
   private ArrayList<Member> seniorXoTeam = new ArrayList<>();
   private ArrayList<Member> passive = new ArrayList<>();
   private ArrayList<Member> allMembers = new ArrayList<>();
-  int year = 2021;
-  String memberId = "M";
+  private int year = 2021;
+  private String memberId;
 
   public void ageIdentifier(Member member) { //TODO eventuel udregn alderen på members.
     int getAge = Integer.parseInt(member.getAge());
@@ -25,6 +25,7 @@ public class Membership { //TODO gøres private
   }
 
   public String generateMemberId() {
+    memberId = "M";
     int randomNumber = (int) (Math.random() * 1000) + 1; //1 to 1000
     memberId += randomNumber;
     validateMemberId();

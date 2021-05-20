@@ -16,7 +16,7 @@ public class CompetitionMembership {
   private ArrayList<CompetitionMember> youthBreaststroke = new ArrayList<>();
   private ArrayList<CompetitionMember> seniorBreaststroke = new ArrayList<>();
 
-  int year = 2021;
+ private int year = 2021;
 
   public void ageIdentifier(CompetitionMember competitionMember) {
     int getAge = Integer.parseInt(competitionMember.getAge());
