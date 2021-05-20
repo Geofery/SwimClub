@@ -11,3 +11,6 @@ C76 Lis Friis		1980	female	true	Butterfly	20 May 2021	11,11
 C106 Jens Sørensen		1992	male	true	Butterfly	20 May 2021	11,12
 C82 Michala Østergaard		1987	female	true	Butterfly	20 May 2021	11,2
 C11 Jeanne Ottesen		1987	female	false	Butterfly	20 May 2021	11,2
+C12 Micha Østergaard		1987	female	true	Butterfly	20 May 2021	11,2
+C98 Viktor Bromer		1993	male	true	Butterfly	20 May 2021	10,3
+

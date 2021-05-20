@@ -62,9 +62,9 @@ public class Controller {
         ui.displayLine();
         ui.displayBlue("Enter your firstname with a capital letter ");
         String input = ui.getString();
-        for (int i = 0; i < membership.getAllMembers().size(); i++) {
-            if (input.equals(membership.getAllMembers().get(i).getFirstName())) {
-                ui.displayGreen(membership.getAllMembers().get(i).toString());
+        for (int i = 0; i < membership.allmembers().size(); i++) {
+            if (input.equals(membership.allmembers().get(i).getFirstName())) {
+                ui.displayGreen(membership.allmembers().get(i).toString());
             }
         }
         ui.displayLine();
@@ -166,10 +166,10 @@ public class Controller {
         int choice = ui.getScanInt();
         if (choice == 1) {
             ui.displayGreen("What member?");
-            membership.getAllMembers().get(ui.getScanInt() - 1).setActive(true);
+            membership.allmembers().get(ui.getScanInt() - 1).setActive(true);
         } else if (choice == 2) {
             ui.displayGreen("What member?");
-            membership.getAllMembers().get(ui.getScanInt() - 1).setActive(false);
+            membership.allmembers().get(ui.getScanInt() - 1).setActive(false);
         } else if (choice == 9) {
             chairmanSubMenu();
         } else if (choice != 1 || choice != 2 || choice != 9) {
@@ -243,7 +243,7 @@ public class Controller {
                 case 1 -> swimStylesSubMenu();
                 case 2 -> competitionMembership.showSwimmers(ui);
                 case 3 -> competitionResults();
-                case 4 -> addCompetitonMember();
+                case 4 -> membership.convertToCompetitionMember(ui, training, competitionMember, fileHandler);
                 case 5 -> deleteCompetitonMember();
                 case 6 -> lostAndFound.addLostItem(ui);
                 case 7 -> lostAndFound.deleteItem(ui);
@@ -272,73 +272,14 @@ public class Controller {
     }
 
 
-    private void addCompetitonMember() { //todo valiadate !age > 60
-        membership.displayMembers(ui);
-        ui.displayGreen("Input member Id");
-        String memberId = ui.getString();
-        while (!validateMemberId(memberId)){
-            memberId = ui.getString();
-        }
 
-        ui.displayGreen("What swimstyle, do you want to the member to comepete in?");
-        ui.displayGreen("1. Frontcrawl: \n2. Backstroke: \n3. Breaststroke: \n4. Butterfly  \n9. to go back\n");
-        int coachChoice = ui.getScanInt();
-        ui.displayGreen("Enter training result in format **,**");
-        String result = ui.getString();
-        String choice = "";
-        if (coachChoice == 1) {
-            choice = swimStyle.Frontcrawl.toString();
-            ui.displayGreen(choice);
-        } else if (coachChoice == 2) {
-            choice = swimStyle.Backstroke.toString();
-        } else if (coachChoice == 3) {
-            choice = swimStyle.Breaststroke.toString();
-        } else if (coachChoice == 4) {
-            choice = swimStyle.Butterfly.toString();
-            ;
-        } else if (coachChoice == 9) {
-            coachSubMenu();
-        }
-        if (validateMemberAge(memberId) == true) {
-            training = new Training(ui.date(), result);
-            for (int i = 0; i < membership.getAllMembers().size(); i++) {
-                if (membership.getAllMembers().get(i).getMemberId().equals(memberId)) {
-                    competitionMember = new CompetitionMember(membership.getAllMembers().get(i).getMemberId().replaceAll("M", "C"),
-                        membership.getAllMembers().get(i).getFirstName(), membership.getAllMembers().get(i).getSurName(),
-                        membership.getAllMembers().get(i).getAge(), membership.getAllMembers().get(i).getSex(),
-                        membership.getAllMembers().get(i).isActive(), choice, training);
-                        membership.getAllMembers().remove(i);
-                }
-            }
-            fileHandler.saveCompetitionMember(competitionMember, choice,training);
-        }
-    }
-
-    public boolean validateMemberAge(String memberId){
-        int validateAge = 1961;
-        for (int i = 0; i < membership.getAllMembers().size(); i++) {
-            if (membership.getAllMembers().get(i).getMemberId().equals(memberId) && Integer.parseInt(membership.getAllMembers().get(i).getAge()) > validateAge){
-                return true;
-            }
-        }
-        ui.errorRed("Member is to old to compete!");
-        return false;
-    }
-
-    public boolean validateMemberId(String memberId){
-        if (memberId.startsWith("M")){
-            return true;
-        }else
-            ui.errorRed("Invalid input");
-            return false;
-    }
 
     private void deleteCompetitonMember() { //todo if there is time
-        for (int i = 0; i < membership.getAllMembers().size(); i++) {
+        for (int i = 0; i < membership.allmembers().size(); i++) {
             membership.displayMembers(ui);
             ui.displayGreen("input member Id og the member you want to delete");
             String memberId = ui.getString();
-            if (membership.getAllMembers().get(i).getMemberId().equals(memberId)) {
+            if (membership.allmembers().get(i).getMemberId().equals(memberId)) {
 
             }
         }
