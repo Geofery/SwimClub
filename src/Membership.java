@@ -48,9 +48,9 @@ public class Membership {
         return allMembers;
     }
 
-    public void displayMembers(UI ui, Membership membership) {
+    public void displayMembers(UI ui) {
         ui.displayLine();
-        Collections.sort(membership.allMembers, (o1, o2) -> o1.getFirstName().compareTo(o2.getFirstName()));
+        Collections.sort(allMembers, (o1, o2) -> o1.getFirstName().compareTo(o2.getFirstName()));
         for (int i = 0; i < allMembers.size(); i++) {
             ui.displayGreen(i + 1 + ". " + allMembers.get(i).toString());
         }

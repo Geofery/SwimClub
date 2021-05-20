@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class FileHandler {
   File file = new File("NewList.txt");
   File trainings = new File("Training.txt");
-  File competitions = new File("Competitions.txt");
+  File competitionMembers = new File("CompetitionMembers.txt");
 
   private String memberId;
   private String firstName;
@@ -77,7 +77,7 @@ public class FileHandler {
   public void saveCompetitions(CompetitionMember competitionMember, String choice) {
     FileWriter fw = null;
     try {
-      fw = new FileWriter(competitions, true);
+      fw = new FileWriter(competitionMembers, true);
     } catch (IOException e) {
       e.printStackTrace();
     }
@@ -105,7 +105,7 @@ public class FileHandler {
   public void saveCompetitionMember(CompetitionMember competitionMember, String choice, Training training) {
     FileWriter fw = null;
     try {
-      fw = new FileWriter(competitions, true);
+      fw = new FileWriter(competitionMembers, true);
     } catch (IOException e) {
       e.printStackTrace();
     }
@@ -136,11 +136,11 @@ public class FileHandler {
   }
 
 
-  public void loadCompetitions(Membership membership, Competition competition, CompetitionMember competitionMember, Training training) {
+  public void loadCompetitionMembers(Membership membership, CompetitionMember competitionMember, Training training, CompetitionMembership competitionMembership) {
 
     Scanner fileReader = null;
     try {
-      fileReader = new Scanner(competitions);
+      fileReader = new Scanner(competitionMembers);
     } catch (FileNotFoundException e) {
       e.printStackTrace();
     }
@@ -154,13 +154,17 @@ public class FileHandler {
       active = fileReader.nextBoolean();
       swimStyle = fileReader.next();
       date = fileReader.next();
+      date += " ";
       date += fileReader.next();
+      date += " ";
       date += fileReader.next();
       result = fileReader.next();
       training = new Training(date, result);
 
+
       competitionMember = new CompetitionMember(memberId, firstName, surName, age, sex, active, swimStyle, training);
-      competition.competitionResults.add(competition);
+      competitionMembership.ageIdentifier(competitionMember);
+
     }
   }
 

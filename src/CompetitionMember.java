@@ -26,5 +26,15 @@ public class CompetitionMember extends Member {
     public void setSwimStyle(String swimStyle) {
         this.swimStyle = swimStyle;
     }
+
+    @Override
+    public String toString() {
+        return  "Member ID: " + getMemberId() + ", First name: " + getFirstName()
+                + ", Surname: " + getSurName() + ", Age: " + getAge()  + ", Sex: " + getSex()
+                + "\nSwimStyle: "  + swimStyle + ", Date: " + trainingResult.getDate() +
+                ", Training result: " + trainingResult.getResult() + ", CompetitionResult: "
+                + competitionResult+ "\n";
+    }
+
 }
 

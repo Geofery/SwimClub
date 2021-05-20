@@ -61,6 +61,10 @@ public class UI {
         return decimalFormat;
     }
 
+
+
+
+
     public int getScanInt() {
         return this.getScanInt("Not a valid input!");
     }

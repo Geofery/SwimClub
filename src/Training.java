@@ -22,6 +22,10 @@ public class Training {
 
   @Override
   public String toString() {
-    return "Training" + "date: " + date + " " + "result: " + result;
+    return "Training date: " + date + " " + "Training result: " + result;
   }
+  /*
+  public int compareTo(Competition o) {
+    return this.result.compareTo(o.getResult());
+  }*/
 }

@@ -1,3 +1,4 @@
+import java.util.Collections;
 import java.util.Locale;
 
 public class Controller {
@@ -8,6 +9,7 @@ public class Controller {
     LostAndFound lostAndFound = new LostAndFound();
     SwimStyle swimStyle;
     Member member;
+    CompetitionMembership competitionMembership = new CompetitionMembership();
     CompetitionMember competitionMember;
     Training training;
 
@@ -15,8 +17,10 @@ public class Controller {
     public void mainMenu() {
         Menu menu = new Menu();
         fileHandler.loadMembers(membership, member); //loads all the member into the array
+        fileHandler.loadCompetitionMembers(membership,competitionMember,training,competitionMembership );
         lostAndFound.createLostAndFoundList();
         membership.allMembers();
+        competitionMembership.allMembers();
         int choice;
         boolean keepRunning;
 
@@ -28,7 +32,7 @@ public class Controller {
                 case 1 -> membership.addNewMember(ui, member, membership, fileHandler);
                 case 2 -> viewMembership();
                 case 3 -> competitionResults();
-                case 4 -> membership.displayMembers(ui, membership);
+                case 4 -> membership.displayMembers(ui);
                 case 5 -> adminLogin();
                 case 6 -> lostAndFound.displayLostAndFound(ui);
                 case 9 -> {
@@ -55,7 +59,7 @@ public class Controller {
     }
 
     public void viewMembership() {
-        //TODO Jeff // Something is wrong it displays a member ++ times  ||  if no member needs to show that.
+        //TODO Jeff //   if no member needs to show that.
         ui.displayLine();
         ui.displayBlue("Enter your firstname with a capital letter ");
         String input = ui.getString();
@@ -155,7 +159,7 @@ public class Controller {
 
     public void changeMembershipStatus() {
         ui.displayLine();
-        membership.displayMembers(ui, membership);
+        membership.displayMembers(ui);
         ui.displayGreen("Set membership status: ");
         ui.displayGreen("1. Active");
         ui.displayGreen("2. Passive");
@@ -218,7 +222,7 @@ public class Controller {
 
     public void deleteMember() {  // Cant be moved because chairman sub also uses it. finance delete has been moved.
         ui.displayLine();
-        membership.displayMembers(ui, membership);
+        membership.displayMembers(ui);
         membership.deleteMember(ui);
         //TODO burde kunne smides ind i switchcase nu og resten af metoden slettes
         ui.displayLine();
@@ -236,13 +240,12 @@ public class Controller {
             choice = ui.getScanInt();
             switch (choice) {
                 case 1 -> swimStylesSubMenu();
-                case 2 -> showSwimmers();
+                case 2 -> competitionMembership.showSwimmers(ui);
                 case 3 -> competitionResults();
                 case 4 -> addCompetitonMember();
-                case 5 -> addTimeCompetitionMember();
-                case 6 -> deleteCompetitonMember();
-                case 7 -> lostAndFound.addLostItem(ui);
-                case 8 -> lostAndFound.deleteItem(ui);
+                case 5 -> deleteCompetitonMember();
+                case 6 -> lostAndFound.addLostItem(ui);
+                case 7 -> lostAndFound.deleteItem(ui);
                 case 9 -> {
                     ui.displayGreen("Swimming away.....");
                     try {
@@ -267,13 +270,9 @@ public class Controller {
         } while (keepRunning);
     }
 
-    public void showSwimmers() {//TODO skal laves færdig
-        ui.displayLine();
 
-        ui.displayLine();
-    }
 
-    private void addCompetitonMember() {
+    private void addCompetitonMember() { //todo valiadate !age > 60
         ui.displayGreen("input member Id");
         String memberId = ui.getString();
         ui.displayGreen("What swimstyle, do you want to the member to comepete in?");
@@ -310,13 +309,9 @@ public class Controller {
 
     }
 
-    private void addTimeCompetitionMember() {
-
-    }
-
-    private void deleteCompetitonMember() {
+    private void deleteCompetitonMember() { //todo if there is time
         for (int i = 0; i < membership.allMembers.size(); i++) {
-            membership.displayMembers(ui, membership);
+            membership.displayMembers(ui);
             ui.displayGreen("input member Id og the member you want to delete");
             String memberId = ui.getString();
             if (membership.allMembers.get(i).getMemberId().equals(memberId)) {
@@ -340,7 +335,6 @@ public class Controller {
                 case 2 -> butterfly();
                 case 3 -> backstroke();
                 case 4 -> breaststroke();
-                case 5 -> sidestroke();
                 case 9 -> {
                     ui.displayGreen("Water we waiting for.....");
                     try {
@@ -377,8 +371,6 @@ public class Controller {
     public void breaststroke() {
     }
 
-    public void sidestroke() {
-    }
 
 }
 
