@@ -37,8 +37,6 @@ public class FileHandler {
       age = member.getAge();
       sex = member.getSex();
       active = member.isActive();
-      //result = member.getResult();
-      // competing = competition.isCompeting();
 
       bw.write(memberId.replaceAll("\\[", "").replaceAll("]", "")
           .replaceAll(",", "\t") + " " + firstName + " " + surName + "\t\t\t" + age + "\t" + sex + "\t" + active);

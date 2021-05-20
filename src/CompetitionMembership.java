@@ -58,10 +58,9 @@ public class CompetitionMembership {
     }
   }
 
-  public void showSwimmers(UI ui) { //Todo needs Tine
+  public void showSwimmers(UI ui) {
     ui.displayLine();
     Collections.sort(allMembers, (o1, o2) -> o1.getFirstName().compareTo(o2.getFirstName()));
-    // Collections.sort(allMembers, (o1, o2) -> o1.getTrainingResult().compareTo(o2.getTrainingResult()));
     for (int i = 0; i < allMembers.size(); i++) {
       ui.displayGreen(i + 1 + ". " + allMembers.get(i).toString());
     }

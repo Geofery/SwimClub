@@ -14,10 +14,6 @@ public class Competition {
     this.result = result;
     this.rank = rank;
   }
-  ArrayList<Competition> competitionResults = new ArrayList<Competition>();
-  /*public String getSwimStyle() {
-    return swimStyle;
-  }*/
 
   public String getPlace() {
     return place;
