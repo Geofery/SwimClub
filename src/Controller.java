@@ -62,9 +62,9 @@ public class Controller {
         ui.displayLine();
         ui.displayBlue("Enter your firstname with a capital letter ");
         String input = ui.getString();
-        for (int i = 0; i < membership.allMembers.size(); i++) {
-            if (input.equals(membership.allMembers.get(i).getFirstName())) {
-                ui.displayGreen(membership.allMembers.get(i).toString());
+        for (int i = 0; i < membership.getAllMembers().size(); i++) {
+            if (input.equals(membership.getAllMembers().get(i).getFirstName())) {
+                ui.displayGreen(membership.getAllMembers().get(i).toString());
             }
         }
         ui.displayLine();
@@ -166,10 +166,10 @@ public class Controller {
         int choice = ui.getScanInt();
         if (choice == 1) {
             ui.displayGreen("What member?");
-            membership.allMembers.get(ui.getScanInt() - 1).setActive(true);
+            membership.getAllMembers().get(ui.getScanInt() - 1).setActive(true);
         } else if (choice == 2) {
             ui.displayGreen("What member?");
-            membership.allMembers.get(ui.getScanInt() - 1).setActive(false);
+            membership.getAllMembers().get(ui.getScanInt() - 1).setActive(false);
         } else if (choice == 9) {
             chairmanSubMenu();
         } else if (choice != 1 || choice != 2 || choice != 9) {
@@ -295,23 +295,23 @@ public class Controller {
             coachSubMenu();
         }
         training = new Training(ui.date(),result);
-        for (int i = 0; i < membership.allMembers.size(); i++) {
-            if (membership.allMembers.get(i).getMemberId().equals(memberId)) {
-                competitionMember = new CompetitionMember(membership.allMembers.get(i).getMemberId().replaceAll("M", "C"),
-                        membership.allMembers.get(i).getFirstName(), membership.allMembers.get(i).getSurName(),
-                        membership.allMembers.get(i).getAge(), membership.allMembers.get(i).getSex(),
-                        membership.allMembers.get(i).isActive(), choice,training);
+        for (int i = 0; i < membership.getAllMembers().size(); i++) {
+            if (membership.getAllMembers().get(i).getMemberId().equals(memberId)) {
+                competitionMember = new CompetitionMember(membership.getAllMembers().get(i).getMemberId().replaceAll("M", "C"),
+                        membership.getAllMembers().get(i).getFirstName(), membership.getAllMembers().get(i).getSurName(),
+                        membership.getAllMembers().get(i).getAge(), membership.getAllMembers().get(i).getSex(),
+                        membership.getAllMembers().get(i).isActive(), choice,training);
             }
         }
         fileHandler.saveCompetitionMember(competitionMember, choice,training);
     }
 
     private void deleteCompetitonMember() { //todo if there is time
-        for (int i = 0; i < membership.allMembers.size(); i++) {
+        for (int i = 0; i < membership.getAllMembers().size(); i++) {
             membership.displayMembers(ui);
             ui.displayGreen("input member Id og the member you want to delete");
             String memberId = ui.getString();
-            if (membership.allMembers.get(i).getMemberId().equals(memberId)) {
+            if (membership.getAllMembers().get(i).getMemberId().equals(memberId)) {
 
             }
         }

@@ -6,20 +6,20 @@ public class Finance {
     int passivePrice = 500;
 
     public int youthSubFee(Membership membership) {
-        return membership.youthTeam.size() * youthPrice;
+        return membership.getYouthTeam().size() * youthPrice;
     }
 
     public int seniorSubFee(Membership membership) {
-        return membership.seniorTeam.size() * seniorPrice;
+        return membership.getSeniorTeam().size() * seniorPrice;
     }
 
     public int seniorXoSubFee(Membership membership) {
-        double seniorXoSub = membership.seniorXoTeam.size() * seniorXoPrice;
+        double seniorXoSub = membership.getSeniorXoTeam().size() * seniorXoPrice;
         return (int) seniorXoSub;
     }
 
     public int passiveSubFee(Membership membership) {
-        return membership.passive.size() * passivePrice;
+        return membership.getPassive().size() * passivePrice;
     }
 
     public void viewFinances(UI ui, Membership membership) {//Todo chris Print BadStandingMember @Jens
@@ -56,19 +56,19 @@ public class Finance {
         int total = 0;
         ui.displayLine();
         ui.displayGreen("Members with negative credit");
-        percentage = membership.youthTeam.size() * 0.02;
+        percentage = membership.getYouthTeam().size() * 0.02;
         badStanding = (int) Math.ceil(percentage) * youthPrice;
         ui.displayGreen("Youth member: " + badStanding + "kr.");
         total += badStanding;
-        percentage = membership.seniorTeam.size() * 0.02;
+        percentage = membership.getSeniorTeam().size() * 0.02;
         badStanding = (int) Math.ceil(percentage) * seniorPrice;
         ui.displayGreen("Senior member: " + badStanding + "kr.");
         total += badStanding;
-        percentage = membership.seniorXoTeam.size() * 0.02;
+        percentage = membership.getSeniorXoTeam().size() * 0.02;
         badStanding = (int) Math.ceil(percentage) * (int) seniorXoPrice;
         ui.displayGreen("SeniorXo member: " + badStanding + "kr.");
         total += badStanding;
-        percentage = membership.passive.size() * 0.02;
+        percentage = membership.getPassive().size() * 0.02;
         badStanding = (int) Math.ceil(percentage) * passivePrice;
         ui.displayGreen("Passive member: " + badStanding + "kr.");
         total += badStanding;

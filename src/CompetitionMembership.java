@@ -4,17 +4,17 @@ import java.util.Comparator;
 
 public class CompetitionMembership {
 
-  ArrayList<CompetitionMember> youthTeam = new ArrayList<>();
-  ArrayList<CompetitionMember> seniorTeam = new ArrayList<>();
-  ArrayList<CompetitionMember> allMembers = new ArrayList<>();
-  ArrayList<CompetitionMember> youthFrontcrawl = new ArrayList<>();
-  ArrayList<CompetitionMember> seniorFrontcrawl = new ArrayList<>();
-  ArrayList<CompetitionMember> youthButterfly = new ArrayList<>();
-  ArrayList<CompetitionMember> seniorButterfly = new ArrayList<>();
-  ArrayList<CompetitionMember> youthBackstroke = new ArrayList<>();
-  ArrayList<CompetitionMember> seniorBackstroke = new ArrayList<>();
-  ArrayList<CompetitionMember> youthBreaststroke = new ArrayList<>();
-  ArrayList<CompetitionMember> seniorBreaststroke = new ArrayList<>();
+  private ArrayList<CompetitionMember> youthTeam = new ArrayList<>();
+  private ArrayList<CompetitionMember> seniorTeam = new ArrayList<>();
+  private ArrayList<CompetitionMember> allMembers = new ArrayList<>();
+  private ArrayList<CompetitionMember> youthFrontcrawl = new ArrayList<>();
+  private ArrayList<CompetitionMember> seniorFrontcrawl = new ArrayList<>();
+  private ArrayList<CompetitionMember> youthButterfly = new ArrayList<>();
+  private ArrayList<CompetitionMember> seniorButterfly = new ArrayList<>();
+  private ArrayList<CompetitionMember> youthBackstroke = new ArrayList<>();
+  private ArrayList<CompetitionMember> seniorBackstroke = new ArrayList<>();
+  private ArrayList<CompetitionMember> youthBreaststroke = new ArrayList<>();
+  private ArrayList<CompetitionMember> seniorBreaststroke = new ArrayList<>();
 
   int year = 2021;
 
