@@ -230,6 +230,8 @@ public class Controller {
 
     public void coachSubMenu() {
         Menu menu = new Menu();
+        competitionMembership.swimStyleIdentifierYouth(competitionMember);
+        competitionMembership.swimStyleIdentifierSenior(competitionMember);
 
         int choice;
         boolean keepRunning;
@@ -271,7 +273,6 @@ public class Controller {
     }
 
 
-
     private void addCompetitonMember() { //todo valiadate !age > 60
         ui.displayGreen("input member Id");
         String memberId = ui.getString();
@@ -303,10 +304,7 @@ public class Controller {
                         membership.allMembers.get(i).isActive(), choice,training);
             }
         }
-
-
         fileHandler.saveCompetitionMember(competitionMember, choice,training);
-
     }
 
     private void deleteCompetitonMember() { //todo if there is time
@@ -360,6 +358,7 @@ public class Controller {
     }
 
     public void frontCrawl() {
+
     }
 
     public void butterfly() {

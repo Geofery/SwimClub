@@ -35,7 +35,7 @@ public class Menu {
 
   public void coachSubMenu(UI ui){
     ui.display("1. Show styles.");
-    ui.display("2. Show swimmers.");
+    ui.display("2. Show competition swimmers.");
     ui.display("3. Competition results");
     ui.display("4. Add competition member");
     ui.display("5. Delete competition member");

@@ -24,8 +24,9 @@ public class Training {
   public String toString() {
     return "Training date: " + date + " " + "Training result: " + result;
   }
-  /*
-  public int compareTo(Competition o) {
+
+
+  public int compareTo(Training o) {
     return this.result.compareTo(o.getResult());
-  }*/
+  }
 }
