@@ -273,8 +273,14 @@ public class Controller {
 
 
     private void addCompetitonMember() { //todo valiadate !age > 60
-        ui.displayGreen("input member Id");
+        membership.displayMembers(ui);
+        ui.displayGreen("Input member Id");
         String memberId = ui.getString();
+        while (validateMemberAge(memberId) == false){
+            memberId = ui.getString();
+            validateMemberId(memberId);
+        }
+
         ui.displayGreen("What swimstyle, do you want to the member to comepete in?");
         ui.displayGreen("1. Frontcrawl: \n2. Backstroke: \n3. Breaststroke: \n4. Butterfly  \n9. to go back\n");
         int coachChoice = ui.getScanInt();
@@ -294,16 +300,39 @@ public class Controller {
         } else if (coachChoice == 9) {
             coachSubMenu();
         }
-        training = new Training(ui.date(),result);
-        for (int i = 0; i < membership.getAllMembers().size(); i++) {
-            if (membership.getAllMembers().get(i).getMemberId().equals(memberId)) {
-                competitionMember = new CompetitionMember(membership.getAllMembers().get(i).getMemberId().replaceAll("M", "C"),
+        validateMemberAge(memberId);
+        if (validateMemberAge(memberId) == true) {
+            training = new Training(ui.date(), result);
+            for (int i = 0; i < membership.getAllMembers().size(); i++) {
+                if (membership.getAllMembers().get(i).getMemberId().equals(memberId)) {
+                    competitionMember = new CompetitionMember(membership.getAllMembers().get(i).getMemberId().replaceAll("M", "C"),
                         membership.getAllMembers().get(i).getFirstName(), membership.getAllMembers().get(i).getSurName(),
                         membership.getAllMembers().get(i).getAge(), membership.getAllMembers().get(i).getSex(),
-                        membership.getAllMembers().get(i).isActive(), choice,training);
+                        membership.getAllMembers().get(i).isActive(), choice, training);
+                    membership.getAllMembers().remove(i);
+                }
+            }
+            fileHandler.saveCompetitionMember(competitionMember, choice,training);
+        }
+    }
+
+    public boolean validateMemberAge(String memberId){
+        int validateAge = 1961;
+        for (int i = 0; i < membership.getAllMembers().size(); i++) {
+            if (membership.getAllMembers().get(i).getMemberId().equals(memberId) && Integer.parseInt(membership.getAllMembers().get(i).getAge()) > validateAge){
+                return true;
             }
         }
-        fileHandler.saveCompetitionMember(competitionMember, choice,training);
+        ui.errorRed("Member is to old to compete!");
+        return false;
+    }
+
+    public boolean validateMemberId(String memberId){
+        if (memberId.startsWith("M")){
+            return true;
+        }else
+            ui.errorRed("Invalid input");
+            return false;
     }
 
     private void deleteCompetitonMember() { //todo if there is time

@@ -7,3 +7,5 @@ C67 Anders Hansen		1991	male	true	Frontcrawl      8 Feb 2014 08,44
 C10 Jannie Ottesen		1987	female	true	Breaststroke	19 May 2021	12,42
 C8 Rikke Hansen		1989	female	true	Breaststroke	19 May 2021	12,17
 C44 Anders Thomsen		2001	male	true	Butterfly	20 May 2021	11,03
+C76 Lis Friis		1980	female	true	Butterfly	20 May 2021	11,11
+C106 Jens Sørensen		1992	male	true	Butterfly	20 May 2021	11,12
