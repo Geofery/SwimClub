@@ -276,9 +276,8 @@ public class Controller {
         membership.displayMembers(ui);
         ui.displayGreen("Input member Id");
         String memberId = ui.getString();
-        while (validateMemberAge(memberId) == false){
+        while (!validateMemberId(memberId)){
             memberId = ui.getString();
-            validateMemberId(memberId);
         }
 
         ui.displayGreen("What swimstyle, do you want to the member to comepete in?");
@@ -300,7 +299,6 @@ public class Controller {
         } else if (coachChoice == 9) {
             coachSubMenu();
         }
-        validateMemberAge(memberId);
         if (validateMemberAge(memberId) == true) {
             training = new Training(ui.date(), result);
             for (int i = 0; i < membership.getAllMembers().size(); i++) {
@@ -309,7 +307,7 @@ public class Controller {
                         membership.getAllMembers().get(i).getFirstName(), membership.getAllMembers().get(i).getSurName(),
                         membership.getAllMembers().get(i).getAge(), membership.getAllMembers().get(i).getSex(),
                         membership.getAllMembers().get(i).isActive(), choice, training);
-                    membership.getAllMembers().remove(i);
+                        membership.getAllMembers().remove(i);
                 }
             }
             fileHandler.saveCompetitionMember(competitionMember, choice,training);
