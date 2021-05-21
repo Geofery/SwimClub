@@ -30,7 +30,7 @@ public class CompetitionMember extends Member {
     @Override
     public String toString() {
         return  "Member ID: " + getMemberId() + ", First name: " + getFirstName()
-                + ", Surname: " + getSurName() + ", Age: " + getAge()  + ", Sex: " + getSex()
+                + ", Surname: " + getSurName() + ", Age: " + getAge()  + ", Sex: " + getGender()
                 + "\nSwimStyle: "  + swimStyle + ", Date: " + trainingResult.getDate() +
                 ", Training result: " + trainingResult.getResult() + ", CompetitionResult: "
                 + competitionResult+ "\n";

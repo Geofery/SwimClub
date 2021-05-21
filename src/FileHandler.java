@@ -35,7 +35,7 @@ public class FileHandler {
       firstName = member.getFirstName();
       surName = member.getSurName();
       age = member.getAge();
-      sex = member.getSex();
+      sex = member.getGender();
       active = member.isActive();
 
       bw.write(memberId.replaceAll("\\[", "").replaceAll("]", "")
@@ -86,7 +86,7 @@ public class FileHandler {
       firstName = competitionMember.getFirstName();
       surName = competitionMember.getSurName();
       age = competitionMember.getAge();
-      sex = competitionMember.getSex();
+      sex = competitionMember.getGender();
       active = competitionMember.isActive();
       swimStyle = choice;
 
@@ -113,7 +113,7 @@ public class FileHandler {
       firstName = competitionMember.getFirstName();
       surName = competitionMember.getSurName();
       age = competitionMember.getAge();
-      sex = competitionMember.getSex();
+      sex = competitionMember.getGender();
       active = competitionMember.isActive();
       swimStyle = competitionMember.getSwimStyle();
       trainingResult = competitionMember.getTrainingResult();
@@ -220,7 +220,7 @@ public class FileHandler {
         fw.write(allMembers.get(i).getMemberId().replaceAll("\\[", "").replaceAll("]", "")
             .replaceAll(",", "\t") + " " + allMembers.get(i).getFirstName() + " "
             + allMembers.get(i).getSurName() + "\t\t\t" +allMembers.get(i).getAge() + "\t"
-            + allMembers.get(i).getSex() + "\t" + allMembers.get(i).isActive()+"\n");
+            + allMembers.get(i).getGender() + "\t" + allMembers.get(i).isActive()+"\n");
       }
         fw.close();
       } catch (IOException e) {

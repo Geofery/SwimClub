@@ -3,16 +3,16 @@ public class Member {
   private String firstName;
   private String surName;
   private String age;
-  private String sex;
+  private String gender;
   private boolean active; // TODO lav til en String Active /Passive Evt. en Metode
 
 
-  public Member(String memberId, String firstName, String surName, String age, String sex, boolean active) {
+  public Member(String memberId, String firstName, String surName, String age, String gender, boolean active) {
     this.memberId = memberId;
     this.firstName = firstName;
     this.surName = surName;
     this.age = age;
-    this.sex = sex;
+    this.gender = gender;
     this.active = active;
   }
 
@@ -34,8 +34,8 @@ public class Member {
 
   public String getAge() { return age; }
 
-  public String getSex() {
-    return sex;
+  public String getGender() {
+    return gender;
   }
 
   public boolean isActive() {
@@ -45,7 +45,7 @@ public class Member {
   @Override
   public String toString() {
     return "Member ID: " + memberId + ", " + " First name: " + firstName + ", "
-        + " Surname: " + surName + ", " + " Age: " + age + ", " + " Sex: " + sex
+        + " Surname: " + surName + ", " + " Age: " + age + ", " + " Sex: " + gender
         + ", " + " Membership status: " + active;
   }
 }
