@@ -26,11 +26,13 @@ public class Finance {
 
     public void viewFinances(UI ui, Membership membership) {//Todo chris Print BadStandingMember @Jens
         int sum = youthSubFee(membership) + seniorSubFee(membership) + seniorXoSubFee(membership) + passiveSubFee(membership);
-        ui.getPattern(youthSubFee(membership));ui.displayGreen(" kr."); //New method
-        ui.displayGreenPrint("Total income from senior subscribers: = ");ui.getPattern(seniorSubFee(membership)); ui.displayGreen(" kr.");
-        ui.displayGreenPrint("Total income from seniors > 60 subscribers: = ");ui.getPattern(seniorXoSubFee(membership)); ui.displayGreen(" kr.");
-        ui.displayGreenPrint("Total income from passive subscribers: = "); ui.getPattern(passiveSubFee(membership));ui.displayGreen(" kr.");
-        ui.displayGreenPrint("Total income from subscribers: = ");ui.getPattern(sum);ui.displayGreen(" kr.");
+        ui.displayLine();
+        ui.displayBlueHeader("Financial overview\n");
+        ui.displayGreenPrint("Total income from youth members: = ");ui.getPattern(youthSubFee(membership));ui.displayGreen(" kr."); //New method
+        ui.displayGreenPrint("Total income from senior members: = ");ui.getPattern(seniorSubFee(membership)); ui.displayGreen(" kr.");
+        ui.displayGreenPrint("Total income from seniors > 60 members: = ");ui.getPattern(seniorXoSubFee(membership)); ui.displayGreen(" kr.");
+        ui.displayGreenPrint("Total income from passive members: = "); ui.getPattern(passiveSubFee(membership));ui.displayGreen(" kr.");
+        ui.displayGreenPrint("Total income from all members: = ");ui.getPattern(sum);ui.displayGreen(" kr.");
         ui.displayLine();
 
     }
@@ -41,7 +43,8 @@ public class Finance {
         int badStanding;
         int total = 0;
 
-        ui.displayGreen("Members with negative credit\n");
+        ui.displayLine();
+        ui.displayBlueHeader("Members with bad credit\n");
         percentage = membership.getYouthTeam().size() * 0.02;
         badStandingMember = (int) Math.ceil(percentage);
         badStanding = (int) Math.ceil(percentage) * youthPrice;
