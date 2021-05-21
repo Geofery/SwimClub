@@ -58,15 +58,24 @@ public class Controller {
   }
 
   public void viewMembership() {
-    //TODO Jeff //   if no member needs to show that.
     ui.displayLine();
-    ui.displayBlue("Enter your firstname with a capital letter ");
-    String input = ui.getString();
+    ui.displayBlueHeader("View your Membership");
+    ui.displayGreen("Input your member ID: ");
+    String memberId = ui.getString();
+    int tracker = 0;
+    if (membership.getAllMembers().size() == 0) {
+      ui.errorRed("Your broke and going out of business!");
+    }else
     for (int i = 0; i < membership.getAllMembers().size(); i++) {
-      if (input.equals(membership.getAllMembers().get(i).getFirstName())) {
+      if (memberId.equals(membership.getAllMembers().get(i).getMemberId())) {
         ui.displayGreen(membership.getAllMembers().get(i).toString());
-      }
+      } else
+        tracker++;
     }
+
+    if (tracker == membership.getAllMembers().size())
+      ui.errorRed("Invalid Member ID!");
+
     ui.displayLine();
   }
 
