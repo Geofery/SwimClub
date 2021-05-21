@@ -1,5 +1,5 @@
 public class Menu {
-  public void showMainMenu(UI ui){ //TODO Christopher få halen til at bevæge sig!
+  public void showMainMenu(UI ui){ //TODO DISplayLine på alle i bunden
     ui.displayBlue("\n\t\tWhalecome to the Dolphins swim club!\n");
 
     ui.display("                                       Jens the Dolphin!");

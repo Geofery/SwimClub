@@ -24,6 +24,7 @@ public class UI {
     public void errorRed(String message) { System.out.println(ANSI_RED + message + ANSI_RESET); }
 
     public void displayBlue(String message) { System.out.println(ANSI_BLUE + message + ANSI_RESET); }
+
     public void displayBlueHeader(String message) { System.out.println(ANSI_BLUE + "                 " + message + ANSI_RESET); }
 
     public void display(String message) { System.out.println(message); }

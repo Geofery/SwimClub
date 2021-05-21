@@ -132,7 +132,7 @@ public class Membership {
       ui.errorRed("WATER YOU SINKING ABOAT???");
       changeMembershipStatus(ui);
     }
-  }
+  }//TODO Fix så den gemmer og ændre på MemberId
 
   public void convertToCompetitionMember(UI ui, Training training, FileHandler fileHandler, CompetitionMember competitionMember) {
     displayMembers(ui);
