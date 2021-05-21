@@ -14,4 +14,3 @@ C11 Jeanne Ottesen		1987	female	false	Butterfly	20 May 2021	11,2
 C12 Micha Østergaard		1987	female	true	Butterfly	20 May 2021	11,2
 C98 Viktor Bromer		1993	male	true	Butterfly	20 May 2021	10,3
 C42 Victor Thomsen		1993	male	true	Backstroke	21 May 2021	12,13
-

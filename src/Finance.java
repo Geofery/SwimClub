@@ -33,31 +33,40 @@ public class Finance {
 
     }
 
-    public void financeCreditors(UI ui, Membership membership, Finance finance) { //TODO CHRISTOPHER!!!! hver enkelt medlem på.
+    public void financeCreditors(UI ui, Membership membership, Finance finance) { //TODO hver enkelt medlem på.
         double percentage;
         int badStanding;
-        int missingPayment;
         int total = 0;
+
         ui.displayGreen("Members with negative credit");
         percentage = membership.getYouthTeam().size() * 0.02;
         badStanding = (int) Math.ceil(percentage) * youthPrice;
         ui.displayGreen("Youth member: " + badStanding + "kr.");
         total += badStanding;
+        getBadstandingMembers(badStanding);
+
         percentage = membership.getSeniorTeam().size() * 0.02;
         badStanding = (int) Math.ceil(percentage) * seniorPrice;
         ui.displayGreen("Senior member: " + badStanding + "kr.");
         total += badStanding;
+        getBadstandingMembers(badStanding);
+
         percentage = membership.getSeniorXoTeam().size() * 0.02;
         badStanding = (int) Math.ceil(percentage) * (int) seniorXoPrice;
         ui.displayGreen("SeniorXo member: " + badStanding + "kr.");
         total += badStanding;
+        getBadstandingMembers(badStanding);
+
         percentage = membership.getPassive().size() * 0.02;
         badStanding = (int) Math.ceil(percentage) * passivePrice;
         ui.displayGreen("Passive member: " + badStanding + "kr.");
         total += badStanding;
+        getBadstandingMembers(badStanding);
+
         ui.errorRed("Total missed payments: " + total + "kr.");
         ui.displayLine();
-        //What statistics would be relevant here? if they have paid or not, and when its time to pay the next sub.
     }
+
+    public void getBadstandingMembers(int badStanding){}
 }
 

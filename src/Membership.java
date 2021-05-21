@@ -1,8 +1,7 @@
 import java.util.ArrayList;
 import java.util.Collections;
 
-
-public class Membership { //TODO gøres private
+public class Membership {
   private ArrayList<Member> youthTeam = new ArrayList<>();
   private ArrayList<Member> seniorTeam = new ArrayList<>();
   private ArrayList<Member> seniorXoTeam = new ArrayList<>();
@@ -10,6 +9,34 @@ public class Membership { //TODO gøres private
   private ArrayList<Member> allMembers = new ArrayList<>();
   private int year = 2021;
   private String memberId;
+
+  public ArrayList<Member> getYouthTeam() {
+    return youthTeam;
+  }
+
+  public ArrayList<Member> getSeniorTeam() {
+    return seniorTeam;
+  }
+
+  public ArrayList<Member> getSeniorXoTeam() {
+    return seniorXoTeam;
+  }
+
+  public ArrayList<Member> getPassive() {
+    return passive;
+  }
+
+  public ArrayList<Member> getAllMembers() {
+    return allMembers;
+  }
+
+  public ArrayList<Member> allMembers() {
+    allMembers.addAll(youthTeam);
+    allMembers.addAll(seniorTeam);
+    allMembers.addAll(seniorXoTeam);
+    allMembers.addAll(passive);
+    return allMembers;
+  }
 
   public void ageIdentifier(Member member) { //TODO eventuel udregn alderen på members.
     int getAge = Integer.parseInt(member.getAge());
@@ -40,14 +67,6 @@ public class Membership { //TODO gøres private
     }
   }
 
-  public ArrayList<Member> allMembers() {
-    allMembers.addAll(youthTeam);
-    allMembers.addAll(seniorTeam);
-    allMembers.addAll(seniorXoTeam);
-    allMembers.addAll(passive);
-    return allMembers;
-  }
-
   public void displayMembers(UI ui) {
     ui.displayLine();
     Collections.sort(allMembers, (o1, o2) -> o1.getFirstName().compareTo(o2.getFirstName()));
@@ -63,6 +82,18 @@ public class Membership { //TODO gøres private
         allMembers.remove(i);
       }
     }
+  }
+
+  public void validateDeleteMember(UI ui) {  // Cant be moved because chairman sub also uses it. finance delete has been moved.
+    ui.displayLine();
+    displayMembers(ui);
+    ui.displayGreen("Input member ID of the member you want deleted: ");
+    String memberId = ui.getString();
+    while (!validateMemberId(memberId, ui)) {
+      memberId = ui.getString();
+    }
+    deleteMember(memberId);
+    ui.displayLine();
   }
 
   public void addNewMember(UI ui, Member member, Membership membership, FileHandler fileHandler) {
@@ -82,30 +113,28 @@ public class Membership { //TODO gøres private
     allMembers.add(member);
   }
 
-  public ArrayList<Member> getYouthTeam() {
-    return youthTeam;
+  public void changeMembershipStatus(UI ui) {
+    ui.displayLine();
+    displayMembers(ui);
+    ui.displayGreen("Set membership status: ");
+    ui.displayGreen("1. Active");
+    ui.displayGreen("2. Passive");
+    ui.displayGreen("9. Back to admin");
+    int choice = ui.getScanInt();
+    if (choice == 1) {
+      ui.displayGreen("What member?");
+      getAllMembers().get(ui.getScanInt() - 1).setActive(true);
+    } else if (choice == 2) {
+      ui.displayGreen("What member?");
+      getAllMembers().get(ui.getScanInt() - 1).setActive(false);
+    } else if (choice == 9) {
+    } else  {
+      ui.errorRed("WATER YOU SINKING ABOAT???");
+      changeMembershipStatus(ui);
+    }
   }
 
-  public ArrayList<Member> getSeniorTeam() {
-    return seniorTeam;
-  }
-
-  public ArrayList<Member> getSeniorXoTeam() {
-    return seniorXoTeam;
-  }
-
-  public ArrayList<Member> getPassive() {
-    return passive;
-  }
-
-  public ArrayList<Member> allmembers() {
-    return allMembers;
-  }
-
-  public ArrayList<Member> getAllMembers() {
-    return allMembers;
-  }
-  /* public void convertToCompetitionMember(UI ui, Training training, CompetitionMember competitionMember, FileHandler fileHandler) { //todo REFRESH FILE!
+  public void convertToCompetitionMember(UI ui, Training training, FileHandler fileHandler, CompetitionMember competitionMember) {
     displayMembers(ui);
     ui.displayGreen("Input member Id");
     String memberId = ui.getString();
@@ -128,24 +157,23 @@ public class Membership { //TODO gøres private
       choice = SwimStyle.Breaststroke.toString();
     } else if (coachChoice == 4) {
       choice = SwimStyle.Butterfly.toString();
-
-
-      if (validateMemberAge(memberId, ui) ==true){
-        training = new Training(ui.date(), result);
-        for (int i = 0; i < allMembers.size(); i++) {
-          if (allMembers.get(i).getMemberId().equals(memberId)) {
-            competitionMember = new CompetitionMember(allMembers.get(i).getMemberId().replaceAll("M", "C"),
-                allMembers.get(i).getFirstName(), allMembers.get(i).getSurName(),
-                allMembers.get(i).getAge(), allMembers.get(i).getSex(),
-                allMembers.get(i).isActive(), choice, training);
-                allMembers.remove(i);
-          }
-        }
-        fileHandler.saveCompetitionMember(competitionMember, choice, training);
-      }
-     // fileHandler.refreshMembers(allMembers);
     }
-  }*/
+
+    if (validateMemberAge(memberId, ui) == true) {
+      training = new Training(ui.date(), result);
+      for (int i = 0; i < getAllMembers().size(); i++) {
+        if (getAllMembers().get(i).getMemberId().equals(memberId)) {
+          competitionMember = new CompetitionMember(getAllMembers().get(i).getMemberId().replaceAll("M", "C"),
+              getAllMembers().get(i).getFirstName(), getAllMembers().get(i).getSurName(),
+              getAllMembers().get(i).getAge(), getAllMembers().get(i).getSex(),
+              getAllMembers().get(i).isActive(), choice, training);
+          deleteMember(memberId);
+          fileHandler.saveCompetitionMember(competitionMember, choice, training);
+          fileHandler.refreshMembers(getAllMembers());
+        }
+      }
+    }
+  }
 
   public boolean validateMemberAge(String memberId, UI ui){
     int validateAge = 1961;

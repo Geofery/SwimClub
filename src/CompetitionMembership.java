@@ -15,8 +15,7 @@ public class CompetitionMembership {
   private ArrayList<CompetitionMember> seniorBackstroke = new ArrayList<>();
   private ArrayList<CompetitionMember> youthBreaststroke = new ArrayList<>();
   private ArrayList<CompetitionMember> seniorBreaststroke = new ArrayList<>();
-
- private int year = 2021;
+  private int year = 2021;
 
   public void ageIdentifier(CompetitionMember competitionMember) {
     int getAge = Integer.parseInt(competitionMember.getAge());
@@ -35,25 +34,26 @@ public class CompetitionMembership {
 
   public void swimStyleIdentifierYouth(CompetitionMember competitionMember) {
     for (int i = 0; i < youthTeam.size(); i++) { //TODO Christopher!
-      if (youthTeam.get(i).getSwimStyle().equals(SwimStyle.Frontcrawl)){
+      if (youthTeam.get(i).getSwimStyle().equals(SwimStyle.Frontcrawl)) {
         youthFrontcrawl.add(competitionMember);
-      } else if (youthTeam.get(i).getSwimStyle().equals(SwimStyle.Butterfly)){
+      } else if (youthTeam.get(i).getSwimStyle().equals(SwimStyle.Butterfly)) {
         youthButterfly.add(competitionMember);
-      } else if (youthTeam.get(i).getSwimStyle().equals(SwimStyle.Backstroke)){
+      } else if (youthTeam.get(i).getSwimStyle().equals(SwimStyle.Backstroke)) {
         youthBackstroke.add(competitionMember);
-      }else
+      } else
         youthBreaststroke.add(competitionMember);
     }
   }
+
   public void swimStyleIdentifierSenior(CompetitionMember competitionMember) {
     for (int i = 0; i < seniorTeam.size(); i++) {
-      if (seniorTeam.get(i).getSwimStyle().equals(SwimStyle.Frontcrawl)){
+      if (seniorTeam.get(i).getSwimStyle().equals(SwimStyle.Frontcrawl)) {
         seniorFrontcrawl.add(competitionMember);
-      } else if (seniorTeam.get(i).getSwimStyle().equals(SwimStyle.Butterfly)){
+      } else if (seniorTeam.get(i).getSwimStyle().equals(SwimStyle.Butterfly)) {
         seniorButterfly.add(competitionMember);
-      } else if (seniorTeam.get(i).getSwimStyle().equals(SwimStyle.Backstroke)){
+      } else if (seniorTeam.get(i).getSwimStyle().equals(SwimStyle.Backstroke)) {
         seniorBackstroke.add(competitionMember);
-      }else
+      } else
         seniorBreaststroke.add(competitionMember);
     }
   }
@@ -66,8 +66,6 @@ public class CompetitionMembership {
     }
     ui.displayLine();
   }
-
-
 
 
 }

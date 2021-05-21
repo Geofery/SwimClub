@@ -128,8 +128,8 @@ public class Controller {
       choice = ui.getScanInt();
       switch (choice) {
         case 1 -> membership.addNewMember(ui, member, membership, fileHandler);
-        case 2 -> changeMembershipStatus();
-        case 3 -> deleteMember();
+        case 2 -> membership.changeMembershipStatus(ui);
+        case 3 -> membership.validateDeleteMember(ui);
         case 4 -> lostAndFound.addLostItem(ui);
         case 5 -> lostAndFound.deleteItem(ui);
         case 9 -> {
@@ -156,28 +156,6 @@ public class Controller {
     } while (keepRunning);
   }
 
-  public void changeMembershipStatus() {
-    ui.displayLine();
-    membership.displayMembers(ui);
-    ui.displayGreen("Set membership status: ");
-    ui.displayGreen("1. Active");
-    ui.displayGreen("2. Passive");
-    ui.displayGreen("9. Back to admin");
-    int choice = ui.getScanInt();
-    if (choice == 1) {
-      ui.displayGreen("What member?");
-      membership.getAllMembers().get(ui.getScanInt() - 1).setActive(true);
-    } else if (choice == 2) {
-      ui.displayGreen("What member?");
-      membership.getAllMembers().get(ui.getScanInt() - 1).setActive(false);
-    } else if (choice == 9) {
-      chairmanSubMenu();
-    } else if (choice != 1 || choice != 2 || choice != 9) {
-      ui.errorRed("WATER YOU SINKING ABOAT???");
-      chairmanSubMenu();
-    }
-  }
-
   public void financeSubMenu() {
     Menu menu = new Menu();
 
@@ -191,7 +169,7 @@ public class Controller {
       switch (choice) {
         case 1 -> finance.financeCreditors(ui, membership, finance);
         case 2 -> finance.viewFinances(ui, membership);
-        case 3 -> deleteMember();
+        case 3 -> membership.validateDeleteMember(ui);
         case 4 -> lostAndFound.addLostItem(ui);
         case 5 -> lostAndFound.deleteItem(ui);
         case 9 -> {
@@ -218,60 +196,6 @@ public class Controller {
     } while (keepRunning);
   }
 
-  public void convertToCompetitionMember() { //todo valiadate !age > 60
-    membership.displayMembers(ui);
-    ui.displayGreen("Input member Id");
-    String memberId = ui.getString();
-    while (!membership.validateMemberId(memberId, ui)) {
-      memberId = ui.getString();
-    }
-
-    ui.displayGreen("What swimstyle, do you want to the member to comepete in?");
-    ui.displayGreen("1. Frontcrawl: \n2. Backstroke: \n3. Breaststroke: \n4. Butterfly  \n9. to go back\n");
-    int coachChoice = ui.getScanInt();
-    ui.displayGreen("Enter training result in format **,**");
-    String result = ui.getString();
-    String choice = "";
-    if (coachChoice == 1) {
-      choice = SwimStyle.Frontcrawl.toString();
-      ui.displayGreen(choice);
-    } else if (coachChoice == 2) {
-      choice = SwimStyle.Backstroke.toString();
-    } else if (coachChoice == 3) {
-      choice = SwimStyle.Breaststroke.toString();
-    } else if (coachChoice == 4) {
-      choice = SwimStyle.Butterfly.toString();
-    }
-
-      if (membership.validateMemberAge(memberId, ui) == true) {
-        training = new Training(ui.date(), result);
-        for (int i = 0; i < membership.getAllMembers().size(); i++) {
-          if (membership.getAllMembers().get(i).getMemberId().equals(memberId)) {
-            competitionMember = new CompetitionMember(membership.getAllMembers().get(i).getMemberId().replaceAll("M", "C"),
-                membership.getAllMembers().get(i).getFirstName(), membership.getAllMembers().get(i).getSurName(),
-                membership.getAllMembers().get(i).getAge(), membership.getAllMembers().get(i).getSex(),
-                membership.getAllMembers().get(i).isActive(), choice, training);
-            membership.deleteMember(memberId);
-            fileHandler.saveCompetitionMember(competitionMember, choice, training);
-            fileHandler.refreshMembers(membership.getAllMembers());
-          }
-        }
-      }
-    }
-
-
-  public void deleteMember() {  // Cant be moved because chairman sub also uses it. finance delete has been moved.
-    ui.displayLine();
-    membership.displayMembers(ui);
-    ui.displayGreen("Input member ID of the member you want deleted: ");
-    String memberId = ui.getString();
-    while (!membership.validateMemberId(memberId, ui)) {
-      memberId = ui.getString();
-    }
-    membership.deleteMember(memberId);
-    ui.displayLine();
-  }
-
   public void coachSubMenu() {
     Menu menu = new Menu();
     competitionMembership.swimStyleIdentifierYouth(competitionMember);
@@ -288,7 +212,7 @@ public class Controller {
         case 1 -> swimStylesSubMenu();
         case 2 -> competitionMembership.showSwimmers(ui);
         case 3 -> competitionResults();
-        case 4 -> convertToCompetitionMember();
+        case 4 -> membership.convertToCompetitionMember(ui,training,fileHandler,competitionMember);
         case 5 -> deleteCompetitonMember();
         case 6 -> lostAndFound.addLostItem(ui);
         case 7 -> lostAndFound.deleteItem(ui);
