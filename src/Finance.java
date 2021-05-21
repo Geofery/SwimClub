@@ -59,11 +59,5 @@ public class Finance {
         ui.displayLine();
         //What statistics would be relevant here? if they have paid or not, and when its time to pay the next sub.
     }
-
-    public void deleteMember(UI ui, Membership membership) {
-        membership.displayMembers(ui);
-        membership.deleteMember(ui);
-        ui.displayLine();
-    }
 }
 

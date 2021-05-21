@@ -57,9 +57,7 @@ public class Membership { //TODO gøres private
     ui.displayLine();
   }
 
-  public void deleteMember(UI ui) {
-    ui.displayGreen("Input member ID of the member you want deleted: ");
-    String memberId = ui.getString();
+  public void deleteMember(String memberId) {
     for (int i = 0; i < allMembers.size(); i++) {
       if (allMembers.get(i).getMemberId().equals(memberId)){
         allMembers.remove(i);
@@ -100,31 +98,14 @@ public class Membership { //TODO gøres private
     return passive;
   }
 
-  public ArrayList<Member> getAllMembers() {
+  public ArrayList<Member> allmembers() {
     return allMembers;
   }
 
-  public void setYouthTeam(ArrayList<Member> youthTeam) {
-    this.youthTeam = youthTeam;
+  public ArrayList<Member> getAllMembers() {
+    return allMembers;
   }
-
-  public void setSeniorTeam(ArrayList<Member> seniorTeam) {
-    this.seniorTeam = seniorTeam;
-  }
-
-  public void setSeniorXoTeam(ArrayList<Member> seniorXoTeam) {
-    this.seniorXoTeam = seniorXoTeam;
-  }
-
-  public void setPassive(ArrayList<Member> passive) {
-    this.passive = passive;
-  }
-
-  public void setAllMembers(ArrayList<Member> allMembers) {
-    this.allMembers = allMembers;
-  }
-
-  /*public void convertToCompetitionMember(UI ui, Training training, CompetitionMember competitionMember, FileHandler fileHandler) { //todo valiadate !age > 60
+  /* public void convertToCompetitionMember(UI ui, Training training, CompetitionMember competitionMember, FileHandler fileHandler) { //todo REFRESH FILE!
     displayMembers(ui);
     ui.displayGreen("Input member Id");
     String memberId = ui.getString();
@@ -161,8 +142,8 @@ public class Membership { //TODO gøres private
           }
         }
         fileHandler.saveCompetitionMember(competitionMember, choice, training);
-        fileHandler.refreshMembers(allMembers);
       }
+     // fileHandler.refreshMembers(allMembers);
     }
   }*/
 

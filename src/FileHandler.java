@@ -209,30 +209,19 @@ public class FileHandler {
   public void refreshMembers(ArrayList<Member> allMembers){
     FileWriter fw = null;
     try {
-      fw = new FileWriter(file, true);
+      fw = new FileWriter(file);
     } catch (IOException e) {
       e.printStackTrace();
     }
-    //BufferedWriter bw = new BufferedWriter(fw);
+    BufferedWriter bw = new BufferedWriter(fw);
     try {
 
       for (int i = 0; i < allMembers.size(); i++) {
-       /* memberId = membership.allMembers().get;
-        firstName = member.getFirstName();
-        surName = member.getSurName();
-        age = member.getAge();
-        sex = member.getSex();
-        active = member.isActive();
-*/
         fw.write(allMembers.get(i).getMemberId().replaceAll("\\[", "").replaceAll("]", "")
             .replaceAll(",", "\t") + " " + allMembers.get(i).getFirstName() + " "
             + allMembers.get(i).getSurName() + "\t\t\t" +allMembers.get(i).getAge() + "\t"
             + allMembers.get(i).getSex() + "\t" + allMembers.get(i).isActive()+"\n");
-
-        //bw.newLine();
       }
-
-        //bw.close();
         fw.close();
       } catch (IOException e) {
       e.printStackTrace();
