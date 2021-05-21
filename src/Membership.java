@@ -105,21 +105,35 @@ public class Membership {
         String year = ui.getString();
         ui.displayGreen("Please enter gender M/F");
         String gender = ui.getString();
-        while (!validateGender(gender, ui).equals("Male") || !validateGender(gender, ui).equals("Female")) {
+
+       /* while (!validateGender(gender, ui).equals("Male") || !validateGender(gender, ui).equals("Female")) {
             gender = ui.getString();
         }
+      boolean keepRunning;
+      do {
+        keepRunning = true;
+        ui.displayGreen("Please enter gender M/F");
+        if (gender.equals("m") || gender.equals("M")) {
+          gender = "Male";
+          keepRunning = true;
+        } else if (gender.equals("F") || gender.equals("f")) {
+          gender = "Female";
+          keepRunning = true;
+        } else {
+          keepRunning = false;
+        }
+      } while (keepRunning);
+*/
         String memberId = generateMemberId();
-
         member = new Member(memberId, firstName, surName, year, gender, true);
         fileHandler.saveMember(member);
         membership.ageIdentifier(member);
         allMembers.add(member);
-    }
+      }
 
     public String validateGender(String gender, UI ui) {
         if (gender.equals("M") || gender.equals("m")) {
             return gender = "Male";
-
         } else if (gender.equals("F") || gender.equals("f")) {
             return gender = "Female";
         } else

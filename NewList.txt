@@ -117,3 +117,8 @@ M38 Torben Chris			1998	male	true
 M89 Torben Bjerg			1955	male	true
 M93 Victor Borge			1993	male	true
 M47 Viktor Bramer			1940	male	true
+M911 jens Sur			1994	S	true
+M809 Jens Jensen			1992	s	true
+M967 Chris GiverOp			1991	m	true
+M919 jens sur			1991	s	true
+M234 jens sur			1991	s	true
