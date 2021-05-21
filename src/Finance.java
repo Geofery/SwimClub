@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Finance {
 
     int youthPrice = 1000;
@@ -33,40 +35,46 @@ public class Finance {
 
     }
 
-    public void financeCreditors(UI ui, Membership membership, Finance finance) { //TODO hver enkelt medlem på.
+    public void financeCreditors(UI ui, Membership membership, Finance finance, Member member) { //TODO hver enkelt medlem på.
         double percentage;
+        int badStandingMember;
         int badStanding;
         int total = 0;
 
         ui.displayGreen("Members with negative credit");
         percentage = membership.getYouthTeam().size() * 0.02;
+        badStandingMember = (int) Math.ceil(percentage);
         badStanding = (int) Math.ceil(percentage) * youthPrice;
         ui.displayGreen("Youth member: " + badStanding + "kr.");
         total += badStanding;
-        getBadstandingMembers(badStanding);
+        getBadstandingMembers(badStandingMember,membership.getYouthTeam().size(), ui, member);
 
         percentage = membership.getSeniorTeam().size() * 0.02;
         badStanding = (int) Math.ceil(percentage) * seniorPrice;
         ui.displayGreen("Senior member: " + badStanding + "kr.");
         total += badStanding;
-        getBadstandingMembers(badStanding);
+        getBadstandingMembers(badStandingMember,membership.getSeniorTeam().size(), ui, member);
 
         percentage = membership.getSeniorXoTeam().size() * 0.02;
         badStanding = (int) Math.ceil(percentage) * (int) seniorXoPrice;
         ui.displayGreen("SeniorXo member: " + badStanding + "kr.");
         total += badStanding;
-        getBadstandingMembers(badStanding);
+        getBadstandingMembers(badStandingMember, membership.getSeniorXoTeam().size(), ui, member);
 
         percentage = membership.getPassive().size() * 0.02;
         badStanding = (int) Math.ceil(percentage) * passivePrice;
         ui.displayGreen("Passive member: " + badStanding + "kr.");
         total += badStanding;
-        getBadstandingMembers(badStanding);
+        getBadstandingMembers(badStandingMember, membership.getPassive().size(), ui, member);
 
         ui.errorRed("Total missed payments: " + total + "kr.");
         ui.displayLine();
     }
 
-    public void getBadstandingMembers(int badStanding){}
+    public void getBadstandingMembers(int badStandingMember, int size, UI ui, Member member){
+        for (int i = 0; i < badStandingMember; i++) {
+            ui.displayGreen(member.toString());
+        }
+    }
 }
 
