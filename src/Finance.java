@@ -23,28 +23,12 @@ public class Finance {
     }
 
     public void viewFinances(UI ui, Membership membership) {//Todo chris Print BadStandingMember @Jens
-        ui.displayLine();
         int sum = youthSubFee(membership) + seniorSubFee(membership) + seniorXoSubFee(membership) + passiveSubFee(membership);
-   /* ui.displayGreen("Total income from youth subscribers: = " + ui.getPattern(youthSubFee(membership)).toString() + "kr.");
-    ui.displayGreen("Total income from youth subscribers: = " + ui.getPattern(seniorSubFee(membership)) + "kr.");
-    ui.displayGreen("Total income from youth subscribers: = " + ui.getPattern(seniorXoSubFee(membership)) + "kr.");
-    ui.displayGreen("Total income from youth subscribers: = " + ui.getPattern(passiveSubFee(membership)) + "kr.");*/
-        ui.displayGreen("Total income from youth subscribers: = " + ui.getPattern(sum) + "kr.");
-        ui.displayLine();
-        ui.getPattern(youthSubFee(membership));
-        ui.displayGreen(" kr."); //New method
-        ui.displayGreenPrint("Total income from senior subscribers: = ");
-        ui.getPattern(seniorSubFee(membership));
-        ui.displayGreen(" kr.");
-        ui.displayGreenPrint("Total income from seniors > 60 subscribers: = ");
-        ui.getPattern(seniorXoSubFee(membership));
-        ui.displayGreen(" kr.");
-        ui.displayGreenPrint("Total income from passive subscribers: = ");
-        ui.getPattern(passiveSubFee(membership));
-        ui.displayGreen(" kr.");
-        ui.displayGreenPrint("Total income from subscribers: = ");
-        ui.getPattern(sum);
-        ui.displayGreen(" kr.");
+        ui.getPattern(youthSubFee(membership));ui.displayGreen(" kr."); //New method
+        ui.displayGreenPrint("Total income from senior subscribers: = ");ui.getPattern(seniorSubFee(membership)); ui.displayGreen(" kr.");
+        ui.displayGreenPrint("Total income from seniors > 60 subscribers: = ");ui.getPattern(seniorXoSubFee(membership)); ui.displayGreen(" kr.");
+        ui.displayGreenPrint("Total income from passive subscribers: = "); ui.getPattern(passiveSubFee(membership));ui.displayGreen(" kr.");
+        ui.displayGreenPrint("Total income from subscribers: = ");ui.getPattern(sum);ui.displayGreen(" kr.");
         ui.displayLine();
 
     }
@@ -54,7 +38,6 @@ public class Finance {
         int badStanding;
         int missingPayment;
         int total = 0;
-        ui.displayLine();
         ui.displayGreen("Members with negative credit");
         percentage = membership.getYouthTeam().size() * 0.02;
         badStanding = (int) Math.ceil(percentage) * youthPrice;
@@ -78,7 +61,6 @@ public class Finance {
     }
 
     public void deleteMember(UI ui, Membership membership) {
-        ui.displayLine();
         membership.displayMembers(ui);
         membership.deleteMember(ui);
         ui.displayLine();

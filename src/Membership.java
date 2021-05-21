@@ -100,7 +100,7 @@ public class Membership { //TODO gøres private
     return passive;
   }
 
-  public ArrayList<Member> allmembers() {
+  public ArrayList<Member> getAllMembers() {
     return allMembers;
   }
 
@@ -123,7 +123,8 @@ public class Membership { //TODO gøres private
   public void setAllMembers(ArrayList<Member> allMembers) {
     this.allMembers = allMembers;
   }
-  public void convertToCompetitionMember(UI ui, Training training, CompetitionMember competitionMember, FileHandler fileHandler) { //todo valiadate !age > 60
+
+  /*public void convertToCompetitionMember(UI ui, Training training, CompetitionMember competitionMember, FileHandler fileHandler) { //todo valiadate !age > 60
     displayMembers(ui);
     ui.displayGreen("Input member Id");
     String memberId = ui.getString();
@@ -163,7 +164,7 @@ public class Membership { //TODO gøres private
         fileHandler.refreshMembers(allMembers);
       }
     }
-  }
+  }*/
 
   public boolean validateMemberAge(String memberId, UI ui){
     int validateAge = 1961;

@@ -25,15 +25,13 @@ public class LostAndFound {
         ui.displayLine();
     }
 
-    public void addLostItem(UI ui) {  //Todo if there is time save to arrayList
-        ui.displayLine();
+    public void addLostItem(UI ui) {  //Todo Jeff if there is time save to arrayList
         ui.displayGreen("Please write what item has been found:");
         lostAndFound.add(ui.getString());
         ui.displayLine();
     }
 
     public void deleteItem(UI ui) {
-        ui.displayLine();
         displayLostAndFound(ui);
         ui.displayGreen("What item has been picked up?");
         lostAndFound.remove(ui.getScanInt() - 1);

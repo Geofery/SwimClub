@@ -213,28 +213,36 @@ public class FileHandler {
     } catch (IOException e) {
       e.printStackTrace();
     }
-    BufferedWriter bw = new BufferedWriter(fw);
+    //BufferedWriter bw = new BufferedWriter(fw);
     try {
 
       for (int i = 0; i < allMembers.size(); i++) {
-       /* memberId = membershio.allMembers().get;
+       /* memberId = membership.allMembers().get;
         firstName = member.getFirstName();
         surName = member.getSurName();
         age = member.getAge();
         sex = member.getSex();
         active = member.isActive();
 */
-        bw.write(allMembers.get(i).getMemberId().replaceAll("\\[", "").replaceAll("]", "")
+        fw.write(allMembers.get(i).getMemberId().replaceAll("\\[", "").replaceAll("]", "")
             .replaceAll(",", "\t") + " " + allMembers.get(i).getFirstName() + " "
             + allMembers.get(i).getSurName() + "\t\t\t" +allMembers.get(i).getAge() + "\t"
-            + allMembers.get(i).getSex() + "\t" + allMembers.get(i).isActive());
-        bw.newLine();
+            + allMembers.get(i).getSex() + "\t" + allMembers.get(i).isActive()+"\n");
+
+        //bw.newLine();
       }
 
-        bw.close();
+        //bw.close();
         fw.close();
       } catch (IOException e) {
       e.printStackTrace();
       }
   }
+
+
+
+
+
+
+
 }
