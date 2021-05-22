@@ -11,10 +11,10 @@ public class Menu {
     ui.display("6. Show lost and found"+"                          ;_\\");
     ui.display("9. Quit ");
     ui.displayBlue("Please choose: ");
+    ui.displayLine();
   }
 
   public void chairmanSubMenu(UI ui){
-    ui.displayLine();
     ui.display("Chairman Menu");
     ui.display("");
     ui.display("1. Register new member.");
@@ -24,10 +24,10 @@ public class Menu {
     ui.display("5. Delete item from Lost and found");
     ui.display("9. Main menu");
     ui.display("Please choose: ");
+    ui.displayLine();
   }
 
   public void financeSubMenu(UI ui){
-    ui.displayLine();
     ui.display("Finance Menu");
     ui.display("");
     ui.display("1. Creditors");
@@ -37,10 +37,10 @@ public class Menu {
     ui.display("5. Delete item from Lost and found");
     ui.errorRed("9. DO NOT PUSH!");
     ui.display("Please choose: ");
+    ui.displayLine();
   }
 
   public void coachSubMenu(UI ui){
-    ui.displayLine();
     ui.display("Coach Menu!");
     ui.display("");
     ui.display("1. Show styles.");
@@ -52,6 +52,7 @@ public class Menu {
     ui.display("7. Delete item from Lost and found");
     ui.display("9. Main menu");
     ui.display("Please choose: ");
+    ui.displayLine();
   }
 
   public void swimStylesSubMenu(UI ui){
@@ -65,5 +66,6 @@ public class Menu {
     ui.display("5. Sidestroke");
     ui.display("9. Coach menu");
     ui.display("Please choose: ");
+    ui.displayLine();
   }
 }

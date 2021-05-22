@@ -15,6 +15,7 @@ public class Controller {
 
   public void mainMenu() {
     Menu menu = new Menu();
+    ui.play();
     fileHandler.loadMembers(membership, member); //loads all the member into the array
     fileHandler.loadCompetitionMembers(membership, competitionMember, training, competitionMembership);
     lostAndFound.createLostAndFoundList(ui);
@@ -57,7 +58,7 @@ public class Controller {
     } while (keepRunning);
   }
 
-  public void viewMembership() {
+  public void viewMembership() { //Todo make name or member id????
     ui.displayBlueHeader("View your Membership");
     ui.displayGreen("Input your member ID: ");
     String memberId = ui.getString();

@@ -10,7 +10,6 @@ M16 Anders Poulsen			1943	male	true
 M5 Bob Friis			1988	male	true
 M56 Bobbi Friis			1988	male	true
 M39 Chris Hansen			2008	male	true
-M87 Chris TestforMellemrum			1994	male	true
 M90 Christian Kjær			2010	male	true
 M99 Christoffer Landin			1988	male	true
 M48 Christopher Hjul			1945	male	true

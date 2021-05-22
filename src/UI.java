@@ -1,3 +1,6 @@
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import java.io.File;
 import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -5,6 +8,7 @@ import java.time.format.FormatStyle;
 import java.util.Scanner;
 
 public class UI {
+    public Object play;
     LocalDate localDate = LocalDate.now();
     Scanner scanner = new Scanner(System.in);
     public static final String ANSI_RESET = "\u001B[0m";
@@ -61,5 +65,20 @@ public class UI {
 
     public int getScanInt() {
         return this.getScanInt("Not a valid input!");
+    }
+
+    public void play()
+    {
+        try
+        {
+            Clip clip = AudioSystem.getClip();
+            clip.open(AudioSystem.getAudioInputStream(new File("PoolDive.wav")));
+            clip.start();
+        }
+        catch (Exception exc)
+        {
+            exc.printStackTrace(System.out);
+        }
+        return;
     }
 }

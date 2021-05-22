@@ -107,15 +107,11 @@ public class Membership {
         String gender = ui.getString();
         if( gender.equals("f")||gender.equals("F")||gender.equals
                 ("female")||gender.equals("Female")||gender.equals("FEMALE"))
-        {
-            gender = ("Female");
-        }
+        { gender = ("Female"); }
 
         if( gender.equals("m")||gender.equals("M")||gender.equals
                 ("male")||gender.equals("Male")||gender.equals("MALE"))
-        {
-            gender =("Male");
-        }
+        { gender =("Male"); }
 
         String memberId = generateMemberId();
         member = new Member(memberId, firstName, surName, year, gender, true);
@@ -123,17 +119,6 @@ public class Membership {
         membership.ageIdentifier(member);
         allMembers.add(member);
       }
-
-    public String validateGender(String gender, UI ui) {
-        if (gender.equals("M") || gender.equals("m")) {
-            return gender = "Male";
-        } else if (gender.equals("F") || gender.equals("f")) {
-            return gender = "Female";
-        } else
-            ui.display("Nope no such member ");
-        return gender;
-    }
-
 
     public void changeMembershipStatus(UI ui) {
         ui.displayLine();
