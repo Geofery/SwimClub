@@ -52,8 +52,7 @@ public class Finance {
     int badStandingMember;
     int badStanding;
     int total = 0;
-
-    ui.displayLine();
+    
     ui.displayBlueHeader("Members with bad credit");
 
     percentage = membership.getYouthTeam().size() * 0.02;
@@ -90,11 +89,11 @@ public class Finance {
   }
 
   public void getBadstandingMembers(int badStandingMember, ArrayList<Member> arrayList, UI ui, String team) {
-    ui.display("");
     ui.displayBlueHeader(team + " members");
     for (int i = 0; i < badStandingMember; i++) {
       ui.displayGreen(arrayList.get(i + 3).toString() + " Owes money!");
     }
+    ui.displayLine();
   }
 }
 

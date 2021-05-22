@@ -4,7 +4,7 @@ public class LostAndFound {
     ArrayList<String> lostAndFound = new ArrayList<>();
     private String item;
 
-    public void createLostAndFoundList() {
+    public void createLostAndFoundList(UI ui) {
         lostAndFound.add("Left swim fin.");
         lostAndFound.add("Wedding dress and shoes size XXL.");
         lostAndFound.add("50 vacuum-packed frogs.");
@@ -14,10 +14,10 @@ public class LostAndFound {
         lostAndFound.add("White powder in a zip bag, maby used for baking??");
         lostAndFound.add("A fly on a leash.");
         lostAndFound.add("A baby shark.");
+        ui.displayLine();
     }
 
     public void displayLostAndFound(UI ui) {
-        ui.displayLine();
         ui.displayGreen("Water you looking for??\n \t\t \"Lost and Found!\"\n");
         for (int i = 0; i < lostAndFound.size(); i++) {
             ui.displayGreen(i + 1 + ". " + lostAndFound.get(i));

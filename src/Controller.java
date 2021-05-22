@@ -17,7 +17,7 @@ public class Controller {
     Menu menu = new Menu();
     fileHandler.loadMembers(membership, member); //loads all the member into the array
     fileHandler.loadCompetitionMembers(membership, competitionMember, training, competitionMembership);
-    lostAndFound.createLostAndFoundList();
+    lostAndFound.createLostAndFoundList(ui);
     membership.allMembers();
     competitionMembership.allMembers();
     int choice;
@@ -58,7 +58,6 @@ public class Controller {
   }
 
   public void viewMembership() {
-    ui.displayLine();
     ui.displayBlueHeader("View your Membership");
     ui.displayGreen("Input your member ID: ");
     String memberId = ui.getString();
@@ -80,14 +79,12 @@ public class Controller {
   }
 
   public void competitionResults() {
-    ui.displayLine();
     //Top 5 svømmere?
     //
     ui.displayLine();
   }
 
   public void adminLogin() { //TODO Christopher fix login sound and...
-    ui.displayLine();
     ui.displayGreen("Please enter E-mail: ");
     String email = ui.getString().toLowerCase(Locale.ROOT);
     ui.displayGreen("Please enter your password: ");
