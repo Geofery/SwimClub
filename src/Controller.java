@@ -205,8 +205,8 @@ public class Controller {
 
   public void coachSubMenu() {
     Menu menu = new Menu();
-    competitionMembership.swimStyleIdentifierYouth(competitionMember);
-    competitionMembership.swimStyleIdentifierSenior(competitionMember);
+    //competitionMembership.swimStyleIdentifier(competitionMember, competitionMembership.getYouthTeam(), competitionMembership.getYouthFrontcrawl(), competitionMembership.getYouthButterfly(), competitionMembership.getYouthBackstroke(), competitionMembership.getYouthBreaststroke());
+    //competitionMembership.swimStyleIdentifier(competitionMember, competitionMembership.getSeniorTeam(), competitionMembership.getSeniorFrontcrawl(), competitionMembership.getSeniorButterfly(), competitionMembership.getSeniorBackstroke(), competitionMembership.getYouthBreaststroke());
 
     int choice;
     boolean keepRunning;
@@ -217,10 +217,10 @@ public class Controller {
       choice = ui.getScanInt();
       switch (choice) {
         case 1 -> swimStylesSubMenu();
-        case 2 -> competitionMembership.showSwimmers(ui);
+        case 2 -> competitionMembership.showSwimTeam(ui);
         case 3 -> competitionResults();
         case 4 -> membership.convertToCompetitionMember(ui,training,fileHandler,competitionMember);
-        case 5 -> deleteCompetitonMember();
+        case 5 -> competitionMembership.deleteCompetitonMember(ui);
         case 6 -> lostAndFound.addLostItem(ui);
         case 7 -> lostAndFound.deleteItem(ui);
         case 9 -> {
@@ -245,17 +245,6 @@ public class Controller {
         }
       }
     } while (keepRunning);
-  }
-
-  private void deleteCompetitonMember() { //todo if there is time
-    for (int i = 0; i < membership.getAllMembers().size(); i++) {
-      membership.displayMembers(ui);
-      ui.displayGreen("input member Id og the member you want to delete");
-      String memberId = ui.getString();
-      if (membership.getAllMembers().get(i).getMemberId().equals(memberId)) {
-
-      }
-    }
   }
 
   public void swimStylesSubMenu() {
@@ -298,17 +287,19 @@ public class Controller {
   }
 
   public void frontCrawl() {
-
-  competitionMembership.showFrontcrawl(ui,competitionMember);
+    competitionMembership.swimStyleIdentifier( ui, SwimStyle.Frontcrawl.toString());
   }
 
   public void butterfly() {
+    competitionMembership.swimStyleIdentifier( ui, SwimStyle.Butterfly.toString());
   }
 
   public void backstroke() {
+    competitionMembership.swimStyleIdentifier(ui, SwimStyle.Backstroke.toString());
   }
 
   public void breaststroke() {
+    competitionMembership.swimStyleIdentifier(ui, SwimStyle.Breaststroke.toString());
   }
 
 

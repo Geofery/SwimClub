@@ -6,14 +6,6 @@ public class CompetitionMembership {
     private ArrayList<CompetitionMember> youthTeam = new ArrayList<>();
     private ArrayList<CompetitionMember> seniorTeam = new ArrayList<>();
     private ArrayList<CompetitionMember> allMembers = new ArrayList<>();
-    private ArrayList<CompetitionMember> youthFrontcrawl = new ArrayList<>();
-    private ArrayList<CompetitionMember> seniorFrontcrawl = new ArrayList<>();
-    private ArrayList<CompetitionMember> youthButterfly = new ArrayList<>();
-    private ArrayList<CompetitionMember> seniorButterfly = new ArrayList<>();
-    private ArrayList<CompetitionMember> youthBackstroke = new ArrayList<>();
-    private ArrayList<CompetitionMember> seniorBackstroke = new ArrayList<>();
-    private ArrayList<CompetitionMember> youthBreaststroke = new ArrayList<>();
-    private ArrayList<CompetitionMember> seniorBreaststroke = new ArrayList<>();
     private int year = 2021;
 
     public void ageIdentifier(CompetitionMember competitionMember) {
@@ -31,50 +23,58 @@ public class CompetitionMembership {
         return allMembers;
     }
 
-    public void swimStyleIdentifierYouth(CompetitionMember competitionMember) {
-        for (int i = 0; i < youthTeam.size(); i++) { //TODO Christopher!
-            if (youthTeam.get(i).getSwimStyle().equals(SwimStyle.Frontcrawl)) {
-                youthFrontcrawl.add(competitionMember);
-            } else if (youthTeam.get(i).getSwimStyle().equals(SwimStyle.Butterfly)) {
-                youthButterfly.add(competitionMember);
-            } else if (youthTeam.get(i).getSwimStyle().equals(SwimStyle.Backstroke)) {
-                youthBackstroke.add(competitionMember);
-            } else
-                youthBreaststroke.add(competitionMember);
-
-        }
-    }
-
-    public void swimStyleIdentifierSenior(CompetitionMember competitionMember) {
-        for (int i = 0; i < seniorTeam.size(); i++) {
-            if (seniorTeam.get(i).getSwimStyle().equals(SwimStyle.Frontcrawl)) {
-                seniorFrontcrawl.add(competitionMember);
-            } else if (seniorTeam.get(i).getSwimStyle().equals(SwimStyle.Butterfly)) {
-                seniorButterfly.add(competitionMember);
-            } else if (seniorTeam.get(i).getSwimStyle().equals(SwimStyle.Backstroke)) {
-                seniorBackstroke.add(competitionMember);
-            } else
-                seniorBreaststroke.add(competitionMember);
-        }
-    }
-
-    public void showSwimmers(UI ui) {
-        Collections.sort(allMembers, (o1, o2) -> o1.getFirstName().compareTo(o2.getFirstName()));
+    public void swimStyleIdentifier(UI ui, String choice) {
+        ui.displayBlueHeader(choice + " Competition swimmers: ");
+        ui.displayGreen("");
+        ui.displayGreen("Youth team");
         for (int i = 0; i < allMembers.size(); i++) {
-            ui.displayGreen(i + 1 + ". " + allMembers.get(i).toString());
+            int age = Integer.parseInt(allMembers.get(i).getAge());
+            if (allMembers.get(i).getSwimStyle().equals(choice) && 18 > (year - age)) {
+                ui.displayGreen(allMembers.get(i).toString());
+            }
         }
-        ui.displayLine();
+        ui.displayGreen("Senior Team");
+        for (int i = 0; i < allMembers.size(); i++) {
+            int age = Integer.parseInt(allMembers.get(i).getAge());
+            if (allMembers.get(i).getSwimStyle().equals(choice) && 18 < (year - age)) {
+                ui.displayGreen(allMembers.get(i).toString());
+            }
+        }
     }
 
-    public void showFrontcrawl(UI ui,CompetitionMember competitionMember) {
-        swimStyleIdentifierYouth(competitionMember);
-        swimStyleIdentifierSenior(competitionMember);
-        for (int i = 0; i < seniorFrontcrawl.size(); i++) {
-            ui.displayGreen(i + 1 + ". " + seniorFrontcrawl.get(i).toString());
-            for (int j = 0; j < youthFrontcrawl.size(); j++) {
-                ui.displayGreen(j + 1 + ". " + youthFrontcrawl.get(j).toString());
+    public void showSwimTeam(UI ui) {
+        ui.displayBlueHeader("Competition swimmers");
+        ui.displayGreen("");
+        ui.displayGreen("Youth team");
+        ui.displayGreen("");
+
+        for (int i = 0; i < allMembers.size(); i++) {
+            int age = Integer.parseInt(allMembers.get(i).getAge());
+            if (18 > year - age) {
+                ui.displayGreen(allMembers.get(i).toString());
             }
-            ui.displayLine();
+        }
+        ui.displayGreen("");
+        ui.displayGreen("Senior team");
+        ui.displayGreen("");
+
+        for (int i = 0; i < allMembers.size(); i++) {
+            int age = Integer.parseInt(allMembers.get(i).getAge());
+            if (18 < year - age) {
+                ui.displayGreen(allMembers.get(i).toString());
+            }
+        }
+    }
+
+    public void deleteCompetitonMember(UI ui){
+        ui.displayBlueHeader("Delete competition member");
+        ui.displayGreen("");
+        ui.displayGreen("Enter the member Id og the swimmer: ");
+        String choice  = ui.getString();
+        for (int i = 0; i < allMembers.size(); i++) {
+            if (allMembers.get(i).getMemberId().equals(choice)){
+                allMembers.remove(i);
+            }
         }
     }
 }

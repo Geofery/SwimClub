@@ -21,12 +21,6 @@ public class CompetitionMember extends Member {
     public Competition getCompetitionResult() { return competitionResult; }
     public String getSwimStyle() { return swimStyle; }
 
-    public void setTrainingResult(Training trainingResult) { this.trainingResult = trainingResult; }
-    public void setCompetitionResult(Competition competitionResult) { this.competitionResult = competitionResult; }
-    public void setSwimStyle(String swimStyle) {
-        this.swimStyle = swimStyle;
-    }
-
     @Override
     public String toString() {
         return  "Member ID: " + getMemberId() + ", First name: " + getFirstName()
