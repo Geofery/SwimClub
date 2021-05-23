@@ -45,7 +45,7 @@ public class Member {
   @Override
   public String toString() {
     return "Member ID: " + memberId + ", " + " First name: " + firstName + ", "
-        + " Surname: " + surName + ", " + " Age: " + age + ", " + " Sex: " + gender
+        + " Surname: " + surName + ", " + " Age: " + age + ", " + " Gender: " + gender
         + ", " + " Membership status: " + active;
   }
 }

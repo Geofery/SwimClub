@@ -79,13 +79,13 @@ public class Controller {
     ui.displayLine();
   }
 
-  public void competitionResults() {
+  public void competitionResults() {//Todo needs work
     //Top 5 svømmere?
     //
     ui.displayLine();
   }
 
-  public void adminLogin() { //TODO Christopher fix login sound and...
+  public void adminLogin() {
     ui.displayGreen("Please enter E-mail: ");
     String email = ui.getString().toLowerCase(Locale.ROOT);
     ui.displayGreen("Please enter your password: ");
@@ -299,6 +299,7 @@ public class Controller {
 
   public void frontCrawl() {
 
+  competitionMembership.showFrontcrawl(ui,competitionMember);
   }
 
   public void butterfly() {

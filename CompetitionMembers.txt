@@ -14,3 +14,6 @@ C11 Jeanne Ottesen		1987	female	false	Butterfly	20 May 2021	11,2
 C12 Micha Østergaard		1987	female	true	Butterfly	20 May 2021	11,2
 C98 Viktor Bromer		1993	male	true	Butterfly	20 May 2021	10,3
 C42 Victor Thomsen		1993	male	true	Backstroke	21 May 2021	12,13
+C911 Rasmus Thomsen			2005	Male	true    Frontcrawl      8 Feb 2014 08,44
+C809 Jens Jensen			2009	Male	true    Frontcrawl      6 Apr 2016 07,23
+C562 Sten Hansen			2004	male	true    Frontcrawl      3 Jun 2017 07,54

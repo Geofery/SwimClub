@@ -24,9 +24,8 @@ public class Finance {
     return membership.getPassive().size() * passivePrice;
   }
 
-  public void viewFinances(UI ui, Membership membership) {//Todo chris Print BadStandingMember @Jens
+  public void viewFinances(UI ui, Membership membership) {//Todo chris Print BadStandingMember Jens
     int sum = youthSubFee(membership) + seniorSubFee(membership) + seniorXoSubFee(membership) + passiveSubFee(membership);
-    ui.displayLine();
     ui.displayBlueHeader("Financial overview\n");
     ui.displayGreenPrint("Total income from youth members: = ");
     ui.getPattern(youthSubFee(membership));
@@ -47,13 +46,14 @@ public class Finance {
 
   }
 
-  public void financeCreditors(UI ui, Membership membership, Finance finance, Member member) { //TODO hver enkelt medlem på.
+  public void financeCreditors(UI ui, Membership membership, Finance finance, Member member) {
     double percentage;
     int badStandingMember;
     int badStanding;
     int total = 0;
     
-    ui.displayBlueHeader("Members with bad credit");
+    ui.displayBlueHeader("Members with bad credit \n");
+
 
     percentage = membership.getYouthTeam().size() * 0.02;
     badStandingMember = (int) Math.ceil(percentage);
@@ -61,7 +61,7 @@ public class Finance {
     getBadstandingMembers(badStandingMember, membership.getYouthTeam(), ui, "Youth");
     ui.errorRed("Youth member: " + badStanding + "kr.");
     total += badStanding;
-
+    ui.displayLine();
 
     percentage = membership.getSeniorTeam().size() * 0.02;
     badStandingMember = (int) Math.ceil(percentage);
@@ -69,6 +69,7 @@ public class Finance {
     getBadstandingMembers(badStandingMember, membership.getSeniorTeam(), ui, "Senior");
     ui.errorRed("Senior member: " + badStanding + "kr.");
     total += badStanding;
+    ui.displayLine();
 
     percentage = membership.getSeniorXoTeam().size() * 0.02;
     badStandingMember = (int) Math.ceil(percentage);
@@ -76,6 +77,7 @@ public class Finance {
     getBadstandingMembers(badStandingMember, membership.getSeniorXoTeam(), ui, "SeniorXo");
     ui.errorRed("SeniorXo member: " + badStanding + "kr.");
     total += badStanding;
+    ui.displayLine();
 
     percentage = membership.getPassive().size() * 0.02;
     badStandingMember = (int) Math.ceil(percentage);
@@ -83,17 +85,18 @@ public class Finance {
     getBadstandingMembers(badStandingMember, membership.getPassive(), ui, "Passive");
     ui.errorRed("Passive member: " + badStanding + "kr.\n");
     total += badStanding;
+    ui.displayLine();
 
     ui.errorRed("Total missed payments: " + total + "kr.");
     ui.displayLine();
   }
 
   public void getBadstandingMembers(int badStandingMember, ArrayList<Member> arrayList, UI ui, String team) {
-    ui.displayBlueHeader(team + " members");
+    ui.displayBlueHeader(team + " members\n");
+
     for (int i = 0; i < badStandingMember; i++) {
       ui.displayGreen(arrayList.get(i + 3).toString() + " Owes money!");
     }
-    ui.displayLine();
   }
 }
 

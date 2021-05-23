@@ -14,6 +14,7 @@ public class LostAndFound {
         lostAndFound.add("White powder in a zip bag, maby used for baking??");
         lostAndFound.add("A fly on a leash.");
         lostAndFound.add("A baby shark.");
+        lostAndFound.add("A half eaten pool noodle.");
         ui.displayLine();
     }
 
@@ -33,7 +34,7 @@ public class LostAndFound {
 
     public void deleteItem(UI ui) {
         displayLostAndFound(ui);
-        ui.displayGreen("What item has been picked up?");
+        ui.displayGreen("What item has been picked up? enter number to remove it: ");
         lostAndFound.remove(ui.getScanInt() - 1);
         ui.displayLine();
     }

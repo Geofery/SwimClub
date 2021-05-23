@@ -63,7 +63,6 @@ public class Menu {
     ui.display("2. Butterfly");
     ui.display("3. Backstroke");
     ui.display("4. Breaststroke");
-    ui.display("5. Sidestroke");
     ui.display("9. Coach menu");
     ui.display("Please choose: ");
     ui.displayLine();
