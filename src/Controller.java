@@ -58,8 +58,9 @@ public class Controller {
     } while (keepRunning);
   }
 
-  public void viewMembership() { //Todo make name or member id????
+  public void viewMembership() { //TODO en Stor arrayListe med både normale Members og CompetitionMembers, som den kan løbe igennem.
     ui.displayBlueHeader("View your Membership");
+    ui.displayGreen("");
     ui.displayGreen("Input your member ID: ");
     String memberId = ui.getString();
     int tracker = 0;
@@ -80,9 +81,6 @@ public class Controller {
   }
 
   public void competitionResults() {//Todo needs work
-    //Top 5 svømmere?
-    //
-    ui.displayLine();
   }
 
   public void adminLogin() {
@@ -251,7 +249,6 @@ public class Controller {
       ui.displayGreen("input member Id og the member you want to delete");
       String memberId = ui.getString();
       if (membership.getAllMembers().get(i).getMemberId().equals(memberId)) {
-
       }
     }
   }
@@ -296,20 +293,23 @@ public class Controller {
   }
 
   public void frontCrawl() {
-  competitionMembership.frontCrawl(ui);
+    competitionMembership.swimStyleIdentifier(ui, SwimStyle.Frontcrawl.toString());
+  competitionMembership.displayTopSwimmers(ui, SwimStyle.Frontcrawl.toString());
   }
 
   public void butterfly() {
-    competitionMembership.butterfly(ui);
-
+    competitionMembership.swimStyleIdentifier(ui, SwimStyle.Butterfly.toString());
+    competitionMembership.displayTopSwimmers(ui, SwimStyle.Butterfly.toString());
   }
 
   public void backstroke() {
-    competitionMembership.backstroke(ui);
+    competitionMembership.swimStyleIdentifier(ui, SwimStyle.Backstroke.toString());
+    competitionMembership.displayTopSwimmers(ui, SwimStyle.Backstroke.toString());
   }
 
   public void breaststroke() {
-    competitionMembership.breaststroke(ui);
+    competitionMembership.swimStyleIdentifier(ui, SwimStyle.Breaststroke.toString());
+    competitionMembership.displayTopSwimmers(ui, SwimStyle.Breaststroke.toString());
   }
 
 

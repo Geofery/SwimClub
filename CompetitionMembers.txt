@@ -18,3 +18,8 @@ C911 Rasmus Thomsen			2005	Male	true    Frontcrawl      8 Feb 2014 08,44
 C809 Jens Jensen			2009	Male	true    Frontcrawl      6 Apr 2016 07,23
 C562 Sten Hansen			2004	male	true    Frontcrawl      3 Jun 2017 07,54
 C782 Stone RoadMan		2008	male	true	Breaststroke	23. maj 2021	12,11
+C540 Peter Jensen		2009	Male	true	Butterfly	24 May 2021	08,12
+C1 Jens Jensen		2008	female	true	Frontcrawl	24 May 2021	09,14
+C432 Mark Jensen 2014 male true Frontcrawl 10 August 2017 10,33
+C200 Hans Rasmussen 1992 male true Frontcrawl 8 April 2015 09,22
+C999 Luke SkyWalker 1999 male true Frontcrawl 4 May 2009 04,10

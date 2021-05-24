@@ -43,7 +43,6 @@ M61 Jeanette Ottesen			1987	female	true
 M62 Jeanne Jessen			1987	female	true
 M11 Jeanne Ottesen			1987	female	false
 M26 Jennie Johansson			1988	female	true
-M1 Jens Jensen			2008	female	true
 M711 Jens Whale			2005	Cum	true
 M106 Jens Sørensen			1992	male	true
 M299 Jens Vejmand			1992	male	true
@@ -97,7 +96,6 @@ M60 Oskar Davidsen			1936	male	true
 M50 Pernille Skipper			1992	female	true
 M101 Pernille Larsen			1992	female	true
 M74 Peter Pallan			1974	male	true
-M540 Peter Jensen			2009	Male	true
 M92 Rasmus Nickelsen			2003	male	true
 M41 Rasmus Mikkelsen			2003	male	false
 M8 Rikke Hansen			1989	female	true
