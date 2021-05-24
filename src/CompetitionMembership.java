@@ -45,7 +45,8 @@ public class CompetitionMembership {
     public void showSwimTeam(UI ui) {
         ui.displayBlueHeader("Competition swimmers");
         ui.displayGreen("");
-        ui.displayGreen("Youth team");
+        ui.displayLine();
+        ui.displayBlue("Youth team");
         ui.displayGreen("");
 
         for (int i = 0; i < allMembers.size(); i++) {
@@ -55,7 +56,8 @@ public class CompetitionMembership {
             }
         }
         ui.displayGreen("");
-        ui.displayGreen("Senior team");
+        ui.displayLine();
+        ui.displayBlue("Senior team");
         ui.displayGreen("");
 
         for (int i = 0; i < allMembers.size(); i++) {
@@ -64,9 +66,10 @@ public class CompetitionMembership {
                 ui.displayGreen(allMembers.get(i).toString());
             }
         }
+        ui.displayLine();
     }
 
-    public void deleteCompetitonMember(UI ui){
+    public void deleteCompetitonMember(UI ui){// Copy ??
         ui.displayBlueHeader("Delete competition member");
         ui.displayGreen("");
         ui.displayGreen("Enter the member Id og the swimmer: ");
@@ -76,5 +79,18 @@ public class CompetitionMembership {
                 allMembers.remove(i);
             }
         }
+        ui.displayLine();
+    }
+
+    public void frontCrawl(UI ui){
+    }
+
+    public void butterfly(UI ui) {
+    }
+
+    public void backstroke(UI ui) {
+    }
+
+    public void breaststroke(UI ui) {
     }
 }

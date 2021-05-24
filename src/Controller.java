@@ -31,7 +31,7 @@ public class Controller {
       switch (choice) {
         case 1 -> membership.addNewMember(ui, member, membership, fileHandler);
         case 2 -> viewMembership();
-        case 3 -> competitionResults();
+        case 3 -> competitionResults();//todo needs Work
         case 4 -> membership.displayMembers(ui);
         case 5 -> adminLogin();
         case 6 -> lostAndFound.displayLostAndFound(ui);
@@ -205,8 +205,6 @@ public class Controller {
 
   public void coachSubMenu() {
     Menu menu = new Menu();
-    //competitionMembership.swimStyleIdentifier(competitionMember, competitionMembership.getYouthTeam(), competitionMembership.getYouthFrontcrawl(), competitionMembership.getYouthButterfly(), competitionMembership.getYouthBackstroke(), competitionMembership.getYouthBreaststroke());
-    //competitionMembership.swimStyleIdentifier(competitionMember, competitionMembership.getSeniorTeam(), competitionMembership.getSeniorFrontcrawl(), competitionMembership.getSeniorButterfly(), competitionMembership.getSeniorBackstroke(), competitionMembership.getYouthBreaststroke());
 
     int choice;
     boolean keepRunning;
@@ -220,7 +218,7 @@ public class Controller {
         case 2 -> competitionMembership.showSwimTeam(ui);
         case 3 -> competitionResults();
         case 4 -> membership.convertToCompetitionMember(ui,training,fileHandler,competitionMember);
-        case 5 -> competitionMembership.deleteCompetitonMember(ui);
+        case 5 -> deleteCompetitonMember();
         case 6 -> lostAndFound.addLostItem(ui);
         case 7 -> lostAndFound.deleteItem(ui);
         case 9 -> {
@@ -245,6 +243,17 @@ public class Controller {
         }
       }
     } while (keepRunning);
+  }
+
+  private void deleteCompetitonMember() { //Is this an copy of the one in membership ?? todo if there is time //does it save to file??
+    for (int i = 0; i < membership.getAllMembers().size(); i++) {
+      membership.displayMembers(ui);
+      ui.displayGreen("input member Id og the member you want to delete");
+      String memberId = ui.getString();
+      if (membership.getAllMembers().get(i).getMemberId().equals(memberId)) {
+
+      }
+    }
   }
 
   public void swimStylesSubMenu() {
@@ -287,19 +296,20 @@ public class Controller {
   }
 
   public void frontCrawl() {
-    competitionMembership.swimStyleIdentifier( ui, SwimStyle.Frontcrawl.toString());
+  competitionMembership.frontCrawl(ui);
   }
 
   public void butterfly() {
-    competitionMembership.swimStyleIdentifier( ui, SwimStyle.Butterfly.toString());
+    competitionMembership.butterfly(ui);
+
   }
 
   public void backstroke() {
-    competitionMembership.swimStyleIdentifier(ui, SwimStyle.Backstroke.toString());
+    competitionMembership.backstroke(ui);
   }
 
   public void breaststroke() {
-    competitionMembership.swimStyleIdentifier(ui, SwimStyle.Breaststroke.toString());
+    competitionMembership.breaststroke(ui);
   }
 
 

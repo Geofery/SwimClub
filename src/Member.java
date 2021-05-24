@@ -4,7 +4,7 @@ public class Member {
   private String surName;
   private String age;
   private String gender;
-  private boolean active; // TODO lav til en String Active /Passive Evt. en Metode
+  private boolean active; // TODO lav til en String Active /Passive Evt. en Metode Not possible because ageIdentifier
 
 
   public Member(String memberId, String firstName, String surName, String age, String gender, boolean active) {
@@ -45,7 +45,7 @@ public class Member {
   @Override
   public String toString() {
     return "Member ID: " + memberId + ", " + " First name: " + firstName + ", "
-        + " Surname: " + surName + ", " + " Age: " + age + ", " + " Gender: " + gender
+        + " Surname: " + surName + ", " + " Age: " + age + ", " + " Sex: " + gender
         + ", " + " Membership status: " + active;
   }
 }

@@ -40,7 +40,7 @@ public class Membership {
 
     public void ageIdentifier(Member member) { //TODO eventuel udregn alderen på members.
         int getAge = Integer.parseInt(member.getAge());
-        if ((year - getAge) < 18 && member.isActive() == true) {
+        if ((year - getAge) < 18 && member.isActive() == true)  {
             youthTeam.add(member);
         } else if ((year - getAge) >= 18 && !(year - getAge > 60) && member.isActive() == true) {
             seniorTeam.add(member);
@@ -85,7 +85,6 @@ public class Membership {
     }
 
     public void validateDeleteMember(UI ui) {  // Cant be moved because chairman sub also uses it. finance delete has been moved.
-        ui.displayLine();
         displayMembers(ui);
         ui.displayGreen("Input member ID of the member you want deleted: ");
         String memberId = ui.getString();
@@ -103,7 +102,7 @@ public class Membership {
         String surName = ui.getString();
         ui.displayGreen("Please enter year of birth");
         String year = ui.getString();
-        ui.displayGreen("Please enter gender M/F");
+        ui.displayGreen("Please enter gender m/f");
         String gender = ui.getString();
         if( gender.equals("f")||gender.equals("F")||gender.equals
                 ("female")||gender.equals("Female")||gender.equals("FEMALE"))
@@ -121,7 +120,6 @@ public class Membership {
       }
 
     public void changeMembershipStatus(UI ui) {
-        ui.displayLine();
         displayMembers(ui);
         ui.displayGreen("Set membership status: ");
         ui.displayGreen("1. Active");
@@ -129,10 +127,10 @@ public class Membership {
         ui.displayGreen("9. Back to admin");
         int choice = ui.getScanInt();
         if (choice == 1) {
-            ui.displayGreen("What member?");
+            ui.displayGreen("Enter member to set member active: ");
             getAllMembers().get(ui.getScanInt() - 1).setActive(true);
         } else if (choice == 2) {
-            ui.displayGreen("What member?");
+            ui.displayGreen("Enter member to set member passive: \"");
             getAllMembers().get(ui.getScanInt() - 1).setActive(false);
         } else if (choice == 9) {
         } else {
@@ -177,6 +175,7 @@ public class Membership {
                     deleteMember(memberId);
                     fileHandler.saveCompetitionMember(competitionMember, choice, training);
                     fileHandler.refreshMembers(getAllMembers());
+                    ui.displayLine();
                 }
             }
         }
