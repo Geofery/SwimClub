@@ -66,13 +66,13 @@ public class Controller {
     int tracker = 0;
     if (membership.getAllMembers().size() == 0) {
       ui.errorRed("Your broke and going out of business!");
-    }else
-    for (int i = 0; i < membership.getAllMembers().size(); i++) {
-      if (memberId.equals(membership.getAllMembers().get(i).getMemberId())) {
-        ui.displayGreen(membership.getAllMembers().get(i).toString());
-      } else
-        tracker++;
-    }
+    } else
+      for (int i = 0; i < membership.getAllMembers().size(); i++) {
+        if (memberId.equals(membership.getAllMembers().get(i).getMemberId())) {
+          ui.displayGreen(membership.getAllMembers().get(i).toString());
+        } else
+          tracker++;
+      }
 
     if (tracker == membership.getAllMembers().size())
       ui.errorRed("Invalid Member ID!");
@@ -172,7 +172,7 @@ public class Controller {
       menu.financeSubMenu(ui);
       choice = ui.getScanInt();
       switch (choice) {
-        case 1 -> finance.financeCreditors(ui, membership, finance,member);
+        case 1 -> finance.financeCreditors(ui, membership, finance, member);
         case 2 -> finance.viewFinances(ui, membership);
         case 3 -> membership.validateDeleteMember(ui);
         case 4 -> lostAndFound.addLostItem(ui);
@@ -215,7 +215,7 @@ public class Controller {
         case 1 -> swimStylesSubMenu();
         case 2 -> competitionMembership.showSwimTeam(ui);
         case 3 -> competitionResults();
-        case 4 -> membership.convertToCompetitionMember(ui,training,fileHandler,competitionMember);
+        case 4 -> membership.convertToCompetitionMember(ui, training, fileHandler, competitionMember);
         case 5 -> deleteCompetitonMember();
         case 6 -> lostAndFound.addLostItem(ui);
         case 7 -> lostAndFound.deleteItem(ui);
@@ -294,7 +294,7 @@ public class Controller {
 
   public void frontCrawl() {
     competitionMembership.swimStyleIdentifier(ui, SwimStyle.Frontcrawl.toString());
-  competitionMembership.displayTopSwimmers(ui, SwimStyle.Frontcrawl.toString());
+    competitionMembership.displayTopSwimmers(ui, SwimStyle.Frontcrawl.toString());
   }
 
   public void butterfly() {

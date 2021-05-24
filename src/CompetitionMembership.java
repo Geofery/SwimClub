@@ -27,17 +27,17 @@ public class CompetitionMembership {
     ui.displayBlueHeader(choice + " Competition swimmers: ");
     ui.displayGreen("");
     ui.displayBlue("Youth team");
-    for (int i = 0; i < allMembers.size(); i++) {
-      int age = Integer.parseInt(allMembers.get(i).getAge());
-      if (allMembers.get(i).getSwimStyle().equals(choice) && 18 > (year - age)) {
-        ui.displayGreen(allMembers.get(i).toString());
+    for (int i = 0; i < youthTeam.size(); i++) {
+      int age = Integer.parseInt(youthTeam.get(i).getAge());
+      if (youthTeam.get(i).getSwimStyle().equals(choice)) {
+        ui.displayGreen(youthTeam.get(i).toString());
       }
     }
     ui.displayBlue("Senior Team");
-    for (int i = 0; i < allMembers.size(); i++) {
-      int age = Integer.parseInt(allMembers.get(i).getAge());
-      if (allMembers.get(i).getSwimStyle().equals(choice) && 18 < (year - age)) {
-        ui.displayGreen(allMembers.get(i).toString());
+    for (int i = 0; i < seniorTeam.size(); i++) {
+      int age = Integer.parseInt(seniorTeam.get(i).getAge());
+      if (seniorTeam.get(i).getSwimStyle().equals(choice)) {
+        ui.displayGreen(seniorTeam.get(i).toString());
       }
     }
     ui.displayLine();
@@ -89,13 +89,13 @@ public class CompetitionMembership {
     ui.displayBlueHeader("Youth Team top 5.");
     for (int i = 0; i < 5; i++) {
       if (swimstyle.equals(youthTeam.get(i).getSwimStyle())) {
-        ui.displayGreen(i + 1 + youthTeam.get(i).toString());
+        ui.displayGreen(youthTeam.get(i).toString());
       }
     }
     ui.displayBlueHeader("Senior Team top 5.");
     for (int i = 0; i < 5; i++) {
       if (swimstyle.equals(youthTeam.get(i).getSwimStyle())) {
-        ui.displayGreen(i + 1 + seniorTeam.get(i).toString());
+        ui.displayGreen(seniorTeam.get(i).toString());
       }
     }
     ui.displayLine();
