@@ -24,9 +24,7 @@ public class CompetitionMembership {
 
   public ArrayList<CompetitionMember> allMembers() {
     allMembers.addAll(youthTeam);
-    System.out.println(youthTeam.size());
     allMembers.addAll(seniorTeam);
-    System.out.println(seniorTeam.size());
     return allMembers;
   }
 
@@ -140,7 +138,7 @@ public class CompetitionMembership {
     ui.displayGreen("Enter position/rank"); //TODO bedre formulering
     int rank = ui.getScanInt();
 
-    competition = new Competition(swimStyle,place,date,result,rank);
+    competition = new Competition(place, date, result, rank);
     for (int i = 0; i < allMembers.size(); i++) {
       if (memberId.equals(allMembers.get(i).getMemberId())) {
         competitionMember = new CompetitionMember(memberId, allMembers.get(i).getFirstName(), allMembers.get(i).getSurName(),
@@ -150,16 +148,37 @@ public class CompetitionMembership {
         allMembers.remove(i);
       }
     }
+    ui.displayGreen(allMembers.toString());
     //fileHandler.saveCompetitions(competitionMember);
   }
 
-  public boolean validateCompetitionId(String memberId, UI ui){
+  public boolean validateCompetitionId(String memberId, UI ui) {
     for (int i = 0; i < allMembers.size(); i++) {
-    if (memberId.equals(allMembers.get(i).getMemberId())) {
-      return true;
-    }
+      if (memberId.equals(allMembers.get(i).getMemberId())) {
+        return true;
+      }
     }
     return false;
+  }
+
+  public void frontCrawl(UI ui) {//TODO add flere members under FrontCrawl
+    swimStyleIdentifier(ui, SwimStyle.Frontcrawl.toString());
+    displayTopSwimmers(ui, SwimStyle.Frontcrawl.toString());
+  }
+
+  public void butterfly(UI ui) {//TODO add flere members under FrontCrawl
+    swimStyleIdentifier(ui, SwimStyle.Butterfly.toString());
+    displayTopSwimmers(ui, SwimStyle.Butterfly.toString());
+  }
+
+  public void backstroke(UI ui) {//TODO add flere members under FrontCrawl
+    swimStyleIdentifier(ui, SwimStyle.Backstroke.toString());
+    displayTopSwimmers(ui, SwimStyle.Backstroke.toString());
+  }
+
+  public void breaststroke(UI ui) {//TODO add flere members under FrontCrawl
+    swimStyleIdentifier(ui, SwimStyle.Breaststroke.toString());
+    displayTopSwimmers(ui, SwimStyle.Breaststroke.toString());
   }
 }
 

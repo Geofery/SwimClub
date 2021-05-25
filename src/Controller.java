@@ -19,7 +19,7 @@ public class Controller {
     Menu menu = new Menu();
     ui.play();
     fileHandler.loadMembers(membership, member); //loads all the member into the array
-    fileHandler.loadCompetitionMembers(membership, competitionMember, training, competitionMembership);
+    fileHandler.loadTrainingToCompetitionMembers(membership, competitionMember, training, competitionMembership);
     lostAndFound.createLostAndFoundList(ui);
     membership.allMembers();
     competitionMembership.allMembers();
@@ -60,7 +60,7 @@ public class Controller {
     } while (keepRunning);
   }
 
-  public void viewMembership() { //TODO en Stor arrayListe med både normale Members og CompetitionMembers, som den kan løbe igennem.
+  public void viewMembership() { //TODO skal fjernes
     ui.displayBlueHeader("View your Membership");
     ui.displayGreen("");
     ui.displayGreen("Input your member ID: ");
@@ -221,10 +221,10 @@ public class Controller {
         case 2 -> competitionMembership.showSwimTeam(ui);
         case 3 -> competitionResults();
         case 4 -> membership.convertToCompetitionMember(ui, training, fileHandler, competitionMember);
-        case 5 -> competitionMembership.deleteCompetitonMember(ui, fileHandler);
-        case 6 -> lostAndFound.addLostItem(ui);
-        case 7 -> lostAndFound.deleteItem(ui);
-        case 8 -> competitionMembership.addCompetition(ui, competition, competitionMember, fileHandler);
+        case 5 -> competitionMembership.addCompetition(ui, competition, competitionMember, fileHandler);
+        case 6 -> competitionMembership.deleteCompetitonMember(ui, fileHandler);
+        case 7 -> lostAndFound.addLostItem(ui);
+        case 8 -> lostAndFound.deleteItem(ui);
         case 9 -> {
           ui.displayGreen("Swimming away.....");
           try {
@@ -260,10 +260,10 @@ public class Controller {
       menu.swimStylesSubMenu(ui);
       choice = ui.getScanInt();
       switch (choice) {
-        case 1 -> frontCrawl();
-        case 2 -> butterfly();
-        case 3 -> backstroke();
-        case 4 -> breaststroke();
+        case 1 -> competitionMembership.frontCrawl(ui);
+        case 2 -> competitionMembership.butterfly(ui);
+        case 3 -> competitionMembership.backstroke(ui);
+        case 4 -> competitionMembership.breaststroke(ui);
         case 9 -> {
           ui.displayGreen("Water we waiting for.....");
           try {
@@ -287,28 +287,5 @@ public class Controller {
       }
     } while (keepRunning);
   }
-
-  //TODO Flyttes til CompetitionMember class.
-  public void frontCrawl() {
-    competitionMembership.swimStyleIdentifier(ui, SwimStyle.Frontcrawl.toString());
-    competitionMembership.displayTopSwimmers(ui, SwimStyle.Frontcrawl.toString());
-  }
-
-  public void butterfly() {
-    competitionMembership.swimStyleIdentifier(ui, SwimStyle.Butterfly.toString());
-    competitionMembership.displayTopSwimmers(ui, SwimStyle.Butterfly.toString());
-  }
-
-  public void backstroke() {
-    competitionMembership.swimStyleIdentifier(ui, SwimStyle.Backstroke.toString());
-    competitionMembership.displayTopSwimmers(ui, SwimStyle.Backstroke.toString());
-  }
-
-  public void breaststroke() {
-    competitionMembership.swimStyleIdentifier(ui, SwimStyle.Breaststroke.toString());
-    competitionMembership.displayTopSwimmers(ui, SwimStyle.Breaststroke.toString());
-  }
-
-
 }
 

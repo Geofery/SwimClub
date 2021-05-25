@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class FileHandler {
-  File file = new File("NewList.txt");
+  File file = new File("Members.txt");
   File trainings = new File("Training.txt");
   File competitionMembers = new File("CompetitionMembers.txt");
 
@@ -107,7 +107,7 @@ public class FileHandler {
     }
   }
 
-  public void saveCompetitionMember(CompetitionMember competitionMember, String choice, Training training) {
+  public void saveTrainingToCompetitionMember(CompetitionMember competitionMember, String choice, Training training) {
     FileWriter fw = null;
     try {
       fw = new FileWriter(competitionMembers, true);
@@ -141,7 +141,7 @@ public class FileHandler {
   }
 
 
-  public void loadCompetitionMembers(Membership membership, CompetitionMember competitionMember, Training training, CompetitionMembership competitionMembership) {
+  public void loadTrainingToCompetitionMembers(Membership membership, CompetitionMember competitionMember, Training training, CompetitionMembership competitionMembership) {
 
     Scanner fileReader = null;
     try {
@@ -165,6 +165,13 @@ public class FileHandler {
       date += fileReader.next();
       result = fileReader.next();
       training = new Training(date, result);
+      if (fileReader.hasNext()){
+        String swimStyle;
+        String place;
+        String date;
+        String result;
+        int rank;
+      }
 
 
       competitionMember = new CompetitionMember(memberId, firstName, surName, age, sex, active, swimStyle, training);

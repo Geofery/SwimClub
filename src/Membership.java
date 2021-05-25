@@ -259,7 +259,7 @@ public void displayMembers(UI ui){
                             getAllMembers().get(i).getAge(), getAllMembers().get(i).getGender(),
                             getAllMembers().get(i).getActive(), choice, training);
                     deleteMember(memberId);
-                    fileHandler.saveCompetitionMember(competitionMember, choice, training);
+                    fileHandler.saveTrainingToCompetitionMember(competitionMember, choice, training);
                     fileHandler.refreshMembers(getAllMembers());
                     ui.displayLine();
                 }
