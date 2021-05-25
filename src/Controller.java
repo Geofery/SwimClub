@@ -33,7 +33,7 @@ public class Controller {
         case 1 -> membership.addNewMember(ui, member);
         case 2 -> viewMembership();
         case 3 -> competitionResults();//todo needs Work
-        case 4 -> membership.displayMembers(ui);
+        case 4 -> membership.displayAllMembers(ui, competitionMembership);
         case 5 -> adminLogin();
         case 6 -> lostAndFound.displayLostAndFound(ui);
         case 9 -> {

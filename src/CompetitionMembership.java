@@ -10,18 +10,25 @@ public class CompetitionMembership {
 
   public void ageIdentifier(CompetitionMember competitionMember) {
     int getAge = Integer.parseInt(competitionMember.getAge());
-    if ((year - getAge) < 18 && competitionMember.getActive().equals("Active")) {
+    if ((year - getAge) < 18 ) {
       youthTeam.add(competitionMember);
-    } else if ((year - getAge) >= 18 && !(year - getAge >= 60) && competitionMember.getActive().equals("Active")) {
+    } else if ((year - getAge) >= 18 ) {
       seniorTeam.add(competitionMember);
     }
   }
 
-  public ArrayList<CompetitionMember> allMembers() {
-    allMembers.addAll(youthTeam);
-    allMembers.addAll(seniorTeam);
+  public ArrayList<CompetitionMember> getAllMembers() {
     return allMembers;
   }
+
+  public ArrayList<CompetitionMember> allMembers() {
+    allMembers.addAll(youthTeam);
+    System.out.println(youthTeam.size());
+    allMembers.addAll(seniorTeam);
+    System.out.println(seniorTeam.size());
+    return allMembers;
+  }
+
 
   public void swimStyleIdentifier(UI ui, String choice) {
     ui.displayBlueHeader(choice + " Competition swimmers: ");
@@ -102,3 +109,5 @@ public class CompetitionMembership {
     ui.displayLine();
   }
 }
+
+
