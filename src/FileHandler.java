@@ -74,7 +74,7 @@ public class FileHandler {
   ////////////////////////////////////////////////////////////
 
 //TODO Can we resuse the two methods above??
-  public void saveCompetitions(CompetitionMember competitionMember, String choice) {
+  public void saveCompetitions(CompetitionMember competitionMember, Competition competition) {
     FileWriter fw = null;
     try {
       fw = new FileWriter(competitionMembers, true);
@@ -83,17 +83,22 @@ public class FileHandler {
     }
     BufferedWriter bw = new BufferedWriter(fw);
     try {
-
       memberId = competitionMember.getMemberId();
       firstName = competitionMember.getFirstName();
       surName = competitionMember.getSurName();
       age = competitionMember.getAge();
       sex = competitionMember.getGender();
       active = competitionMember.getActive();
-      swimStyle = choice;
+      swimStyle = competitionMember.getSwimStyle();
+      trainingResult = competitionMember.getTrainingResult();
+      competitionResult = competitionMember.getCompetitionResult();
+      //date = competition.getDate();
+      //result = competition.getResult;
+
 
       bw.write(memberId.replaceAll("\\[", "").replaceAll("]", "")
-          .replaceAll(",", "\t") + " " + firstName + " " + surName + " " + age + " " + sex + " " + active + " " + swimStyle); //+ " " + place + " " + date + " " + result + " " + rank);
+          .replaceAll(",", "\t") + " " + firstName + " " + surName + "\t\t" + age + "\t" + sex +
+          "\t" + active + "\t" + swimStyle + "\t" + date + "\t" + result);
       bw.newLine();
       bw.close();
       fw.close();

@@ -7,6 +7,7 @@ public class Controller {
   Finance finance = new Finance();
   LostAndFound lostAndFound = new LostAndFound();
   SwimStyle swimStyle;
+  Competition competition;
   Member member;
   CompetitionMembership competitionMembership = new CompetitionMembership();
   CompetitionMember competitionMember;
@@ -223,6 +224,7 @@ public class Controller {
         case 5 -> competitionMembership.deleteCompetitonMember(ui, fileHandler);
         case 6 -> lostAndFound.addLostItem(ui);
         case 7 -> lostAndFound.deleteItem(ui);
+        case 8 -> competitionMembership.addCompetition(ui, competition, competitionMember, fileHandler);
         case 9 -> {
           ui.displayGreen("Swimming away.....");
           try {

@@ -1,3 +1,4 @@
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -10,9 +11,9 @@ public class CompetitionMembership {
 
   public void ageIdentifier(CompetitionMember competitionMember) {
     int getAge = Integer.parseInt(competitionMember.getAge());
-    if ((year - getAge) < 18 ) {
+    if ((year - getAge) < 18) {
       youthTeam.add(competitionMember);
-    } else if ((year - getAge) >= 18 ) {
+    } else if ((year - getAge) >= 18) {
       seniorTeam.add(competitionMember);
     }
   }
@@ -107,6 +108,58 @@ public class CompetitionMembership {
       }
     }
     ui.displayLine();
+  }
+
+  public void addCompetition(UI ui, Competition competition, CompetitionMember competitionMember, FileHandler fileHandler) {
+    ui.displayBlueHeader("New competition");
+    ui.display("");
+    ui.displayGreen("Enter member ID of the competition swimmer: ");
+    String memberId = ui.getString();
+    while (!validateCompetitionId(memberId, ui)) {
+      memberId = ui.getString();
+    }
+    ui.displayGreen("1. Frontcrawl: \n2. Backstroke: \n3. Breaststroke: \n4. Butterfly  \n9. to go back\n");
+    int coachChoice = ui.getScanInt();
+    String choice = "";
+    if (coachChoice == 1) {
+      choice = SwimStyle.Frontcrawl.toString();
+      ui.displayGreen(choice);
+    } else if (coachChoice == 2) {
+      choice = SwimStyle.Backstroke.toString();
+    } else if (coachChoice == 3) {
+      choice = SwimStyle.Breaststroke.toString();
+    } else if (coachChoice == 4) {
+      choice = SwimStyle.Butterfly.toString();
+    }
+    String swimStyle = choice;
+    ui.displayGreen("Enter location for competition: ");
+    String place = ui.getString();
+    String date = ui.date();
+    ui.displayGreen("Enter swim time");
+    String result = ui.getString();
+    ui.displayGreen("Enter position/rank"); //TODO bedre formulering
+    int rank = ui.getScanInt();
+
+    competition = new Competition(swimStyle,place,date,result,rank);
+    for (int i = 0; i < allMembers.size(); i++) {
+      if (memberId.equals(allMembers.get(i).getMemberId())) {
+        competitionMember = new CompetitionMember(memberId, allMembers.get(i).getFirstName(), allMembers.get(i).getSurName(),
+            allMembers.get(i).getAge(), allMembers.get(i).getGender(), allMembers.get(i).getActive(),
+            allMembers.get(i).getSwimStyle(), allMembers.get(i).getTrainingResult(), competition);
+        allMembers.add(competitionMember);
+        allMembers.remove(i);
+      }
+    }
+    //fileHandler.saveCompetitions(competitionMember);
+  }
+
+  public boolean validateCompetitionId(String memberId, UI ui){
+    for (int i = 0; i < allMembers.size(); i++) {
+    if (memberId.equals(allMembers.get(i).getMemberId())) {
+      return true;
+    }
+    }
+    return false;
   }
 }
 
