@@ -14,14 +14,14 @@ public class Menu {
     ui.displayLine();
   }
 
-  public void chairmanSubMenu(UI ui){
+  public void chairmanSubMenu(UI ui, Membership membership){
     ui.display("Chairman Menu");
     ui.display("");
     ui.display("1. Register new member.");
     ui.display("2. Change membership status.");
-    ui.display("3. Delete a member.");
-    ui.display("4. Add item to Lost and found");
-    ui.display("5. Delete item from Lost and found");
+    ui.displayprint("3. Pending members ");  ui.displayGreenPrint(String.valueOf(membership.getPendingMembers().size())); ui.displayGreenPrint(". new\n");
+    ui.display("5. Add item to Lost and found");
+    ui.display("6. Delete item from Lost and found");
     ui.display("9. Main menu");
     ui.display("Please choose: ");
     ui.displayLine();

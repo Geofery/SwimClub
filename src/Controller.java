@@ -30,7 +30,7 @@ public class Controller {
       menu.showMainMenu(ui);
       choice = ui.getScanInt();
       switch (choice) {
-        case 1 -> membership.addNewMember(ui, member, membership, fileHandler);
+        case 1 -> membership.addNewMember(ui, member);
         case 2 -> viewMembership();
         case 3 -> competitionResults();//todo needs Work
         case 4 -> membership.displayMembers(ui);
@@ -132,12 +132,12 @@ public class Controller {
 
     do {
       keepRunning = true;
-      menu.chairmanSubMenu(ui);
+      menu.chairmanSubMenu(ui, membership);
       choice = ui.getScanInt();
       switch (choice) {
-        case 1 -> membership.addNewMember(ui, member, membership, fileHandler);
+        case 1 -> membership.addNewMember(ui, member);
         case 2 -> membership.changeMembershipStatus(ui, fileHandler);
-        case 3 -> membership.pendingMembers(ui, fileHandler, member);
+        case 3 -> membership.pendingMembers(ui, fileHandler);
         case 4 -> membership.validateDeleteMember(ui);
         case 5 -> lostAndFound.addLostItem(ui);
         case 6 -> lostAndFound.deleteItem(ui);

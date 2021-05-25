@@ -31,6 +31,10 @@ public class Membership {
         return allMembers;
     }
 
+    public ArrayList<Member> getPendingMembers() {
+        return pendingMembers;
+    }
+
     public ArrayList<Member> allMembers() {
         allMembers.addAll(youthTeam);
         allMembers.addAll(seniorTeam);
@@ -96,7 +100,7 @@ public class Membership {
         ui.displayLine();
     }
 
-    public void addNewMember(UI ui, Member member, Membership membership, FileHandler fileHandler) {
+    public void addNewMember(UI ui, Member member) {
         ui.displayGreen("Please enter first name");
         String firstName = ui.getString();
         ui.displayGreen("Please enter surname");
@@ -108,12 +112,10 @@ public class Membership {
 
         String memberId = generateMemberId();
         member = new Member(memberId, firstName, surName, year, gender, "Active");
-        //fileHandler.saveMember(member);
-        //membership.ageIdentifier(member);
         pendingMembers.add(member);
     }
 
-    public void pendingMembers(UI ui, FileHandler fileHandler, Member member){
+    public void pendingMembers(UI ui, FileHandler fileHandler){
         String memberId;
         int option;
         ui.displayBlueHeader("Pending members");
@@ -148,7 +150,7 @@ public class Membership {
         }else if (option == 9) {
         } else {
             ui.errorRed("WATER YOU SINKING ABOAT???");
-            pendingMembers(ui, fileHandler, member);
+            pendingMembers(ui, fileHandler);
         }
 
 

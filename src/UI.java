@@ -33,6 +33,10 @@ public class UI {
 
     public void display(String message) { System.out.println(message); }
 
+    public void displayprint(String message){
+        System.out.print(message);
+    }
+
     public String getString() { String anwser = scanner.nextLine();return anwser; }
 
     public int getScanInt(String errorMessage) {
