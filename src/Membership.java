@@ -7,6 +7,7 @@ public class Membership {
     private ArrayList<Member> seniorXoTeam = new ArrayList<>();
     private ArrayList<Member> passive = new ArrayList<>();
     private ArrayList<Member> allMembers = new ArrayList<>();
+    private ArrayList<Member> pendingMembers = new ArrayList<>();
     private int year = 2021;
     private String memberId;
 
@@ -30,6 +31,10 @@ public class Membership {
         return allMembers;
     }
 
+    public ArrayList<Member> getPendingMembers() {
+        return pendingMembers;
+    }
+
     public ArrayList<Member> allMembers() {
         allMembers.addAll(youthTeam);
         allMembers.addAll(seniorTeam);
@@ -51,7 +56,7 @@ public class Membership {
         }
     }
 
-    public String generateMemberId() {
+    public String generateMemberId() { //TODO create arrayList with all members, to validate new memberId
         memberId = "M";
         int randomNumber = (int) (Math.random() * 1000) + 1; //1 to 1000
         memberId += randomNumber;
@@ -66,13 +71,29 @@ public class Membership {
             }
         }
     }
+public void displayMembers(UI ui){
+    ui.displayBlueHeader("\nAll members\n");
+    ui.displayBlue("Members\n");
+    Collections.sort(allMembers, (o1, o2) -> o1.getFirstName().compareTo(o2.getFirstName()));
+    for (int i = 0; i < allMembers.size(); i++) {
+        ui.displayGreen(i + 1 + ". " + allMembers.get(i).toString());
+    }
+}
 
-    public void displayMembers(UI ui) {
-        ui.displayLine();
+    public void displayAllMembers(UI ui, CompetitionMembership competitionMembership) {
+        ui.displayBlueHeader("\nAll members\n");
+        ui.displayBlue("Members\n");
         Collections.sort(allMembers, (o1, o2) -> o1.getFirstName().compareTo(o2.getFirstName()));
         for (int i = 0; i < allMembers.size(); i++) {
             ui.displayGreen(i + 1 + ". " + allMembers.get(i).toString());
         }
+        ui.displayLine();
+        ui.displayBlue("\nCompetition members\n");
+        //Collections.sort(competitionMembership.getAllMembers(), (o1, o2) -> o1.getFirstName().compareTo(o2.getFirstName()));
+        for (int i = 0; i < competitionMembership.getAllMembers().size(); i++) {
+            ui.displayGreen(i + 1 + ". " + competitionMembership.getAllMembers().get(i).toString());
+        }
+
         ui.displayLine();
     }
 
@@ -95,7 +116,7 @@ public class Membership {
         ui.displayLine();
     }
 
-    public void addNewMember(UI ui, Member member, Membership membership, FileHandler fileHandler) {
+    public void addNewMember(UI ui, Member member) {
         ui.displayGreen("Please enter first name");
         String firstName = ui.getString();
         ui.displayGreen("Please enter surname");
@@ -106,10 +127,51 @@ public class Membership {
         String gender = validateGender(ui);
 
         String memberId = generateMemberId();
+        ui.displayGreen("\nYour member ID is: " + memberId);
+        ui.displayLine();
         member = new Member(memberId, firstName, surName, year, gender, "Active");
-        fileHandler.saveMember(member);
-        membership.ageIdentifier(member);
-        allMembers.add(member);
+        pendingMembers.add(member);
+    }
+
+    public void pendingMembers(UI ui, FileHandler fileHandler){
+        String memberId;
+        int option;
+        ui.displayBlueHeader("Pending members");
+        ui.displayGreen("");
+        for (int i = 0; i < pendingMembers.size(); i++) {
+            ui.displayGreen(pendingMembers.get(i).toString());
+        }
+        ui.displayGreen("\nInput member Id");
+        memberId = ui.getString();
+        ui.displayBlue("\nSet membership status: \n");
+        ui.displayGreen("1. Accept");
+        ui.errorRed("2. Deny");
+        ui.displayGreen("9. Back to admin");
+        option = ui.getScanInt();
+
+        if (option == 1){
+            for (int i = 0; i < pendingMembers.size(); i++) {
+                if (memberId.equals(pendingMembers.get(i).getMemberId())){
+                    allMembers.add(pendingMembers.get(i));
+                    fileHandler.saveMember(pendingMembers.get(i));
+                    ageIdentifier(pendingMembers.get(i));
+                    pendingMembers.remove(pendingMembers.get(i));
+                }
+            }
+        }else if (option == 2){
+            for (int i = 0; i < pendingMembers.size(); i++) {
+                if (memberId.equals(pendingMembers.get(i).getMemberId())){
+                    pendingMembers.remove(i);
+
+                }
+            }
+        }else if (option == 9) {
+        } else {
+            ui.errorRed("WATER YOU SINKING ABOAT???");
+            pendingMembers(ui, fileHandler);
+        }
+
+
     }
 
     public String validateGender(UI ui) {

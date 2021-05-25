@@ -164,7 +164,6 @@ public class FileHandler {
 
       competitionMember = new CompetitionMember(memberId, firstName, surName, age, sex, active, swimStyle, training);
       competitionMembership.ageIdentifier(competitionMember);
-
     }
   }
 

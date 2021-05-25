@@ -6,7 +6,7 @@ import java.util.Locale;
 public class LoginGui implements ActionListener {
   private static JLabel passwordLabel;
   private static JButton loginButton;
-  private static JButton cancelButton;
+  //private static JButton cancelButton;
   private static JLabel emailLabel;
   private static JPasswordField passwordField;
   private static JTextField email;
@@ -49,18 +49,6 @@ public class LoginGui implements ActionListener {
     loginButton.setBounds(10, 80, 80, 25);
     loginButton.addActionListener(this);
     panel.add(loginButton);
-
-
-    cancelButton = new JButton("Cancel");
-    cancelButton.setBounds(100, 80, 80, 25);
-    cancelButton.addActionListener(new ActionListener() {
-                                     @Override
-                                     public void actionPerformed(ActionEvent e) {
-                                       frame.setVisible(false);
-                                       new Main().run();
-                                     }
-                                   });
-    panel.add(cancelButton);
 
 
     success = new JLabel("");
@@ -117,8 +105,8 @@ public class LoginGui implements ActionListener {
 
   public boolean listenForLogin() {
     boolean check = true;
-
     while (check) {
+      Thread.yield();;
       check = checkIfLoggedIn();
     }
     return true;
