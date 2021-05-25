@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.util.Locale;
 
 public class Controller {
@@ -83,8 +84,8 @@ public class Controller {
   public void competitionResults() {//Todo needs work
   }
 
-  public void adminLogin() {
-    ui.displayGreen("Please enter E-mail: ");
+  public void adminLogin() { //TODO GUI????
+    /*ui.displayGreen("Please enter E-mail: ");
     String email = ui.getString().toLowerCase(Locale.ROOT);
     ui.displayGreen("Please enter your password: ");
     String password = ui.getString();
@@ -103,23 +104,24 @@ public class Controller {
       coachSubMenu();
     } else
       ui.errorRed("WATER YOU DOING??? ");
+  }*/
+
+    LoginGui loginGui = new LoginGui();
+    JFrame frame = loginGui.createFrame();
+
+    loginGui.listenForLogin();
+    frame.setVisible(false);
+    ui.displayLine();
+    if (loginGui.getLoginRights() == 1) {
+      chairmanSubMenu();
+    } else if (loginGui.getLoginRights() == 2) {
+      financeSubMenu();
+    } else if (loginGui.getLoginRights() == 3) {
+      coachSubMenu();
+    } else
+      ui.errorRed("Water you doing?!");
+    ui.displayLine();
   }
-
-  //JOptionPain
-      /* JFrame frame = loginGui.createFrame();
-
-        loginGui.listenForLogin();
-        frame.setVisible(false);
-        ui.displayLine();
-        if (loginGui.getLoginRights() == 1) {
-            chairmanSubMenu();
-        } else if (loginGui.getLoginRights() == 2) {
-            financeSubMenu();
-        } else if (loginGui.getLoginRights() == 3) {
-            coachSubMenu();
-        } else
-            ui.errorRed("Water you doing?!");
-        ui.displayLine();*/
 
   public void chairmanSubMenu() {
     Menu menu = new Menu();
@@ -133,7 +135,7 @@ public class Controller {
       choice = ui.getScanInt();
       switch (choice) {
         case 1 -> membership.addNewMember(ui, member, membership, fileHandler);
-        case 2 -> membership.changeMembershipStatus(ui,fileHandler);
+        case 2 -> membership.changeMembershipStatus(ui, fileHandler);
         case 3 -> membership.validateDeleteMember(ui);
         case 4 -> lostAndFound.addLostItem(ui);
         case 5 -> lostAndFound.deleteItem(ui);
@@ -216,7 +218,7 @@ public class Controller {
         case 2 -> competitionMembership.showSwimTeam(ui);
         case 3 -> competitionResults();
         case 4 -> membership.convertToCompetitionMember(ui, training, fileHandler, competitionMember);
-        case 5 -> competitionMembership.deleteCompetitonMember(ui,fileHandler);
+        case 5 -> competitionMembership.deleteCompetitonMember(ui, fileHandler);
         case 6 -> lostAndFound.addLostItem(ui);
         case 7 -> lostAndFound.deleteItem(ui);
         case 9 -> {
@@ -282,6 +284,7 @@ public class Controller {
     } while (keepRunning);
   }
 
+  //TODO Flyttes til CompetitionMember class.
   public void frontCrawl() {
     competitionMembership.swimStyleIdentifier(ui, SwimStyle.Frontcrawl.toString());
     competitionMembership.displayTopSwimmers(ui, SwimStyle.Frontcrawl.toString());

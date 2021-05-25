@@ -22,6 +22,8 @@ public class FileHandler {
   private Training trainingResult;
   private Competition competitionResult;
 
+
+  //TODO FW and BW initializes at the top?? to be used in all methods?
   public void saveMember(Member member) {
     FileWriter fw = null;
     try {
@@ -71,7 +73,7 @@ public class FileHandler {
 
   ////////////////////////////////////////////////////////////
 
-
+//TODO Can we resuse the two methods above??
   public void saveCompetitions(CompetitionMember competitionMember, String choice) {
     FileWriter fw = null;
     try {
