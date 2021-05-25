@@ -7,8 +7,8 @@ public class Menu {
     ui.display("2. View your membership"+"              .--'  '-._");
     ui.display("3. Competition results"+ "            _/`o  _      '.");
     ui.display("4. Show members"+"                  '----'._`.----. \\");
-    ui.display("5. Admin access"+"                   .     . `  .   \\;");
-    ui.display("6. Show lost and found"+"         _.`(. _.`(._.`(  /__\\");
+    ui.display("5. Admin access"+"                 .     .   `.    \\;");
+    ui.display("6. Show lost and found"+"       _.`(. _.`(._.`(   /__\\");
     ui.display("9. Quit ");
     ui.displayBlue("Please choose: ");
     ui.displayLine();
