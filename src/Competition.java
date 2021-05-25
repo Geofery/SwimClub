@@ -14,6 +14,7 @@ public class Competition {
     this.rank = rank;
   }
 
+  //TODO Implement this now please!
 }
 
 

@@ -6,7 +6,7 @@ import java.util.Locale;
 public class LoginGui implements ActionListener {
   private static JLabel passwordLabel;
   private static JButton loginButton;
-  //private static JButton cancelButton;
+  private static JButton cancelButton;
   private static JLabel emailLabel;
   private static JPasswordField passwordField;
   private static JTextField email;
@@ -47,20 +47,27 @@ public class LoginGui implements ActionListener {
     //Button
     loginButton = new JButton("Login");
     loginButton.setBounds(10, 80, 80, 25);
-    loginButton.addActionListener(new LoginGui());
+    loginButton.addActionListener(this);
     panel.add(loginButton);
 
-/*
+
     cancelButton = new JButton("Cancel");
     cancelButton.setBounds(100, 80, 80, 25);
-    loginButton.addActionListener(new LoginGUI());
+    cancelButton.addActionListener(new ActionListener() {
+                                     @Override
+                                     public void actionPerformed(ActionEvent e) {
+                                       frame.setVisible(false);
+                                       new Main().run();
+                                     }
+                                   });
     panel.add(cancelButton);
-*/
+
 
     success = new JLabel("");
     success.setBounds(10, 110, 300, 25);
     panel.add(success);
 
+    frame.setLocationRelativeTo(null); //Window opens in the center of the screen.
     frame.setVisible(true);
     frame.toFront();
     frame.requestFocus();
@@ -75,15 +82,15 @@ public class LoginGui implements ActionListener {
     String password = passwordField.getText();
 
     if (e.getActionCommand().equals("Login")) {
-      if (user.equals("chairman@dolphin.com") && password.equals("1234")) {
+      if (user.equals("chairman") && password.equals("1234")) {
         setFilledOut(true);
         setLoginRights(1);
         success.setText("Login successful!");
-      } else if (user.equals("finance@dolphin.com") && password.equals("1234")) {
+      } else if (user.equals("finance") && password.equals("1234")) {
         success.setText("Login successful!");
         setLoginRights(2);
         setFilledOut(true);
-      } else if (user.equals("coach@dolphin.com") && password.equals("1234")) {
+      } else if (user.equals("coach") && password.equals("1234")) {
         success.setText("Login successful!");
         setLoginRights(3);
         setFilledOut(true);
@@ -108,24 +115,19 @@ public class LoginGui implements ActionListener {
     return filledOut;
   }
 
-  public boolean listenForLogin(){
+  public boolean listenForLogin() {
     boolean check = true;
 
-    while(check){
-      //Java dosnt know shit is changing!!!! WHAT TO DO????
+    while (check) {
       check = checkIfLoggedIn();
     }
-
     return true;
   }
 
-  public boolean checkIfLoggedIn(){
-
-    if(isFilledOut()){
+  public boolean checkIfLoggedIn() {
+    if (isFilledOut()) {
       return false;
     }
     return true;
   }
-
-
 }

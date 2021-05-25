@@ -70,7 +70,7 @@ public class CompetitionMembership {
     ui.displayLine();
   }
 
-  public void deleteCompetitonMember(UI ui, FileHandler fileHandler) {// Copy ??
+  public void deleteCompetitonMember(UI ui, FileHandler fileHandler) {
     ui.displayBlueHeader("Delete competition member");
     ui.displayGreen("");
     ui.displayGreen("Enter the member Id og the swimmer: ");
