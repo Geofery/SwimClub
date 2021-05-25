@@ -126,7 +126,7 @@ public class Membership {
             gender = "Male";
             return gender;
         }
-        ui.errorRed("Invalid input no such gender");
+        ui.errorRed("Invalid gender");
         return validateGender(ui);
         }
 
@@ -205,7 +205,7 @@ public class Membership {
         }
     }
 
-    public boolean validateMemberAge(String memberId, UI ui) {
+    public boolean validateMemberAge(String memberId, UI ui) { //todo need to set min and max age
         int validateAge = 1961;
         for (int i = 0; i < allMembers.size(); i++) {
             if (allMembers.get(i).getMemberId().equals(memberId) && Integer.parseInt(allMembers.get(i).getAge()) > validateAge) {
