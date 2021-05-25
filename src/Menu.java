@@ -50,6 +50,7 @@ public class Menu {
     ui.display("5. Delete competition member");
     ui.display("6. Add item to Lost and found");
     ui.display("7. Delete item from Lost and found");
+    ui.display("8. Add Competition");
     ui.display("9. Main menu");
     ui.display("Please choose: ");
     ui.displayLine();

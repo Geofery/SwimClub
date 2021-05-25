@@ -81,15 +81,15 @@ public void displayMembers(UI ui){
 }
 
     public void displayAllMembers(UI ui, CompetitionMembership competitionMembership) {
-        ui.displayBlueHeader("\nAll members\n");
-        ui.displayBlue("Members\n");
+        ui.displayBlueHeader("All members\n");
+        ui.displayBlue("Recreational members\n");
         Collections.sort(allMembers, (o1, o2) -> o1.getFirstName().compareTo(o2.getFirstName()));
         for (int i = 0; i < allMembers.size(); i++) {
             ui.displayGreen(i + 1 + ". " + allMembers.get(i).toString());
         }
         ui.displayLine();
         ui.displayBlue("\nCompetition members\n");
-        //Collections.sort(competitionMembership.getAllMembers(), (o1, o2) -> o1.getFirstName().compareTo(o2.getFirstName()));
+        Collections.sort(competitionMembership.getAllMembers(), (o1, o2) -> o1.getFirstName().compareTo(o2.getFirstName()));
         for (int i = 0; i < competitionMembership.getAllMembers().size(); i++) {
             ui.displayGreen(i + 1 + ". " + competitionMembership.getAllMembers().get(i).toString());
         }
