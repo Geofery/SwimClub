@@ -124,4 +124,4 @@ M55 Hassan Hussein			2010	Male	Active
 M787 Fatma Ismael			2000	Female	Active
 M848 Mohamad Ibraheim			2000	Female	Active
 M824 Jon Rasmussen			2001	Male	Active
-M10 Jon kanon			2010	Male	Active
+M10 Jon Kanon			2010	Male	Active

@@ -117,18 +117,17 @@ public class Membership {
         gender = ui.getString();
         if (gender.equals("f") || gender.equals("F") || gender.equals
                 ("female") || gender.equals("Female") || gender.equals("FEMALE")) {
-            return gender = "Female";
+            gender = "Female";
+            return gender;
         }
 
-        if (gender.equals("m") || gender.equals("M") || gender.equals
+        else if (gender.equals("m") || gender.equals("M") || gender.equals
                 ("male") || gender.equals("Male") || gender.equals("MALE")) {
-            return gender = "Male";
-
-       } else{
-            ui.errorRed("Invalid gender please try again");
-            validateGender(ui);
+            gender = "Male";
+            return gender;
         }
-        return gender;
+        ui.errorRed("Invalid input no such gender");
+        return validateGender(ui);
         }
 
     public void changeMembershipStatus(UI ui, FileHandler fileHandler) {
