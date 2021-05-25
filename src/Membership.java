@@ -40,11 +40,11 @@ public class Membership {
 
     public void ageIdentifier(Member member) { //TODO eventuel udregn alderen på members.
         int getAge = Integer.parseInt(member.getAge());
-        if ((year - getAge) < 18 && member.isActive() == true)  {
+        if ((year - getAge) < 18 && member.getActive().equals("Active")) {
             youthTeam.add(member);
-        } else if ((year - getAge) >= 18 && !(year - getAge > 60) && member.isActive() == true) {
+        } else if ((year - getAge) >= 18 && !(year - getAge > 60) && member.getActive().equals("Active")) {
             seniorTeam.add(member);
-        } else if ((year - getAge) >= 60 && member.isActive() == true) {
+        } else if ((year - getAge) >= 60 && member.getActive().equals("Active")) {
             seniorXoTeam.add(member);
         } else {
             passive.add(member);
@@ -102,42 +102,67 @@ public class Membership {
         String surName = ui.getString();
         ui.displayGreen("Please enter year of birth");
         String year = ui.getString();
-        ui.displayGreen("Please enter gender m/f");
-        String gender = ui.getString();
-        if( gender.equals("f")||gender.equals("F")||gender.equals
-                ("female")||gender.equals("Female")||gender.equals("FEMALE"))
-        { gender = ("Female"); }
-
-        if( gender.equals("m")||gender.equals("M")||gender.equals
-                ("male")||gender.equals("Male")||gender.equals("MALE"))
-        { gender =("Male"); }
+        ui.displayGreen("Please enter gender M/F");
+        String gender = validateGender(ui);
 
         String memberId = generateMemberId();
-        member = new Member(memberId, firstName, surName, year, gender, true);
+        member = new Member(memberId, firstName, surName, year, gender, "Active");
         fileHandler.saveMember(member);
         membership.ageIdentifier(member);
         allMembers.add(member);
-      }
+    }
 
-    public void changeMembershipStatus(UI ui) {
+    public String validateGender(UI ui) {
+        String gender;
+        gender = ui.getString();
+        if (gender.equals("f") || gender.equals("F") || gender.equals
+                ("female") || gender.equals("Female") || gender.equals("FEMALE")) {
+            return gender = "Female";
+        }
+
+        if (gender.equals("m") || gender.equals("M") || gender.equals
+                ("male") || gender.equals("Male") || gender.equals("MALE")) {
+            return gender = "Male";
+
+       } else{
+            ui.errorRed("Invalid gender please try again");
+            validateGender(ui);
+        }
+        return gender;
+        }
+
+    public void changeMembershipStatus(UI ui, FileHandler fileHandler) {
         displayMembers(ui);
         ui.displayGreen("Set membership status: ");
         ui.displayGreen("1. Active");
         ui.displayGreen("2. Passive");
         ui.displayGreen("9. Back to admin");
         int choice = ui.getScanInt();
+        String memberId;
         if (choice == 1) {
-            ui.displayGreen("Enter member to set member active: ");
-            getAllMembers().get(ui.getScanInt() - 1).setActive(true);
+            ui.displayGreen("Enter member Id: ");
+            memberId = ui.getString();
+            for (int i = 0; i < allMembers.size(); i++) {
+                if (allMembers.get(i).getMemberId().equals(memberId)) {
+                    allMembers.get(i).setActive("Active");
+                }
+            }
+            fileHandler.refreshMembers(allMembers);
         } else if (choice == 2) {
-            ui.displayGreen("Enter member to set member passive: \"");
-            getAllMembers().get(ui.getScanInt() - 1).setActive(false);
+            ui.displayGreen("Enter member Id: ");
+            memberId = ui.getString();
+            for (int i = 0; i < allMembers.size(); i++) {
+                if (allMembers.get(i).getMemberId().equals(memberId)) {
+                    allMembers.get(i).setActive("Passive");
+                }
+            }
+            fileHandler.refreshMembers(allMembers);
         } else if (choice == 9) {
         } else {
             ui.errorRed("WATER YOU SINKING ABOAT???");
-            changeMembershipStatus(ui);
+            changeMembershipStatus(ui, fileHandler);
         }
-    }//TODO Fix så den gemmer og ændre på MemberId
+    }
 
     public void convertToCompetitionMember(UI ui, Training training, FileHandler fileHandler, CompetitionMember competitionMember) {
         displayMembers(ui);
@@ -171,7 +196,7 @@ public class Membership {
                     competitionMember = new CompetitionMember(getAllMembers().get(i).getMemberId().replaceAll("M", "C"),
                             getAllMembers().get(i).getFirstName(), getAllMembers().get(i).getSurName(),
                             getAllMembers().get(i).getAge(), getAllMembers().get(i).getGender(),
-                            getAllMembers().get(i).isActive(), choice, training);
+                            getAllMembers().get(i).getActive(), choice, training);
                     deleteMember(memberId);
                     fileHandler.saveCompetitionMember(competitionMember, choice, training);
                     fileHandler.refreshMembers(getAllMembers());

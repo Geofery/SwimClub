@@ -133,7 +133,7 @@ public class Controller {
       choice = ui.getScanInt();
       switch (choice) {
         case 1 -> membership.addNewMember(ui, member, membership, fileHandler);
-        case 2 -> membership.changeMembershipStatus(ui);
+        case 2 -> membership.changeMembershipStatus(ui,fileHandler);
         case 3 -> membership.validateDeleteMember(ui);
         case 4 -> lostAndFound.addLostItem(ui);
         case 5 -> lostAndFound.deleteItem(ui);
@@ -216,7 +216,7 @@ public class Controller {
         case 2 -> competitionMembership.showSwimTeam(ui);
         case 3 -> competitionResults();
         case 4 -> membership.convertToCompetitionMember(ui, training, fileHandler, competitionMember);
-        case 5 -> deleteCompetitonMember();
+        case 5 -> competitionMembership.deleteCompetitonMember(ui,fileHandler);
         case 6 -> lostAndFound.addLostItem(ui);
         case 7 -> lostAndFound.deleteItem(ui);
         case 9 -> {
@@ -241,16 +241,6 @@ public class Controller {
         }
       }
     } while (keepRunning);
-  }
-
-  private void deleteCompetitonMember() { //Is this an copy of the one in membership ?? todo if there is time //does it save to file??
-    for (int i = 0; i < membership.getAllMembers().size(); i++) {
-      membership.displayMembers(ui);
-      ui.displayGreen("input member Id og the member you want to delete");
-      String memberId = ui.getString();
-      if (membership.getAllMembers().get(i).getMemberId().equals(memberId)) {
-      }
-    }
   }
 
   public void swimStylesSubMenu() {

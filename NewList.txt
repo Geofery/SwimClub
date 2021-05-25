@@ -116,3 +116,12 @@ M38 Torben Chris			1998	male	true
 M89 Torben Bjerg			1955	male	true
 M93 Victor Borge			1993	male	true
 M47 Viktor Bramer			1940	male	true
+M524 Jan Johansen			2006	Male	Active
+M923 Max Power			2011	Male	Active
+M881 Find  Frandesn			2010	Male	Active
+M538 Jane  Jensen			2003	Female	Active
+M55 Hassan Hussein			2010	Male	Active
+M787 Fatma Ismael			2000	Female	Active
+M848 Mohamad Ibraheim			2000	Female	Active
+M824 Jon Rasmussen			2001	Male	Active
+M10 Jon kanon			2010	Male	Active

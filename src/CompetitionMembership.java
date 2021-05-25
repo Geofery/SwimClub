@@ -10,9 +10,9 @@ public class CompetitionMembership {
 
   public void ageIdentifier(CompetitionMember competitionMember) {
     int getAge = Integer.parseInt(competitionMember.getAge());
-    if ((year - getAge) < 18 && competitionMember.isActive()) {
+    if ((year - getAge) < 18 && competitionMember.getActive().equals("Active")) {
       youthTeam.add(competitionMember);
-    } else if ((year - getAge) >= 18 && !(year - getAge >= 60) && competitionMember.isActive()) {
+    } else if ((year - getAge) >= 18 && !(year - getAge >= 60) && competitionMember.getActive().equals("Active")) {
       seniorTeam.add(competitionMember);
     }
   }
@@ -70,7 +70,7 @@ public class CompetitionMembership {
     ui.displayLine();
   }
 
-  public void deleteCompetitonMember(UI ui) {// Copy ??
+  public void deleteCompetitonMember(UI ui, FileHandler fileHandler) {// Copy ??
     ui.displayBlueHeader("Delete competition member");
     ui.displayGreen("");
     ui.displayGreen("Enter the member Id og the swimmer: ");
@@ -80,6 +80,7 @@ public class CompetitionMembership {
         allMembers.remove(i);
       }
     }
+    fileHandler.refreshCompetitionMembers(allMembers);
     ui.displayLine();
   }
 

@@ -3,7 +3,7 @@ public class CompetitionMember extends Member {
     private Competition competitionResult;
     private String swimStyle;
 
-    public CompetitionMember(String memberId, String firstName, String surName, String age, String sex, boolean active,
+    public CompetitionMember(String memberId, String firstName, String surName, String age, String sex, String active,
                              String swimStyle, Training trainingResult, Competition competitionResult) {
         super(memberId, firstName, surName, age, sex, active);
         this.swimStyle = swimStyle;
@@ -11,7 +11,7 @@ public class CompetitionMember extends Member {
         this.competitionResult = competitionResult;
     }
 
-    public CompetitionMember(String memberId, String firstName, String surName, String age, String sex, boolean active, String swimStyle, Training trainingResult) {
+    public CompetitionMember(String memberId, String firstName, String surName, String age, String sex, String active, String swimStyle, Training trainingResult) {
         super(memberId, firstName, surName, age, sex, active);
         this.swimStyle = swimStyle;
         this.trainingResult = trainingResult;

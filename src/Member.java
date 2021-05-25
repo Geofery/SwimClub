@@ -4,10 +4,10 @@ public class Member {
   private String surName;
   private String age;
   private String gender;
-  private boolean active; // TODO lav til en String Active /Passive Evt. en Metode Not possible because ageIdentifier
+  private String active; // TODO lav til en String Active /Passive Evt. en Metode Not possible because ageIdentifier
 
 
-  public Member(String memberId, String firstName, String surName, String age, String gender, boolean active) {
+  public Member(String memberId, String firstName, String surName, String age, String gender, String active) {
     this.memberId = memberId;
     this.firstName = firstName;
     this.surName = surName;
@@ -16,7 +16,7 @@ public class Member {
     this.active = active;
   }
 
-  public void setActive(boolean active) {
+  public void setActive(String active) {
     this.active = active;
   }
 
@@ -38,7 +38,7 @@ public class Member {
     return gender;
   }
 
-  public boolean isActive() {
+  public String getActive() {
     return active;
   }
 

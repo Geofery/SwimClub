@@ -24,7 +24,7 @@ public class Finance {
     return membership.getPassive().size() * passivePrice;
   }
 
-  public void viewFinances(UI ui, Membership membership) {//Todo chris Print BadStandingMember Jens
+  public void viewFinances(UI ui, Membership membership) {
     int sum = youthSubFee(membership) + seniorSubFee(membership) + seniorXoSubFee(membership) + passiveSubFee(membership);
     ui.displayBlueHeader("Financial overview\n");
     ui.displayGreenPrint("Total income from youth members: = ");

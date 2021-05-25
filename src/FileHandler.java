@@ -12,7 +12,7 @@ public class FileHandler {
   private String surName;
   private String age;
   private String sex;
-  private boolean active;
+  private String active;
   //.-.-.-.--.-.-.-....-.-.-.-.
   private String swimStyle;
   private String place;
@@ -36,7 +36,7 @@ public class FileHandler {
       surName = member.getSurName();
       age = member.getAge();
       sex = member.getGender();
-      active = member.isActive();
+      active = member.getActive();
 
       bw.write(memberId.replaceAll("\\[", "").replaceAll("]", "")
           .replaceAll(",", "\t") + " " + firstName + " " + surName + "\t\t\t" + age + "\t" + sex + "\t" + active);
@@ -63,7 +63,7 @@ public class FileHandler {
       surName = fileReader.next();
       age = fileReader.next();
       sex = fileReader.next();
-      active = fileReader.nextBoolean();
+      active = fileReader.next();
       member = new Member(memberId, firstName, surName, age, sex, active);
       membership.ageIdentifier(member);
     }
@@ -87,7 +87,7 @@ public class FileHandler {
       surName = competitionMember.getSurName();
       age = competitionMember.getAge();
       sex = competitionMember.getGender();
-      active = competitionMember.isActive();
+      active = competitionMember.getActive();
       swimStyle = choice;
 
       bw.write(memberId.replaceAll("\\[", "").replaceAll("]", "")
@@ -114,7 +114,7 @@ public class FileHandler {
       surName = competitionMember.getSurName();
       age = competitionMember.getAge();
       sex = competitionMember.getGender();
-      active = competitionMember.isActive();
+      active = competitionMember.getActive();
       swimStyle = competitionMember.getSwimStyle();
       trainingResult = competitionMember.getTrainingResult();
       competitionResult = competitionMember.getCompetitionResult();
@@ -149,7 +149,7 @@ public class FileHandler {
       surName = fileReader.next();
       age = fileReader.next();
       sex = fileReader.next();
-      active = fileReader.nextBoolean();
+      active = fileReader.next();
       swimStyle = fileReader.next();
       date = fileReader.next();
       date += " ";
@@ -220,7 +220,7 @@ public class FileHandler {
         fw.write(allMembers.get(i).getMemberId().replaceAll("\\[", "").replaceAll("]", "")
             .replaceAll(",", "\t") + " " + allMembers.get(i).getFirstName() + " "
             + allMembers.get(i).getSurName() + "\t\t\t" +allMembers.get(i).getAge() + "\t"
-            + allMembers.get(i).getGender() + "\t" + allMembers.get(i).isActive()+"\n");
+            + allMembers.get(i).getGender() + "\t" + allMembers.get(i).getActive()+"\n");
       }
         fw.close();
       } catch (IOException e) {
@@ -229,9 +229,25 @@ public class FileHandler {
   }
 
 
+  public void refreshCompetitionMembers(ArrayList<CompetitionMember> allCompetitionMembers) {
+    FileWriter fw = null;
+    try {
+      fw = new FileWriter(competitionMembers);
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+    BufferedWriter bw = new BufferedWriter(fw);
+    try {
 
-
-
-
-
+      for (int i = 0; i < allCompetitionMembers.size(); i++) {
+        fw.write(allCompetitionMembers.get(i).getMemberId().replaceAll("\\[", "").replaceAll("]", "")
+                .replaceAll(",", "\t") + " " + allCompetitionMembers.get(i).getFirstName() + " "
+                + allCompetitionMembers.get(i).getSurName() + "\t\t\t" +allCompetitionMembers.get(i).getAge() + "\t"
+                + allCompetitionMembers.get(i).getGender() + "\t" + allCompetitionMembers.get(i).getActive()+"\n");
+      }
+      fw.close();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
 }
