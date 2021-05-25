@@ -1,5 +1,4 @@
 import javax.swing.*;
-import java.util.Locale;
 
 public class Controller {
   UI ui = new UI();
@@ -12,6 +11,7 @@ public class Controller {
   CompetitionMembership competitionMembership = new CompetitionMembership();
   CompetitionMember competitionMember;
   Training training;
+  LoginGui loginGui;
 
 
   public void mainMenu() {
@@ -84,7 +84,8 @@ public class Controller {
   public void competitionResults() {//Todo needs work
   }
 
-  public void adminLogin() { //TODO GUI????
+  public void adminLogin() {
+    //Alternative admin menu
     /*ui.displayGreen("Please enter E-mail: ");
     String email = ui.getString().toLowerCase(Locale.ROOT);
     ui.displayGreen("Please enter your password: ");
@@ -106,7 +107,7 @@ public class Controller {
       ui.errorRed("WATER YOU DOING??? ");
   }*/
 
-    LoginGui loginGui = new LoginGui();
+    loginGui = new LoginGui();
     JFrame frame = loginGui.createFrame();
 
     loginGui.listenForLogin();
@@ -136,9 +137,10 @@ public class Controller {
       switch (choice) {
         case 1 -> membership.addNewMember(ui, member, membership, fileHandler);
         case 2 -> membership.changeMembershipStatus(ui, fileHandler);
-        case 3 -> membership.validateDeleteMember(ui);
-        case 4 -> lostAndFound.addLostItem(ui);
-        case 5 -> lostAndFound.deleteItem(ui);
+        case 3 -> membership.pendingMembers(ui, fileHandler, member);
+        case 4 -> membership.validateDeleteMember(ui);
+        case 5 -> lostAndFound.addLostItem(ui);
+        case 6 -> lostAndFound.deleteItem(ui);
         case 9 -> {
           ui.displayGreen("Checking if you forgot anyfin.....");
           try {
