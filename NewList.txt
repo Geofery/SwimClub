@@ -130,3 +130,4 @@ M47 Viktor Bramer			1940	male	true
 M794 Lone Trambone			1992	Female	Active
 M254 Bone Kanone			1984	Female	Active
 M322 Trine Larsen			1984	Female	Active
+M862 Karl William			2009	Male	Active

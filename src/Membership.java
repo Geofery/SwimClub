@@ -111,6 +111,8 @@ public class Membership {
         String gender = validateGender(ui);
 
         String memberId = generateMemberId();
+        ui.displayGreen("\nYour member ID is: " + memberId);
+        ui.displayLine();
         member = new Member(memberId, firstName, surName, year, gender, "Active");
         pendingMembers.add(member);
     }
@@ -127,7 +129,7 @@ public class Membership {
         memberId = ui.getString();
         ui.displayBlue("\nSet membership status: \n");
         ui.displayGreen("1. Accept");
-        ui.displayGreen("2. Deny");
+        ui.errorRed("2. Deny");
         ui.displayGreen("9. Back to admin");
         option = ui.getScanInt();
 
