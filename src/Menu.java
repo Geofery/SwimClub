@@ -2,7 +2,7 @@ public class Menu {
   public void showMainMenu(UI ui){
     ui.displayBlue("\n\t\tWhalecome to the Dolphins swim club!\n");
 
-    ui.display("                                       Jens the Dolphin!");
+    ui.display("                                 Jens the Dolphin!");
     ui.display("1. Join the club"+"                         _.-,");
     ui.display("2. View your membership"+"              .--'  '-._");
     ui.display("3. Competition results"+ "            _/`-  _      '.");
