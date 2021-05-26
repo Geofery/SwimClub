@@ -31,7 +31,7 @@ public class Menu {
     ui.display("Finance Menu");
     ui.display("");
     ui.display("1. Creditors");
-    ui.display("2. View finances");
+    ui.display("2. Subscription overview");
     ui.display("3. Delete member");
     ui.display("4. Add item to Lost and found");
     ui.display("5. Delete item from Lost and found");

@@ -24,5 +24,6 @@ C999 Luke SkyWalker		1999	male	true	Frontcrawl	4 May 2009	04,10	true	DeathStar	2
 C911 Rasmus Thomsen		2005	Male	true	Frontcrawl	8 Feb 2014	08,44	true	Allerod	26 May 2021	09,12	2
 C38 Torben Chris		1998	Male	Active	Backstroke	26 May 2021	10,34
 C1 Jens Jensen		2008	Male	true	Frontcrawl	24 May 2021	09,14	true	Copenhagen	26 May 2021	08,44	2
+C42 Victor Thomsen		1993	Male	true	Frontcrawl	14 Feb 2021	09,14	true	Berlin	26. maj 2021	08,34	3
 C81 Sarah Njöström		1993	Female	Active	Backstroke	26 May 2021	11,13
 C80 Sarah Thomsen		1993	Female	Passive	Backstroke	26 May 2021	10,11
