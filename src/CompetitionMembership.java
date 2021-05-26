@@ -1,4 +1,3 @@
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -76,7 +75,7 @@ public class CompetitionMembership {
     ui.displayLine();
   }
 
-  public void deleteCompetitonMember(UI ui, FileHandler fileHandler, Competition competition) {
+  public void deleteCompetitonMember(UI ui) {
     ui.displayBlueHeader("Delete competition member");
     ui.displayGreen("");
     ui.displayGreen("Enter the member Id og the swimmer: ");
@@ -86,7 +85,7 @@ public class CompetitionMembership {
         allMembers.remove(i);
       }
     }
-    fileHandler.refreshCompetitionMembers(allMembers);
+    //fileHandler.refreshCompetitionMembers(allMembers);
     ui.displayLine();
   }
 
@@ -135,7 +134,7 @@ public class CompetitionMembership {
     String date = ui.date();
     ui.displayGreen("Enter swim time");
     String result = ui.getString();
-    ui.displayGreen("Enter position/rank"); //TODO bedre formulering
+    ui.displayGreen("Enter rank"); //TODO bedre formulering
     String rank = ui.getString();
 
     competition = new Competition(place, date, result, Integer.parseInt(rank));
@@ -149,8 +148,8 @@ public class CompetitionMembership {
     }
 
     allMembers.add(competitionMember);
-    //fileHandler.saveCompetitionMember(competitionMember, choice, training, competition);
-    fileHandler.refreshCompetitionMembers(allMembers);
+    fileHandler.saveCompetitionMember(competitionMember, choice, training, competition);
+    //fileHandler.refreshCompetitionMembers(allMembers);
   }
 
   public boolean validateCompetitionId(String memberId, UI ui) {

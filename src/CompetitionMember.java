@@ -3,6 +3,7 @@ public class CompetitionMember extends Member {
     private Competition competitionResult;
     private String swimStyle;
 
+
     public CompetitionMember(String memberId, String firstName, String surName, String age, String sex, String active,
                              String swimStyle, Training trainingResult, Competition competitionResult) {
         super(memberId, firstName, surName, age, sex, active);

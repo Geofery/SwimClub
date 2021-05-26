@@ -83,6 +83,13 @@ public class Controller {
   }
 
   public void competitionResults() {//Todo needs work
+    ui.displayBlueHeader("Top 5 competition swimmers");
+    /*for (int i = 0; i < competitionMembership.getAllMembers().size(); i++) {
+      if (competitionMembership.getAllMembers().get(i).getCompetitionResult().getRank() >= 1){
+        ui.displayGreen(competitionMembership.getAllMembers().get(i).toString());
+      }
+
+    }*/
   }
 
   public void adminLogin() {
@@ -222,7 +229,7 @@ public class Controller {
         case 3 -> competitionResults();
         case 4 -> membership.convertToCompetitionMember(ui, training, fileHandler, competitionMember, competition);
         case 5 -> competitionMembership.addCompetition(ui, competition, competitionMember, fileHandler, training);
-        case 6 -> competitionMembership.deleteCompetitonMember(ui, fileHandler, competition);
+        case 6 -> competitionMembership.deleteCompetitonMember(ui);
         case 7 -> lostAndFound.addLostItem(ui);
         case 8 -> lostAndFound.deleteItem(ui);
         case 9 -> {

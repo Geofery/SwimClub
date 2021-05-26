@@ -131,14 +131,14 @@ public class FileHandler {
       trainingResult = competitionMember.getTrainingResult().getResult();
       //Competition object
       placeholder = true;
-      competition = competitionMember.getCompetitionResult();
+      //competition = competitionMember.getCompetitionResult();
 
-     /* place = competitionMember.getCompetitionResult().getPlace();
+      place = competitionMember.getCompetitionResult().getPlace();
       competitionDate = competitionMember.getCompetitionResult().getDate();
       competitionTime = competitionMember.getCompetitionResult().getResult();
       rank = competitionMember.getCompetitionResult().getRank();
-*/
-      if (rank >= 1) {
+
+     /* if (rank >= 1) {
         bw.write(memberId.replaceAll("\\[", "").replaceAll("]", "")
             .replaceAll(",", "\t") + " " + firstName + " " + surName + "\t\t" + age + "\t" + sex +
             "\t" + active + "\t" + swimStyle + "\t" + trainingDate + "\t" + trainingResult + "\t" + placeholder + "\t"
@@ -146,9 +146,9 @@ public class FileHandler {
         bw.newLine();
         bw.close();
         fw.close();
-      }
+      }*/
 
-      /*if (rank >= 1) {
+      if (rank >= 1) {
         bw.write(memberId.replaceAll("\\[", "").replaceAll("]", "")
             .replaceAll(",", "\t") + " " + firstName + " " + surName + "\t\t" + age + "\t" + sex +
             "\t" + active + "\t" + swimStyle + "\t" + trainingDate + "\t" + trainingResult + "\t" + placeholder + "\t"
@@ -156,7 +156,7 @@ public class FileHandler {
         bw.newLine();
         bw.close();
         fw.close();
-      } */else if (rank <= 0) {
+      } else if (rank <= 0) {
 
         bw.write(memberId.replaceAll("\\[", "").replaceAll("]", "")
             .replaceAll(",", "\t") + " " + firstName + " " + surName + "\t\t" + age + "\t" + sex +
