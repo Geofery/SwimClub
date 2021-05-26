@@ -61,7 +61,7 @@ M10 Jon Kanon			2010	Male	Active
 M824 Jon Rasmussen			2001	Male	Active
 M35 Julia Hjorth-Hansen			1984	Female	Active
 M13 Julie Jansen			2000	Female	Active
-M36 Julie Hjorth			1984	Female	Active
+M36 Julie Hjorth			1984	Female	Passive
 M64 Julie Jensen			2000	Female	Active
 M87 Julie Sørensen			1984	Female	Active
 M103 Julie Hjorth-Hansen			1984	Female	Active
@@ -121,7 +121,6 @@ M73 Sarah Tuxen			1993	Female	Active
 M29 Sarah Tjomsen			1983	Female	Passive
 M30 Susan Njöström			1953	Female	Active
 M668 Tine Marbjerg			1994	Male	Active
-M88 Tobias Bjerg			1998	Male	Active
 M88 Tobias Mikkelsen			1998	Male	Active
 M37 Tobias Thomsen			1998	Male	Passive
 M89 Torben Bjerg			1955	Male	Passive

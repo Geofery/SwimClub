@@ -1,3 +1,4 @@
+package objects;
 
 public class Training {
   private String date;

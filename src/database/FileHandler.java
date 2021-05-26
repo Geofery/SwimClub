@@ -1,11 +1,19 @@
+package database;
+
+import membershipadministrator.CompetitionMembership;
+import membershipadministrator.Membership;
+import membertypes.CompetitionMember;
+import membertypes.Member;
+import objects.Competition;
+import objects.Training;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class FileHandler {
-  File file = new File("Members.txt");
-  File trainings = new File("Training.txt");
-  File competitionMembers = new File("CompetitionMembers.txt");
+  File file = new File("src/database/Members.txt");
+  File competitionMembers = new File("src/database/CompetitionMembers.txt");
   FileWriter fw = null;
   BufferedWriter bw = null;
   Scanner fileReader = null;

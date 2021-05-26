@@ -27,3 +27,4 @@ C1 Jens Jensen		2008	Male	true	Frontcrawl	24 May 2021	09,14	true	Copenhagen	26 M
 C42 Victor Thomsen		1993	Male	true	Frontcrawl	14 Feb 2021	09,14	true	Berlin	26. maj 2021	08,34	3
 C81 Sarah Njöström		1993	Female	Active	Backstroke	26 May 2021	11,13
 C80 Sarah Thomsen		1993	Female	Passive	Backstroke	26 May 2021	10,11
+C88 Tobias Bjerg		1998	Male	Active	Breaststroke	26. maj 2021	10,45

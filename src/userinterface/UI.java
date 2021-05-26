@@ -1,3 +1,5 @@
+package userinterface;
+
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import java.io.File;
@@ -76,7 +78,7 @@ public class UI {
         try
         {
             Clip clip = AudioSystem.getClip();
-            clip.open(AudioSystem.getAudioInputStream(new File("PoolDive.wav")));
+            clip.open(AudioSystem.getAudioInputStream(new File("src/menu/PoolDive.wav")));
             clip.start();
         }
         catch (Exception exc)

@@ -1,3 +1,14 @@
+package membershipadministrator;
+
+import database.FileHandler;
+import membershipadministrator.CompetitionMembership;
+import membertypes.CompetitionMember;
+import membertypes.Member;
+import objects.Competition;
+import objects.Training;
+import userinterface.SwimStyle;
+import userinterface.UI;
+
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -105,7 +116,7 @@ public void displayMembers(UI ui){
         }
     }
 
-    public void validateDeleteMember(UI ui) {  // Cant be moved because chairman sub also uses it. finance delete has been moved.
+    public void validateDeleteMember(UI ui) {
         displayMembers(ui);
         ui.displayGreen("Input member ID of the member you want deleted: ");
         String memberId = ui.getString();
@@ -187,7 +198,7 @@ public void displayMembers(UI ui){
     }
 
     public void viewMembership(UI ui) {
-        ui.displayBlueHeader("View your Membership");
+        ui.displayBlueHeader("View your membership");
         ui.displayGreen("");
         ui.displayGreen("Input your member ID: ");
         String memberId = ui.getString();
@@ -267,7 +278,7 @@ public void displayMembers(UI ui){
             memberId = ui.getString();
         }
 
-        ui.displayGreen("What swimstyle, do you want to the member to comepete in?");
+        ui.displayGreen("What swimstyle, do you want to the member to compete in?");
         ui.displayGreen("1. Frontcrawl: \n2. Backstroke: \n3. Breaststroke: \n4. Butterfly  \n9. to go back\n");
         int coachChoice = ui.getScanInt();
         ui.displayGreen("Enter training result in format **,**");

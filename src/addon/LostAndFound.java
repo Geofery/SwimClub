@@ -1,3 +1,7 @@
+package addon;
+
+import userinterface.UI;
+
 import java.util.ArrayList;
 
 public class LostAndFound {

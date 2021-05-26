@@ -1,3 +1,8 @@
+package membershipadministrator;
+
+import membertypes.Member;
+import userinterface.UI;
+
 import java.util.ArrayList;
 
 public class Finance {
@@ -26,7 +31,7 @@ public class Finance {
 
   public void viewFinances(UI ui, Membership membership) {
     int sum = youthSubFee(membership) + seniorSubFee(membership) + seniorXoSubFee(membership) + passiveSubFee(membership);
-    ui.displayBlueHeader("Financial overview\n");
+    ui.displayBlueHeader("Financial subscription overview\n");
     ui.displayGreenPrint("Total income from youth members: = ");
     ui.getPattern(youthSubFee(membership));
     ui.displayGreen(" kr."); //New method
@@ -95,7 +100,7 @@ public class Finance {
     ui.displayBlueHeader(team + " members\n");
 
     for (int i = 0; i < badStandingMember; i++) {
-      ui.displayGreen(arrayList.get(i + 3).toString() + " Owes money!");
+      ui.displayGreen(arrayList.get(i + 3).toString() + "\nOwes money!");
     }
   }
 }
