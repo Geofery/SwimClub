@@ -237,27 +237,29 @@ public class FileHandler {
     }
     bw = new BufferedWriter(fw);
     try {
+      for (int i = 0; i < allCompetitionMembers.size(); i++) {
+        System.out.println(allCompetitionMembers.get(i));
+      }
 
       for (int i = 0; i < allCompetitionMembers.size(); i++) {
-        Integer rank = allCompetitionMembers.get(i).getCompetitionResult().getRank();
-        if (rank == null){
+        if (allCompetitionMembers.contains(allCompetitionMembers.get(i).getCompetitionResult())){
+          rank = 1;
+        }else if (!allCompetitionMembers.contains(allCompetitionMembers.get(i).getCompetitionResult())){
           rank = 0;
         }
 
-        if (rank < 1) {
+        if (rank == 0) {
         fw.write(allCompetitionMembers.get(i).getMemberId().replaceAll("\\[", "").replaceAll("]", "")
             .replaceAll(",", "\t") + " " + allCompetitionMembers.get(i).getFirstName() + " "
             + allCompetitionMembers.get(i).getSurName() + "\t\t\t" + allCompetitionMembers.get(i).getAge() + "\t"
             + allCompetitionMembers.get(i).getGender() + "\t" + allCompetitionMembers.get(i).getActive() + "\t"
             + allCompetitionMembers.get(i).getTrainingResult() + "\n");
-      }else if (rank >= 1){
+      }else if (rank == 1){
           fw.write(allCompetitionMembers.get(i).getMemberId().replaceAll("\\[", "").replaceAll("]", "")
               .replaceAll(",", "\t") + " " + allCompetitionMembers.get(i).getFirstName() + " "
               + allCompetitionMembers.get(i).getSurName() + "\t\t\t" + allCompetitionMembers.get(i).getAge() + "\t"
               + allCompetitionMembers.get(i).getGender() + "\t" + allCompetitionMembers.get(i).getActive() + "\t"
-              + allCompetitionMembers.get(i).getTrainingResult().getDate() + "\t" +  allCompetitionMembers.get(i).getTrainingResult().getResult() + "\t"
-              + placeholder + "\t" + allCompetitionMembers.get(i).getCompetitionResult().getPlace() + "\t" + allCompetitionMembers.get(i).getCompetitionResult().getDate()
-              + "\t" + allCompetitionMembers.get(i).getCompetitionResult().getResult() + "\t" + allCompetitionMembers.get(i).getCompetitionResult().getRank() + "\n");
+              + allCompetitionMembers.get(i).getTrainingResult() + "\t" + placeholder + allCompetitionMembers.get(i).getCompetitionResult() + "\n");
         }
       }
       fw.close();

@@ -86,7 +86,7 @@ public class CompetitionMembership {
         allMembers.remove(i);
       }
     }
-    //fileHandler.refreshCompetitionMembers(allMembers);
+    fileHandler.refreshCompetitionMembers(allMembers);
     ui.displayLine();
   }
 
@@ -144,13 +144,13 @@ public class CompetitionMembership {
         competitionMember = new CompetitionMember(memberId, allMembers.get(i).getFirstName(), allMembers.get(i).getSurName(),
             allMembers.get(i).getAge(), allMembers.get(i).getGender(), allMembers.get(i).getActive(),
             allMembers.get(i).getSwimStyle(), allMembers.get(i).getTrainingResult(), competition);
-        allMembers.get(i);
+            allMembers.remove(i);
       }
     }
 
     allMembers.add(competitionMember);
-    fileHandler.saveCompetitionMember(competitionMember, choice, training, competition);
-    //fileHandler.refreshCompetitionMembers(allMembers);
+    //fileHandler.saveCompetitionMember(competitionMember, choice, training, competition);
+    fileHandler.refreshCompetitionMembers(allMembers);
   }
 
   public boolean validateCompetitionId(String memberId, UI ui) {

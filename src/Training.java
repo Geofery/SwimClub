@@ -22,7 +22,7 @@ public class Training {
 
   @Override
   public String toString() {
-    return "Training date: " + date + " " + "Training result: " + result;
+    return  date + " " + result;
   }
 
 
