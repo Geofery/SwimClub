@@ -21,14 +21,14 @@ public class CompetitionMember extends Member {
     public Competition getCompetitionResult() { return competitionResult; }
     public String getSwimStyle() { return swimStyle; }
 
+
+
     @Override
     public String toString() {
-        return  "Member ID: " + getMemberId() + ", First name: " + getFirstName()
-                + ", Surname: " + getSurName() + ", Age: " + getAge()  + ", Sex: " + getGender()
-                + "\nSwimStyle: "  + swimStyle + ", Date: " + trainingResult.getDate() +
-                ", Training result: " + trainingResult.getResult() + ", CompetitionResult: "
-                + competitionResult+ "\n";
+        return "Member ID: " + getMemberId() + ", First name: " + getFirstName()
+            + ", Surname: " + getSurName() + ", Age: " + getAge() + ", Sex: " + getGender()
+            + "\nSwimStyle: " + swimStyle +",\n" +  trainingResult  + "\n" + "Competition: "
+            + competitionResult + "\n";
     }
-
 }
 

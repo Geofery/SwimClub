@@ -19,7 +19,7 @@ public class Controller {
     Menu menu = new Menu();
     ui.play();
     fileHandler.loadMembers(membership, member); //loads all the member into the array
-    fileHandler.loadTrainingToCompetitionMembers(membership, competitionMember, training, competitionMembership);
+    fileHandler.loadCompetitionMembers(membership, competitionMember, training, competitionMembership, competition);
     lostAndFound.createLostAndFoundList(ui);
     membership.allMembers();
     competitionMembership.allMembers();
@@ -220,9 +220,9 @@ public class Controller {
         case 1 -> swimStylesSubMenu();
         case 2 -> competitionMembership.showSwimTeam(ui);
         case 3 -> competitionResults();
-        case 4 -> membership.convertToCompetitionMember(ui, training, fileHandler, competitionMember);
-        case 5 -> competitionMembership.addCompetition(ui, competition, competitionMember, fileHandler);
-        case 6 -> competitionMembership.deleteCompetitonMember(ui, fileHandler);
+        case 4 -> membership.convertToCompetitionMember(ui, training, fileHandler, competitionMember, competition);
+        case 5 -> competitionMembership.addCompetition(ui, competition, competitionMember, fileHandler, training);
+        case 6 -> competitionMembership.deleteCompetitonMember(ui, fileHandler, competition);
         case 7 -> lostAndFound.addLostItem(ui);
         case 8 -> lostAndFound.deleteItem(ui);
         case 9 -> {

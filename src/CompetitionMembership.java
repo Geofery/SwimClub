@@ -76,7 +76,7 @@ public class CompetitionMembership {
     ui.displayLine();
   }
 
-  public void deleteCompetitonMember(UI ui, FileHandler fileHandler) {
+  public void deleteCompetitonMember(UI ui, FileHandler fileHandler, Competition competition) {
     ui.displayBlueHeader("Delete competition member");
     ui.displayGreen("");
     ui.displayGreen("Enter the member Id og the swimmer: ");
@@ -86,7 +86,7 @@ public class CompetitionMembership {
         allMembers.remove(i);
       }
     }
-    fileHandler.refreshCompetitionMembers(allMembers);
+    //fileHandler.refreshCompetitionMembers(allMembers);
     ui.displayLine();
   }
 
@@ -108,7 +108,7 @@ public class CompetitionMembership {
     ui.displayLine();
   }
 
-  public void addCompetition(UI ui, Competition competition, CompetitionMember competitionMember, FileHandler fileHandler) {
+  public void addCompetition(UI ui, Competition competition, CompetitionMember competitionMember, FileHandler fileHandler, Training training) {
     ui.displayBlueHeader("New competition");
     ui.display("");
     ui.displayGreen("Enter member ID of the competition swimmer: ");
@@ -136,20 +136,21 @@ public class CompetitionMembership {
     ui.displayGreen("Enter swim time");
     String result = ui.getString();
     ui.displayGreen("Enter position/rank"); //TODO bedre formulering
-    int rank = ui.getScanInt();
+    String rank = ui.getString();
 
-    competition = new Competition(place, date, result, rank);
+    competition = new Competition(place, date, result, Integer.parseInt(rank));
     for (int i = 0; i < allMembers.size(); i++) {
       if (memberId.equals(allMembers.get(i).getMemberId())) {
         competitionMember = new CompetitionMember(memberId, allMembers.get(i).getFirstName(), allMembers.get(i).getSurName(),
             allMembers.get(i).getAge(), allMembers.get(i).getGender(), allMembers.get(i).getActive(),
             allMembers.get(i).getSwimStyle(), allMembers.get(i).getTrainingResult(), competition);
-        allMembers.add(competitionMember);
-        allMembers.remove(i);
+        allMembers.get(i);
       }
     }
-    ui.displayGreen(allMembers.toString());
-    //fileHandler.saveCompetitions(competitionMember);
+
+    allMembers.add(competitionMember);
+    fileHandler.saveCompetitionMember(competitionMember, choice, training, competition);
+    //fileHandler.refreshCompetitionMembers(allMembers);
   }
 
   public boolean validateCompetitionId(String memberId, UI ui) {

@@ -225,7 +225,7 @@ public void displayMembers(UI ui){
         }
     }
 
-    public void convertToCompetitionMember(UI ui, Training training, FileHandler fileHandler, CompetitionMember competitionMember) {
+    public void convertToCompetitionMember(UI ui, Training training, FileHandler fileHandler, CompetitionMember competitionMember, Competition competition) {
         displayMembers(ui);
         ui.displayGreen("Input member Id");
         String memberId = ui.getString();
@@ -259,7 +259,7 @@ public void displayMembers(UI ui){
                             getAllMembers().get(i).getAge(), getAllMembers().get(i).getGender(),
                             getAllMembers().get(i).getActive(), choice, training);
                     deleteMember(memberId);
-                    fileHandler.saveTrainingToCompetitionMember(competitionMember, choice, training);
+                    fileHandler.saveCompetitionMember(competitionMember, choice, training, competition);
                     fileHandler.refreshMembers(getAllMembers());
                     ui.displayLine();
                 }
