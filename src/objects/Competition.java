@@ -29,12 +29,17 @@ public class Competition {
     return rank;
   }
 
-  @Override
+  /*@Override
   public String toString() {
     return "Location: " + place  +
         ", Date: " + date  +
         ", Swim time: " + result +
         ", Position: " + rank;
+  }*/
+
+  @Override
+  public String toString() {
+    return place + " " + date+ " " + result + " " + rank;
   }
 }
 

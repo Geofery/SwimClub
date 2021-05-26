@@ -175,7 +175,8 @@ public class CompetitionMembership {
     }
 
     allMembers.add(competitionMember);
-    fileHandler.saveCompetitionMember(competitionMember, choice, training, competition);
+    fileHandler.saveCompetitionToMember(competitionMember, training,  competition);
+    //fileHandler.saveCompetitionMember(competitionMember, choice, training, competition);
     //fileHandler.refreshCompetitionMembers(allMembers, competition);
   }
 

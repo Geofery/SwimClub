@@ -105,6 +105,41 @@ public class FileHandler {
     }
   }
 
+  public void saveCompetitionToMember(CompetitionMember competitionMember, Training training, Competition competition) {
+    try {
+      fw = new FileWriter(competitionMembers, true);
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+    bw = new BufferedWriter(fw);
+    try {
+      memberId = competitionMember.getMemberId();
+      firstName = competitionMember.getFirstName();
+      surName = competitionMember.getSurName();
+      age = competitionMember.getAge();
+      sex = competitionMember.getGender();
+      active = competitionMember.getActive();
+      swimStyle = competitionMember.getSwimStyle();
+      trainingDate = competitionMember.getTraining().getDate();
+      trainingResult = competitionMember.getTraining().getResult();
+      competition = competitionMember.getCompetition();
+
+
+
+      bw.write(memberId.replaceAll("\\[", "").replaceAll("]", "")
+          .replaceAll(",", "\t") + " " + firstName + " " + surName + "\t\t" + age + "\t" + sex +
+          "\t" + active + "\t" + swimStyle + "\t" + trainingDate + "\t" + trainingResult + " " + placeholder + " " + competition);
+      bw.newLine();
+      bw.close();
+      fw.close();
+
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+
+
+
   public void loadCompetitionMembers(Membership membership, CompetitionMember competitionMember, Training training, CompetitionMembership competitionMembership, Competition competition) {
     try {
       fileReader = new Scanner(competitionMembers);
