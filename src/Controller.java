@@ -33,7 +33,7 @@ public class Controller {
       switch (choice) {
         case 1 -> membership.addNewMember(ui, member);
         case 2 -> viewMembership();
-        case 3 -> competitionResults();//todo needs Work
+        case 3 -> competitionMembership.competitionResults(ui, competition);//todo needs Work
         case 4 -> membership.displayAllMembers(ui, competitionMembership);
         case 5 -> adminLogin();
         case 6 -> lostAndFound.displayLostAndFound(ui);
@@ -82,15 +82,6 @@ public class Controller {
     ui.displayLine();
   }
 
-  public void competitionResults() {//Todo needs work
-    ui.displayBlueHeader("Top 5 competition swimmers");
-    /*for (int i = 0; i < competitionMembership.getAllMembers().size(); i++) {
-      if (competitionMembership.getAllMembers().get(i).getCompetitionResult().getRank() >= 1){
-        ui.displayGreen(competitionMembership.getAllMembers().get(i).toString());
-      }
-
-    }*/
-  }
 
   public void adminLogin() {
     //Alternative admin menu
@@ -226,7 +217,7 @@ public class Controller {
       switch (choice) {
         case 1 -> swimStylesSubMenu();
         case 2 -> competitionMembership.showSwimTeam(ui);
-        case 3 -> competitionResults();
+        case 3 -> competitionMembership.competitionResults(ui, competition);
         case 4 -> membership.convertToCompetitionMember(ui, training, fileHandler, competitionMember, competition);
         case 5 -> competitionMembership.addCompetition(ui, competition, competitionMember, fileHandler, training);
         case 6 -> competitionMembership.deleteCompetitonMember(ui);

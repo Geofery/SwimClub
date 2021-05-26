@@ -1,4 +1,4 @@
-C136 Hans Jensen 1994 male true Breaststroke 17 Aug 2019 08,08  true	Hobrox	2 Jan 2020	09,47	3
+C136 Hans Jensen 1994 male true Breaststroke 17 Aug 2019 08,08  true	Hobronx	2 Jan 2020	09,47	3
 C88 Tobias Bjerg			1998	male	true	Butterfly	13 Jan 2020 14,24
 C44 Anders Thomsen			2001	male	true	Breaststroke	8 Feb 2019 11,35
 C74 Peter Pallan			1974	male	true	Backstroke	4 Sep 2018 13,42
@@ -24,3 +24,5 @@ C999 Luke SkyWalker		1999	male	true	Frontcrawl	4 May 2009	04,10	true	DeathStar	2
 C911 Rasmus Thomsen		2005	Male	true	Frontcrawl	8 Feb 2014	08,44	true	Allerod	26 May 2021	09,12	2
 C38 Torben Chris		1998	Male	Active	Backstroke	26 May 2021	10,34
 C1 Jens Jensen		2008	Male	true	Frontcrawl	24 May 2021	09,14	true	Copenhagen	26 May 2021	08,44	2
+C81 Sarah Njöström		1993	Female	Active	Backstroke	26 May 2021	11,13
+C80 Sarah Thomsen		1993	Female	Passive	Backstroke	26 May 2021	10,11

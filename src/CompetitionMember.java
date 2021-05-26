@@ -1,6 +1,6 @@
 public class CompetitionMember extends Member {
-    private Training trainingResult;
-    private Competition competitionResult;
+    private Training training;
+    private Competition competition;
     private String swimStyle;
 
 
@@ -8,18 +8,18 @@ public class CompetitionMember extends Member {
                              String swimStyle, Training trainingResult, Competition competitionResult) {
         super(memberId, firstName, surName, age, sex, active);
         this.swimStyle = swimStyle;
-        this.trainingResult = trainingResult;
-        this.competitionResult = competitionResult;
+        this.training = trainingResult;
+        this.competition = competitionResult;
     }
 
     public CompetitionMember(String memberId, String firstName, String surName, String age, String sex, String active, String swimStyle, Training trainingResult) {
         super(memberId, firstName, surName, age, sex, active);
         this.swimStyle = swimStyle;
-        this.trainingResult = trainingResult;
+        this.training = trainingResult;
     }
 
-    public Training getTrainingResult() { return trainingResult; }
-    public Competition getCompetitionResult() { return competitionResult; }
+    public Training getTraining() { return training; }
+    public Competition getCompetition() { return competition; }
     public String getSwimStyle() { return swimStyle; }
 
 
@@ -28,8 +28,8 @@ public class CompetitionMember extends Member {
     public String toString() {
         return "Member ID: " + getMemberId() + ", First name: " + getFirstName()
             + ", Surname: " + getSurName() + ", Age: " + getAge() + ", Sex: " + getGender()
-            + "\nSwimStyle: " + swimStyle +",\n" +  trainingResult  + "\n" + "Competition: "
-            + competitionResult + "\n";
+            + "\nSwimStyle: " + swimStyle +",\n" + training + "\n" + "Competition: "
+            + competition + "\n";
     }
 }
 

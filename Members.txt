@@ -118,9 +118,7 @@ M22 Sara Ström			1993	Female	Active
 M20 Sarah Sjark			2009	Female	Active
 M71 Sarah Sjös			1993	Female	Active
 M73 Sarah Tuxen			1993	Female	Active
-M81 Sarah Njöström			1993	Female	Active
 M29 Sarah Tjomsen			1983	Female	Passive
-M80 Sarah Thomsen			1993	Female	Passive
 M30 Susan Njöström			1953	Female	Active
 M668 Tine Marbjerg			1994	Male	Active
 M88 Tobias Bjerg			1998	Male	Active

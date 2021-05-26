@@ -35,8 +35,6 @@ public class Competition {
         ", Swim time: " + result +
         ", Position: " + rank;
   }
-
-  //TODO Implement this now please!
 }
 
 

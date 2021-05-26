@@ -75,6 +75,24 @@ public class CompetitionMembership {
     ui.displayLine();
   }
 
+  public void competitionResults(UI ui, Competition competition) {
+    ui.displayBlueHeader("Top 5 competition swimmers");
+    ui.displayBlue("\n Youth team\n");
+    for (int i = 0; i < youthTeam.size(); i++) {
+      if (youthTeam.get(i).getCompetition() != competition){
+        ui.displayGreen(youthTeam.get(i).toString());
+      }
+    }
+    ui.displayLine();
+    ui.displayBlue("\n Senior team\n");
+    for (int i = 0; i < seniorTeam.size(); i++) {
+      if (seniorTeam.get(i).getCompetition() != competition){
+        ui.displayGreen(seniorTeam.get(i).toString());
+      }
+    }
+    ui.displayLine();
+  }
+
   public void deleteCompetitonMember(UI ui) {
     ui.displayBlueHeader("Delete competition member");
     ui.displayGreen("");
@@ -90,8 +108,8 @@ public class CompetitionMembership {
   }
 
   public void displayTopSwimmers(UI ui, String swimstyle) {
-    Collections.sort(youthTeam, (o1, o2) -> o1.getTrainingResult().compareTo(o2.getTrainingResult()));
-    Collections.sort(seniorTeam, (o1, o2) -> o1.getTrainingResult().compareTo(o2.getTrainingResult()));
+    Collections.sort(youthTeam, (o1, o2) -> o1.getTraining().compareTo(o2.getTraining()));
+    Collections.sort(seniorTeam, (o1, o2) -> o1.getTraining().compareTo(o2.getTraining()));
     ui.displayBlueHeader("Youth Team top 5.");
     for (int i = 0; i < 5; i++) {
       if (swimstyle.equals(youthTeam.get(i).getSwimStyle())) {
@@ -134,7 +152,7 @@ public class CompetitionMembership {
     String date = ui.date();
     ui.displayGreen("Enter swim time");
     String result = ui.getString();
-    ui.displayGreen("Enter rank"); //TODO bedre formulering
+    ui.displayGreen("Enter ranking");
     String rank = ui.getString();
 
     competition = new Competition(place, date, result, Integer.parseInt(rank));
@@ -142,14 +160,14 @@ public class CompetitionMembership {
       if (memberId.equals(allMembers.get(i).getMemberId())) {
         competitionMember = new CompetitionMember(memberId, allMembers.get(i).getFirstName(), allMembers.get(i).getSurName(),
             allMembers.get(i).getAge(), allMembers.get(i).getGender(), allMembers.get(i).getActive(),
-            allMembers.get(i).getSwimStyle(), allMembers.get(i).getTrainingResult(), competition);
+            allMembers.get(i).getSwimStyle(), allMembers.get(i).getTraining(), competition);
             allMembers.remove(i);
       }
     }
 
     allMembers.add(competitionMember);
     fileHandler.saveCompetitionMember(competitionMember, choice, training, competition);
-    //fileHandler.refreshCompetitionMembers(allMembers);
+    //fileHandler.refreshCompetitionMembers(allMembers, competition);
   }
 
   public boolean validateCompetitionId(String memberId, UI ui) {
@@ -166,17 +184,17 @@ public class CompetitionMembership {
     displayTopSwimmers(ui, SwimStyle.Frontcrawl.toString());
   }
 
-  public void butterfly(UI ui) {//TODO add flere members under FrontCrawl
+  public void butterfly(UI ui) {//TODO add flere members under Butterfly
     swimStyleIdentifier(ui, SwimStyle.Butterfly.toString());
     displayTopSwimmers(ui, SwimStyle.Butterfly.toString());
   }
 
-  public void backstroke(UI ui) {//TODO add flere members under FrontCrawl
+  public void backstroke(UI ui) {//TODO add flere members under BackStroke
     swimStyleIdentifier(ui, SwimStyle.Backstroke.toString());
     displayTopSwimmers(ui, SwimStyle.Backstroke.toString());
   }
 
-  public void breaststroke(UI ui) {//TODO add flere members under FrontCrawl
+  public void breaststroke(UI ui) {//TODO add flere members under Breaststroke
     swimStyleIdentifier(ui, SwimStyle.Breaststroke.toString());
     displayTopSwimmers(ui, SwimStyle.Breaststroke.toString());
   }
