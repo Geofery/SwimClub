@@ -67,7 +67,7 @@ public class Finance {
     badStandingMember = (int) Math.ceil(percentage);
     badStanding = (int) Math.ceil(percentage) * seniorPrice;
     getBadstandingMembers(badStandingMember, membership.getSeniorTeam(), ui, "Senior");
-    ui.errorRed("Senior member: " + badStanding + "kr.");
+    ui.errorRed("Senior member: " + badStanding/2 + "kr. + " +  badStanding/2 + "kr." + "\nIn total: " + badStanding + "kr.");
     total += badStanding;
     ui.displayLine();
 

@@ -43,7 +43,7 @@ public class Membership {
         return allMembers;
     }
 
-    public void ageIdentifier(Member member) { //TODO eventuel udregn alderen på members.
+    public void ageIdentifier(Member member) {
         int getAge = Integer.parseInt(member.getAge());
         if ((year - getAge) < 18 && member.getActive().equals("Active")) {
             youthTeam.add(member);
@@ -56,7 +56,7 @@ public class Membership {
         }
     }
 
-    public String generateMemberId() { //TODO create arrayList with all members, to validate new memberId
+    public String generateMemberId() {
         memberId = "M";
         int randomNumber = (int) (Math.random() * 1000) + 1; //1 to 1000
         memberId += randomNumber;
@@ -116,13 +116,18 @@ public void displayMembers(UI ui){
         ui.displayLine();
     }
 
-    public void addNewMember(UI ui, Member member) {
+    public void addNewMember(UI ui, Member member) { //TODO fix
         ui.displayGreen("Please enter first name");
         String firstName = ui.getString();
         ui.displayGreen("Please enter surname");
         String surName = ui.getString();
         ui.displayGreen("Please enter year of birth");
         String year = ui.getString();
+        if (!validateAge(year, ui) == true) {
+            ui.errorRed("You are too old or to young too be a member");
+            year = ui.getString();
+        }
+
         ui.displayGreen("Please enter gender M/F");
         String gender = validateGender(ui);
 
@@ -131,6 +136,15 @@ public void displayMembers(UI ui){
         ui.displayLine();
         member = new Member(memberId, firstName, surName, year, gender, "Active");
         pendingMembers.add(member);
+    }
+
+    public boolean validateAge(String year, UI ui){
+        int intYear = Integer.parseInt(year);
+        if (intYear >= 2019 || intYear <= 1923 ){
+            return false;
+        }
+
+        return true;
     }
 
     public void pendingMembers(UI ui, FileHandler fileHandler){
@@ -170,8 +184,28 @@ public void displayMembers(UI ui){
             ui.errorRed("WATER YOU SINKING ABOAT???");
             pendingMembers(ui, fileHandler);
         }
+    }
 
+    public void viewMembership(UI ui) {
+        ui.displayBlueHeader("View your Membership");
+        ui.displayGreen("");
+        ui.displayGreen("Input your member ID: ");
+        String memberId = ui.getString();
+        int tracker = 0;
+        if (allMembers.size() == 0) {
+            ui.errorRed("Your broke and going out of business!");
+        } else
+            for (int i = 0; i < allMembers.size(); i++) {
+                if (memberId.equals(allMembers.get(i).getMemberId())) {
+                    ui.displayGreen(allMembers.get(i).toString());
+                } else
+                    tracker++;
+            }
 
+        if (tracker == allMembers.size())
+            ui.errorRed("Invalid Member ID!");
+
+        ui.displayLine();
     }
 
     public String validateGender(UI ui) {
@@ -267,7 +301,7 @@ public void displayMembers(UI ui){
         }
     }
 
-    public boolean validateMemberAge(String memberId, UI ui) { //todo need to set min and max age
+    public boolean validateMemberAge(String memberId, UI ui) {
         int validateAge = 1961;
         for (int i = 0; i < allMembers.size(); i++) {
             if (allMembers.get(i).getMemberId().equals(memberId) && Integer.parseInt(allMembers.get(i).getAge()) > validateAge) {

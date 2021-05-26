@@ -9,8 +9,7 @@ public class FileHandler {
   FileWriter fw = null;
   BufferedWriter bw = null;
   Scanner fileReader = null;
- //private Training training;
- //private Competition competition;
+
 
   private String memberId;
   private String firstName;
@@ -19,19 +18,11 @@ public class FileHandler {
   private String sex;
   private String active;
   private String swimStyle;
-  //.-.-.-.--.-.-.-....-.-.-.-.
   private String trainingDate;
   private String trainingResult;
-  //.-.-.-.--.-.-.-....-.-.-.-.
   private boolean placeholder = true;
-  private String place;
-  private String competitionDate;
-  private String competitionTime;
   private int rank;
 
-
-
-  //TODO FW and BW initializes at the top?? to be used in all methods?
   public void saveMember(Member member) {
     try {
       fw = new FileWriter(file, true);
@@ -75,41 +66,6 @@ public class FileHandler {
     }
   }
 
-  ////////////////////////////////////////////////////////////
-
-  //TODO Can we resuse the two methods above??
-  public void saveCompetitions(CompetitionMember competitionMember, Competition competition) {
-    try {
-      fw = new FileWriter(competitionMembers, true);
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
-    bw = new BufferedWriter(fw);
-    try {
-      memberId = competitionMember.getMemberId();
-      firstName = competitionMember.getFirstName();
-      surName = competitionMember.getSurName();
-      age = competitionMember.getAge();
-      sex = competitionMember.getGender();
-      active = competitionMember.getActive();
-      swimStyle = competitionMember.getSwimStyle();
-      //trainingResult = competitionMember.getTrainingResult();
-      competition = competitionMember.getCompetition();
-      //date = competition.getDate();
-      //result = competition.getResult;
-
-
-      bw.write(memberId.replaceAll("\\[", "").replaceAll("]", "")
-          .replaceAll(",", "\t") + " " + firstName + " " + surName + "\t\t" + age + "\t" + sex +
-          "\t" + active + "\t" + swimStyle + "\t"  /*date + "\t" + result*/);
-      bw.newLine();
-      bw.close();
-      fw.close();
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
-  }
-
   public void saveCompetitionMember(CompetitionMember competitionMember, String choice, Training training, Competition competition) {
     try {
       fw = new FileWriter(competitionMembers, true);
@@ -140,7 +96,6 @@ public class FileHandler {
       e.printStackTrace();
     }
   }
-
 
   public void loadCompetitionMembers(Membership membership, CompetitionMember competitionMember, Training training, CompetitionMembership competitionMembership, Competition competition) {
     try {
@@ -208,7 +163,6 @@ public class FileHandler {
       e.printStackTrace();
     }
   }
-
 
   public void refreshCompetitionMembers(ArrayList<CompetitionMember> allCompetitionMembers, Competition competition) {
     try {

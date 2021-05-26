@@ -32,8 +32,8 @@ public class Controller {
       choice = ui.getScanInt();
       switch (choice) {
         case 1 -> membership.addNewMember(ui, member);
-        case 2 -> viewMembership();
-        case 3 -> competitionMembership.competitionResults(ui, competition);//todo needs Work
+        case 2 -> membership.viewMembership(ui);
+        case 3 -> competitionMembership.competitionResults(ui, competition);
         case 4 -> membership.displayAllMembers(ui, competitionMembership);
         case 5 -> adminLogin();
         case 6 -> lostAndFound.displayLostAndFound(ui);
@@ -60,27 +60,7 @@ public class Controller {
     } while (keepRunning);
   }
 
-  public void viewMembership() { //TODO skal fjernes
-    ui.displayBlueHeader("View your Membership");
-    ui.displayGreen("");
-    ui.displayGreen("Input your member ID: ");
-    String memberId = ui.getString();
-    int tracker = 0;
-    if (membership.getAllMembers().size() == 0) {
-      ui.errorRed("Your broke and going out of business!");
-    } else
-      for (int i = 0; i < membership.getAllMembers().size(); i++) {
-        if (memberId.equals(membership.getAllMembers().get(i).getMemberId())) {
-          ui.displayGreen(membership.getAllMembers().get(i).toString());
-        } else
-          tracker++;
-      }
 
-    if (tracker == membership.getAllMembers().size())
-      ui.errorRed("Invalid Member ID!");
-
-    ui.displayLine();
-  }
 
 
   public void adminLogin() {

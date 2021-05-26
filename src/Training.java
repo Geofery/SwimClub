@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-import java.util.Date;
 
 public class Training {
   private String date;
@@ -9,8 +7,6 @@ public class Training {
     this.date = date;
     this.result = result;
   }
-
-  ArrayList<Training> trainingResults = new ArrayList<Training>();//TODO Gøres private
 
   public String getDate() {
     return date;
