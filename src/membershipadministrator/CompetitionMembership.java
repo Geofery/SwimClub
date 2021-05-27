@@ -126,7 +126,7 @@ public class CompetitionMembership {
     }
     ui.displayBlueHeader("Senior Team top 5.");
     for (int i = 0; i < 5; i++) {
-      if (swimstyle.equals(youthTeam.get(i).getSwimStyle())) {
+      if (swimstyle.equals(seniorTeam.get(i).getSwimStyle())) {
         ui.displayGreen(seniorTeam.get(i).toString());
       }
     }
@@ -159,7 +159,7 @@ public class CompetitionMembership {
     String place = ui.getString();
     String date = ui.date();
     ui.displayGreen("Enter swim time");
-    String result = ui.getString(); //TODO Time Formatter????
+    String result = ui.getString();
     ui.displayGreen("Enter ranking");
     int rank = ui.getScanInt();
 

@@ -328,4 +328,13 @@ public class Membership {
       ui.errorRed("Invalid input");
     return false;
   }
+
+  //FOR TESTING PURPOSES ONLY!
+  public String generateMemberIdTest() {
+    memberId = "M";
+    int randomNumber = (int) (Math.random() * 1) + 1; //1 to 1
+    memberId += randomNumber;
+    validateMemberId();
+    return memberId;
+  }
 }
