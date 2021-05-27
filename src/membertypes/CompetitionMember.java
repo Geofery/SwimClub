@@ -2,7 +2,7 @@ package membertypes;
 
 import objects.Competition;
 import objects.Training;
-
+//Christopher & Jeffrey
 public class CompetitionMember extends Member {
     private Training training;
     private Competition competition;

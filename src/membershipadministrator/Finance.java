@@ -4,7 +4,7 @@ import membertypes.Member;
 import userinterface.UI;
 
 import java.util.ArrayList;
-
+//Christopher & Jeffrey
 public class Finance {
 
   private int youthPrice = 1000;

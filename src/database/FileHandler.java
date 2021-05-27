@@ -9,7 +9,7 @@ import objects.Training;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
-
+//Jeffrey
 public class FileHandler {
   File file = new File("src/database/Members.txt");
   File competitionMembers = new File("src/database/CompetitionMembers.txt");
