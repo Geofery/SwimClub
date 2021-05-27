@@ -28,7 +28,7 @@ public class FileHandler {
   private String trainingResult;
   private boolean placeholder = true;
   private int rank;
-
+  //@author Chris & Jeff
   public void saveMember(Member member) {
     try {
       fw = new FileWriter(file, true);
