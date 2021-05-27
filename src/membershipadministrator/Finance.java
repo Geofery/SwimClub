@@ -51,7 +51,7 @@ public class Finance {
 
   }
 
-  public void financeCreditors(UI ui, Membership membership, Finance finance, Member member) {
+  public void financeCreditors(UI ui, Membership membership) {
     double percentage;
     int badStandingMember;
     int badStanding;

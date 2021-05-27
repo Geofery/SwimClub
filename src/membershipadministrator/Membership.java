@@ -150,7 +150,7 @@ public class Membership {
     pendingMembers.add(member);
   }
 
-  public boolean validateAge(String year, UI ui) {
+  public boolean validateAge(String year,UI ui) {
     int intYear = Integer.parseInt(year);
     if (intYear >= 2019 || intYear <= 1923) {
       return false;
