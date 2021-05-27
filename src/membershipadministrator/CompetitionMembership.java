@@ -133,6 +133,21 @@ public class CompetitionMembership {
     ui.displayLine();
   }
 
+  public void displayTopSwimmersDynamic(UI ui, String swimstyle, String teamName, ArrayList<CompetitionMember> team){
+    ui.displayBlueHeader(teamName + " team Top 5.");
+    ArrayList<CompetitionMember> topFive = new ArrayList<>();
+    for (int i = 0; i < team.size(); i++) {
+      if (team.get(i).getSwimStyle().toString().equals(swimstyle)) {
+        topFive.add(team.get(i));
+        ui.displayGreen("test");
+      }
+    }
+      Collections.sort(team, (o1, o2) -> o1.getTraining().compareTo(o2.getTraining()));
+    for (int i = 0; i < 5; i++) {
+      ui.displayGreen(topFive.get(i).toString());
+    }
+    }
+
   public void addCompetition(UI ui, Competition competition, CompetitionMember competitionMember, FileHandler fileHandler, Training training) {
     ui.displayBlueHeader("New competition");
     ui.display("");
@@ -205,6 +220,8 @@ public class CompetitionMembership {
   public void breaststroke(UI ui) {
     swimStyleIdentifier(ui, SwimStyle.Breaststroke.toString());
     displayTopSwimmers(ui, SwimStyle.Breaststroke.toString());
+    //displayTopSwimmersDynamic(ui,SwimStyle.Breaststroke.toString(),"Youth", youthTeam);
+    displayTopSwimmersDynamic(ui,SwimStyle.Breaststroke.toString(),"Senior", allMembers);
   }
 }
 
