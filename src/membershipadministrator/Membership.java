@@ -12,6 +12,7 @@ import userinterface.UI;
 import java.util.ArrayList;
 import java.util.Collections;
 
+//Christopher & Jeffrey
 public class Membership {
   private ArrayList<Member> youthTeam = new ArrayList<>();
   private ArrayList<Member> seniorTeam = new ArrayList<>();

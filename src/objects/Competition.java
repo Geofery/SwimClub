@@ -1,4 +1,5 @@
 package objects;
+
 //Christopher & Jeffrey
 public class Competition {
   private String place;

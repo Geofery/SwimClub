@@ -6,10 +6,12 @@ import membertypes.CompetitionMember;
 import membertypes.Member;
 import objects.Competition;
 import objects.Training;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
-//Jeffrey
+
+//Christopher & Jeffrey
 public class FileHandler {
   File file = new File("src/database/Members.txt");
   File competitionMembers = new File("src/database/CompetitionMembers.txt");
@@ -29,13 +31,14 @@ public class FileHandler {
   private boolean placeholder = true;
   private int rank;
 
+  //Christopher & Jeffrey
   public void saveMember(Member member) {
     try {
       fw = new FileWriter(file, true);
     } catch (IOException e) {
       e.printStackTrace();
     }
-     bw = new BufferedWriter(fw);
+    bw = new BufferedWriter(fw);
     try {
       memberId = member.getMemberId();
       firstName = member.getFirstName();
@@ -54,6 +57,7 @@ public class FileHandler {
     }
   }
 
+  //Christopher & Jeffrey
   public void loadMembers(Membership membership, Member member) {
     try {
       fileReader = new Scanner(file);
@@ -72,6 +76,7 @@ public class FileHandler {
     }
   }
 
+  //Jeffrey
   public void saveCompetitionMember(CompetitionMember competitionMember, String choice, Training training, Competition competition) {
     try {
       fw = new FileWriter(competitionMembers, true);
@@ -103,6 +108,7 @@ public class FileHandler {
     }
   }
 
+  //Jeffrey
   public void saveCompetitionToMember(CompetitionMember competitionMember, Training training, Competition competition) {
     try {
       fw = new FileWriter(competitionMembers, true);
@@ -123,7 +129,6 @@ public class FileHandler {
       competition = competitionMember.getCompetition();
 
 
-
       bw.write(memberId.replaceAll("\\[", "").replaceAll("]", "")
           .replaceAll(",", "\t") + " " + firstName + " " + surName + "\t\t" + age + "\t" + sex +
           "\t" + active + "\t" + swimStyle + "\t" + trainingDate + "\t" + trainingResult + " " + placeholder + " " + competition);
@@ -136,6 +141,7 @@ public class FileHandler {
     }
   }
 
+  //Jeffrey
   public void loadCompetitionMembers(Membership membership, CompetitionMember competitionMember, Training training, CompetitionMembership competitionMembership, Competition competition) {
     try {
       fileReader = new Scanner(competitionMembers);
@@ -172,7 +178,7 @@ public class FileHandler {
         competition = new Competition(place, competitionDate, competitionTime, rank);
       }
 
-       if (rank >= 1) {
+      if (rank >= 1) {
         competitionMember = new CompetitionMember(memberId, firstName, surName, age, sex, active, swimStyle, training, competition);
         competitionMembership.ageIdentifier(competitionMember);
       } else if (rank < 1) {
@@ -182,13 +188,13 @@ public class FileHandler {
     }
   }
 
+  //Christopher & Jeffrey
   public void refreshMembers(ArrayList<Member> allMembers) {
     try {
       fw = new FileWriter(file);
     } catch (IOException e) {
       e.printStackTrace();
     }
-    bw = new BufferedWriter(fw);
     try {
 
       for (int i = 0; i < allMembers.size(); i++) {
@@ -203,6 +209,7 @@ public class FileHandler {
     }
   }
 
+  //Jeffrey
   public void refreshCompetitionMembers(ArrayList<CompetitionMember> allCompetitionMembers) {
     try {
       fw = new FileWriter(competitionMembers);
@@ -210,22 +217,21 @@ public class FileHandler {
     } catch (IOException e) {
       e.printStackTrace();
     }
-    bw = new BufferedWriter(fw);
     try {
 
       for (int i = 0; i < allCompetitionMembers.size(); i++) {
         if (allCompetitionMembers.get(i).getCompetition() == null) {
-        fw.write(allCompetitionMembers.get(i).getMemberId().replaceAll("\\[", "").replaceAll("]", "")
-            .replaceAll(",", "\t") + " " + allCompetitionMembers.get(i).getFirstName() + " "
-            + allCompetitionMembers.get(i).getSurName() + "\t\t\t" + allCompetitionMembers.get(i).getAge() + "\t"
-            + allCompetitionMembers.get(i).getGender() + "\t" + allCompetitionMembers.get(i).getActive() + "\t"
-            + allCompetitionMembers.get(i).getSwimStyle() + "\t" + allCompetitionMembers.get(i).getTraining() + "\n");
-      }else if (allCompetitionMembers.get(i).getCompetition() != null){
+          fw.write(allCompetitionMembers.get(i).getMemberId().replaceAll("\\[", "").replaceAll("]", "")
+              .replaceAll(",", "\t") + " " + allCompetitionMembers.get(i).getFirstName() + " "
+              + allCompetitionMembers.get(i).getSurName() + "\t\t\t" + allCompetitionMembers.get(i).getAge() + "\t"
+              + allCompetitionMembers.get(i).getGender() + "\t" + allCompetitionMembers.get(i).getActive() + "\t"
+              + allCompetitionMembers.get(i).getSwimStyle() + "\t" + allCompetitionMembers.get(i).getTraining() + "\n");
+        } else if (allCompetitionMembers.get(i).getCompetition() != null) {
           fw.write(allCompetitionMembers.get(i).getMemberId().replaceAll("\\[", "").replaceAll("]", "")
               .replaceAll(",", "\t") + " " + allCompetitionMembers.get(i).getFirstName() + " "
               + allCompetitionMembers.get(i).getSurName() + "\t\t\t" + allCompetitionMembers.get(i).getAge() + "\t"
               + allCompetitionMembers.get(i).getGender() + "\t" + allCompetitionMembers.get(i).getActive() + "\t" + allCompetitionMembers.get(i).getSwimStyle() + "\t"
-              + allCompetitionMembers.get(i).getTraining() + "\t" + placeholder +"\t" +  allCompetitionMembers.get(i).getCompetition() + "\n");
+              + allCompetitionMembers.get(i).getTraining() + "\t" + placeholder + "\t" + allCompetitionMembers.get(i).getCompetition() + "\n");
         }
       }
 
