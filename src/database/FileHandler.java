@@ -6,7 +6,6 @@ import membertypes.CompetitionMember;
 import membertypes.Member;
 import objects.Competition;
 import objects.Training;
-
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -17,7 +16,6 @@ public class FileHandler {
   FileWriter fw = null;
   BufferedWriter bw = null;
   Scanner fileReader = null;
-
 
   private String memberId;
   private String firstName;
@@ -138,8 +136,6 @@ public class FileHandler {
     }
   }
 
-
-
   public void loadCompetitionMembers(Membership membership, CompetitionMember competitionMember, Training training, CompetitionMembership competitionMembership, Competition competition) {
     try {
       fileReader = new Scanner(competitionMembers);
@@ -207,6 +203,7 @@ public class FileHandler {
     }
   }
 
+  //Kræver at vi kan få adgang til det underliggende object!
   public void refreshCompetitionMembers(ArrayList<CompetitionMember> allCompetitionMembers, Competition competition) {
     try {
       fw = new FileWriter(competitionMembers);

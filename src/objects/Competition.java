@@ -13,6 +13,7 @@ public class Competition {
     this.rank = rank;
   }
 
+  //Bliver ikke brugt da vi ikke har adgang til det fra vores ArrayList
   public String getPlace() {
     return place;
   }
@@ -29,6 +30,7 @@ public class Competition {
     return rank;
   }
 
+  //Ser bedst ud når vi udskriver vores members.
   /*@Override
   public String toString() {
     return "Location: " + place  +
@@ -37,6 +39,7 @@ public class Competition {
         ", Position: " + rank;
   }*/
 
+  //Kan gemme til fil uden ændringer.
   @Override
   public String toString() {
     return place + " " + date+ " " + result + " " + rank;

@@ -8,17 +8,12 @@ public class Member {
   private String gender;
   private String active; // TODO lav til en String Active /Passive Evt. en Metode Not possible because ageIdentifier
 
-
   public Member(String memberId, String firstName, String surName, String age, String gender, String active) {
     this.memberId = memberId;
     this.firstName = firstName;
     this.surName = surName;
     this.age = age;
     this.gender = gender;
-    this.active = active;
-  }
-
-  public void setActive(String active) {
     this.active = active;
   }
 
@@ -42,6 +37,10 @@ public class Member {
 
   public String getActive() {
     return active;
+  }
+
+  public void setActive(String active) {
+    this.active = active;
   }
 
   @Override

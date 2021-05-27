@@ -17,13 +17,13 @@ public class Training {
     return result;
   }
 
+  public int compareTo(Training o) {
+    return this.result.compareTo(o.getResult());
+  }
+
   @Override
   public String toString() {
     return  date + " " + result;
   }
 
-
-  public int compareTo(Training o) {
-    return this.result.compareTo(o.getResult());
-  }
 }

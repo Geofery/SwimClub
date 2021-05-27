@@ -12,7 +12,6 @@ import objects.Training;
 import userinterface.LoginGui;
 import userinterface.SwimStyle;
 import userinterface.UI;
-
 import javax.swing.*;
 
 public class Controller {
@@ -28,7 +27,6 @@ public class Controller {
   CompetitionMember competitionMember;
   Training training;
   LoginGui loginGui;
-
 
   public void mainMenu() {
     Menu menu = new Menu();
@@ -74,9 +72,6 @@ public class Controller {
       }
     } while (keepRunning);
   }
-
-
-
 
   public void adminLogin() {
     //Alternative admin menu

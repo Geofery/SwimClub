@@ -7,10 +7,10 @@ import java.util.ArrayList;
 
 public class Finance {
 
-  int youthPrice = 1000;
-  int seniorPrice = 1600;
-  double seniorXoPrice = 1600 * 0.8;
-  int passivePrice = 500;
+  private int youthPrice = 1000;
+  private int seniorPrice = 1600;
+  private double seniorXoPrice = 1600 * 0.8;
+  private int passivePrice = 500;
 
   public int youthSubFee(Membership membership) {
     return membership.getYouthTeam().size() * youthPrice;
@@ -56,9 +56,8 @@ public class Finance {
     int badStandingMember;
     int badStanding;
     int total = 0;
-    
-    ui.displayBlueHeader("Members with bad credit \n");
 
+    ui.displayBlueHeader("Members with bad credit \n");
 
     percentage = membership.getYouthTeam().size() * 0.02;
     badStandingMember = (int) Math.ceil(percentage);
@@ -72,7 +71,7 @@ public class Finance {
     badStandingMember = (int) Math.ceil(percentage);
     badStanding = (int) Math.ceil(percentage) * seniorPrice;
     getBadstandingMembers(badStandingMember, membership.getSeniorTeam(), ui, "Senior");
-    ui.errorRed("Senior member: " + badStanding/2 + "kr. + " +  badStanding/2 + "kr." + "\nIn total: " + badStanding + "kr.");
+    ui.errorRed("Senior member: " + badStanding / 2 + "kr. + " + badStanding / 2 + "kr." + "\nIn total: " + badStanding + "kr.");
     total += badStanding;
     ui.displayLine();
 

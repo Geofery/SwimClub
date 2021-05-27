@@ -6,7 +6,6 @@ import objects.Competition;
 import objects.Training;
 import userinterface.SwimStyle;
 import userinterface.UI;
-
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -17,6 +16,10 @@ public class CompetitionMembership {
   private ArrayList<CompetitionMember> allMembers = new ArrayList<>();
   private int year = 2021;
 
+  public ArrayList<CompetitionMember> getAllMembers() {
+    return allMembers;
+  }
+
   public void ageIdentifier(CompetitionMember competitionMember) {
     int getAge = Integer.parseInt(competitionMember.getAge());
     if ((year - getAge) < 18) {
@@ -26,16 +29,11 @@ public class CompetitionMembership {
     }
   }
 
-  public ArrayList<CompetitionMember> getAllMembers() {
-    return allMembers;
-  }
-
   public ArrayList<CompetitionMember> allMembers() {
     allMembers.addAll(youthTeam);
     allMembers.addAll(seniorTeam);
     return allMembers;
   }
-
 
   public void swimStyleIdentifier(UI ui, String choice) {
     ui.displayBlueHeader(choice + "Competition swimmers: ");
