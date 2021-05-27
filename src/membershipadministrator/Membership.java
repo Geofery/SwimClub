@@ -1,7 +1,6 @@
 package membershipadministrator;
 
 import database.FileHandler;
-import membershipadministrator.CompetitionMembership;
 import membertypes.CompetitionMember;
 import membertypes.Member;
 import objects.Competition;

@@ -115,25 +115,7 @@ public class CompetitionMembership {
     ui.displayLine();
   }
 
-  public void displayTopSwimmers(UI ui, String swimstyle) { //TODO Broken
-    Collections.sort(youthTeam, (o1, o2) -> o1.getTraining().compareTo(o2.getTraining()));
-    Collections.sort(seniorTeam, (o1, o2) -> o1.getTraining().compareTo(o2.getTraining()));
-    ui.displayBlueHeader("Youth Team top 5.");
-    for (int i = 0; i < 5; i++) {
-      if (swimstyle.equals(youthTeam.get(i).getSwimStyle())) {
-        ui.displayGreen(youthTeam.get(i).toString());
-      }
-    }
-    ui.displayBlueHeader("Senior Team top 5.");
-    for (int i = 0; i < 5; i++) {
-      if (swimstyle.equals(seniorTeam.get(i).getSwimStyle())) {
-        ui.displayGreen(seniorTeam.get(i).toString());
-      }
-    }
-    ui.displayLine();
-  }
-
-  public void displayTopSwimmersDynamic(UI ui, String swimstyle, String teamName, ArrayList<CompetitionMember> team){
+  public void displayTopSwimmers(UI ui, String swimstyle, String teamName, ArrayList<CompetitionMember> team){
     ui.displayBlueHeader(teamName + " team Top 5.");
     ArrayList<CompetitionMember> topFive = new ArrayList<>();
     for (int i = 0; i < team.size(); i++) {
@@ -203,26 +185,26 @@ public class CompetitionMembership {
 
   public void frontCrawl(UI ui) {
     swimStyleIdentifier(ui, SwimStyle.Frontcrawl.toString());
-    displayTopSwimmersDynamic(ui,SwimStyle.Frontcrawl.toString(),"Youth", youthTeam);
-    displayTopSwimmersDynamic(ui,SwimStyle.Frontcrawl.toString(),"Senior", seniorTeam);
+    displayTopSwimmers(ui,SwimStyle.Frontcrawl.toString(),"Youth", youthTeam);
+    displayTopSwimmers(ui,SwimStyle.Frontcrawl.toString(),"Senior", seniorTeam);
   }
 
   public void butterfly(UI ui) {
     swimStyleIdentifier(ui, SwimStyle.Butterfly.toString());
-    displayTopSwimmersDynamic(ui,SwimStyle.Butterfly.toString(),"Youth", youthTeam);
-    displayTopSwimmersDynamic(ui,SwimStyle.Butterfly.toString(),"Senior", seniorTeam);
+    displayTopSwimmers(ui,SwimStyle.Butterfly.toString(),"Youth", youthTeam);
+    displayTopSwimmers(ui,SwimStyle.Butterfly.toString(),"Senior", seniorTeam);
   }
 
   public void backstroke(UI ui) {
     swimStyleIdentifier(ui, SwimStyle.Backstroke.toString());
-    displayTopSwimmersDynamic(ui,SwimStyle.Backstroke.toString(),"Youth", youthTeam);
-    displayTopSwimmersDynamic(ui,SwimStyle.Backstroke.toString(),"Senior", seniorTeam);
+    displayTopSwimmers(ui,SwimStyle.Backstroke.toString(),"Youth", youthTeam);
+    displayTopSwimmers(ui,SwimStyle.Backstroke.toString(),"Senior", seniorTeam);
   }
 
   public void breaststroke(UI ui) {
     swimStyleIdentifier(ui, SwimStyle.Breaststroke.toString());
-    displayTopSwimmersDynamic(ui,SwimStyle.Breaststroke.toString(),"Youth", youthTeam);
-    displayTopSwimmersDynamic(ui,SwimStyle.Breaststroke.toString(),"Senior", allMembers);
+    displayTopSwimmers(ui,SwimStyle.Breaststroke.toString(),"Youth", youthTeam);
+    displayTopSwimmers(ui,SwimStyle.Breaststroke.toString(),"Senior", allMembers);
   }
 }
 
