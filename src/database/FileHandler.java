@@ -213,24 +213,21 @@ public class FileHandler {
     }
     bw = new BufferedWriter(fw);
     try {
-      for (int i = 0; i < allCompetitionMembers.size(); i++) {
-        System.out.println(allCompetitionMembers.get(i));
-      }
 
       for (int i = 0; i < allCompetitionMembers.size(); i++) {
-        if (allCompetitionMembers.get(i).getCompetition() != competition){
+       /* if (allCompetitionMembers.get(i).getCompetition() != null){
           rank = 1;
-        }else if (allCompetitionMembers.get(i).getCompetition() == competition){
+        }else if (allCompetitionMembers.get(i).getCompetition() == null){
           rank = 0;
-        }
+        }*/
 
-        if (rank == 0) {
+        if (allCompetitionMembers.get(i).getCompetition() == null) {
         fw.write(allCompetitionMembers.get(i).getMemberId().replaceAll("\\[", "").replaceAll("]", "")
             .replaceAll(",", "\t") + " " + allCompetitionMembers.get(i).getFirstName() + " "
             + allCompetitionMembers.get(i).getSurName() + "\t\t\t" + allCompetitionMembers.get(i).getAge() + "\t"
             + allCompetitionMembers.get(i).getGender() + "\t" + allCompetitionMembers.get(i).getActive() + "\t"
             + allCompetitionMembers.get(i).getTraining() + "\n");
-      }else if (rank == 1){
+      }else if (allCompetitionMembers.get(i).getCompetition() != null){
           fw.write(allCompetitionMembers.get(i).getMemberId().replaceAll("\\[", "").replaceAll("]", "")
               .replaceAll(",", "\t") + " " + allCompetitionMembers.get(i).getFirstName() + " "
               + allCompetitionMembers.get(i).getSurName() + "\t\t\t" + allCompetitionMembers.get(i).getAge() + "\t"

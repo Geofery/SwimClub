@@ -175,7 +175,7 @@ public class CompetitionMembership {
     allMembers.add(competitionMember);
     fileHandler.saveCompetitionToMember(competitionMember, training,  competition);
     //fileHandler.saveCompetitionMember(competitionMember, choice, training, competition);
-    //fileHandler.refreshCompetitionMembers(allMembers, competition);
+    fileHandler.refreshCompetitionMembers(allMembers, competition);
   }
 
   public boolean validateCompetitionId(String memberId, UI ui) {

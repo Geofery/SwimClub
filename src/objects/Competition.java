@@ -30,8 +30,17 @@ public class Competition {
     return rank;
   }
 
+
   //Ser bedst ud når vi udskriver vores members.
-  /*@Override
+  //Fungere heller ikke, da competition er null.
+  public String toDisplayString() {
+    return "Location: " + place  +
+        ", Date: " + date  +
+        ", Swim time: " + result +
+        ", Position: " + rank;
+  }
+/*
+@Override
   public String toString() {
     return "Location: " + place  +
         ", Date: " + date  +

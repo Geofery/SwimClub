@@ -1,34 +1,34 @@
-C136 Hans Jensen 1994 male true Breaststroke 17 Aug 2019 08,08  true	Hobronx	2 Jan 2020	09,47	3
-C88 Tobias Bjerg			1998	male	true	Butterfly	13 Jan 2020 14,24
-C44 Anders Thomsen			2001	male	true	Breaststroke	8 Feb 2019 11,35
-C74 Peter Pallan			1974	male	true	Backstroke	4 Sep 2018 13,42
-C74 Peter Pallan			1974	male	true	Butterfly	9 Apr 2018 12,12
-C67 Anders Hansen		1991	male	true	Frontcrawl      8 Feb 2014 08,44
-C10 Jannie Ottesen		1987	female	true	Breaststroke	19 May 2021	12,42
-C8 Rikke Hansen		1989	female	true	Breaststroke	19 May 2021	12,17
-C44 Anders Thomsen		2001	male	true	Butterfly	20 May 2021	11,03
-C76 Lis Friis		1980	female	true	Butterfly	20 May 2021	11,11
-C106 Jens Sørensen		1992	male	true	Butterfly	20 May 2021	11,12
-C82 Michala Østergaard		1987	female	true	Butterfly	20 May 2021	11,2
-C11 Jeanne Ottesen		1987	female	false	Butterfly	20 May 2021	11,2
-C12 Micha Østergaard		1987	female	true	Butterfly	20 May 2021	11,2
-C98 Viktor Bromer		1993	male	true	Butterfly	20 May 2021	10,3
-C42 Victor Thomsen		1993	male	true	Backstroke	21 May 2021	12,13
-C809 Jens Jensen			2009	Male	true    Frontcrawl      6 Apr 2016 07,23
-C562 Sten Hansen			2004	male	true    Frontcrawl      3 Jun 2017 07,54
-C782 Stone RoadMan		2008	male	true	Breaststroke	23. maj 2021	12,11
-C540 Peter Jensen		2009	Male	true	Butterfly	24 May 2021	08,12
-C432 Mark Jensen 2014 male true Frontcrawl 10 August 2017 10,33
-C200 Hans Rasmussen 1992 male true Frontcrawl 8 April 2015 09,22
-C999 Luke SkyWalker		1999	male	true	Frontcrawl	4 May 2009	04,10	true	DeathStar	26 May 2021	02,02	1
-C911 Rasmus Thomsen		2005	Male	true	Frontcrawl	8 Feb 2014	08,44	true	Allerod	26 May 2021	09,12	2
-C38 Torben Chris		1998	Male	Active	Backstroke	26 May 2021	10,34
-C1 Jens Jensen		2008	Male	true	Frontcrawl	24 May 2021	09,14	true	Copenhagen	26 May 2021	08,44	2
-C42 Victor Thomsen		1993	Male	true	Frontcrawl	14 Feb 2021	09,14	true	Berlin	26. Sep 2019	08,34	3
-C81 Sarah Njöström		1993	Female	Active	Backstroke	26 May 2021	11,13
-C80 Sarah Thomsen		1993	Female	Passive	Backstroke	26 May 2021	10,11
-C88 Tobias Bjerg		1998	Male	Active	Breaststroke	26. maj 2021	10,45
-C11 Jeanne Ottesen		1987	female	false	Butterfly	20 May 2021	11,2
-C44 Anders Thomsen		2001	male	true	Butterfly	20 May 2021	11,03 true Hamburg  26 May 2021 11,10 8
-C44 Anders Thomsen		2001	male	true	Butterfly	20 May 2021	11,03 true Paris 26 May 2021 08,2  1
-C106 Jens Sørensen		1992	male	true	Butterfly	20 May 2021	11,12 true NewYork 26 May 2021 07,12 2
+C809 Jens Jensen			2009	Male	true	6 Apr 2016 07,23
+C562 Sten Hansen			2004	male	true	3 Jun 2017 07,54
+C782 Stone RoadMan			2008	male	true	23. maj 2021 12,11
+C540 Peter Jensen			2009	Male	true	24 May 2021 08,12
+C432 Mark Jensen			2014	male	true	10 August 2017 10,33
+C911 Rasmus Thomsen			2005	Male	true	8 Feb 2014 08,44	true	Allerod 26 May 2021 09,12 2
+C1 Jens Jensen			2008	Male	true	24 May 2021 09,14	true	Copenhagen 26 May 2021 08,44 2
+C136 Hans Jensen			1994	male	true	17 Aug 2019 08,08	true	Hobronx 2 Jan 2020 09,47 3
+C88 Tobias Bjerg			1998	male	true	13 Jan 2020 14,24
+C44 Anders Thomsen			2001	male	true	8 Feb 2019 11,35
+C74 Peter Pallan			1974	male	true	4 Sep 2018 13,42
+C74 Peter Pallan			1974	male	true	9 Apr 2018 12,12
+C67 Anders Hansen			1991	male	true	8 Feb 2014 08,44
+C10 Jannie Ottesen			1987	female	true	19 May 2021 12,42
+C8 Rikke Hansen			1989	female	true	19 May 2021 12,17
+C44 Anders Thomsen			2001	male	true	20 May 2021 11,03
+C76 Lis Friis			1980	female	true	20 May 2021 11,11
+C106 Jens Sørensen			1992	male	true	20 May 2021 11,12
+C82 Michala Østergaard			1987	female	true	20 May 2021 11,2
+C11 Jeanne Ottesen			1987	female	false	20 May 2021 11,2
+C12 Micha Østergaard			1987	female	true	20 May 2021 11,2
+C98 Viktor Bromer			1993	male	true	20 May 2021 10,3
+C42 Victor Thomsen			1993	male	true	21 May 2021 12,13
+C200 Hans Rasmussen			1992	male	true	8 April 2015 09,22
+C999 Luke SkyWalker			1999	male	true	4 May 2009 04,10	true	DeathStar 26 May 2021 02,02 1
+C42 Victor Thomsen			1993	Male	true	14 Feb 2021 09,14	true	Berlin 26. Sep 2019 08,34 3
+C81 Sarah Njöström			1993	Female	Active	26 May 2021 11,13
+C80 Sarah Thomsen			1993	Female	Passive	26 May 2021 10,11
+C88 Tobias Bjerg			1998	Male	Active	26. maj 2021 10,45
+C11 Jeanne Ottesen			1987	female	false	20 May 2021 11,2
+C44 Anders Thomsen			2001	male	true	20 May 2021 11,03	true	Hamburg 26 May 2021 11,10 8
+C44 Anders Thomsen			2001	male	true	20 May 2021 11,03	true	Paris 26 May 2021 08,2 1
+C106 Jens Sørensen			1992	male	true	20 May 2021 11,12	true	NewYork 26 May 2021 07,12 2
+C38 Torben Chris			1998	Male	Active	26 May 2021 10,34	true	Copenhagen 27 May 2021 10,33 3

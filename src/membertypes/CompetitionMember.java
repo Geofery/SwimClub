@@ -32,10 +32,17 @@ public class CompetitionMember extends Member {
 
     @Override
     public String toString() {
-        return "Member ID: " + getMemberId() + ", First name: " + getFirstName()
-            + ", Surname: " + getSurName() + ", Age: " + getAge() + ", Sex: " + getGender()
-            + "\nSwimStyle: " + swimStyle +",\n" + training + "\n" + "Competition: "
-            + competition + "\n";
+        if (competition != null) {
+            return
+                "Member ID: " + getMemberId() + ", First name: " + getFirstName()
+                    + ", Surname: " + getSurName() + ", Age: " + getAge() + ", Sex: " + getGender()
+                    + "\nSwimStyle: " + swimStyle + ",\n" + training + "\n" + "Competition: "
+                    +
+                    competition.toDisplayString() + "\n";
+        }else
+            return "Member ID: " + getMemberId() + ", First name: " + getFirstName()
+                + ", Surname: " + getSurName() + ", Age: " + getAge() + ", Sex: " + getGender()
+                + "\nSwimStyle: " + swimStyle + ",\n" + training + "\n" + "\n";
     }
 }
 
