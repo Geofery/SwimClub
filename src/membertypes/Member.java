@@ -1,5 +1,5 @@
 package membertypes;
-
+//Christopher & Jeffrey
 public class Member {
   private String memberId;
   private String firstName;

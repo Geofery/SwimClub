@@ -1,5 +1,5 @@
 package objects;
-
+//Christopher & Jeffrey
 public class Training {
   private String date;
   private String result;

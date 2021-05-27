@@ -13,7 +13,7 @@ import userinterface.LoginGui;
 import userinterface.SwimStyle;
 import userinterface.UI;
 import javax.swing.*;
-
+//Christopher & Jeffrey
 public class Controller {
   UI ui = new UI();
   FileHandler fileHandler = new FileHandler();
