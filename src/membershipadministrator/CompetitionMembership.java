@@ -186,22 +186,22 @@ public class CompetitionMembership {
     return false;
   }
 
-  public void frontCrawl(UI ui) {//TODO add flere members under FrontCrawl
+  public void frontCrawl(UI ui) {
     swimStyleIdentifier(ui, SwimStyle.Frontcrawl.toString());
     displayTopSwimmers(ui, SwimStyle.Frontcrawl.toString());
   }
 
-  public void butterfly(UI ui) {//TODO add flere members under Butterfly
+  public void butterfly(UI ui) {
     swimStyleIdentifier(ui, SwimStyle.Butterfly.toString());
     displayTopSwimmers(ui, SwimStyle.Butterfly.toString());
   }
 
-  public void backstroke(UI ui) {//TODO add flere members under BackStroke
+  public void backstroke(UI ui) {
     swimStyleIdentifier(ui, SwimStyle.Backstroke.toString());
     displayTopSwimmers(ui, SwimStyle.Backstroke.toString());
   }
 
-  public void breaststroke(UI ui) {//TODO add flere members under Breaststroke
+  public void breaststroke(UI ui) {
     swimStyleIdentifier(ui, SwimStyle.Breaststroke.toString());
     displayTopSwimmers(ui, SwimStyle.Breaststroke.toString());
   }

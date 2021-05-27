@@ -134,7 +134,7 @@ public class Membership {
     String surName = ui.getString();
     ui.displayGreen("Please enter year of birth");
     String year = ui.getString();
-    if (!validateAge(year, ui) == true) {
+    while (!validateAge(year, ui) == true) {
       ui.errorRed("You are too old or to young too be a member");
       year = ui.getString();
     }
