@@ -101,17 +101,17 @@ public class CompetitionMembership {
     ui.displayLine();
   }
 
-  public void deleteCompetitonMember(UI ui) {
+  public void deleteCompetitonMember(UI ui, FileHandler fileHandler) {
     ui.displayBlueHeader("Delete competition member");
     ui.displayGreen("");
-    ui.displayGreen("Enter the member Id og the swimmer: ");
+    ui.displayGreen("Enter the member Id: ");
     String choice = ui.getString();
     for (int i = 0; i < allMembers.size(); i++) {
       if (allMembers.get(i).getMemberId().equals(choice)) {
         allMembers.remove(i);
       }
     }
-    //fileHandler.refreshCompetitionMembers(allMembers);
+    fileHandler.refreshCompetitionMembers(allMembers);
     ui.displayLine();
   }
 

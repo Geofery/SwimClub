@@ -85,6 +85,5 @@ public class UI {
         {
             exc.printStackTrace(System.out);
         }
-        return;
     }
 }

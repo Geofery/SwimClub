@@ -7,7 +7,6 @@ C911 Rasmus Thomsen			2005	Male	Active	Backstroke	8 Feb 2014 08,44	true	Allerod 
 C1 Jens Jensen			2008	Male	Active	Breaststroke	24 May 2021 09,14	true	Copenhagen 26 May 2021 08,44 2
 C136 Hans Jensen			1994	male	Active	Frontcrawl	17 Aug 2019 08,08	true	Hobronx 2 Jan 2020 09,47 3
 C88 Tobias Bjerg			1998	male	Active	Butterfly	13 Jan 2020 14,24
-C74 Peter Pallan			1974	male	Active	Breaststroke	4 Sep 2018 13,42
 C74 Peter Pallan			1974	male	Active	Frontcrawl	9 Apr 2018 12,12
 C67 Anders Hansen			1991	male	Active	Butterfly	8 Feb 2014 08,44
 C10 Jannie Ottesen			1987	female	Active	Backstroke	19 May 2021 12,42
@@ -20,7 +19,7 @@ C12 Micha Østergaard			1987	female	Active	Frontcrawl	20 May 2021 11,2
 C42 Victor Thomsen			1993	male	Active	Backstroke	21 May 2021 12,13
 C200 Hans Rasmussen			1992	male	Active	Breaststroke	8 April 2015 09,22
 C999 Luke SkyWalker			1999	male	Active	Frontcrawl	4 May 2009 04,10	true	DeathStar 26 May 2021 02,02 1
-C42 Victor Thomsen			1993	Male	Active	Butterfly 14 Feb 2021 09,14	true	Berlin 26. Sep 2019 08,34 3
+C42 Victor Thomsen			1993	Male	Active	Butterfly	14 Feb 2021 09,14	true	Berlin 26. Sep 2019 08,34 3
 C81 Sarah Njöström			1993	Female	Active	Backstroke	26 May 2021 11,13
 C80 Sarah Thomsen			1993	Female	Active	Butterfly	26 May 2021 10,11
 C88 Tobias Bjerg			1998	Male	Active	Frontcrawl	26 maj 2021 10,45

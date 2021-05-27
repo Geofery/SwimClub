@@ -211,7 +211,7 @@ public class Controller {
         case 3 -> competitionMembership.competitionResults(ui, competition);
         case 4 -> membership.convertToCompetitionMember(ui, training, fileHandler, competitionMember, competition);
         case 5 -> competitionMembership.addCompetition(ui, competition, competitionMember, fileHandler, training);
-        case 6 -> competitionMembership.deleteCompetitonMember(ui);
+        case 6 -> competitionMembership.deleteCompetitonMember(ui, fileHandler);
         case 7 -> lostAndFound.addLostItem(ui);
         case 8 -> lostAndFound.deleteItem(ui);
         case 9 -> {
