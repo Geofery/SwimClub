@@ -13,42 +13,13 @@ public class Competition {
     this.rank = rank;
   }
 
-  //Bliver ikke brugt da vi ikke har adgang til det fra vores ArrayList
-  public String getPlace() {
-    return place;
-  }
-
-  public String getDate() {
-    return date;
-  }
-
-  public String getResult() {
-    return result;
-  }
-
-  public int getRank() {
-    return rank;
-  }
-
-
-  //Ser bedst ud når vi udskriver vores members.
-  //Fungere heller ikke, da competition er null.
   public String toDisplayString() {
     return "Location: " + place  +
         ", Date: " + date  +
         ", Swim time: " + result +
         ", Position: " + rank;
   }
-/*
-@Override
-  public String toString() {
-    return "Location: " + place  +
-        ", Date: " + date  +
-        ", Swim time: " + result +
-        ", Position: " + rank;
-  }*/
 
-  //Kan gemme til fil uden ændringer.
   @Override
   public String toString() {
     return place + " " + date+ " " + result + " " + rank;

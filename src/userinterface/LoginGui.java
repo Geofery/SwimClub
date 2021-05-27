@@ -72,15 +72,15 @@ public class LoginGui implements ActionListener {
     String password = passwordField.getText();
 
     if (e.getActionCommand().equals("Login")) {
-      if (user.equals("chairman") && password.equals("1234")) {
+      if (user.equals("chairman@dolphin.com") && password.equals("1234")) {
         setFilledOut(true);
         setLoginRights(1);
         success.setText("Login successful!");
-      } else if (user.equals("finance") && password.equals("1234")) {
+      } else if (user.equals("finance@dolphin.com") && password.equals("1234")) {
         success.setText("Login successful!");
         setLoginRights(2);
         setFilledOut(true);
-      } else if (user.equals("coach") && password.equals("1234")) {
+      } else if (user.equals("coach@dolphin.com") && password.equals("1234")) {
         success.setText("Login successful!");
         setLoginRights(3);
         setFilledOut(true);

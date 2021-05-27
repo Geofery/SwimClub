@@ -28,8 +28,6 @@ public class CompetitionMember extends Member {
     public Competition getCompetition() { return competition; }
     public String getSwimStyle() { return swimStyle; }
 
-
-
     @Override
     public String toString() {
         if (competition != null) {

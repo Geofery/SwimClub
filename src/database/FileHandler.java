@@ -203,7 +203,6 @@ public class FileHandler {
     }
   }
 
-
   public void refreshCompetitionMembers(ArrayList<CompetitionMember> allCompetitionMembers) {
     try {
       fw = new FileWriter(competitionMembers);
@@ -215,12 +214,6 @@ public class FileHandler {
     try {
 
       for (int i = 0; i < allCompetitionMembers.size(); i++) {
-       /* if (allCompetitionMembers.get(i).getCompetition() != null){
-          rank = 1;
-        }else if (allCompetitionMembers.get(i).getCompetition() == null){
-          rank = 0;
-        }*/
-
         if (allCompetitionMembers.get(i).getCompetition() == null) {
         fw.write(allCompetitionMembers.get(i).getMemberId().replaceAll("\\[", "").replaceAll("]", "")
             .replaceAll(",", "\t") + " " + allCompetitionMembers.get(i).getFirstName() + " "
@@ -235,6 +228,7 @@ public class FileHandler {
               + allCompetitionMembers.get(i).getTraining() + "\t" + placeholder +"\t" +  allCompetitionMembers.get(i).getCompetition() + "\n");
         }
       }
+
       fw.close();
     } catch (IOException e) {
       e.printStackTrace();

@@ -74,7 +74,7 @@ public class Controller {
   }
 
   public void adminLogin() {
-    //Alternative admin menu
+    //Alternative admin login
     /*ui.displayGreen("Please enter E-mail: ");
     String email = ui.getString().toLowerCase(Locale.ROOT);
     ui.displayGreen("Please enter your password: ");
