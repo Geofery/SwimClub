@@ -8,7 +8,6 @@ import objects.Competition;
 import objects.Training;
 import userinterface.SwimStyle;
 import userinterface.UI;
-
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -82,6 +81,7 @@ public class Membership {
             }
         }
     }
+
 public void displayMembers(UI ui){
     ui.displayBlueHeader("\nAll members\n");
     ui.displayBlue("Members\n");
@@ -104,7 +104,6 @@ public void displayMembers(UI ui){
         for (int i = 0; i < competitionMembership.getAllMembers().size(); i++) {
             ui.displayGreen(i + 1 + ". " + competitionMembership.getAllMembers().get(i).toString());
         }
-
         ui.displayLine();
     }
 
@@ -154,7 +153,6 @@ public void displayMembers(UI ui){
         if (intYear >= 2019 || intYear <= 1923 ){
             return false;
         }
-
         return true;
     }
 
@@ -212,10 +210,9 @@ public void displayMembers(UI ui){
                 } else
                     tracker++;
             }
-
-        if (tracker == allMembers.size())
+        if (tracker == allMembers.size()) {
             ui.errorRed("Invalid Member ID!");
-
+        }
         ui.displayLine();
     }
 
@@ -226,9 +223,7 @@ public void displayMembers(UI ui){
                 ("female") || gender.equals("Female") || gender.equals("FEMALE")) {
             gender = "Female";
             return gender;
-        }
-
-        else if (gender.equals("m") || gender.equals("M") || gender.equals
+        } else if (gender.equals("m") || gender.equals("M") || gender.equals
                 ("male") || gender.equals("Male") || gender.equals("MALE")) {
             gender = "Male";
             return gender;
@@ -284,6 +279,7 @@ public void displayMembers(UI ui){
         ui.displayGreen("Enter training result in format **,**");
         String result = ui.getString();
         String choice = "";
+
         if (coachChoice == 1) {
             choice = SwimStyle.Frontcrawl.toString();
             ui.displayGreen(choice);
