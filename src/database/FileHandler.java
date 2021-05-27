@@ -219,12 +219,12 @@ public class FileHandler {
             .replaceAll(",", "\t") + " " + allCompetitionMembers.get(i).getFirstName() + " "
             + allCompetitionMembers.get(i).getSurName() + "\t\t\t" + allCompetitionMembers.get(i).getAge() + "\t"
             + allCompetitionMembers.get(i).getGender() + "\t" + allCompetitionMembers.get(i).getActive() + "\t"
-            + allCompetitionMembers.get(i).getTraining() + "\n");
+            + allCompetitionMembers.get(i).getSwimStyle() + "\t" + allCompetitionMembers.get(i).getTraining() + "\n");
       }else if (allCompetitionMembers.get(i).getCompetition() != null){
           fw.write(allCompetitionMembers.get(i).getMemberId().replaceAll("\\[", "").replaceAll("]", "")
               .replaceAll(",", "\t") + " " + allCompetitionMembers.get(i).getFirstName() + " "
               + allCompetitionMembers.get(i).getSurName() + "\t\t\t" + allCompetitionMembers.get(i).getAge() + "\t"
-              + allCompetitionMembers.get(i).getGender() + "\t" + allCompetitionMembers.get(i).getActive() + "\t"
+              + allCompetitionMembers.get(i).getGender() + "\t" + allCompetitionMembers.get(i).getActive() + "\t" + allCompetitionMembers.get(i).getSwimStyle()
               + allCompetitionMembers.get(i).getTraining() + "\t" + placeholder +"\t" +  allCompetitionMembers.get(i).getCompetition() + "\n");
         }
       }
