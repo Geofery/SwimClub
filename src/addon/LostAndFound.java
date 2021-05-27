@@ -15,7 +15,7 @@ public class LostAndFound {
         lostAndFound.add("Speedoes suspiciously discolored.");
         lostAndFound.add("A Goldfish, kinda alive.");
         lostAndFound.add("Some kind of used balloon looking thing, strawberry flavored???");
-        lostAndFound.add("White powder in a zip bag, maby used for baking??");
+        lostAndFound.add("White powder in a zip bag, maybe used for baking??");
         lostAndFound.add("A fly on a leash.");
         lostAndFound.add("A baby shark.");
         lostAndFound.add("A half eaten pool noodle.");
