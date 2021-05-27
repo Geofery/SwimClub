@@ -9,6 +9,7 @@ import userinterface.UI;
 import java.util.ArrayList;
 import java.util.Collections;
 
+//Christopher & Jeffrey
 public class CompetitionMembership {
 
   private ArrayList<CompetitionMember> youthTeam = new ArrayList<>();
@@ -158,11 +159,11 @@ public class CompetitionMembership {
     String place = ui.getString();
     String date = ui.date();
     ui.displayGreen("Enter swim time");
-    String result = ui.getString();
+    String result = ui.getString(); //TODO Time Formatter????
     ui.displayGreen("Enter ranking");
-    String rank = ui.getString();
+    int rank = ui.getScanInt();
 
-    competition = new Competition(place, date, result, Integer.parseInt(rank));
+    competition = new Competition(place.replaceAll(" ", ""), date, result, rank);
     for (int i = 0; i < allMembers.size(); i++) {
       if (memberId.equals(allMembers.get(i).getMemberId())) {
         competitionMember = new CompetitionMember(memberId, allMembers.get(i).getFirstName(), allMembers.get(i).getSurName(),
