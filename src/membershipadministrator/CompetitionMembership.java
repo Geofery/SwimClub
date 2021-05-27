@@ -114,7 +114,7 @@ public class CompetitionMembership {
     ui.displayLine();
   }
 
-  public void displayTopSwimmers(UI ui, String swimstyle) {
+  public void displayTopSwimmers(UI ui, String swimstyle) { //TODO Broken
     Collections.sort(youthTeam, (o1, o2) -> o1.getTraining().compareTo(o2.getTraining()));
     Collections.sort(seniorTeam, (o1, o2) -> o1.getTraining().compareTo(o2.getTraining()));
     ui.displayBlueHeader("Youth Team top 5.");

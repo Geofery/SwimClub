@@ -6,7 +6,7 @@ public class Member {
   private String surName;
   private String age;
   private String gender;
-  private String active; // TODO lav til en String Active /Passive Evt. en Metode Not possible because ageIdentifier
+  private String active;
 
   public Member(String memberId, String firstName, String surName, String age, String gender, String active) {
     this.memberId = memberId;

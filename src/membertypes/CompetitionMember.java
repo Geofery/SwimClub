@@ -34,13 +34,12 @@ public class CompetitionMember extends Member {
             return
                 "Member ID: " + getMemberId() + ", First name: " + getFirstName()
                     + ", Surname: " + getSurName() + ", Age: " + getAge() + ", Sex: " + getGender()
-                    + "\nSwimStyle: " + swimStyle + ",\n" + training + "\n" + "Competition: "
-                    +
-                    competition.toDisplayString() + "\n";
+                    + "\nSwimStyle: " + swimStyle + ", " + training.toDisplayString() + "\n" + "Competition: "
+                    + competition.toDisplayString() + "\n";
         }else
             return "Member ID: " + getMemberId() + ", First name: " + getFirstName()
                 + ", Surname: " + getSurName() + ", Age: " + getAge() + ", Sex: " + getGender()
-                + "\nSwimStyle: " + swimStyle + ",\n" + training + "\n" + "\n";
+                + "\nSwimStyle: " + swimStyle + "," + training + "\n";
     }
 }
 

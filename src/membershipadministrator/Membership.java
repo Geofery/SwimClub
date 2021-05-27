@@ -127,7 +127,7 @@ public class Membership {
     ui.displayLine();
   }
 
-  public void addNewMember(UI ui, Member member) { //TODO fix
+  public void addNewMember(UI ui, Member member) {
     ui.displayGreen("Please enter first name");
     String firstName = ui.getString();
     ui.displayGreen("Please enter surname");

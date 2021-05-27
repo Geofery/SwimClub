@@ -21,9 +21,12 @@ public class Training {
     return this.result.compareTo(o.getResult());
   }
 
+  public String toDisplayString(){
+    return "Date: " + date + ", Result: " + result;
+  }
+
   @Override
   public String toString() {
     return  date + " " + result;
   }
-
 }
