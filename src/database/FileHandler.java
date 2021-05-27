@@ -203,8 +203,8 @@ public class FileHandler {
     }
   }
 
-  //Kræver at vi kan få adgang til det underliggende object!
-  public void refreshCompetitionMembers(ArrayList<CompetitionMember> allCompetitionMembers, Competition competition) {
+
+  public void refreshCompetitionMembers(ArrayList<CompetitionMember> allCompetitionMembers) {
     try {
       fw = new FileWriter(competitionMembers);
       fileReader = new Scanner(competitionMembers);

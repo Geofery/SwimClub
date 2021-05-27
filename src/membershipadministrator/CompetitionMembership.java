@@ -131,7 +131,7 @@ public class CompetitionMembership {
     }
     ui.displayLine();
   }
-//todo Needs some LOOOOve
+
   public void addCompetition(UI ui, Competition competition, CompetitionMember competitionMember, FileHandler fileHandler, Training training) {
     ui.displayBlueHeader("New competition");
     ui.display("");
@@ -174,8 +174,7 @@ public class CompetitionMembership {
 
     allMembers.add(competitionMember);
     fileHandler.saveCompetitionToMember(competitionMember, training,  competition);
-    //fileHandler.saveCompetitionMember(competitionMember, choice, training, competition);
-    fileHandler.refreshCompetitionMembers(allMembers, competition);
+    fileHandler.refreshCompetitionMembers(allMembers);
   }
 
   public boolean validateCompetitionId(String memberId, UI ui) {
